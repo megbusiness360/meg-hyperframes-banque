@@ -14,7 +14,7 @@
      Détourage : `npx hyperframes remove-background <master>.mp4`. -->
 <div data-hf-id="hf-cpn0" id="corps-detoure-panneau-root" data-composition-id="corps-detoure-panneau" data-start="0" data-duration="5" data-width="1080" data-height="1920">
     <style>
-      @font-face{font-family:'Clash Grotesk MEG';src:url('../assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #corps-detoure-panneau-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
       #corps-detoure-panneau-root .voile{position:absolute;inset:0;z-index:1;backdrop-filter:blur(24px) saturate(.8);background:linear-gradient(180deg,rgba(47,44,0,.62) 0%,rgba(47,44,0,.80) 100%);opacity:0}
       /* Panneau calibré au texte, et volontairement moins large que le cadre : un
@@ -35,7 +35,7 @@
       <div data-hf-id="hf-cpn4" class="tt">Une certification<br data-hf-id="hf-cpn5">ne s'achète pas.</div>
       <div data-hf-id="hf-cpn6" class="filet"></div>
     </div>
-    <video id="meg-cutout-panel-video" data-hf-id="hf-cpn7" class="clip sujet" src="../assets/cutout-demo.webm" data-start="0" data-duration="5" muted playsinline></video>
+    <video id="meg-cutout-panel-video" data-hf-id="hf-cpn7" class="clip sujet" src="assets/cutout-demo.webm" data-start="0" data-duration="5" muted playsinline></video>
     <script>
       window.__timelines=window.__timelines||{};
       const cpn=gsap.timeline({paused:true});

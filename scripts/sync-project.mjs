@@ -38,6 +38,18 @@ async function readConfig(configPath) {
   return JSON.parse(await readFile(configPath, "utf8"));
 }
 
+async function keepDoctypeFirst(paths) {
+  for (const path of paths) {
+    if (!(await exists(path))) continue;
+    const source = await readFile(path, "utf8");
+    const match = source.match(
+      /^\s*(<!--\s*hyperframes-registry-item:[^>]*-->)\s*(<!doctype html>)/i,
+    );
+    if (!match) continue;
+    await writeFile(path, `${match[2]}\n${match[1]}\n${source.slice(match[0].length)}`);
+  }
+}
+
 async function main() {
   const projectPath = resolve(process.argv[2] ?? "");
   if (!process.argv[2]) {
@@ -78,6 +90,7 @@ async function main() {
     const compositionTargets = item.files
       .filter((file) => file.type === "hyperframes:composition")
       .map((file) => resolve(projectPath, file.target));
+    await keepDoctypeFirst(compositionTargets);
     if (compositionTargets.length > 0 && (await Promise.all(compositionTargets.map(exists))).every(Boolean)) {
       preserved.push(name);
       continue;
@@ -88,6 +101,7 @@ async function main() {
       ["--yes", "hyperframes", "add", name, "--dir", projectPath, "--no-clipboard", "--json"],
       { timeout: 60_000, maxBuffer: 10 * 1024 * 1024 },
     );
+    await keepDoctypeFirst(compositionTargets);
     installed.push(name);
   }
 

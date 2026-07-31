@@ -32,11 +32,7 @@ for (const name of names) {
     .replace(
       /<script\s+src=["']https:\/\/cdn\.jsdelivr\.net\/npm\/gsap@[^"']+["']><\/script>/gi,
       "",
-    )
-    .replaceAll("url('assets/", "url('../assets/")
-    .replaceAll('url("assets/', 'url("../assets/')
-    .replaceAll('src="assets/', 'src="../assets/')
-    .replaceAll("src='assets/", "src='../assets/");
+    );
 
   body = body.replace(
     /(<div\b[^>]*\bdata-composition-id=["'][^"']+["'])/i,
