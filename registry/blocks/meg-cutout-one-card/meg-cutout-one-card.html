@@ -1,0 +1,44 @@
+<!-- Corps détouré — une carte derrière le sujet.
+     Carte volontairement décentrée : sa moitié gauche reste lisible, l'épaule et la
+     tête passent devant sa droite. C'est ce chevauchement qui rend le détourage visible.
+     Détourage : `npx hyperframes remove-background <master>.mp4 -o cutout.webm`. -->
+<template id="corps-detoure-1c-template">
+  <div data-hf-id="hf-c1c0" id="corps-detoure-1c-root" data-composition-id="corps-detoure-1c" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #corps-detoure-1c-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #corps-detoure-1c-root .voile{position:absolute;inset:0;z-index:1;backdrop-filter:blur(22px) saturate(.85);background:linear-gradient(180deg,rgba(47,44,0,.55) 0%,rgba(47,44,0,.78) 100%);opacity:0}
+      /* Carte calibrée au texte : la même carte en 980 px de haut laissait un tiers
+         de vide sous la dernière ligne, et le chevauchement avec la tête devenait mou.
+         Ici elle tient la bande épaules–tête, là où le détourage se voit. */
+      #corps-detoure-1c-root .carte{position:absolute;z-index:2;left:36px;top:400px;width:556px;box-sizing:border-box;padding:38px 38px 42px;border-radius:40px;background:#FFFCD6;color:#2F2C00;box-shadow:0 34px 76px rgba(0,0,0,.45);transform:rotate(-4deg);opacity:0}
+      #corps-detoure-1c-root .eyebrow{display:inline-block;padding:9px 20px;border-radius:999px;background:#B9AA02;font-size:25px;font-weight:700;letter-spacing:.13em}
+      #corps-detoure-1c-root .tt{margin-top:22px;font-size:64px;line-height:.92;font-weight:700;letter-spacing:-.03em;word-spacing:.03em}
+      #corps-detoure-1c-root .li{margin-top:20px;padding-left:30px;position:relative;font-size:31px;line-height:1.12;font-weight:500}
+      /* Puce dessinée : un glyphe de liste dépendrait de la police système. */
+      #corps-detoure-1c-root .li::before{content:'';position:absolute;left:0;top:12px;width:16px;height:16px;border-radius:50%;background:#B9AA02}
+      /* Le sujet est repoussé vers la droite : sur un master cadré au centre, une
+         carte pleine largeur finit toujours coupée en deux par la tête. Le fond
+         flouté reste en place, c'est le sujet net qui se déplace. */
+      #corps-detoure-1c-root .sujet{position:absolute;inset:0;z-index:3;width:100%;height:100%;object-fit:cover;transform:translateX(216px)}
+    </style>
+    <div data-hf-id="hf-c1c1" class="voile"></div>
+    <div data-hf-id="hf-c1c2" class="carte">
+      <span data-hf-id="hf-c1c3" class="eyebrow">CE QU'ON VÉRIFIE</span>
+      <div data-hf-id="hf-c1c4" class="tt">Trois points<br data-hf-id="hf-c1c5">bloquants</div>
+      <div data-hf-id="hf-c1c6" class="li">Le référentiel choisi</div>
+      <div data-hf-id="hf-c1c7" class="li">Les preuves d'activité</div>
+      <div data-hf-id="hf-c1c8" class="li">Le dépôt sur EDOF</div>
+    </div>
+    <video data-hf-id="hf-c1c9" class="sujet" src="assets/cutout-demo.webm" autoplay muted loop playsinline></video>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const c1c=gsap.timeline({paused:true});
+      c1c.to('#corps-detoure-1c-root .voile',{opacity:1,duration:.34,ease:'power2.out'},0)
+         .fromTo('#corps-detoure-1c-root .carte',{x:-110,rotate:-11,opacity:0},{x:0,rotate:-4,opacity:1,duration:.50,ease:'power3.out'},.14)
+         .fromTo('#corps-detoure-1c-root .li',{x:-24,opacity:0},{x:0,opacity:1,duration:.28,stagger:.14,ease:'power2.out'},.46)
+         .to('#corps-detoure-1c-root .carte',{y:-18,duration:3.2,ease:'none'},.9);
+      window.__timelines['corps-detoure-1c']=c1c;
+    </script>
+  </div>
+</template>

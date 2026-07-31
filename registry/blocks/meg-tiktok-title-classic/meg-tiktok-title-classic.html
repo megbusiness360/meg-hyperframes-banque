@@ -1,0 +1,108 @@
+<!-- Port HTML du TikTokTitleClassic canonique. Le texte est mesuré et une
+     silhouette SVG unique est recalculée : jamais deux pastilles CSS. -->
+<template id="titre-tiktok-template">
+  <div data-hf-id="hf-rl87" id="titre-tiktok-root" data-composition-id="titre-tiktok" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:ClashMEG;src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-display:block}
+      #titre-tiktok-root{position:relative;width:100%;height:100%;overflow:hidden}
+      /* Presets couleur validés — on change data-preset, jamais on ne duplique le bloc.
+         A : fond vidéo sombre, forme crème.  B : fond vidéo clair, forme encre MEG.
+         E : fond vidéo sombre, forme jaune clair (Primary 300).  Jamais de rouge. */
+      #titre-tiktok-root .titre-bloc{--forme:#2f2c00;--encre:#fffcd6;position:absolute;z-index:2;top:92px;left:50%;width:980px}
+      #titre-tiktok-root .titre-bloc[data-preset="A"]{--forme:#fffcd6;--encre:#2f2c00}
+      #titre-tiktok-root .titre-bloc[data-preset="B"]{--forme:#2f2c00;--encre:#fffcd6}
+      #titre-tiktok-root .titre-bloc[data-preset="E"]{--forme:#fff3ae;--encre:#2f2c00}
+      #titre-tiktok-root .titre-fond path{fill:var(--forme)}
+      #titre-tiktok-root .titre-fond{position:absolute;inset:0 auto auto 0;width:980px;overflow:visible;pointer-events:none}
+      #titre-tiktok-root .titre-lignes{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+      #titre-tiktok-root .titre-ligne{display:block;width:fit-content;max-width:980px;box-sizing:border-box;padding:20px 36px 24px;color:var(--encre);text-align:center;font-family:ClashMEG,sans-serif;font-size:94px;font-weight:600;line-height:.96;letter-spacing:-.055em;white-space:nowrap}
+      #titre-tiktok-root .titre-ligne[hidden]{display:none}
+    </style>
+    <div data-hf-id="hf-1vsq" class="titre-bloc" data-preset="B" data-ligne-1="Demandez votre accès" data-ligne-2="à EDOF en 2026">
+      <svg data-hf-id="hf-gtou" class="titre-fond" aria-hidden="true" width="980"><path data-hf-id="hf-rkvf" /></svg>
+      <div data-hf-id="hf-wix7" class="titre-lignes">
+        <div data-hf-id="hf-2mwd" class="titre-ligne ligne-1">Demandez votre accès</div>
+        <div data-hf-id="hf-vbrq" class="titre-ligne ligne-2">à EDOF en 2026</div>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const root=document.querySelector('#titre-tiktok-root');
+        const block=root.querySelector('.titre-bloc');
+        const lines=[...root.querySelectorAll('.titre-ligne')];
+        const svg=root.querySelector('.titre-fond');
+        const path=svg.querySelector('path');
+
+        lines[0].textContent=block.getAttribute('data-ligne-1')||lines[0].textContent;
+        lines[1].textContent=block.getAttribute('data-ligne-2')||'';
+        lines[1].hidden=!lines[1].textContent.trim();
+
+        const roundedPolygon=(points,radius) => {
+          const clean=points.filter((point,index) => {
+            const previous=points[(index-1+points.length)%points.length];
+            return point[0]!==previous[0]||point[1]!==previous[1];
+          });
+          return clean.map((point,index) => {
+            const previous=clean[(index-1+clean.length)%clean.length];
+            const next=clean[(index+1)%clean.length];
+            const previousLength=Math.hypot(previous[0]-point[0],previous[1]-point[1]);
+            const nextLength=Math.hypot(next[0]-point[0],next[1]-point[1]);
+            const r=Math.min(radius,previousLength/2,nextLength/2);
+            const start=[
+              point[0]+(previous[0]-point[0])*(r/previousLength),
+              point[1]+(previous[1]-point[1])*(r/previousLength)
+            ];
+            const end=[
+              point[0]+(next[0]-point[0])*(r/nextLength),
+              point[1]+(next[1]-point[1])*(r/nextLength)
+            ];
+            return `${index===0?'M':'L'}${start[0]},${start[1]} Q${point[0]},${point[1]} ${end[0]},${end[1]}`;
+          }).join(' ')+' Z';
+        };
+
+        const fitAndDraw=() => {
+          lines.forEach(line => line.style.fontSize='94px');
+          let size=94;
+          while(size>54&&lines.some(line => !line.hidden&&line.scrollWidth>980)){
+            size-=2;
+            lines.forEach(line => line.style.fontSize=`${size}px`);
+          }
+
+          const visible=lines.filter(line => !line.hidden);
+          const widths=visible.map(line => Math.ceil(line.getBoundingClientRect().width));
+          const heights=visible.map(line => Math.ceil(line.getBoundingClientRect().height));
+          const center=490;
+
+          if(visible.length===1){
+            const width=widths[0],height=heights[0];
+            const left=center-width/2,right=center+width/2;
+            path.setAttribute('d',roundedPolygon([[left,0],[right,0],[right,height],[left,height]],42));
+            svg.setAttribute('height',height);
+            svg.style.height=`${height}px`;
+            return;
+          }
+
+          const [w1,w2]=widths,[h1,h2]=heights;
+          const left1=center-w1/2,right1=center+w1/2;
+          const left2=center-w2/2,right2=center+w2/2;
+          const total=h1+h2;
+          path.setAttribute('d',roundedPolygon([
+            [left1,0],[right1,0],[right1,h1],[right2,h1],
+            [right2,total],[left2,total],[left2,h1],[left1,h1]
+          ],42));
+          svg.setAttribute('height',total);
+          svg.style.height=`${total}px`;
+        };
+
+        fitAndDraw();
+
+        window.__timelines=window.__timelines||{};
+        const tl=gsap.timeline({paused:true});
+        tl.set('#titre-tiktok-root .titre-bloc',{xPercent:-50,y:0,opacity:1},0)
+          .to('#titre-tiktok-root .titre-bloc',{y:-24,opacity:0,duration:.28,ease:'power2.in'},2.12)
+          .set('#titre-tiktok-root .titre-bloc',{opacity:0},2.4);
+        window.__timelines['titre-tiktok']=tl;
+      })();
+    </script>
+  </div>
+</template>

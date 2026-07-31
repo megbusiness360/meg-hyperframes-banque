@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-captions-global",
+  "type": "hyperframes:block",
+  "title": "Sous-titres",
+  "description": "Une seule ligne, capitale initiale, cadre ajusté au texte et position liée au visage.",
+  "tags": [
+    "meg",
+    "sous-titres",
+    "global"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "meg-captions-global.html",
+      "target": "compositions/meg-captions-global.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

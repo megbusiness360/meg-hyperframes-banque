@@ -1,0 +1,41 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-cutout-one-card",
+  "type": "hyperframes:block",
+  "title": "Corps détouré — une carte",
+  "description": "Une carte calibrée au texte, décentrée derrière le sujet, liste de trois points.",
+  "tags": [
+    "meg",
+    "corps-detoure",
+    "detourage"
+  ],
+  "family": "corps-detoure",
+  "familyTitle": "Corps détouré",
+  "variant": "Une carte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-cutout-one-card.html",
+      "target": "compositions/meg-cutout-one-card.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/cutout-demo.webm",
+      "target": "assets/cutout-demo.webm",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

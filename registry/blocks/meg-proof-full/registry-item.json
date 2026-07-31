@@ -1,0 +1,44 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-proof-full",
+  "type": "hyperframes:block",
+  "title": "Preuve — capture centrée",
+  "description": "Capture posée au centre sur fond dégradé crème, marque en source. La page défile pendant le plan.",
+  "tags": [
+    "meg",
+    "preuve",
+    "plein-ecran"
+  ],
+  "family": "preuve-plein",
+  "familyTitle": "Preuve plein écran",
+  "variant": "Capture centrée",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-proof-full.html",
+      "target": "compositions/meg-proof-full.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-site-long.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo.png",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,41 @@
+<!-- Corps détouré — panneau derrière le sujet.
+     Le panneau tient le haut du cadre comme une slide de keynote : tout son texte vit
+     au-dessus de la tête, et seul son bord bas passe derrière le front. Assez pour
+     qu'on voie le détourage, pas assez pour que le montage devienne l'effet.
+     Détourage : `npx hyperframes remove-background <master>.mp4`. -->
+<template id="corps-detoure-panneau-template">
+  <div data-hf-id="hf-cpn0" id="corps-detoure-panneau-root" data-composition-id="corps-detoure-panneau" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #corps-detoure-panneau-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #corps-detoure-panneau-root .voile{position:absolute;inset:0;z-index:1;backdrop-filter:blur(24px) saturate(.8);background:linear-gradient(180deg,rgba(47,44,0,.62) 0%,rgba(47,44,0,.80) 100%);opacity:0}
+      /* Panneau calibré au texte, et volontairement moins large que le cadre : un
+         panneau pleine largeur de 810 px de haut passait derrière toute la tête, ce
+         qui rend le montage flagrant. Ici il s'arrête à hauteur de front (y 646),
+         donc le sujet le recouvre juste assez pour qu'on voie le détourage. */
+      #corps-detoure-panneau-root .panneau{position:absolute;z-index:2;left:96px;top:176px;width:888px;box-sizing:border-box;padding:42px 46px 48px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.46);opacity:0}
+      #corps-detoure-panneau-root .kicker{display:inline-block;padding:10px 22px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:26px;font-weight:700;letter-spacing:.13em}
+      /* Tracking serré mais mots séparés : à -0,05 em les mots se collent. */
+      #corps-detoure-panneau-root .tt{margin-top:24px;font-size:80px;line-height:.94;font-weight:700;letter-spacing:-.03em;word-spacing:.04em}
+      /* Filet or : marque la limite du texte, sous laquelle le sujet passe devant. */
+      #corps-detoure-panneau-root .filet{margin-top:26px;width:190px;height:8px;border-radius:99px;background:#B9AA02;transform-origin:left center}
+      #corps-detoure-panneau-root .sujet{position:absolute;inset:0;z-index:3;width:100%;height:100%;object-fit:cover}
+    </style>
+    <div data-hf-id="hf-cpn1" class="voile"></div>
+    <div data-hf-id="hf-cpn2" class="panneau">
+      <span data-hf-id="hf-cpn3" class="kicker">CE QUE PERSONNE NE DIT</span>
+      <div data-hf-id="hf-cpn4" class="tt">Une certification<br data-hf-id="hf-cpn5">ne s'achète pas.</div>
+      <div data-hf-id="hf-cpn6" class="filet"></div>
+    </div>
+    <video data-hf-id="hf-cpn7" class="sujet" src="assets/cutout-demo.webm" autoplay muted loop playsinline></video>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const cpn=gsap.timeline({paused:true});
+      cpn.to('#corps-detoure-panneau-root .voile',{opacity:1,duration:.34,ease:'power2.out'},0)
+         .fromTo('#corps-detoure-panneau-root .panneau',{y:-92,opacity:0},{y:0,opacity:1,duration:.52,ease:'power3.out'},.12)
+         .fromTo('#corps-detoure-panneau-root .filet',{scaleX:0},{scaleX:1,duration:.40,ease:'power2.out'},.52)
+         .to('#corps-detoure-panneau-root .panneau',{y:-14,duration:3.2,ease:'none'},.9);
+      window.__timelines['corps-detoure-panneau']=cpn;
+    </script>
+  </div>
+</template>

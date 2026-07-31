@@ -1,0 +1,24 @@
+<template id="preuve-haut-template">
+  <div data-hf-id="hf-0lwi" id="preuve-haut-root" data-composition-id="preuve-haut" data-start="0" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2')}
+      #preuve-haut-root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #preuve-haut-root .proof{position:absolute;left:46px;top:46px;width:988px;height:716px;box-sizing:border-box;overflow:hidden;border:7px solid #fffcd6;border-radius:34px;background:#fffcd6;box-shadow:0 20px 60px rgba(0,0,0,.16);opacity:0}
+      #preuve-haut-root .placeholder{display:flex;align-items:center;justify-content:center;padding:54px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);color:#2f2c00;text-align:center;font-size:43px;line-height:1.02;font-weight:600;letter-spacing:-.035em}
+      #preuve-haut-root .standalone-face{display:none;position:absolute;left:46px;top:784px;width:988px;height:1090px;border-radius:34px;background:#2f2c00;color:#fffcd6;align-items:center;justify-content:center;text-align:center;font-size:52px;font-weight:700;letter-spacing:-.03em}
+    </style>
+    <div data-hf-id="hf-2bqt" class="proof placeholder"><span data-hf-id="hf-znph">ILLUSTRATION<br data-hf-id="hf-x5px">À PLANIFIER</span></div>
+    <div data-hf-id="hf-515j" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-rsrt">FACE EN BAS</div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const t04root=document.querySelector('#preuve-haut-root');
+      const t04=gsap.timeline({paused:true});
+      if(!document.querySelector('#meg-master-frame')){
+        t04root.querySelector('.standalone-face').style.display='flex';
+        t04.set(t04root.querySelector('.proof'),{y:-48,opacity:0}).to(t04root.querySelector('.proof'),{y:0,opacity:1,duration:.42,ease:'power3.out'},0);
+      }
+      window.__timelines['preuve-haut']=t04;
+    </script>
+  </div>
+</template>

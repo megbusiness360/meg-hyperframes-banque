@@ -1,0 +1,41 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-cutout-emoji",
+  "type": "hyperframes:block",
+  "title": "Corps détouré — pastilles",
+  "description": "Sept jetons en arc autour de la tête, pour énumérer sans texte.",
+  "tags": [
+    "meg",
+    "corps-detoure",
+    "detourage"
+  ],
+  "family": "corps-detoure",
+  "familyTitle": "Corps détouré",
+  "variant": "Pastilles",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-cutout-emoji.html",
+      "target": "compositions/meg-cutout-emoji.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/cutout-demo.webm",
+      "target": "assets/cutout-demo.webm",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

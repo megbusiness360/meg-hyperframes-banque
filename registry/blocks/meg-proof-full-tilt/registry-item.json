@@ -1,0 +1,44 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-proof-full-tilt",
+  "type": "hyperframes:block",
+  "title": "Preuve — capture inclinée",
+  "description": "Capture en perspective, texte en encre sur le fond crème. Pour un programme qu'on montre en train de défiler.",
+  "tags": [
+    "meg",
+    "preuve",
+    "plein-ecran"
+  ],
+  "family": "preuve-plein",
+  "familyTitle": "Preuve plein écran",
+  "variant": "Capture inclinée",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-proof-full-tilt.html",
+      "target": "compositions/meg-proof-full-tilt.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-programme-long.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo.png",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

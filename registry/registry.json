@@ -1,0 +1,24 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry.json",
+  "name": "meg-hyperframes",
+  "homepage": "https://megbusiness360.com",
+  "items": [
+    {"name":"meg-catalog-preview","type":"hyperframes:block"},
+    {"name":"meg-face-full","type":"hyperframes:block"},
+    {"name":"meg-tiktok-title-classic","type":"hyperframes:block"},
+    {"name":"meg-face-proof-split-t04","type":"hyperframes:block"},
+    {"name":"meg-face-proof-split-t17","type":"hyperframes:block"},
+    {"name":"meg-proof-full","type":"hyperframes:block"},
+    {"name":"meg-proof-full-tilt","type":"hyperframes:block"},
+    {"name":"meg-proof-full-browser","type":"hyperframes:block"},
+    {"name":"meg-face-cta-arrows","type":"hyperframes:block"},
+    {"name":"meg-captions-global","type":"hyperframes:block"},
+    {"name":"meg-cutout-two-cards","type":"hyperframes:block"},
+    {"name":"meg-cutout-one-card","type":"hyperframes:block"},
+    {"name":"meg-cutout-panel","type":"hyperframes:block"},
+    {"name":"meg-cutout-emoji","type":"hyperframes:block"},
+    {"name":"meg-proof-split-50-top","type":"hyperframes:block"},
+    {"name":"meg-proof-split-50-bottom","type":"hyperframes:block"},
+    {"name":"meg-masked-face-stage","type":"hyperframes:block"}
+  ]
+}

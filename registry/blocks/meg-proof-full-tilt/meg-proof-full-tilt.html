@@ -1,0 +1,58 @@
+<!-- Preuve plein écran — capture inclinée.
+     Variante « objet posé » : la capture est grande, débordante et légèrement tournée
+     en perspective. À utiliser quand la preuve est une page longue — ici un programme
+     de formation — qu'on montre en train de défiler pendant qu'on parle.
+     Plus de socle encre en bas : le noir sur fond jaune cassait l'enchaînement des
+     trois preuves. Tout le plan reste dans le monde crème, le texte est en encre.
+     Régénérer la capture avec tools/snap-site.mjs. Remplacer l'image, le sur-titre,
+     les deux lignes de titre et le nom de domaine. -->
+<template id="preuve-plein-tilt-template">
+  <div data-hf-id="hf-pt00" id="preuve-plein-tilt-root" data-composition-id="preuve-plein-tilt" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #preuve-plein-tilt-root{position:relative;width:100%;height:100%;overflow:hidden;background:linear-gradient(200deg,#FFFEEC 0%,#FFFCD6 38%,#EFE39C 100%);color:#2F2C00;font-family:'Clash Grotesk MEG',sans-serif}
+      /* Halo bas : ancre la capture au sol au lieu de la laisser flotter dans le vide. */
+      #preuve-plein-tilt-root .sol{position:absolute;left:50%;top:1120px;width:1500px;height:900px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(185,170,2,.34) 0%,rgba(185,170,2,0) 68%)}
+      /* Scène en perspective : c'est le parent qui la porte, la carte ne fait que tourner. */
+      #preuve-plein-tilt-root .scene{position:absolute;left:0;right:0;top:214px;height:1010px;perspective:2200px;perspective-origin:50% 20%}
+      #preuve-plein-tilt-root .cadre{width:1010px;height:1010px;margin:0 auto;padding:16px;box-sizing:border-box;border-radius:40px;background:#FFFEEC;box-shadow:0 60px 120px rgba(47,44,0,.30),0 8px 22px rgba(47,44,0,.12);transform:rotateX(15deg) rotateZ(-3deg);transform-origin:50% 0%;opacity:0}
+      /* Hublot : la page fait plus de 3000 px de haut, seul son haut tient dans le
+         cadre et c'est lui qui glisse. */
+      #preuve-plein-tilt-root .hublot{width:100%;height:100%;border-radius:26px;overflow:hidden}
+      #preuve-plein-tilt-root .hublot img{display:block;width:100%;height:auto}
+      #preuve-plein-tilt-root .bloc{position:absolute;left:70px;right:70px;bottom:104px}
+      /* Filet or : sépare la preuve de ce qu'on en dit, sans poser d'aplat sombre. */
+      #preuve-plein-tilt-root .filet{width:190px;height:9px;border-radius:99px;background:#B9AA02;transform-origin:left center}
+      #preuve-plein-tilt-root .eyebrow{display:inline-block;margin-top:30px;font-size:29px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A7E02;opacity:0}
+      #preuve-plein-tilt-root .titre{margin-top:16px;font-size:88px;line-height:.92;font-weight:700;letter-spacing:-.028em;word-spacing:.05em;opacity:0}
+      /* Source : la marque signe la preuve, le domaine seul faisait légende. */
+      #preuve-plein-tilt-root .source{display:inline-flex;align-items:center;gap:18px;margin-top:30px;padding:13px 28px 13px 22px;border-radius:999px;background:#FFFEEC;box-shadow:0 12px 30px rgba(47,44,0,.14);font-size:31px;font-weight:600;opacity:0}
+      #preuve-plein-tilt-root .marque{display:block;width:76px;height:auto;flex:none}
+      #preuve-plein-tilt-root .sep{width:2px;height:32px;flex:none;border-radius:2px;background:rgba(185,170,2,.6)}
+    </style>
+    <div data-hf-id="hf-pt01" class="sol"></div>
+    <div data-hf-id="hf-pt02" class="scene">
+      <div data-hf-id="hf-pt03" class="cadre">
+        <div data-hf-id="hf-pt0b" class="hublot"><img data-hf-id="hf-pt04" src="assets/meg-programme-long.png" alt="Preuve"></div>
+      </div>
+    </div>
+    <div data-hf-id="hf-pt06" class="bloc">
+      <div data-hf-id="hf-pt0c" class="filet"></div>
+      <div data-hf-id="hf-pt07" class="eyebrow">Le programme, en entier</div>
+      <div data-hf-id="hf-pt08" class="titre">Publié, daté,<br data-hf-id="hf-pt09">vérifiable.</div>
+      <div data-hf-id="hf-pt0a" class="source"><img data-hf-id="hf-pt0d" class="marque" src="assets/meg-logo.png" alt="MEG"><span data-hf-id="hf-pt0e" class="sep"></span>megbusiness360.com/formation</div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const ptl=gsap.timeline({paused:true});
+      ptl.fromTo('#preuve-plein-tilt-root .cadre',{y:120,rotateX:32,opacity:0},{y:0,rotateX:15,opacity:1,duration:.62,ease:'power3.out'},.04)
+         .fromTo('#preuve-plein-tilt-root .filet',{scaleX:0},{scaleX:1,duration:.36,ease:'power2.out'},.30)
+         .fromTo('#preuve-plein-tilt-root .eyebrow',{y:18,opacity:0},{y:0,opacity:1,duration:.26,ease:'power3.out'},.38)
+         .fromTo('#preuve-plein-tilt-root .titre',{y:26,opacity:0},{y:0,opacity:1,duration:.34,ease:'power3.out'},.44)
+         .fromTo('#preuve-plein-tilt-root .source',{y:14,opacity:0},{y:0,opacity:.96,duration:.26},.60)
+         /* Le programme défile : c'est la démonstration, pas la décoration. */
+         .fromTo('#preuve-plein-tilt-root .hublot img',{y:0},{y:-1180,duration:3.4,ease:'power1.inOut'},.70);
+      window.__timelines['preuve-plein-tilt']=ptl;
+    </script>
+  </div>
+</template>

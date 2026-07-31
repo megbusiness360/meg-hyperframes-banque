@@ -1,0 +1,41 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-cutout-two-cards",
+  "type": "hyperframes:block",
+  "title": "Corps détouré — deux cartes",
+  "description": "Deux cartes avant/après serrées derrière le sujet détouré, fond master flouté.",
+  "tags": [
+    "meg",
+    "corps-detoure",
+    "detourage"
+  ],
+  "family": "corps-detoure",
+  "familyTitle": "Corps détouré",
+  "variant": "Deux cartes",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-cutout-two-cards.html",
+      "target": "compositions/meg-cutout-two-cards.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/cutout-demo.webm",
+      "target": "assets/cutout-demo.webm",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-proof-full-browser",
+  "type": "hyperframes:block",
+  "title": "Preuve — fenêtre navigateur",
+  "description": "Capture dans une fenêtre à la charte, marque et URL dans la barre. La page défile franchement.",
+  "tags": [
+    "meg",
+    "preuve",
+    "plein-ecran"
+  ],
+  "family": "preuve-plein",
+  "familyTitle": "Preuve plein écran",
+  "variant": "Fenêtre navigateur",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-proof-full-browser.html",
+      "target": "compositions/meg-proof-full-browser.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-site-long.png",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo.png",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

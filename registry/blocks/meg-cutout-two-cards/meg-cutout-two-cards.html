@@ -1,0 +1,47 @@
+<!-- Corps détouré — deux cartes derrière le sujet.
+     Le détourage vient de `npx hyperframes remove-background <master>.mp4 -o cutout.webm`
+     (u²-net_human_seg, local, VP9 alpha lu nativement par Chrome). Le master reste le
+     fond fourni par l'hôte ; ici on l'assombrit et on le floute pour que les cartes
+     ressortent, puis le sujet détouré repasse net par-dessus.
+     Cartes calibrées au texte : une carte plus grande qu'il ne faut se lit comme un
+     vide, et le chevauchement avec la tête devient mou. Elles tiennent donc dans la
+     bande épaules–tête (y 420 → 870), là où le détourage se voit vraiment.
+     En production : régénérer cutout.webm depuis VOTRE master, même début, même durée. -->
+<template id="corps-detoure-2c-template">
+  <div data-hf-id="hf-c2c0" id="corps-detoure-2c-root" data-composition-id="corps-detoure-2c" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #corps-detoure-2c-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      /* Voile : le fond doit reculer, sinon les cartes se noient dans l'image. */
+      #corps-detoure-2c-root .voile{position:absolute;inset:0;z-index:1;backdrop-filter:blur(22px) saturate(.85);background:linear-gradient(180deg,rgba(47,44,0,.58) 0%,rgba(47,44,0,.76) 100%);opacity:0}
+      #corps-detoure-2c-root .carte{position:absolute;z-index:2;width:424px;box-sizing:border-box;padding:30px 30px 34px;border-radius:34px;background:#FFFCD6;color:#2F2C00;box-shadow:0 30px 66px rgba(0,0,0,.44);opacity:0}
+      #corps-detoure-2c-root .carte.g{left:26px;top:420px;transform:rotate(-5deg)}
+      #corps-detoure-2c-root .carte.d{right:26px;top:474px;transform:rotate(5deg);background:#2F2C00;color:#FFFCD6}
+      /* Le texte reste dans la moitié extérieure de la carte : c'est le sujet qui
+         occupe le centre du cadre, et une phrase à moitié derrière une tête ne se
+         lit pas. La carte, elle, passe bien derrière — l'effet est intact. */
+      #corps-detoure-2c-root .txt{width:292px}
+      #corps-detoure-2c-root .carte.d .txt{margin-left:auto;text-align:right}
+      #corps-detoure-2c-root .num{display:inline-block;padding:7px 17px;border-radius:999px;background:#B9AA02;color:#2F2C00;font-size:24px;font-weight:700;letter-spacing:.12em}
+      #corps-detoure-2c-root .carte.d .num{background:#FFF3AE}
+      #corps-detoure-2c-root .tt{margin-top:18px;font-size:50px;line-height:.94;font-weight:700;letter-spacing:-.03em;word-spacing:.03em}
+      #corps-detoure-2c-root .ss{margin-top:14px;font-size:28px;line-height:1.14;font-weight:500;opacity:.78}
+      /* Le sujet détouré repasse au-dessus des cartes : c'est tout l'effet. */
+      #corps-detoure-2c-root .sujet{position:absolute;inset:0;z-index:3;width:100%;height:100%;object-fit:cover}
+    </style>
+    <div data-hf-id="hf-c2c1" class="voile"></div>
+    <div data-hf-id="hf-c2c2" class="carte g"><div data-hf-id="hf-c2cd" class="txt"><span data-hf-id="hf-c2c3" class="num">AVANT</span><div data-hf-id="hf-c2c4" class="tt">Dossier<br data-hf-id="hf-c2c5">refusé</div><div data-hf-id="hf-c2c6" class="ss">Trois mois perdus, aucune explication.</div></div></div>
+    <div data-hf-id="hf-c2c7" class="carte d"><div data-hf-id="hf-c2ce" class="txt"><span data-hf-id="hf-c2c8" class="num">APRÈS</span><div data-hf-id="hf-c2c9" class="tt">En 6<br data-hf-id="hf-c2ca">semaines</div><div data-hf-id="hf-c2cb" class="ss">Le même dossier, repris au bon endroit.</div></div></div>
+    <video data-hf-id="hf-c2cc" class="sujet" src="assets/cutout-demo.webm" autoplay muted loop playsinline></video>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const c2c=gsap.timeline({paused:true});
+      c2c.to('#corps-detoure-2c-root .voile',{opacity:1,duration:.34,ease:'power2.out'},0)
+         .fromTo('#corps-detoure-2c-root .carte.g',{x:-90,rotate:-12,opacity:0},{x:0,rotate:-5,opacity:1,duration:.46,ease:'power3.out'},.12)
+         .fromTo('#corps-detoure-2c-root .carte.d',{x:90,rotate:12,opacity:0},{x:0,rotate:5,opacity:1,duration:.46,ease:'power3.out'},.26)
+         .to('#corps-detoure-2c-root .carte.g',{y:-16,duration:3.4,ease:'none'},.7)
+         .to('#corps-detoure-2c-root .carte.d',{y:16,duration:3.4,ease:'none'},.7);
+      window.__timelines['corps-detoure-2c']=c2c;
+    </script>
+  </div>
+</template>
