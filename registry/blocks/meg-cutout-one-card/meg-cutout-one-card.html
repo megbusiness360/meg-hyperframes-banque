@@ -1,11 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
 <!-- Corps détouré — une carte derrière le sujet.
      Carte volontairement décentrée : sa moitié gauche reste lisible, l'épaule et la
      tête passent devant sa droite. C'est ce chevauchement qui rend le détourage visible.
      Détourage : `npx hyperframes remove-background <master>.mp4 -o cutout.webm`. -->
-<template id="corps-detoure-1c-template">
-  <div data-hf-id="hf-c1c0" id="corps-detoure-1c-root" data-composition-id="corps-detoure-1c" data-width="1080" data-height="1920">
+<div data-hf-id="hf-c1c0" id="corps-detoure-1c-root" data-composition-id="corps-detoure-1c" data-start="0" data-duration="5" data-width="1080" data-height="1920">
     <style>
-      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      @font-face{font-family:'Clash Grotesk MEG';src:url('../assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #corps-detoure-1c-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
       #corps-detoure-1c-root .voile{position:absolute;inset:0;z-index:1;backdrop-filter:blur(22px) saturate(.85);background:linear-gradient(180deg,rgba(47,44,0,.55) 0%,rgba(47,44,0,.78) 100%);opacity:0}
       /* Carte calibrée au texte : la même carte en 980 px de haut laissait un tiers
@@ -30,7 +38,7 @@
       <div data-hf-id="hf-c1c7" class="li">Les preuves d'activité</div>
       <div data-hf-id="hf-c1c8" class="li">Le dépôt sur EDOF</div>
     </div>
-    <video id="meg-cutout-one-card-video" data-hf-id="hf-c1c9" class="sujet" src="assets/cutout-demo.webm" data-start="0" data-duration="5" muted playsinline></video>
+    <video id="meg-cutout-one-card-video" data-hf-id="hf-c1c9" class="clip sujet" src="../assets/cutout-demo.webm" data-start="0" data-duration="5" muted playsinline></video>
     <script>
       window.__timelines=window.__timelines||{};
       const c1c=gsap.timeline({paused:true});
@@ -41,4 +49,5 @@
       window.__timelines['corps-detoure-1c']=c1c;
     </script>
   </div>
-</template>
+</body>
+</html>
