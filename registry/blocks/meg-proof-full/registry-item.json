@@ -30,10 +30,12 @@
     },
     {
       "path": "assets/meg-site-long.png",
+      "target": "assets/meg-site-long.png",
       "type": "hyperframes:asset"
     },
     {
       "path": "assets/meg-logo.png",
+      "target": "assets/meg-logo.png",
       "type": "hyperframes:asset"
     }
   ],
