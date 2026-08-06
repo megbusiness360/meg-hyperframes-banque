@@ -26,6 +26,16 @@ const logoPaths = {
 for (const [variant, path] of Object.entries(logoPaths)) {
   if (!existsSync(path)) throw new Error(`Logo MEG officiel ${variant} introuvable`);
 }
+// Icône/favicon officielle MEG (3 traits, PAS le wordmark) — asset distinct
+// du logo texte, copié depuis les sources canon confirmées visuellement
+// (voir vault wiki/concepts/logo-meg-assets-canon.md, 06/08/2026).
+const iconPaths = {
+  light: join(racine, "scripts", "gen-layouts", "assets", "meg-icon-light.png"),
+  dark: join(racine, "scripts", "gen-layouts", "assets", "meg-icon-dark.png"),
+};
+for (const [variant, path] of Object.entries(iconPaths)) {
+  if (!existsSync(path)) throw new Error(`Icône MEG officielle ${variant} introuvable`);
+}
 
 // Blocs retirés du registre (dépréciation validée) — le dossier est supprimé
 // par git, cette liste empêche toute résurrection à la régénération.
@@ -47,7 +57,7 @@ for (const b of all) {
   vus.add(b.name);
 }
 
-for (const b of all) writeBlock(blocksRoot, fontPath, logoPaths, b);
+for (const b of all) writeBlock(blocksRoot, fontPath, logoPaths, iconPaths, b);
 
 // ——— Reconstruction du registre en deux partitions ———
 const registry = JSON.parse(readFileSync(registryPath, "utf8"));

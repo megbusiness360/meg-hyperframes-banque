@@ -596,7 +596,21 @@ const habillages = [
     html: `<div class="halo-h" data-layout-allow-occlusion=""></div><div class="halo-b" data-layout-allow-occlusion=""></div>`,
     script: `tl.fromTo([root.querySelector('.halo-h'),root.querySelector('.halo-b')],{opacity:0},{opacity:1,duration:.7,ease:'power2.out'},.05);` },
   { key: "marque-meg-coin", txt: "marque MEG persistante coin haut-droit", logoVariant: "light",
-    css: `%R% .marque-meg-coin{position:absolute;z-index:3;right:${M}px;top:64px;width:160px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));opacity:0}`,
+    // Position mesurée en PIXELS (bbox seuil de luminosité) directement sur les
+    // 3 captures de référence (2, 3, 5 sur 14) : "LEGEND" a une bbox IDENTIQUE
+    // au pixel près sur les 3 (marge droite 112px, texte y:285-325 → centre
+    // vertical 305px dans un cadre 1080×1920 canonique) — calque statique à
+    // position fixe. La marge standard M (46px) collait trop au bord droit ;
+    // corrigé en dur ici pour matcher la référence plutôt que le token maison.
+    // QC 6e passe : la 1re mesure utilisait un crop de référence dont le haut
+    // (REF_TOP=296) mordait encore sur la barre de navigation iOS translucide
+    // ("X · N sur 14"), invisible à l'oeil mais qui déformait l'échelle de
+    // remise à l'échelle 1080×1920 canonique. Barre re-mesurée : opaque
+    // jusqu'à y=340 (identique aux pixels près sur les 4 captures) ; crop
+    // recalé à REF_TOP=348. Sous ce crop corrigé, le centre vertical réel de
+    // "LEGEND" est 305px (pas 346) : top:298 plaçait la marque ~45px trop bas.
+    // Corrigé ici en top:253.
+    css: `%R% .marque-meg-coin{position:absolute;z-index:3;right:112px;top:253px;width:160px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));opacity:0}`,
     html: `<img class="marque-meg-coin" src="assets/meg-logo-light.png" alt="Logo MEG Business 360" data-qa-allow-bleed="">`,
     script: `tl.fromTo(root.querySelector('.marque-meg-coin'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.05);` },
 ];
@@ -963,31 +977,39 @@ sur un contenu plein écran. Remplacer la zone hachurée par le contenu réel.`,
  * Visage bande haute (master recadré), bulle-titre flottante à cheval sur la
  * couture, coupe B-roll plein cadre en bas. Révisé (06/08/2026, 2e passe) après
  * réexamen pixel des 4 captures de référence envoyées par Mohamed :
- * - l'étiquette n'est pas un médaillon circulaire flottant mais une PASTILLE
- *   HEXAGONALE qui mord le coin haut-gauche de la bulle-titre (repère MEG
- *   "trois tirés" en lieu et place de l'icône fournisseur source).
+ * - l'étiquette n'est pas un médaillon circulaire flottant mais une pastille
+ *   qui mord le coin haut-gauche de la bulle-titre.
  * 3e passe (06/08/2026) : le bandeau de marque persistant vu sur plusieurs
  * captures de référence (dont le frame CTA noir n'en porte PAS) n'est PAS un
  * élément de CE bloc — c'est un calque indépendant qui doit pouvoir chevaucher
  * n'importe quelle durée/combinaison de blocs. Déplacé vers son propre
  * habillage (piste 2) : voir R10, `meg-reel-habillage-marque-meg-coin`. Le
  * souder ici en tween local aurait fait clignoter la marque à chaque coupure
- * de bloc au lieu de rester stable — contraire à la référence. */
+ * de bloc au lieu de rester stable — contraire à la référence.
+ * 4e passe (06/08/2026) : Mohamed a signalé un vrai bug — la pastille était
+ * une reconstruction dessinée à la main (3 rectangles pivotés dans un
+ * hexagone), PAS l'icône MEG officielle. Contraire à la doctrine du vault
+ * (logo-meg-assets-canon.md : jamais de reconstruction devinée, toujours
+ * l'asset canon confirmé visuellement). Remplacée par le vrai fichier
+ * (favicon-512.png / icon.png, confirmés à l'oeil) via le nouveau mécanisme
+ * `iconVariant` (parallèle à `logoVariant`, même mécanique) — rendue dans sa
+ * forme native (carré arrondi), l'hexagone/fond/svg maison sont supprimés. */
 blocks.push(emit({
   name: "meg-reel-intro-hook-bulle-titre",
   title: "Reel — hook bulle-titre + coupe B-roll",
-  desc: "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (pastille hexagonale MEG mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
+  desc: "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (icône MEG officielle mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
   tags: ["reel", "layout", "intro", "hook", "bulle-titre", "broll"],
   family: "reel-intro",
   familyTitle: "Reels — intros & hooks",
   variant: "bulle-titre + broll bas",
   ratio: "reel",
   duration: 5,
+  iconVariant: "light",
   comment: `Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
-flottante mordue au coin par une pastille hexagonale MEG (repère "trois
-tirés"). Coupe B-roll plein cadre en bas. Remplacer le titre et la zone
-hachurée par la preuve réelle ; enchaîner sur un layout standard une fois
-le hook posé. Pour une marque persistante en surimpression (bandeau
+flottante mordue au coin par l'icône MEG officielle (favicon canon, pas une
+reconstruction). Coupe B-roll plein cadre en bas. Remplacer le titre et la
+zone hachurée par la preuve réelle ; enchaîner sur un layout standard une
+fois le hook posé. Pour une marque persistante en surimpression (bandeau
 haut-droite), empiler l'habillage meg-reel-habillage-marque-meg-coin sur
 une piste au-dessus — jamais en tween local à ce bloc.`,
   faceGeom: { x: 0, y: 0, w: W, h: 840, r: 0 },
@@ -995,13 +1017,12 @@ une piste au-dessus — jamais en tween local à ce bloc.`,
     ecranCss("%R%"),
     `%R% .bulle-titre{position:absolute;z-index:4;left:${M}px;top:724px;width:${CW}px;min-height:224px;border-radius:${R}px;background:${PAL.clair};box-shadow:0 30px 70px rgba(0,0,0,.35);padding:60px 58px 42px;color:${PAL.encre};opacity:0}
 %R% .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
-%R% .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:${PAL.clair};box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0}
-%R% .badge-meg svg{width:42px;height:42px}`,
+%R% .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.4));opacity:0}`,
   ].join("\n"),
   html: [
     ecranDiv({ x: 0, y: 840, w: W, h: H - 840, label: "COUPE B-ROLL — REMPLACER", sub: "preuve, capture, plan tourné", bord: true }),
     `<div class="bulle-titre" data-layout-allow-occlusion=""><span class="txt">Elle a financé sa formation sans avancer un centime</span></div>`,
-    `<div class="badge-meg" data-qa-allow-bleed=""><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="21" y="3" width="6" height="17" rx="3" fill="${PAL.encre}" transform="rotate(18 24 11.5)"/><rect x="21" y="3" width="6" height="24" rx="3" fill="${PAL.encre}" transform="rotate(34 24 15)"/><rect x="21" y="3" width="6" height="30" rx="3" fill="${PAL.encre}" transform="rotate(50 24 18)"/></svg></div>`,
+    `<img class="badge-meg" src="assets/meg-icon-light.png" alt="Icône MEG Business 360" data-qa-allow-bleed="">`,
   ].join("\n    "),
   script: [
     entree(5),
@@ -1017,13 +1038,19 @@ une piste au-dessus — jamais en tween local à ce bloc.`,
  * Registre minimaliste distinct des CTA existants (carte-marque, commentaire,
  * recap) : fond noir plein cadre, question + pastille contact — sans carte
  * crème ni logo. Confirmé absent de la banque (grep registry complet) avant
- * création. Révisé (06/08/2026, 2e passe) : la référence aligne le bloc
- * question+pastille à GAUCHE (les deux éléments partagent le même bord
- * gauche), pas centré — corrigé après réexamen pixel de la capture 10/14. */
+ * création. Révisé (06/08/2026, 2e passe) : alignement à GAUCHE — LECTURE
+ * ERRONÉE, corrigée en 3e passe ci-dessous.
+ * 3e passe (06/08/2026) : Mohamed a signalé que "plein de trucs ne
+ * correspondent pas" ; re-mesure au pixel de la capture 10/14 (marges
+ * gauche/droite des 2 lignes de texte ET de la pastille, mesurées depuis les
+ * bords du cadre) : les 3 éléments sont CENTRÉS sur l'axe horizontal, marges
+ * quasi égales des deux côtés (±8px sur 921px de large, donc <1% d'écart) —
+ * pas alignés à gauche. La 2e passe était une lecture pixel erronée,
+ * corrigée ici. */
 blocks.push(emit({
   name: "meg-reel-cta-fond-noir",
   title: "Reel — CTA fond noir, question + contact",
-  desc: "CTA/outro Reel 9:16 : fond noir plein cadre, question directe alignée à gauche + pastille contact. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
+  desc: "CTA/outro Reel 9:16 : fond noir plein cadre, question directe centrée + pastille contact centrée. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
   tags: ["reel", "layout", "cta", "outro", "noir", "contact", "minimaliste"],
   family: "reel-cta",
   familyTitle: "Reels — CTA & outros",
@@ -1031,13 +1058,13 @@ blocks.push(emit({
   ratio: "reel",
   duration: 4,
   comment: `CTA/outro Reel "fond noir" — registre minimaliste : fond noir
-plein cadre, question et pastille contact alignées à gauche (même bord).
-Aucune carte ni logo, contraste maximal. Remplacer la question ; l'appel
-à l'action reste indirect (règles MEG : on montre où continuer, on ne
-supplie pas).`,
+plein cadre, question et pastille contact CENTRÉES (confirmé au pixel sur
+la référence). Aucune carte ni logo, contraste maximal. Remplacer la
+question ; l'appel à l'action reste indirect (règles MEG : on montre où
+continuer, on ne supplie pas).`,
   faceGeom: null,
   css: `
-%R% .fond{position:absolute;inset:0;z-index:3;background:#000000;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:52px;padding:0 84px;color:#FFFFFF;text-align:left;opacity:0}
+%R% .fond{position:absolute;inset:0;z-index:3;background:#000000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px;padding:0 84px;color:#FFFFFF;text-align:center;opacity:0}
 %R% .question{font-size:70px;font-weight:700;line-height:1.14;letter-spacing:-.01em}
 %R% .pastille-contact{display:flex;align-items:center;gap:18px;padding:24px 42px;border-radius:999px;background:linear-gradient(135deg,#FFFEEC 0%,#F4E9A8 100%);color:${PAL.encre};font-size:34px;font-weight:700}
 %R% .pastille-contact svg{width:34px;height:34px;flex:none}`,
@@ -1046,6 +1073,123 @@ supplie pas).`,
       tl.fromTo(root.querySelector('.fond'),{opacity:0},{opacity:1,duration:.5,ease:'power2.out'},.05)
         .fromTo(root.querySelector('.question'),{y:30,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.22)
         .fromTo(root.querySelector('.pastille-contact'),{scale:.85,opacity:0},{scale:1,opacity:1,duration:.5,ease:'back.out(1.6)'},.5);`,
+}));
+
+/* ————— R18 · Légendes vedette — interview (référence "legend", 06/08/2026) —————
+ * Les 2 layouts manquants sur les 4 demandés par Mohamed (bulle-titre et
+ * fond-noir étaient déjà construits) : captures 3/14 ("Tony Parker" — légende
+ * + pastille nom/rôle) et 5/14 (légende seule, sans pastille). Confirmé
+ * absents de la banque (grep registry complet, aucun layout "légende +
+ * nom/rôle" ni "légende seule" existant) avant création.
+ * Convention : master INTACT plein cadre (comme reel-chapitre, "carton posé
+ * par-dessus le master intact") — aucun faceGeom, la légende est un calque,
+ * pas un recadrage. Position/typo mesurées au pixel sur les captures 3 et 5 :
+ * légende alignée à GAUCHE (pas centrée, contrairement au CTA), texte blanc
+ * majuscule à contour foncé (repère visuel constant sur les 2 captures),
+ * ancrée à la même hauteur (~59 % du cadre utile) sur les 2 captures — la
+ * pastille nom/rôle (capture 3 seulement) vient juste en dessous. Aucune
+ * marque persistante embarquée ici : superposer meg-reel-habillage-marque-meg-coin
+ * sur une piste au-dessus, comme pour les 2 autres blocs de la même série. */
+blocks.push(emit({
+  name: "meg-reel-intro-legende-nom-role",
+  title: "Reel — légende + nom/rôle",
+  desc: "Légende Reel 9:16 : citation vedette en légende basse (texte blanc à contour) + pastille nom/rôle, posée par-dessus le master intact plein cadre. Format interview \"parole d'expert\".",
+  tags: ["reel", "layout", "intro", "hook", "legende", "citation", "nom"],
+  family: "reel-intro",
+  familyTitle: "Reels — intros & hooks",
+  variant: "légende + nom/rôle",
+  ratio: "reel",
+  duration: 5,
+  faceGeom: null,
+  comment: `Légende Reel avec pastille nom/rôle — le master (parole filmée)
+reste plein cadre, intact ; seule la légende est posée par-dessus, comme un
+sous-titre vedette. Remplacer la citation et le nom/rôle par les vrais
+propos, toujours sourcés (règle MEG : jamais de citation inventée). Marque
+persistante : superposer l'habillage meg-reel-habillage-marque-meg-coin.
+QC 4e passe : -webkit-text-stroke cassait les fûts fermés (E/P/Q) de Clash
+Grotesk 800 à 60px — bug de rendu Chrome confirmé à l'écran, invisible sur le
+« 87 % » (chiffres, 230px) qui a inspiré la 1re version. Remplacé par un
+contour en text-shadow multi-directions, technique déjà éprouvée dans
+meg-captions-middle, sans stroke sur le glyphe.
+QC 5e passe : position verticale mesurée en PIXELS (bbox contraste local)
+sur la capture de référence Mohamed IMG_3687 (citation 2 lignes y:1228-1346,
+pastille nom y:1395-1450 dans un cadre 1080×1920 canonique) — l'ancien
+top:1120/1270 plaçait la légende ~100-125px trop haut par rapport à la
+référence. Corrigé en dur ici pour matcher, plutôt qu'à l'oeil.
+QC 6e passe (revue advisor) : 2 bugs trouvés dans la 5e passe.
+(1) Le crop de référence (REF_TOP=296) mordait encore sur la barre de nav iOS
+translucide en haut de capture — invisible à l'oeil aux bandes basses qu'on
+regardait, mais ça faussait l'échelle de remise à 1080×1920 sur TOUT le cadre.
+Barre re-mesurée opaque jusqu'à y=340 (identique sur les 4 captures) → crop
+recalé à REF_TOP=348. Sous ce crop corrigé, citation 2 lignes (3687)
+y:1213-1334 (centre 1273.5) et citation 1 ligne (3688) y:1249-1299 (centre
+1274) : les DEUX captures centrent leur citation sur quasi le même pixel
+(1273-1274) malgré 1 ou 2 lignes — la légende référence est donc ANCRÉE SUR
+SON MILIEU, pas sur son haut ; top fixe (1210) collait au cas 2-lignes et
+plaçait le cas 1-ligne ~35px trop haut. Remplacé par top:1274px +
+transform:translateY(-50%) + min-height:132px + flex centrage, qui centre
+le bloc sur 1274 quel que soit le nombre de lignes, sans dupliquer un top par
+variante. (2) Le texte était fer-à-gauche pleine largeur (988px) ; la
+référence est CENTRÉE (lignes 1 et 2 toutes deux centrées sur x=540, mesuré
+sur la grille pixel) dans un bandeau plus étroit que la marge M-à-M — ajouté
+text-align:center + max-width:860px sur .citation. Pastille nom/rôle : la
+référence a son bord gauche à x≈90 (mesuré sur grille), pas x=46 (M) —
+corrigé left:90px ; son top box (~1378-1380 mesuré) restait juste sous le
+nouveau bas de citation (1274+66=1340, écart ~40px, proche du ~44px mesuré) —
+top:1380 inchangé. Citation exemple remplacée : l'ancienne ("Moi, je pense
+que c'est ça le plus") était les mots verbatim de la personne filmée dans la
+référence Instagram — jamais une citation tierce dans un bloc catalogue
+réutilisable ; remplacée par un exemple neutre MEG.`,
+  css: `
+%R% .legende{position:absolute;z-index:3;left:${M}px;right:${M}px;top:1274px;transform:translateY(-50%);min-height:132px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;opacity:0}
+%R% .legende .citation{max-width:860px;text-align:center;font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-.01em;text-transform:uppercase;text-shadow:-3px -3px 0 ${PAL.encre},3px -3px 0 ${PAL.encre},-3px 3px 0 ${PAL.encre},3px 3px 0 ${PAL.encre},0 -3px 0 ${PAL.encre},0 3px 0 ${PAL.encre},-3px 0 0 ${PAL.encre},3px 0 0 ${PAL.encre},0 8px 20px rgba(0,0,0,.4)}
+%R% .nom-role{position:absolute;z-index:3;left:90px;top:1380px;padding:14px 30px;border-radius:14px;background:rgba(20,18,4,.6);color:#FFFFFF;font-size:32px;font-weight:700;letter-spacing:.02em;opacity:0}`,
+  html: `<div class="legende" data-layout-allow-occlusion=""><div class="citation">On m'a dit que ça ne marcherait jamais</div></div><div class="nom-role" data-layout-allow-occlusion="">Prénom Nom — rôle à remplacer</div>`,
+  script: `
+      tl.fromTo(root.querySelector('.legende'),{y:30,opacity:0},{y:0,opacity:1,duration:.48,ease:'power3.out'},.2)
+        .fromTo(root.querySelector('.nom-role'),{y:20,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.4)
+        .to([root.querySelector('.legende'),root.querySelector('.nom-role')],{opacity:0,y:-16,duration:.32,ease:'power2.in'},4.6);`,
+}));
+blocks.push(emit({
+  name: "meg-reel-intro-legende-citation-seule",
+  title: "Reel — légende citation seule",
+  desc: "Légende Reel 9:16 : citation vedette en légende basse (texte blanc à contour), sans pastille nom, posée par-dessus le master intact plein cadre. Format interview \"punchline\".",
+  tags: ["reel", "layout", "intro", "hook", "legende", "citation"],
+  family: "reel-intro",
+  familyTitle: "Reels — intros & hooks",
+  variant: "légende citation seule",
+  ratio: "reel",
+  duration: 5,
+  faceGeom: null,
+  comment: `Légende Reel citation seule — le master (parole filmée) reste
+plein cadre, intact ; seule la légende punchline est posée par-dessus.
+Remplacer la citation par les vrais propos, toujours sourcés (règle MEG :
+jamais de citation inventée). Marque persistante : superposer l'habillage
+meg-reel-habillage-marque-meg-coin.
+QC 4e passe : même correction que meg-reel-intro-legende-nom-role — contour
+en text-shadow multi-directions au lieu de -webkit-text-stroke, qui cassait
+les fûts fermés (E/P/Q) de Clash Grotesk 800 à 60px.
+QC 5e passe : même correction de position que meg-reel-intro-legende-nom-role
+— mesure pixel sur IMG_3688 (citation 1 ligne y:1263-1313 dans un cadre
+1080×1920 canonique), top:1120 remplacé par top:1210 pour matcher la
+référence.
+QC 6e passe (revue advisor) : même 2 corrections que
+meg-reel-intro-legende-nom-role — crop de référence recalé (REF_TOP=348,
+barre de nav iOS translucide re-mesurée opaque jusqu'à y=340), citation
+1 ligne (3688) recentrée sur y:1274 (contre 1287 dans la 5e passe), même
+pixel de milieu que la variante 2 lignes (3687, 1273.5) : ancrage par
+transform:translateY(-50%) sur top:1274 + min-height:132px, pas un top fixe
+par variante. Texte re-centré (text-align:center + max-width:860px, contre
+fer-à-gauche pleine largeur avant). Citation exemple remplacée : l'ancienne
+("C'était en mode") était un fragment verbatim de la personne filmée dans
+la référence Instagram — remplacée par un exemple neutre MEG.`,
+  css: `
+%R% .legende-seule{position:absolute;z-index:3;left:${M}px;right:${M}px;top:1274px;transform:translateY(-50%);min-height:132px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;opacity:0}
+%R% .legende-seule .citation{max-width:860px;text-align:center;font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-.01em;text-transform:uppercase;text-shadow:-3px -3px 0 ${PAL.encre},3px -3px 0 ${PAL.encre},-3px 3px 0 ${PAL.encre},3px 3px 0 ${PAL.encre},0 -3px 0 ${PAL.encre},0 3px 0 ${PAL.encre},-3px 0 0 ${PAL.encre},3px 0 0 ${PAL.encre},0 8px 20px rgba(0,0,0,.4)}`,
+  html: `<div class="legende-seule" data-layout-allow-occlusion=""><div class="citation">Aujourd'hui, tout a changé</div></div>`,
+  script: `
+      tl.fromTo(root.querySelector('.legende-seule'),{y:30,opacity:0},{y:0,opacity:1,duration:.48,ease:'power3.out'},.2)
+        .to(root.querySelector('.legende-seule'),{opacity:0,y:-16,duration:.32,ease:'power2.in'},4.6);`,
 }));
 
 export const reelBlocks = blocks;

@@ -3,7 +3,7 @@
   "name": "meg-reel-intro-hook-bulle-titre",
   "type": "hyperframes:block",
   "title": "Reel — hook bulle-titre + coupe B-roll",
-  "description": "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (pastille hexagonale MEG mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
+  "description": "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (icône MEG officielle mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
   "tags": [
     "meg",
     "reel",
@@ -32,6 +32,11 @@
     {
       "path": "assets/ClashGrotesk-Variable.woff2",
       "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-icon-light.png",
+      "target": "assets/meg-icon-light.png",
       "type": "hyperframes:asset"
     }
   ],

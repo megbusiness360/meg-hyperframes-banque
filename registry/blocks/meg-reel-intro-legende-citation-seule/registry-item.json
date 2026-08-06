@@ -1,0 +1,42 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-intro-legende-citation-seule",
+  "type": "hyperframes:block",
+  "title": "Reel — légende citation seule",
+  "description": "Légende Reel 9:16 : citation vedette en légende basse (texte blanc à contour), sans pastille nom, posée par-dessus le master intact plein cadre. Format interview \"punchline\".",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "intro",
+    "hook",
+    "legende",
+    "citation",
+    "meg-reel",
+    "meg-reel-folder-intros"
+  ],
+  "family": "reel-intro",
+  "familyTitle": "Reels — intros & hooks",
+  "variant": "légende citation seule",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-reel-intro-legende-citation-seule.html",
+      "target": "compositions/meg-reel-intro-legende-citation-seule.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -8,10 +8,10 @@
 </head>
 <body>
 <!-- Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
-     flottante mordue au coin par une pastille hexagonale MEG (repère "trois
-     tirés"). Coupe B-roll plein cadre en bas. Remplacer le titre et la zone
-     hachurée par la preuve réelle ; enchaîner sur un layout standard une fois
-     le hook posé. Pour une marque persistante en surimpression (bandeau
+     flottante mordue au coin par l'icône MEG officielle (favicon canon, pas une
+     reconstruction). Coupe B-roll plein cadre en bas. Remplacer le titre et la
+     zone hachurée par la preuve réelle ; enchaîner sur un layout standard une
+     fois le hook posé. Pour une marque persistante en surimpression (bandeau
      haut-droite), empiler l'habillage meg-reel-habillage-marque-meg-coin sur
      une piste au-dessus — jamais en tween local à ce bloc. -->
 <div data-hf-id="hf-oxec0" id="reel-intro-hook-bulle-titre-root" data-composition-id="reel-intro-hook-bulle-titre" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="0" data-face-y="0" data-face-w="1080" data-face-h="840" data-face-r="0" data-face-mode="move">
@@ -28,13 +28,12 @@
 #reel-intro-hook-bulle-titre-root .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #reel-intro-hook-bulle-titre-root .bulle-titre{position:absolute;z-index:4;left:46px;top:724px;width:988px;min-height:224px;border-radius:34px;background:#FFFEEC;box-shadow:0 30px 70px rgba(0,0,0,.35);padding:60px 58px 42px;color:#2F2C00;opacity:0}
 #reel-intro-hook-bulle-titre-root .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
-#reel-intro-hook-bulle-titre-root .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:#FFFEEC;box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0}
-#reel-intro-hook-bulle-titre-root .badge-meg svg{width:42px;height:42px}
+#reel-intro-hook-bulle-titre-root .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.4));opacity:0}
     </style>
     <div data-hf-id="hf-oxec1" class="fond-scene" data-layout-allow-occlusion=""></div>
     <div data-hf-id="hf-oxec2" class="ecran bord" style="left:0px;top:840px;width:1080px;height:1080px;" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec3" class="etiquette">COUPE B-ROLL — REMPLACER</span><span data-hf-id="hf-oxec4" class="sous">preuve, capture, plan tourné</span></div>
     <div data-hf-id="hf-oxec5" class="bulle-titre" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec6" class="txt">Elle a financé sa formation sans avancer un centime</span></div>
-    <div data-hf-id="hf-oxec7" class="badge-meg" data-qa-allow-bleed=""><svg data-hf-id="hf-oxec8" viewBox="0 0 48 48" aria-hidden="true"><rect data-hf-id="hf-oxec9" x="21" y="3" width="6" height="17" rx="3" fill="#2F2C00" transform="rotate(18 24 11.5)"/><rect data-hf-id="hf-oxeca" x="21" y="3" width="6" height="24" rx="3" fill="#2F2C00" transform="rotate(34 24 15)"/><rect data-hf-id="hf-oxecb" x="21" y="3" width="6" height="30" rx="3" fill="#2F2C00" transform="rotate(50 24 18)"/></svg></div>
+    <img data-hf-id="hf-oxec7" class="badge-meg" src="assets/meg-icon-light.png" alt="Icône MEG Business 360" data-qa-allow-bleed="">
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{

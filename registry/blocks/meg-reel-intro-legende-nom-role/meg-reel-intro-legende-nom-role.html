@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Légende Reel avec pastille nom/rôle — le master (parole filmée)
+     reste plein cadre, intact ; seule la légende est posée par-dessus, comme un
+     sous-titre vedette. Remplacer la citation et le nom/rôle par les vrais
+     propos, toujours sourcés (règle MEG : jamais de citation inventée). Marque
+     persistante : superposer l'habillage meg-reel-habillage-marque-meg-coin.
+     QC 4e passe : -webkit-text-stroke cassait les fûts fermés (E/P/Q) de Clash
+     Grotesk 800 à 60px — bug de rendu Chrome confirmé à l'écran, invisible sur le
+     « 87 % » (chiffres, 230px) qui a inspiré la 1re version. Remplacé par un
+     contour en text-shadow multi-directions, technique déjà éprouvée dans
+     meg-captions-middle, sans stroke sur le glyphe.
+     QC 5e passe : position verticale mesurée en PIXELS (bbox contraste local)
+     sur la capture de référence Mohamed IMG_3687 (citation 2 lignes y:1228-1346,
+     pastille nom y:1395-1450 dans un cadre 1080×1920 canonique) — l'ancien
+     top:1120/1270 plaçait la légende ~100-125px trop haut par rapport à la
+     référence. Corrigé en dur ici pour matcher, plutôt qu'à l'oeil.
+     QC 6e passe (revue advisor) : 2 bugs trouvés dans la 5e passe.
+     (1) Le crop de référence (REF_TOP=296) mordait encore sur la barre de nav iOS
+     translucide en haut de capture — invisible à l'oeil aux bandes basses qu'on
+     regardait, mais ça faussait l'échelle de remise à 1080×1920 sur TOUT le cadre.
+     Barre re-mesurée opaque jusqu'à y=340 (identique sur les 4 captures) → crop
+     recalé à REF_TOP=348. Sous ce crop corrigé, citation 2 lignes (3687)
+     y:1213-1334 (centre 1273.5) et citation 1 ligne (3688) y:1249-1299 (centre
+     1274) : les DEUX captures centrent leur citation sur quasi le même pixel
+     (1273-1274) malgré 1 ou 2 lignes — la légende référence est donc ANCRÉE SUR
+     SON MILIEU, pas sur son haut ; top fixe (1210) collait au cas 2-lignes et
+     plaçait le cas 1-ligne ~35px trop haut. Remplacé par top:1274px +
+     transform:translateY(-50%) + min-height:132px + flex centrage, qui centre
+     le bloc sur 1274 quel que soit le nombre de lignes, sans dupliquer un top par
+     variante. (2) Le texte était fer-à-gauche pleine largeur (988px) ; la
+     référence est CENTRÉE (lignes 1 et 2 toutes deux centrées sur x=540, mesuré
+     sur la grille pixel) dans un bandeau plus étroit que la marge M-à-M — ajouté
+     text-align:center + max-width:860px sur .citation. Pastille nom/rôle : la
+     référence a son bord gauche à x≈90 (mesuré sur grille), pas x=46 (M) —
+     corrigé left:90px ; son top box (~1378-1380 mesuré) restait juste sous le
+     nouveau bas de citation (1274+66=1340, écart ~40px, proche du ~44px mesuré) —
+     top:1380 inchangé. Citation exemple remplacée : l'ancienne ("Moi, je pense
+     que c'est ça le plus") était les mots verbatim de la personne filmée dans la
+     référence Instagram — jamais une citation tierce dans un bloc catalogue
+     réutilisable ; remplacée par un exemple neutre MEG. -->
+<div data-hf-id="hf-yiwj0" id="reel-intro-legende-nom-role-root" data-composition-id="reel-intro-legende-nom-role" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-intro-legende-nom-role-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-intro-legende-nom-role-root .legende{position:absolute;z-index:3;left:46px;right:46px;top:1274px;transform:translateY(-50%);min-height:132px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;opacity:0}
+#reel-intro-legende-nom-role-root .legende .citation{max-width:860px;text-align:center;font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-.01em;text-transform:uppercase;text-shadow:-3px -3px 0 #2F2C00,3px -3px 0 #2F2C00,-3px 3px 0 #2F2C00,3px 3px 0 #2F2C00,0 -3px 0 #2F2C00,0 3px 0 #2F2C00,-3px 0 0 #2F2C00,3px 0 0 #2F2C00,0 8px 20px rgba(0,0,0,.4)}
+#reel-intro-legende-nom-role-root .nom-role{position:absolute;z-index:3;left:90px;top:1380px;padding:14px 30px;border-radius:14px;background:rgba(20,18,4,.6);color:#FFFFFF;font-size:32px;font-weight:700;letter-spacing:.02em;opacity:0}
+    </style>
+    <div data-hf-id="hf-yiwj1" class="legende" data-layout-allow-occlusion=""><div data-hf-id="hf-yiwj2" class="citation">On m'a dit que ça ne marcherait jamais</div></div><div data-hf-id="hf-yiwj3" class="nom-role" data-layout-allow-occlusion="">Prénom Nom — rôle à remplacer</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-intro-legende-nom-role-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.legende'),{y:30,opacity:0},{y:0,opacity:1,duration:.48,ease:'power3.out'},.2)
+        .fromTo(root.querySelector('.nom-role'),{y:20,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.4)
+        .to([root.querySelector('.legende'),root.querySelector('.nom-role')],{opacity:0,y:-16,duration:.32,ease:'power2.in'},4.6);
+      window.__timelines['reel-intro-legende-nom-role']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

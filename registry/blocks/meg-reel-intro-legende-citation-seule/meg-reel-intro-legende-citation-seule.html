@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Légende Reel citation seule — le master (parole filmée) reste
+     plein cadre, intact ; seule la légende punchline est posée par-dessus.
+     Remplacer la citation par les vrais propos, toujours sourcés (règle MEG :
+     jamais de citation inventée). Marque persistante : superposer l'habillage
+     meg-reel-habillage-marque-meg-coin.
+     QC 4e passe : même correction que meg-reel-intro-legende-nom-role — contour
+     en text-shadow multi-directions au lieu de -webkit-text-stroke, qui cassait
+     les fûts fermés (E/P/Q) de Clash Grotesk 800 à 60px.
+     QC 5e passe : même correction de position que meg-reel-intro-legende-nom-role
+     — mesure pixel sur IMG_3688 (citation 1 ligne y:1263-1313 dans un cadre
+     1080×1920 canonique), top:1120 remplacé par top:1210 pour matcher la
+     référence.
+     QC 6e passe (revue advisor) : même 2 corrections que
+     meg-reel-intro-legende-nom-role — crop de référence recalé (REF_TOP=348,
+     barre de nav iOS translucide re-mesurée opaque jusqu'à y=340), citation
+     1 ligne (3688) recentrée sur y:1274 (contre 1287 dans la 5e passe), même
+     pixel de milieu que la variante 2 lignes (3687, 1273.5) : ancrage par
+     transform:translateY(-50%) sur top:1274 + min-height:132px, pas un top fixe
+     par variante. Texte re-centré (text-align:center + max-width:860px, contre
+     fer-à-gauche pleine largeur avant). Citation exemple remplacée : l'ancienne
+     ("C'était en mode") était un fragment verbatim de la personne filmée dans
+     la référence Instagram — remplacée par un exemple neutre MEG. -->
+<div data-hf-id="hf-1i340" id="reel-intro-legende-citation-seule-root" data-composition-id="reel-intro-legende-citation-seule" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-intro-legende-citation-seule-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-intro-legende-citation-seule-root .legende-seule{position:absolute;z-index:3;left:46px;right:46px;top:1274px;transform:translateY(-50%);min-height:132px;display:flex;align-items:center;justify-content:center;color:#FFFFFF;opacity:0}
+#reel-intro-legende-citation-seule-root .legende-seule .citation{max-width:860px;text-align:center;font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-.01em;text-transform:uppercase;text-shadow:-3px -3px 0 #2F2C00,3px -3px 0 #2F2C00,-3px 3px 0 #2F2C00,3px 3px 0 #2F2C00,0 -3px 0 #2F2C00,0 3px 0 #2F2C00,-3px 0 0 #2F2C00,3px 0 0 #2F2C00,0 8px 20px rgba(0,0,0,.4)}
+    </style>
+    <div data-hf-id="hf-1i341" class="legende-seule" data-layout-allow-occlusion=""><div data-hf-id="hf-1i342" class="citation">Aujourd'hui, tout a changé</div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-intro-legende-citation-seule-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.legende-seule'),{y:30,opacity:0},{y:0,opacity:1,duration:.48,ease:'power3.out'},.2)
+        .to(root.querySelector('.legende-seule'),{opacity:0,y:-16,duration:.32,ease:'power2.in'},4.6);
+      window.__timelines['reel-intro-legende-citation-seule']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

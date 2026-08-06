@@ -175,6 +175,8 @@
     {"name":"meg-reel-intro-hook-bulle-titre","type":"hyperframes:block"},
     {"name":"meg-reel-cta-fond-noir","type":"hyperframes:block"},
     {"name":"meg-reel-habillage-marque-meg-coin","type":"hyperframes:block"},
+    {"name":"meg-reel-intro-legende-nom-role","type":"hyperframes:block"},
+    {"name":"meg-reel-intro-legende-citation-seule","type":"hyperframes:block"},
     {"name":"meg-catalogue-large","type":"hyperframes:block"},
     {"name":"meg-yt-ecran-droite-55-carte","type":"hyperframes:block"},
     {"name":"meg-yt-ecran-droite-55-nav","type":"hyperframes:block"},

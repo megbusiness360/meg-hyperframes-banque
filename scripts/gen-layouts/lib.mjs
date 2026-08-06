@@ -183,7 +183,7 @@ export function emit(spec) {
   const {
     name, title, desc, tags = [], family, familyTitle, variant,
     ratio, duration, comment, css, html, script, posterAt = 1.2,
-    needsFont = true, logoVariant = null, faceGeom = null, faceMode = "move", master = null,
+    needsFont = true, logoVariant = null, iconVariant = null, faceGeom = null, faceMode = "move", master = null,
     fond = true, faceBias = null,
   } = spec;
   const RA = RATIOS[ratio];
@@ -254,7 +254,7 @@ export function emit(spec) {
 `.replace(/[ \t]+$/gm, "");
 
   return {
-    name, doc, posterAt, ratio, duration, needsFont, logoVariant,
+    name, doc, posterAt, ratio, duration, needsFont, logoVariant, iconVariant,
     manifest: {
       $schema: "https://hyperframes.heygen.com/schema/registry-item.json",
       name,
@@ -275,13 +275,16 @@ export function emit(spec) {
         ...(logoVariant
           ? [{ path: `assets/meg-logo-${logoVariant}.png`, target: `assets/meg-logo-${logoVariant}.png`, type: "hyperframes:asset" }]
           : []),
+        ...(iconVariant
+          ? [{ path: `assets/meg-icon-${iconVariant}.png`, target: `assets/meg-icon-${iconVariant}.png`, type: "hyperframes:asset" }]
+          : []),
       ],
       preview: { poster: "preview.jpg", video: "preview.mp4" },
     },
   };
 }
 
-export function writeBlock(blocksRoot, fontPath, logoPaths, block) {
+export function writeBlock(blocksRoot, fontPath, logoPaths, iconPaths, block) {
   const dir = join(blocksRoot, block.name);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, `${block.name}.html`), block.doc);
@@ -301,5 +304,14 @@ export function writeBlock(blocksRoot, fontPath, logoPaths, block) {
     const assets = join(dir, "assets");
     mkdirSync(assets, { recursive: true });
     copyFileSync(source, join(assets, `meg-logo-${block.logoVariant}.png`));
+  }
+  if (block.iconVariant) {
+    const source = iconPaths[block.iconVariant];
+    if (!source || !existsSync(source)) {
+      throw new Error(`Icône MEG ${block.iconVariant} introuvable`);
+    }
+    const assets = join(dir, "assets");
+    mkdirSync(assets, { recursive: true });
+    copyFileSync(source, join(assets, `meg-icon-${block.iconVariant}.png`));
   }
 }
