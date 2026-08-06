@@ -291,7 +291,7 @@ for (const ratio of ["reel", "yt"]) {
     script: `
       tl.fromTo(root.querySelector('.meg'),{y:44,opacity:0},{y:0,opacity:1,duration:.5,ease:'power4.out'},.1)
         .fromTo(root.querySelector('.filet-m'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.4)
-        .fromTo(root.querySelector('.b360'),{opacity:0,letterSpacing:'.6em'},{opacity:1,letterSpacing:'.38em',duration:.55,ease:'power2.out'},.6)
+        .fromTo(root.querySelector('.b360'),{opacity:0,y:10},{opacity:1,y:0,duration:.55,ease:'power2.out'},.6)
         .to(root.querySelector('.marque'),{opacity:0,duration:.4,ease:'power2.in'},2.05);`,
   }));
 }
