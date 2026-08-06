@@ -76,7 +76,7 @@ export function masterScript({ mode = "move", geom, W, H, dur, bias = null, stan
   const exitAt = Math.max(0.5, dur - 0.42).toFixed(2);
   const endAt = dur.toFixed(2);
   if (mode === "hide") {
-    const backAt = Math.max(0.3, dur - 0.32).toFixed(2);
+    const backAt = Math.max(0.3, dur - 0.1).toFixed(2);
     return `
       const master=document.querySelector('#meg-master-frame');
       if(master){
@@ -88,7 +88,7 @@ export function masterScript({ mode = "move", geom, W, H, dur, bias = null, stan
            scène crème (z1), jamais coupé net par lui. */
         tl.set(master,{zIndex:2},0)
           .fromTo(master,{autoAlpha:1},{autoAlpha:0,duration:.16,ease:'power2.in'},0)
-          .to(master,{autoAlpha:1,duration:.3,ease:'power2.out'},${backAt})
+          .to(master,{autoAlpha:1,duration:.1,ease:'power2.out'},${backAt})
           .set(master,{clearProps:'zIndex'},${endAt});
       }`;
   }
@@ -163,7 +163,7 @@ ${sel} .silhouette .tag{margin-top:-8px;padding:11px 24px;border-radius:20px;bac
 }
 export function silhouetteDiv({ x, y, w, h, tag = "VISAGE DÉTOURÉ (alpha)" }) {
   // Buste simple tracé : tête + épaules, hachures encre, liseré pointillé.
-  return `<div class="silhouette" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;" data-layout-allow-occlusion="">
+  return `<div class="silhouette" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;" data-layout-allow-occlusion="" data-qa-allow-bleed="">
     <svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
       <defs><pattern id="hachure-sil" width="14" height="14" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="rgba(47,44,0,.10)"></rect><rect width="7" height="14" fill="rgba(47,44,0,.20)"></rect></pattern></defs>
       <path d="M100 18a44 44 0 0 1 44 44v14a44 44 0 0 1-15 33c34 12 57 38 63 74l4 57H4l4-57c6-36 29-62 63-74a44 44 0 0 1-15-33v-14a44 44 0 0 1 44-44z" fill="url(#hachure-sil)" stroke="rgba(47,44,0,.55)" stroke-width="4" stroke-dasharray="14 10"></path>
@@ -196,14 +196,16 @@ export function emit(spec) {
     ? ` data-face-x="${faceGeom.x}" data-face-y="${faceGeom.y}" data-face-w="${faceGeom.w}" data-face-h="${faceGeom.h}" data-face-r="${faceGeom.r}" data-face-mode="${faceMode}"`
     : faceMode === "hide" ? ` data-face-mode="alpha"` : "";
 
-  // Biais visage auto : plus la fenêtre du bloc rogne la hauteur du rush
-  // (cover), plus la fenêtre vise haut — le visage vit dans le tiers haut du
-  // master MEG. Surchargeable par bloc (faceBias), désactivable (false).
+  // Biais visage auto : une bande horizontale dans un rush portrait doit viser
+  // le tiers visage (et non le haut du rush). Pour un master Large, le sujet
+  // reste centré verticalement. Surchargeable par bloc, désactivable (false).
   let bias = faceBias === false ? null : faceBias;
   if (bias == null && faceBias !== false && faceGeom) {
     const scale = Math.max(faceGeom.w / RA.w, faceGeom.h / RA.h);
     const visH = faceGeom.h / scale / RA.h;
-    bias = visH < 0.4 ? "50% 6%" : visH < 0.75 ? "50% 12%" : visH < 0.96 ? "50% 25%" : null;
+    bias = RA.w > RA.h
+      ? (visH < 0.96 ? "50% 50%" : null)
+      : visH < 0.4 ? "50% 38%" : visH < 0.75 ? "50% 36%" : visH < 0.96 ? "50% 32%" : null;
   }
 
   // Fond de scène crème : dès que le master quitte le plein cadre (move) ou

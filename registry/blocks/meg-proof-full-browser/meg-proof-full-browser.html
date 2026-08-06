@@ -18,7 +18,7 @@
 <div data-hf-id="hf-pb00" id="preuve-plein-navigateur-root" data-composition-id="preuve-plein-navigateur" data-start="0" data-duration="5" data-width="1080" data-height="1920">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
-      #preuve-plein-navigateur-root{position:relative;width:100%;height:100%;overflow:hidden;box-sizing:border-box;padding:120px 50px 104px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(152deg,#3B3B3B 0%,#2F2C00 58%,#1F1D00 100%);color:#FFFEEC;font-family:'Clash Grotesk MEG',sans-serif}
+      #preuve-plein-navigateur-root{position:relative;z-index:3;width:100%;height:100%;overflow:hidden;box-sizing:border-box;padding:120px 50px 104px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(152deg,#3B3B3B 0%,#2F2C00 58%,#1F1D00 100%);color:#FFFEEC;font-family:'Clash Grotesk MEG',sans-serif}
       /* Halo or sur fond sombre : la fenêtre semble éclairée par le haut. */
       #preuve-plein-navigateur-root .halo{position:absolute;left:50%;top:-220px;width:1400px;height:1100px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(185,170,2,.34) 0%,rgba(185,170,2,0) 70%);pointer-events:none}
       #preuve-plein-navigateur-root .titre{position:relative;text-align:center;font-size:74px;line-height:.94;font-weight:700;letter-spacing:-.028em;word-spacing:.05em;opacity:0}
@@ -38,7 +38,7 @@
       #preuve-plein-navigateur-root .vue img{display:block;width:100%;height:auto}
       #preuve-plein-navigateur-root .source{position:relative;margin-top:auto;padding:15px 32px;border-radius:999px;background:#B9AA02;color:#2F2C00;font-size:31px;font-weight:700;letter-spacing:.10em;opacity:0}
     </style>
-    <div data-hf-id="hf-pb01" class="halo"></div>
+    <div data-hf-id="hf-pb01" class="halo" data-qa-allow-bleed=""></div>
     <div data-hf-id="hf-pb02" class="titre">Allez vérifier<br data-hf-id="hf-pb03">vous-même.</div>
     <div data-hf-id="hf-pb04" class="fenetre">
       <div data-hf-id="hf-pb05" class="barre">

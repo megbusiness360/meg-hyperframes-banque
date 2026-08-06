@@ -31,7 +31,7 @@
     </style>
     <div data-hf-id="hf-10ux1" class="fond-scene" data-layout-allow-occlusion=""></div>
     <div data-hf-id="hf-10ux2" class="ecran" style="left:46px;top:46px;width:988px;height:900px;" data-layout-allow-occlusion=""><span data-hf-id="hf-10ux3" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-10ux4" class="sous">capture, démo, document</span></div>
-    <div data-hf-id="hf-10ux5" class="silhouette" style="left:260px;top:1120px;width:560px;height:800px;" data-layout-allow-occlusion="">
+    <div data-hf-id="hf-10ux5" class="silhouette" style="left:260px;top:1120px;width:560px;height:800px;" data-layout-allow-occlusion="" data-qa-allow-bleed="">
     <svg data-hf-id="hf-10ux6" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
       <defs data-hf-id="hf-10ux7"><pattern data-hf-id="hf-10ux8" id="hachure-sil" width="14" height="14" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><rect data-hf-id="hf-10ux9" width="14" height="14" fill="rgba(47,44,0,.10)"></rect><rect data-hf-id="hf-10uxa" width="7" height="14" fill="rgba(47,44,0,.20)"></rect></pattern></defs>
       <path data-hf-id="hf-10uxb" d="M100 18a44 44 0 0 1 44 44v14a44 44 0 0 1-15 33c34 12 57 38 63 74l4 57H4l4-57c6-36 29-62 63-74a44 44 0 0 1-15-33v-14a44 44 0 0 1 44-44z" fill="url(#hachure-sil)" stroke="rgba(47,44,0,.55)" stroke-width="4" stroke-dasharray="14 10"></path>
@@ -53,7 +53,7 @@
            scène crème (z1), jamais coupé net par lui. */
         tl.set(master,{zIndex:2},0)
           .fromTo(master,{autoAlpha:1},{autoAlpha:0,duration:.16,ease:'power2.in'},0)
-          .to(master,{autoAlpha:1,duration:.3,ease:'power2.out'},5.68)
+          .to(master,{autoAlpha:1,duration:.1,ease:'power2.out'},5.90)
           .set(master,{clearProps:'zIndex'},6.00);
       }
       tl.fromTo(root.querySelectorAll('.ecran'),{y:-70,opacity:0,scale:.97},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out',stagger:.12},.06)

@@ -196,8 +196,8 @@ le résultat, sous-ligne = le contexte. Remplacer les deux textes.`,
    Un objet plein cadre (asset alpha à poser) + la phrase qui l'explique. */
 for (const ratio of ["reel", "yt"]) {
   const C = CFG[ratio];
-  const obj = ratio === "reel" ? "left:220px;top:560px;width:640px;height:640px" : "left:1300px;top:220px;width:480px;height:480px";
-  const phrase = ratio === "reel" ? "left:70px;right:70px;top:1280px;text-align:center" : "left:1240px;width:600px;top:740px;text-align:center";
+  const obj = ratio === "reel" ? "left:260px;top:540px;width:560px;height:560px" : "left:1300px;top:220px;width:480px;height:480px";
+  const phrase = ratio === "reel" ? "left:70px;right:70px;top:1260px;text-align:center" : "left:1240px;width:600px;top:740px;text-align:center";
   blocks.push(emit({
     name: `meg-motion-objet-phrase-${ratio}`,
     title: `${C.prefix} — Objet détouré + phrase`,
@@ -476,7 +476,7 @@ caption. Le master visage reste derrière, masqué par l'écran.`,
     script: `
       tl.fromTo(root.querySelector('.plein'),{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},0)
         .fromTo(root.querySelector('.cap-c'),{scale:.92,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(1.6)'},.3)
-        .to([root.querySelector('.plein'),root.querySelector('.cap-c')],{opacity:0,duration:.35,ease:'power2.in'},3.55);`,
+        .to(root.querySelector('.cap-c'),{opacity:0,duration:.35,ease:'power2.in'},3.55);`,
   }));
 }
 

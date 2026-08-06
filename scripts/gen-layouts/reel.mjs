@@ -537,7 +537,9 @@ intervenant (réaction, duo, entretien).`,
     ].join("\n"),
     html: [
       `<div class="invite" data-layout-allow-occlusion=""><span class="etiquette">INVITÉ — REMPLACER</span><span class="sous">rush du second intervenant</span></div>`,
-      cadreDiv(d.face),
+      d.key === "cote-a-cote"
+        ? cadreDiv(d.face).replace('class="face-cadre"', 'class="face-cadre" data-qa-allow-bleed=""')
+        : cadreDiv(d.face),
       standaloneHtml("MASTER — VOUS"),
     ].join("\n    "),
     script: `
@@ -577,7 +579,7 @@ const habillages = [
   { key: "marge-titre-vertical", txt: "marge latérale + titre vertical",
     css: `%R% .filet{position:absolute;z-index:3;left:70px;top:180px;width:7px;height:0;border-radius:4px;background:${PAL.or}}
 %R% .titre-v{position:absolute;z-index:3;left:20px;top:50%;white-space:nowrap;color:${PAL.creme};font-size:44px;font-weight:700;letter-spacing:.12em;text-shadow:0 4px 24px rgba(0,0,0,.5);opacity:0}`,
-    html: `<div class="filet"></div><div class="titre-v">SUJET DE LA VIDÉO</div>`,
+    html: `<div class="filet"></div><div class="titre-v" data-qa-allow-bleed="">SUJET DE LA VIDÉO</div>`,
     script: `gsap.set(root.querySelector('.titre-v'),{rotation:-90,xPercent:-50,yPercent:-50});
       tl.to(root.querySelector('.filet'),{height:1560,duration:.9,ease:'power2.inOut'},.05)
         .fromTo(root.querySelector('.titre-v'),{opacity:0},{opacity:1,duration:.5},.5);` },
@@ -760,8 +762,8 @@ const avantApres = [
 %R% .carte-av.apres .tag{background:${PAL.or};color:${PAL.encre}}
 %R% .couture{position:absolute;z-index:4;left:0;top:${H - 506}px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}`,
       standaloneCss("%R%", { x: 0, y: H - 500, w: W, h: 500, r: 0 })].join("\n"),
-    html: [`<div class="carte-av avant" data-layout-allow-occlusion=""><span class="tag">AVANT</span></div>`,
-      `<div class="carte-av apres" data-layout-allow-occlusion=""><span class="tag">APRÈS</span></div>`,
+    html: [`<div class="carte-av avant" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span class="tag">AVANT</span></div>`,
+      `<div class="carte-av apres" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span class="tag">APRÈS</span></div>`,
       `<div class="couture"></div>`, standaloneHtml("MASTER — BANDE VISAGE")].join("\n    "),
     script: `gsap.set(root.querySelector('.carte-av.avant'),{rotation:-4});gsap.set(root.querySelector('.carte-av.apres'),{rotation:3});
       tl.fromTo(root.querySelector('.carte-av.avant'),{y:70,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.08)

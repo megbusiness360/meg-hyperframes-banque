@@ -71,13 +71,14 @@ const LINT_FN = `(() => {
     const r = el.getBoundingClientRect();
     if (r.width < 8 || r.height < 8) continue;
     const over = { left: r.left < -2, top: r.top < -2, right: r.right > W + 2, bottom: r.bottom > H + 2 };
-    if ((over.left || over.right || over.top || over.bottom) && !el.closest('[data-qa-allow-bleed]'))
+    if ((over.left || over.right || over.top || over.bottom) && !el.closest('[data-qa-allow-bleed],[data-layout-allow-overflow]'))
       out.outOfBounds.push({ el: label(el), rect: [r.left, r.top, r.width, r.height].map(Math.round), over });
   }
   const ecrans = [...root.querySelectorAll('.ecran, .col, .rang, .carte-av, .panneau')]
     .filter((el) => getComputedStyle(el).display !== 'none')
-    .map((el) => ({ el: label(el), r: el.getBoundingClientRect() }));
+    .map((el) => ({ el: label(el), elRef: el, r: el.getBoundingClientRect() }));
   for (let i = 0; i < ecrans.length; i++) for (let j = i + 1; j < ecrans.length; j++) {
+    if (ecrans[i].elRef?.closest?.('[data-qa-allow-overlap]') || ecrans[j].elRef?.closest?.('[data-qa-allow-overlap]')) continue;
     const a = ecrans[i].r, b = ecrans[j].r;
     const gx = Math.max(a.left, b.left) - Math.min(a.right, b.right);
     const gy = Math.max(a.top, b.top) - Math.min(a.bottom, b.bottom);

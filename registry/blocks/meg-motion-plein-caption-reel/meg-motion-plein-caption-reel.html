@@ -30,7 +30,7 @@
 
       tl.fromTo(root.querySelector('.plein'),{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},0)
         .fromTo(root.querySelector('.cap-c'),{scale:.92,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(1.6)'},.3)
-        .to([root.querySelector('.plein'),root.querySelector('.cap-c')],{opacity:0,duration:.35,ease:'power2.in'},3.55);
+        .to(root.querySelector('.cap-c'),{opacity:0,duration:.35,ease:'power2.in'},3.55);
       window.__timelines['motion-plein-caption-reel']=tl;
       })();
     </script>
