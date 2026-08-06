@@ -24,8 +24,8 @@
 #reel-avant-apres-duo-cartes-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1420px;width:1080px;height:500px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
     <div data-hf-id="hf-1ebx1" class="fond-scene" data-layout-allow-occlusion=""></div>
-    <div data-hf-id="hf-1ebx2" class="carte-av avant" data-layout-allow-occlusion=""><span data-hf-id="hf-1ebx3" class="tag">AVANT</span></div>
-    <div data-hf-id="hf-1ebx4" class="carte-av apres" data-layout-allow-occlusion=""><span data-hf-id="hf-1ebx5" class="tag">APRÈS</span></div>
+    <div data-hf-id="hf-1ebx2" class="carte-av avant" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span data-hf-id="hf-1ebx3" class="tag">AVANT</span></div>
+    <div data-hf-id="hf-1ebx4" class="carte-av apres" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span data-hf-id="hf-1ebx5" class="tag">APRÈS</span></div>
     <div data-hf-id="hf-1ebx6" class="couture"></div>
     <div data-hf-id="hf-1ebx7" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
     <script>
@@ -51,7 +51,7 @@
         const vid=master.querySelector('video,img');
         if(vid){
           const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
-          tl.set(vid,{objectPosition:'50% 6%'},0).set(vid,{objectPosition:op0},6.00);
+          tl.set(vid,{objectPosition:'50% 38%'},0).set(vid,{objectPosition:op0},6.00);
         }
       }else{
         const sa=root.querySelector('.standalone-face');

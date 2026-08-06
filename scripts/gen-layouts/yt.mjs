@@ -558,8 +558,8 @@ Inclinaisons posées par gsap.set. Remplacer les deux zones.`,
 %R% .carte-av.apres .tag{background:${PAL.or};color:${PAL.encre}}
 %R% .couture{position:absolute;z-index:4;left:0;top:${H - 336}px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}`,
       standaloneCss("%R%", face)].join("\n"),
-    html: [`<div class="carte-av avant" data-layout-allow-occlusion=""><span class="tag">AVANT</span></div>`,
-      `<div class="carte-av apres" data-layout-allow-occlusion=""><span class="tag">APRÈS</span></div>`,
+    html: [`<div class="carte-av avant" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span class="tag">AVANT</span></div>`,
+      `<div class="carte-av apres" data-layout-allow-occlusion="" data-qa-allow-overlap=""><span class="tag">APRÈS</span></div>`,
       `<div class="couture"></div>`, standaloneHtml("MASTER — BANDE VISAGE")].join("\n    "),
     script: `gsap.set(root.querySelector('.carte-av.avant'),{rotation:-3});gsap.set(root.querySelector('.carte-av.apres'),{rotation:2});
       tl.fromTo(root.querySelector('.carte-av.avant'),{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.08)

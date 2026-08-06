@@ -208,7 +208,7 @@ entourer ; le tracé et la sortie suivent.`,
         .to(root.querySelector('.accent-fleche'),{opacity:0,duration:.3,ease:'power2.in'},2.6);`,
   }));
 
-  const surlGeom = ratio === "reel" ? { x: 150, y: 1150, w: 780 } : { x: 180, y: 820, w: 780 };
+  const surlGeom = ratio === "reel" ? { x: 150, y: 1150, w: 780 } : { x: 120, y: 300, w: 480 };
   blocks.push(emit({
     name: `meg-anim-accent-surligneur-${ratio}`,
     title: `Accent surligneur — ${suffixe}`,
@@ -318,7 +318,8 @@ mot en or. Remplacer le mot ; un seul mot, jamais une phrase.`,
     html: `<div class="mot" data-layout-allow-occlusion=""><span>GAGNANT</span></div>`,
     script: `
       tl.fromTo(root.querySelector('.mot'),{scale:.6,opacity:0},{scale:1,opacity:1,duration:.4,ease:'back.out(1.8)'},.08)
-        .to(root.querySelector('.mot'),{scale:.92,opacity:0,duration:.3,ease:'power2.in'},2.1);`,
+        .to(root.querySelector('.mot'),{scale:.92,duration:.22,ease:'power2.in'},2.1)
+        .set(root.querySelector('.mot'),{autoAlpha:0},2.34);`,
   }));
 }
 

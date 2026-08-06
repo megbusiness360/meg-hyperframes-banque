@@ -18,7 +18,7 @@
 <div data-hf-id="hf-pt00" id="preuve-plein-tilt-root" data-composition-id="preuve-plein-tilt" data-start="0" data-duration="5" data-width="1080" data-height="1920">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
-      #preuve-plein-tilt-root{position:relative;width:100%;height:100%;overflow:hidden;background:linear-gradient(200deg,#FFFEEC 0%,#FFFCD6 38%,#EFE39C 100%);color:#2F2C00;font-family:'Clash Grotesk MEG',sans-serif}
+      #preuve-plein-tilt-root{position:relative;z-index:3;width:100%;height:100%;overflow:hidden;background:linear-gradient(200deg,#FFFEEC 0%,#FFFCD6 38%,#EFE39C 100%);color:#2F2C00;font-family:'Clash Grotesk MEG',sans-serif}
       /* Halo bas : ancre la capture au sol au lieu de la laisser flotter dans le vide. */
       #preuve-plein-tilt-root .sol{position:absolute;left:50%;top:1120px;width:1500px;height:900px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(185,170,2,.34) 0%,rgba(185,170,2,0) 68%)}
       /* Scène en perspective : c'est le parent qui la porte, la carte ne fait que tourner. */
@@ -38,7 +38,7 @@
       #preuve-plein-tilt-root .marque{display:block;width:76px;height:auto;flex:none}
       #preuve-plein-tilt-root .sep{width:2px;height:32px;flex:none;border-radius:2px;background:rgba(185,170,2,.6)}
     </style>
-    <div data-hf-id="hf-pt01" class="sol"></div>
+    <div data-hf-id="hf-pt01" class="sol" data-qa-allow-bleed=""></div>
     <div data-hf-id="hf-pt02" class="scene">
       <div data-hf-id="hf-pt03" class="cadre">
         <div data-hf-id="hf-pt0b" class="hublot"><img data-hf-id="hf-pt04" src="assets/meg-programme-long.png" alt="Preuve"></div>

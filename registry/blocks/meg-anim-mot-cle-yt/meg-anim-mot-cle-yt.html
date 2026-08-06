@@ -24,7 +24,8 @@
       const tl=gsap.timeline({paused:true});
 
       tl.fromTo(root.querySelector('.mot'),{scale:.6,opacity:0},{scale:1,opacity:1,duration:.4,ease:'back.out(1.8)'},.08)
-        .to(root.querySelector('.mot'),{scale:.92,opacity:0,duration:.3,ease:'power2.in'},2.1);
+        .to(root.querySelector('.mot'),{scale:.92,duration:.22,ease:'power2.in'},2.1)
+        .set(root.querySelector('.mot'),{autoAlpha:0},2.34);
       window.__timelines['anim-mot-cle-yt']=tl;
       })();
     </script>

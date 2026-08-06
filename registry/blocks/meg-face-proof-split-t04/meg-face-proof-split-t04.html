@@ -10,7 +10,7 @@
 <div data-hf-id="hf-0lwi" id="preuve-haut-root" data-composition-id="preuve-haut" data-start="0" data-duration="5" data-start="0" data-width="1080" data-height="1920">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2')}
-      #preuve-haut-root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #preuve-haut-root{position:relative;z-index:3;width:1080px;height:1920px;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
       #preuve-haut-root .proof{position:absolute;left:46px;top:46px;width:988px;height:716px;box-sizing:border-box;overflow:hidden;border:7px solid #fffcd6;border-radius:34px;background:#fffcd6;box-shadow:0 20px 60px rgba(0,0,0,.16);opacity:0}
       #preuve-haut-root .placeholder{display:flex;align-items:center;justify-content:center;padding:54px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);color:#2f2c00;text-align:center;font-size:43px;line-height:1.02;font-weight:600;letter-spacing:-.035em}
       #preuve-haut-root .standalone-face{display:none;position:absolute;left:46px;top:784px;width:988px;height:1090px;border-radius:34px;background:#2f2c00;color:#fffcd6;align-items:center;justify-content:center;text-align:center;font-size:52px;font-weight:700;letter-spacing:-.03em}
@@ -22,10 +22,19 @@
       window.__timelines=window.__timelines||{};
       const t04root=document.querySelector('#preuve-haut-root');
       const t04=gsap.timeline({paused:true});
-      if(!document.querySelector('#meg-master-frame')){
+      const t04master=document.querySelector('#meg-master-frame');
+      if(t04master){
+        const t04video=t04master.querySelector('video,img');
+        t04.set(t04master,{zIndex:2,x:46,y:784,width:988,height:1090,borderRadius:34},0);
+        t04.set(t04master,{clearProps:'zIndex,transform,width,height,borderRadius'},5);
+        if(t04video){
+          t04.set(t04video,{objectPosition:'50% 32%'},0);
+          t04.set(t04video,{clearProps:'objectPosition'},5);
+        }
+      }else{
         t04root.querySelector('.standalone-face').style.display='flex';
-        t04.set(t04root.querySelector('.proof'),{y:-48,opacity:0}).to(t04root.querySelector('.proof'),{y:0,opacity:1,duration:.42,ease:'power3.out'},0);
       }
+      t04.fromTo(t04root.querySelector('.proof'),{y:-48,opacity:0},{y:0,opacity:1,duration:.42,ease:'power3.out'},0);
       window.__timelines['preuve-haut']=t04;
     </script>
   </div>

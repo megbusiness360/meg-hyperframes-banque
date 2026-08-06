@@ -17,7 +17,7 @@
 <div data-hf-id="hf-finn" id="preuve-plein-ecran-root" data-composition-id="preuve-plein-ecran" data-start="0" data-duration="5" data-width="1080" data-height="1920">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
-      #preuve-plein-ecran-root{position:relative;width:100%;height:100%;overflow:hidden;box-sizing:border-box;padding:104px 62px 88px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(168deg,#FFFEEC 0%,#FFFCD6 44%,#F6EDB2 100%);color:#2F2C00;font-family:'Clash Grotesk MEG',sans-serif}
+      #preuve-plein-ecran-root{position:relative;z-index:3;width:100%;height:100%;overflow:hidden;box-sizing:border-box;padding:104px 62px 88px;display:flex;flex-direction:column;align-items:center;background:linear-gradient(168deg,#FFFEEC 0%,#FFFCD6 44%,#F6EDB2 100%);color:#2F2C00;font-family:'Clash Grotesk MEG',sans-serif}
       /* Halo or : donne du volume au fond sans ajouter d'aplat de couleur. */
       #preuve-plein-ecran-root .halo{position:absolute;left:50%;top:-160px;width:1280px;height:900px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(185,170,2,.26) 0%,rgba(185,170,2,0) 72%);pointer-events:none}
       /* Sur-titre : plus une gélule or pleine, mais une puce crème à filet or avec
@@ -39,7 +39,7 @@
       #preuve-plein-ecran-root .marque{display:block;width:78px;height:auto;flex:none}
       #preuve-plein-ecran-root .sep{width:2px;height:34px;flex:none;border-radius:2px;background:rgba(185,170,2,.6)}
     </style>
-    <div data-hf-id="hf-halo" class="halo"></div>
+    <div data-hf-id="hf-halo" class="halo" data-qa-allow-bleed=""></div>
     <div data-hf-id="hf-eyeb" class="eyebrow">
       <svg data-hf-id="hf-eyes" viewBox="0 0 24 24" aria-hidden="true"><path data-hf-id="hf-eyep" d="M12 3.2 20 6.4v5.3c0 4.4-3.2 7.6-8 9.1-4.8-1.5-8-4.7-8-9.1V6.4Z"/><path data-hf-id="hf-eyeq" d="m8.6 11.9 2.5 2.5 4.4-4.7"/></svg>
       Preuve
