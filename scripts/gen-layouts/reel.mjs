@@ -957,35 +957,42 @@ sur un contenu plein écran. Remplacer la zone hachurée par le contenu réel.`,
 
 /* ————— R16 · Hook bulle-titre + coupe B-roll (référence "legend", 06/08/2026) —————
  * Visage bande haute (master recadré), bulle-titre flottante à cheval sur la
- * couture (médaillon MEG "trois tirés" en lieu et place du badge fournisseur
- * source), coupe B-roll plein cadre en bas. Confirmé absent de la banque
- * (grep registry complet) avant création — accord Mohamed implicite (demande
- * explicite du layout manquant). */
+ * couture, coupe B-roll plein cadre en bas. Révisé (06/08/2026, 2e passe) après
+ * réexamen pixel des 4 captures de référence envoyées par Mohamed :
+ * - l'étiquette n'est pas un médaillon circulaire flottant mais une PASTILLE
+ *   HEXAGONALE qui mord le coin haut-gauche de la bulle-titre (repère MEG
+ *   "trois tirés" en lieu et place de l'icône fournisseur source) ;
+ * - la référence porte un bandeau de marque PERSISTANT haut-droite pendant
+ *   toute la bande visage (équivalent du wordmark fournisseur) — absent de
+ *   la 1re passe, ajouté ici en wordmark "MEG" seul (texte, sans icône,
+ *   fidèle à la référence qui n'accole pas son logo au wordmark). */
 blocks.push(emit({
   name: "meg-reel-intro-hook-bulle-titre",
   title: "Reel — hook bulle-titre + coupe B-roll",
-  desc: "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (médaillon MEG en lieu de badge fournisseur), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\".",
+  desc: "Intro Reel 9:16 : visage bande haute avec bandeau de marque MEG persistant, bulle-titre flottante à cheval sur la couture (pastille hexagonale MEG mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\".",
   tags: ["reel", "layout", "intro", "hook", "bulle-titre", "broll"],
   family: "reel-intro",
   familyTitle: "Reels — intros & hooks",
   variant: "bulle-titre + broll bas",
   ratio: "reel",
   duration: 5,
-  comment: `Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
-flottante en médaillon (repère MEG "trois tirés" remplace le badge
-fournisseur de la référence). Coupe B-roll plein cadre en bas. Remplacer
-le titre et la zone hachurée par la preuve réelle ; enchaîner sur un
-layout standard une fois le hook posé.`,
+  comment: `Intro Reel "hook bulle-titre" — visage en bande haute avec bandeau
+de marque MEG persistant (haut-droite), bulle-titre flottante mordue au
+coin par une pastille hexagonale MEG (repère "trois tirés"). Coupe
+B-roll plein cadre en bas. Remplacer le titre et la zone hachurée par
+la preuve réelle ; enchaîner sur un layout standard une fois le hook posé.`,
   faceGeom: { x: 0, y: 0, w: W, h: 840, r: 0 },
   css: [
     ecranCss("%R%"),
     `%R% .bulle-titre{position:absolute;z-index:4;left:${M}px;top:724px;width:${CW}px;min-height:224px;border-radius:${R}px;background:${PAL.clair};box-shadow:0 30px 70px rgba(0,0,0,.35);padding:60px 58px 42px;color:${PAL.encre};opacity:0}
 %R% .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
-%R% .badge-meg{position:absolute;z-index:5;left:54px;top:670px;width:108px;height:108px;border-radius:50%;background:${PAL.clair};border:6px solid ${PAL.or};box-shadow:0 14px 30px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;opacity:0}
-%R% .badge-meg svg{width:52px;height:52px}`,
+%R% .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:${PAL.clair};box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0}
+%R% .badge-meg svg{width:42px;height:42px}
+%R% .marque-meg{position:absolute;z-index:5;right:${M}px;top:64px;color:${PAL.clair};font-size:38px;font-weight:700;letter-spacing:.09em;text-shadow:0 2px 12px rgba(0,0,0,.5);opacity:0}`,
   ].join("\n"),
   html: [
     ecranDiv({ x: 0, y: 840, w: W, h: H - 840, label: "COUPE B-ROLL — REMPLACER", sub: "preuve, capture, plan tourné", bord: true }),
+    `<div class="marque-meg" data-qa-allow-bleed="">MEG</div>`,
     `<div class="bulle-titre" data-layout-allow-occlusion=""><span class="txt">Elle a financé sa formation sans avancer un centime</span></div>`,
     `<div class="badge-meg" data-qa-allow-bleed=""><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="21" y="3" width="6" height="17" rx="3" fill="${PAL.encre}" transform="rotate(18 24 11.5)"/><rect x="21" y="3" width="6" height="24" rx="3" fill="${PAL.encre}" transform="rotate(34 24 15)"/><rect x="21" y="3" width="6" height="30" rx="3" fill="${PAL.encre}" transform="rotate(50 24 18)"/></svg></div>`,
   ].join("\n    "),
@@ -994,20 +1001,24 @@ layout standard une fois le hook posé.`,
     `
       tl.fromTo(root.querySelector('.bulle-titre'),{y:-46,opacity:0},{y:0,opacity:1,duration:.5,ease:'back.out(1.5)'},.16)
         .to(root.querySelector('.bulle-titre'),{opacity:0,y:-20,duration:.3,ease:'power2.in'},4.6);
-      tl.fromTo(root.querySelector('.badge-meg'),{scale:.4,opacity:0},{scale:1,opacity:1,duration:.42,ease:'back.out(1.7)'},.38)
-        .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);`,
+      tl.fromTo(root.querySelector('.badge-meg'),{scale:.5,rotate:-14,opacity:0},{scale:1,rotate:0,opacity:1,duration:.42,ease:'back.out(1.8)'},.32)
+        .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);
+      tl.fromTo(root.querySelector('.marque-meg'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.5)
+        .to(root.querySelector('.marque-meg'),{opacity:0,duration:.25,ease:'power2.in'},4.45);`,
   ].join("\n"),
 }));
 
 /* ————— R17 · CTA fond noir + contact (référence "legend", 06/08/2026) —————
  * Registre minimaliste distinct des CTA existants (carte-marque, commentaire,
- * recap) : fond noir plein cadre, question centrée, pastille contact — sans
- * carte crème ni logo. Confirmé absent de la banque (grep registry complet)
- * avant création. */
+ * recap) : fond noir plein cadre, question + pastille contact — sans carte
+ * crème ni logo. Confirmé absent de la banque (grep registry complet) avant
+ * création. Révisé (06/08/2026, 2e passe) : la référence aligne le bloc
+ * question+pastille à GAUCHE (les deux éléments partagent le même bord
+ * gauche), pas centré — corrigé après réexamen pixel de la capture 10/14. */
 blocks.push(emit({
   name: "meg-reel-cta-fond-noir",
   title: "Reel — CTA fond noir, question + contact",
-  desc: "CTA/outro Reel 9:16 : fond noir plein cadre, question directe centrée + pastille contact. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
+  desc: "CTA/outro Reel 9:16 : fond noir plein cadre, question directe alignée à gauche + pastille contact. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
   tags: ["reel", "layout", "cta", "outro", "noir", "contact", "minimaliste"],
   family: "reel-cta",
   familyTitle: "Reels — CTA & outros",
@@ -1015,12 +1026,13 @@ blocks.push(emit({
   ratio: "reel",
   duration: 4,
   comment: `CTA/outro Reel "fond noir" — registre minimaliste : fond noir
-plein cadre, question centrée, pastille contact. Aucune carte ni logo,
-contraste maximal. Remplacer la question ; l'appel à l'action reste
-indirect (règles MEG : on montre où continuer, on ne supplie pas).`,
+plein cadre, question et pastille contact alignées à gauche (même bord).
+Aucune carte ni logo, contraste maximal. Remplacer la question ; l'appel
+à l'action reste indirect (règles MEG : on montre où continuer, on ne
+supplie pas).`,
   faceGeom: null,
   css: `
-%R% .fond{position:absolute;inset:0;z-index:3;background:#000000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:52px;padding:0 84px;color:#FFFFFF;text-align:center;opacity:0}
+%R% .fond{position:absolute;inset:0;z-index:3;background:#000000;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:52px;padding:0 84px;color:#FFFFFF;text-align:left;opacity:0}
 %R% .question{font-size:70px;font-weight:700;line-height:1.14;letter-spacing:-.01em}
 %R% .pastille-contact{display:flex;align-items:center;gap:18px;padding:24px 42px;border-radius:999px;background:linear-gradient(135deg,#FFFEEC 0%,#F4E9A8 100%);color:${PAL.encre};font-size:34px;font-weight:700}
 %R% .pastille-contact svg{width:34px;height:34px;flex:none}`,
