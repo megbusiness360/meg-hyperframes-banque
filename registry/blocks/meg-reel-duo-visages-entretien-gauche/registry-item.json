@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-duo-visages-entretien-gauche",
+  "type": "hyperframes:block",
+  "title": "Reel — deux visages hôte dominant à gauche",
+  "description": "Layout réaction/entretien 9:16 : master hôte dominant à gauche + zone invité à remplacer par le rush du second intervenant.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "duo-visages",
+    "reaction",
+    "entretien-gauche"
+  ],
+  "family": "reel-duo-visages",
+  "familyTitle": "Reels — deux visages (réaction/entretien)",
+  "variant": "hôte dominant à gauche",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-duo-visages-entretien-gauche.html",
+      "target": "compositions/meg-reel-duo-visages-entretien-gauche.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

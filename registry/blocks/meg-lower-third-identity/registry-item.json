@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-lower-third-identity",
+  "type": "hyperframes:block",
+  "title": "Bandeau identité",
+  "description": "Lower third bas-gauche en deux gélules calibrées (nom + rôle), entre et ressort par la gauche.",
+  "tags": [
+    "meg",
+    "habillage",
+    "lower-third",
+    "identite"
+  ],
+  "family": "habillage",
+  "familyTitle": "Habillage",
+  "variant": "Bandeau identité",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-lower-third-identity.html",
+      "target": "compositions/meg-lower-third-identity.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

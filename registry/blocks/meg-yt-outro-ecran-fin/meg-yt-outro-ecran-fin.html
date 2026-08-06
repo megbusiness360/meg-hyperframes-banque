@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Écran de fin YouTube — le visage conclut à gauche, les deux cartes à
+     droite matérialisent les zones end-screen (vidéo suivante + playlist)
+     qu'on active dans YouTube Studio. Durée 8 s (minimum end-screen 5 s). -->
+<div data-hf-id="hf-1y190" id="yt-outro-ecran-fin-root" data-composition-id="yt-outro-ecran-fin" data-start="0" data-duration="8" data-width="1920" data-height="1080" data-face-x="70" data-face-y="290" data-face-w="640" data-face-h="500" data-face-r="30" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #yt-outro-ecran-fin-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-outro-ecran-fin-root .fond{position:absolute;inset:0;z-index:1}
+#yt-outro-ecran-fin-root .fond span{position:absolute;background-image:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);background-size:1920px 1080px}
+#yt-outro-ecran-fin-root .carte-video{position:absolute;z-index:3;left:800px;width:1050px;height:390px;box-sizing:border-box;border-radius:30px;border:5px dashed rgba(255,252,214,.5);background:repeating-linear-gradient(-45deg,rgba(47,44,0,.16) 0 18px,rgba(47,44,0,.06) 18px 36px);display:flex;align-items:center;justify-content:center;gap:20px;color:#FFFCD6;font-size:34px;font-weight:700;letter-spacing:.03em;opacity:0}
+#yt-outro-ecran-fin-root .mention{position:absolute;z-index:3;left:70px;top:830px;width:640px;text-align:center;color:#B9AA02;font-size:34px;font-weight:700;opacity:0}
+#yt-outro-ecran-fin-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:30px;pointer-events:none;opacity:0}
+#yt-outro-ecran-fin-root .standalone-face{display:none;position:absolute;z-index:2;left:70px;top:290px;width:640px;height:500px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-1y191" class="fond" data-layout-allow-occlusion=""><span data-hf-id="hf-1y192" style="left:0;top:0;width:1920px;height:290px;background-position:0 0" data-layout-allow-occlusion=""></span><span data-hf-id="hf-1y193" style="left:0;top:290px;width:70px;height:500px;background-position:0 -290px" data-layout-allow-occlusion=""></span><span data-hf-id="hf-1y194" style="left:710px;top:290px;width:1210px;height:500px;background-position:-710px -290px" data-layout-allow-occlusion=""></span><span data-hf-id="hf-1y195" style="left:0;top:790px;width:1920px;height:290px;background-position:0 -790px" data-layout-allow-occlusion=""></span></div>
+    <div data-hf-id="hf-1y196" class="carte-video" style="top:120px;">ZONE END-SCREEN — VIDÉO SUIVANTE</div>
+    <div data-hf-id="hf-1y197" class="carte-video" style="top:570px;">ZONE END-SCREEN — PLAYLIST</div>
+    <div data-hf-id="hf-1y198" class="mention">megbusiness360.com</div>
+    <div data-hf-id="hf-1y199" class="face-cadre" style="left:63px;top:283px;width:654px;height:514px;"></div>
+    <div data-hf-id="hf-1y19a" class="standalone-face" data-layout-allow-occlusion="">MASTER — VOUS</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#yt-outro-ecran-fin-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+          {x:70,y:290,width:640,height:500,borderRadius:30,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},7.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelector('.fond'),{opacity:0},{opacity:1,duration:.5},0)
+        .fromTo(root.querySelectorAll('.carte-video'),{x:70,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out',stagger:.16},.3)
+        .fromTo(root.querySelector('.mention'),{opacity:0},{opacity:1,duration:.4},.7);
+      const cadre=root.querySelector('.face-cadre');
+      if(cadre)tl.fromTo(cadre,{opacity:0},{opacity:1,duration:.4},.3);
+      window.__timelines['yt-outro-ecran-fin']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

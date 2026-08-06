@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Mot-clé pop — UN mot qui claque au centre (back.out), gélule encre,
+     mot en or. Remplacer le mot ; un seul mot, jamais une phrase. -->
+<div data-hf-id="hf-amlz0" id="anim-mot-cle-yt-root" data-composition-id="anim-mot-cle-yt" data-start="0" data-duration="2.5" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #anim-mot-cle-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #anim-mot-cle-yt-root .mot{position:absolute;z-index:30;left:0;top:740px;width:100%;display:flex;justify-content:center;opacity:0}
+#anim-mot-cle-yt-root .mot span{display:inline-block;padding:26px 54px;border-radius:32px;background:#2F2C00;color:#B9AA02;font-size:130px;font-weight:700;letter-spacing:-.02em;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+    </style>
+    <div data-hf-id="hf-amlz1" class="mot" data-layout-allow-occlusion=""><span data-hf-id="hf-amlz2">GAGNANT</span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-mot-cle-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.mot'),{scale:.6,opacity:0},{scale:1,opacity:1,duration:.4,ease:'back.out(1.8)'},.08)
+        .to(root.querySelector('.mot'),{scale:.92,opacity:0,duration:.3,ease:'power2.in'},2.1);
+      window.__timelines['anim-mot-cle-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

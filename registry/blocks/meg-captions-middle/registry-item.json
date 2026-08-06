@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-captions-middle",
+  "type": "hyperframes:block",
+  "title": "Sous-titres — milieu",
+  "description": "Gélule de sous-titre posée sur la couture d'un split écran + visage (ancres 40, 50 ou centre).",
+  "tags": [
+    "meg",
+    "captions",
+    "sous-titres",
+    "milieu",
+    "split"
+  ],
+  "family": "captions",
+  "familyTitle": "Sous-titres",
+  "variant": "Milieu",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "meg-captions-middle.html",
+      "target": "compositions/meg-captions-middle.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

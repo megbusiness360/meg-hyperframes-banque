@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-secousse-reel",
+  "type": "hyperframes:block",
+  "title": "Effet secousse — Reel 9:16",
+  "description": "Secousse horizontale brève du master (±16 px) pour un mot choc ou une rupture. 0,8 s.",
+  "tags": [
+    "meg",
+    "reel",
+    "effet",
+    "secousse"
+  ],
+  "family": "anim-camera-reel",
+  "familyTitle": "Effets caméra — Reel 9:16",
+  "variant": "secousse",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 0.8,
+  "files": [
+    {
+      "path": "meg-anim-secousse-reel.html",
+      "target": "compositions/meg-anim-secousse-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

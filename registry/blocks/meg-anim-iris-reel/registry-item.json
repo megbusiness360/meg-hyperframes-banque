@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-iris-reel",
+  "type": "hyperframes:block",
+  "title": "Transition iris — Reel 9:16",
+  "description": "Disque encre qui se referme sur le centre puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.",
+  "tags": [
+    "meg",
+    "reel",
+    "transition",
+    "iris"
+  ],
+  "family": "anim-transition-reel",
+  "familyTitle": "Transitions — Reel 9:16",
+  "variant": "iris",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-anim-iris-reel.html",
+      "target": "compositions/meg-anim-iris-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

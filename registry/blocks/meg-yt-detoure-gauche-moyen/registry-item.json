@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-detoure-gauche-moyen",
+  "type": "hyperframes:block",
+  "title": "YouTube — détouré gauche (moyen)",
+  "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à gauche (moyen). Remplacer par l'asset alpha.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "detoure",
+    "fond-vert",
+    "gauche"
+  ],
+  "family": "yt-detoure",
+  "familyTitle": "YouTube — visage détouré (fond vert)",
+  "variant": "gauche moyen",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-detoure-gauche-moyen.html",
+      "target": "compositions/meg-yt-detoure-gauche-moyen.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

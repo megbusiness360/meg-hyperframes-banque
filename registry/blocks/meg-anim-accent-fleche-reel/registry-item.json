@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-accent-fleche-reel",
+  "type": "hyperframes:block",
+  "title": "Accent flèche or — Reel 9:16",
+  "description": "Flèche or tracée qui pointe vers une zone de l'écran. 3 s, repositionnable.",
+  "tags": [
+    "meg",
+    "reel",
+    "accent",
+    "fleche"
+  ],
+  "family": "anim-accent-reel",
+  "familyTitle": "Accents graphiques — Reel 9:16",
+  "variant": "flèche or",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-anim-accent-fleche-reel.html",
+      "target": "compositions/meg-anim-accent-fleche-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

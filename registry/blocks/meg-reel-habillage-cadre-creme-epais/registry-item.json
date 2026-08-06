@@ -1,0 +1,33 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-habillage-cadre-creme-epais",
+  "type": "hyperframes:block",
+  "title": "Reel — habillage cadre crème épais",
+  "description": "Habillage plein cadre 9:16 : cadre crème épais par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "overlay",
+    "cadre-creme-epais"
+  ],
+  "family": "reel-habillage",
+  "familyTitle": "Reels — habillages plein cadre",
+  "variant": "cadre crème épais",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-habillage-cadre-creme-epais.html",
+      "target": "compositions/meg-reel-habillage-cadre-creme-epais.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

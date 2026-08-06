@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-intro-sommaire",
+  "type": "hyperframes:block",
+  "title": "Reel — intro sommaire 3 points",
+  "description": "Intro 9:16 : sommaire 3 points plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "intro",
+    "hook",
+    "sommaire"
+  ],
+  "family": "reel-intro",
+  "familyTitle": "Reels — intros & hooks",
+  "variant": "sommaire 3 points",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-reel-intro-sommaire.html",
+      "target": "compositions/meg-reel-intro-sommaire.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

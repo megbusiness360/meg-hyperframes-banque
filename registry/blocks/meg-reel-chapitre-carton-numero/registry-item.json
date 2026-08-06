@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-chapitre-carton-numero",
+  "type": "hyperframes:block",
+  "title": "Reel — chapitre carton numéro plein",
+  "description": "Carton de chapitre 9:16 : carton numéro plein, posé par-dessus le master intact. Textes à remplacer.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "chapitre",
+    "carton-numero"
+  ],
+  "family": "reel-chapitre",
+  "familyTitle": "Reels — cartons de chapitre",
+  "variant": "carton numéro plein",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-reel-chapitre-carton-numero.html",
+      "target": "compositions/meg-reel-chapitre-carton-numero.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

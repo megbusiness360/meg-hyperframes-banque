@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-bande-bas-25",
+  "type": "hyperframes:block",
+  "title": "YouTube — écran dominant, bande visage bas 25 %",
+  "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (25 %) en bas.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "bande"
+  ],
+  "family": "yt-bande",
+  "familyTitle": "YouTube — écran dominant + bande visage",
+  "variant": "bas 25 %",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-bande-bas-25.html",
+      "target": "compositions/meg-yt-bande-bas-25.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

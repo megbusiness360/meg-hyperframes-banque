@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-flash-reel",
+  "type": "hyperframes:block",
+  "title": "Transition flash crème — Reel 9:16",
+  "description": "Flash crème 0,6 s à poser à cheval sur un cut : monte vite, cache le cut au pic, retombe.",
+  "tags": [
+    "meg",
+    "reel",
+    "transition",
+    "flash"
+  ],
+  "family": "anim-transition-reel",
+  "familyTitle": "Transitions — Reel 9:16",
+  "variant": "flash crème",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 0.6,
+  "files": [
+    {
+      "path": "meg-anim-flash-reel.html",
+      "target": "compositions/meg-anim-flash-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

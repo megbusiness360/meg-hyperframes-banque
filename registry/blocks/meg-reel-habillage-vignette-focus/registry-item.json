@@ -1,0 +1,33 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-habillage-vignette-focus",
+  "type": "hyperframes:block",
+  "title": "Reel — habillage vignette de focus",
+  "description": "Habillage plein cadre 9:16 : vignette de focus par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "overlay",
+    "vignette-focus"
+  ],
+  "family": "reel-habillage",
+  "familyTitle": "Reels — habillages plein cadre",
+  "variant": "vignette de focus",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-habillage-vignette-focus.html",
+      "target": "compositions/meg-reel-habillage-vignette-focus.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

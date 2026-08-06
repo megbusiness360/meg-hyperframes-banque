@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition balayage — un voile crème traverse l'écran.
+     À poser À CHEVAL sur un cut : le voile incliné balaie de gauche à droite,
+     couvre tout l'écran à mi-course (c'est là que le cut se cache), puis
+     libère l'image suivante. Bord de fuite or. Commence et finit 100 %
+     transparent : rien à régler, juste caler le milieu du bloc sur le cut. -->
+<div data-hf-id="hf-twp0" id="transition-balayage-root" data-composition-id="transition-balayage" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+    <style>
+      #transition-balayage-root{position:relative;width:100%;height:100%;overflow:hidden}
+      /* Voile surdimensionné + skew : l'inclinaison doit couvrir les coins
+         pendant toute la traversée. Départ hors champ gauche, en px : GSAP
+         convertit un translateX(%) CSS en offset px permanent qui
+         s'additionnerait à un tween xPercent — on reste donc en px partout. */
+      #transition-balayage-root .voile{position:absolute;z-index:40;top:-8%;left:0;width:150%;height:116%;background:linear-gradient(168deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);transform:translateX(-2025px) skewX(-12deg)}
+      #transition-balayage-root .bord{position:absolute;top:0;right:-10px;width:34px;height:100%;background:#B9AA02;box-shadow:0 0 60px rgba(185,170,2,.55)}
+    </style>
+    <div data-hf-id="hf-twp1" class="voile" data-layout-allow-occlusion="" data-layout-allow-overflow=""><div data-hf-id="hf-twp2" class="bord"></div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const twpRoot=document.querySelector('#transition-balayage-root');
+      const twp=gsap.timeline({paused:true});
+      /* -2025 px (soit -125 % des 1620 px du voile) → hors champ gauche ;
+         +1539 px (95 %) → hors champ droit, marges de skew comprises. À t=0.5
+         le voile couvre exactement l'écran : caler le cut à cet instant. */
+      twp.fromTo(twpRoot.querySelector('.voile'),{x:-2025,skewX:-12},{x:1539,skewX:-12,duration:1,ease:'power2.inOut'},0);
+      window.__timelines['transition-balayage']=twp;
+    </script>
+  </div>
+</body>
+</html>

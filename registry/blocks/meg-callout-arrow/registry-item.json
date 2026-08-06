@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-callout-arrow",
+  "type": "hyperframes:block",
+  "title": "Étiquette-flèche",
+  "description": "Étiquette crème et flèche or qui se trace en courbe jusqu'au détail exact (cible réglable).",
+  "tags": [
+    "meg",
+    "habillage",
+    "callout",
+    "fleche",
+    "preuve"
+  ],
+  "family": "habillage",
+  "familyTitle": "Habillage",
+  "variant": "Étiquette-flèche",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-callout-arrow.html",
+      "target": "compositions/meg-callout-arrow.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

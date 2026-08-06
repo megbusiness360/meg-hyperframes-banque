@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Comparatif deux cartes — avant/après, avec/sans.
+     Deux cartes entrent chacune par son côté : à gauche la situation subie
+     (encre, ✗, éteinte), à droite la situation MEG (crème, ✓ or, vivante).
+     Le jeton VS scelle l'opposition au centre. Éditer les deux titres et les
+     deux listes ; garder le négatif à gauche, l'œil finit toujours à droite. -->
+<div data-hf-id="hf-cmp0" id="comparatif-cartes-root" data-composition-id="comparatif-cartes" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #comparatif-cartes-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #comparatif-cartes-root .standalone-stage{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:flex-end;justify-content:center;padding-bottom:220px;text-align:center;font-size:44px;font-weight:700;letter-spacing:-.02em}
+      #comparatif-cartes-root .scene{position:absolute;z-index:2;left:96px;top:150px;width:888px;display:flex;gap:28px}
+      #comparatif-cartes-root .carte{flex:1;min-width:0;box-sizing:border-box;padding:36px 34px 40px;border-radius:38px;opacity:0}
+      #comparatif-cartes-root .carte.sans{background:rgba(47,44,0,.88);color:#FFFCD6;box-shadow:0 30px 70px rgba(0,0,0,.36)}
+      #comparatif-cartes-root .carte.avec{background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.34)}
+      #comparatif-cartes-root .carte .entete{font-size:42px;line-height:1;font-weight:700;letter-spacing:-.025em}
+      #comparatif-cartes-root .carte.sans .entete{opacity:.72}
+      #comparatif-cartes-root .carte .point{margin-top:26px;display:flex;align-items:flex-start;gap:14px;font-size:32px;font-weight:600;letter-spacing:-.01em;line-height:1.12}
+      #comparatif-cartes-root .carte .signe{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;margin-top:-2px}
+      #comparatif-cartes-root .carte.sans .signe{background:rgba(255,252,214,.14);color:#FFFCD6;opacity:.75}
+      #comparatif-cartes-root .carte.sans .point{opacity:.62}
+      #comparatif-cartes-root .carte.avec .signe{background:#B9AA02;color:#2F2C00}
+      /* Le jeton chevauche les deux cartes : posé sur la scène, pas dans une
+         carte, pour survivre aux entrées latérales. */
+      #comparatif-cartes-root .jeton{position:absolute;z-index:3;left:50%;top:96px;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;background:#2F2C00;color:#FFFCD6;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:700;letter-spacing:-.02em;border:5px solid #B9AA02;box-shadow:0 16px 38px rgba(0,0,0,.4);opacity:0}
+      #comparatif-cartes-root .verdict{position:absolute;z-index:2;left:96px;width:888px;display:flex;justify-content:center}
+      #comparatif-cartes-root .verdict span{display:inline-flex;padding:14px 30px;border-radius:26px;background:#B9AA02;color:#2F2C00;font-size:36px;font-weight:700;letter-spacing:-.02em;box-shadow:0 14px 34px rgba(47,44,0,.30);opacity:0}
+    </style>
+    <div data-hf-id="hf-cmp1" class="standalone-stage" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-cmp2">DERRIÈRE LES CARTES</div>
+    <div data-hf-id="hf-cmp3" class="scene">
+      <div data-hf-id="hf-cmp4" class="carte sans">
+        <div data-hf-id="hf-cmp5" class="entete">Seul</div>
+        <div data-hf-id="hf-cmp6" class="point"><span data-hf-id="hf-cmp7" class="signe">✗</span><span data-hf-id="hf-cmp8">6 mois à déchiffrer le référentiel</span></div>
+        <div data-hf-id="hf-cmp9" class="point"><span data-hf-id="hf-cmpA" class="signe">✗</span><span data-hf-id="hf-cmpB">Des non-conformités à l'audit</span></div>
+      </div>
+      <div data-hf-id="hf-cmpC" class="carte avec">
+        <div data-hf-id="hf-cmpD" class="entete">Accompagné</div>
+        <div data-hf-id="hf-cmpE" class="point"><span data-hf-id="hf-cmpF" class="signe">✓</span><span data-hf-id="hf-cmpG">Un dossier prêt en 3 mois</span></div>
+        <div data-hf-id="hf-cmpH" class="point"><span data-hf-id="hf-cmpI" class="signe">✓</span><span data-hf-id="hf-cmpJ">Audit passé du premier coup</span></div>
+      </div>
+    </div>
+    <div data-hf-id="hf-cmpK" class="jeton">VS</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const cmpRoot=document.querySelector('#comparatif-cartes-root');
+      if(!document.querySelector('#meg-master-frame'))cmpRoot.querySelector('.standalone-stage').style.display='flex';
+      /* Le jeton se cale à la jointure verticale réelle des cartes. */
+      const cmpScene=cmpRoot.querySelector('.scene');
+      const cmpJeton=cmpRoot.querySelector('.jeton');
+      cmpJeton.style.top=(cmpScene.offsetTop+Math.round(cmpScene.offsetHeight/2)-46)+'px';
+      const cmp=gsap.timeline({paused:true});
+      cmp.fromTo(cmpRoot.querySelector('.carte.sans'),{x:-560,opacity:0},{x:0,opacity:1,duration:.55,ease:'power3.out'},.1)
+         .fromTo(cmpRoot.querySelector('.carte.avec'),{x:560,opacity:0},{x:0,opacity:1,duration:.55,ease:'power3.out'},.22)
+         .fromTo(cmpJeton,{scale:0,opacity:0},{scale:1,opacity:1,duration:.4,ease:'back.out(2)'},.72)
+         /* La carte « avec » respire une fois : l'œil doit finir sur elle. */
+         .fromTo(cmpRoot.querySelector('.carte.avec'),{scale:1},{scale:1.03,transformOrigin:'center',duration:.42,ease:'power1.inOut',yoyo:true,repeat:1},1.5);
+      window.__timelines['comparatif-cartes']=cmp;
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-accent-surligneur-yt",
+  "type": "hyperframes:block",
+  "title": "Accent surligneur — YouTube 16:9",
+  "description": "Trait de surligneur or semi-transparent qui balaie une ligne, comme au feutre. 3 s, repositionnable.",
+  "tags": [
+    "meg",
+    "youtube",
+    "accent",
+    "surligneur"
+  ],
+  "family": "anim-accent-yt",
+  "familyTitle": "Accents graphiques — YouTube 16:9",
+  "variant": "surligneur",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-anim-accent-surligneur-yt.html",
+      "target": "compositions/meg-anim-accent-surligneur-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

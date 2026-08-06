@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Habillage YouTube — bande de marque haute. Master plein cadre intact, l'habillage
+     se pose dessus et s'étire sur la durée voulue. -->
+<div data-hf-id="hf-1nee0" id="yt-habillage-header-marque-root" data-composition-id="yt-habillage-header-marque" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #yt-habillage-header-marque-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-habillage-header-marque-root .bande-h{position:absolute;z-index:3;left:0;top:0;width:100%;height:96px;background:#FFFCD6;display:flex;align-items:center;justify-content:space-between;padding:0 60px;color:#2F2C00;font-size:32px;font-weight:700;letter-spacing:.08em;opacity:0}
+#yt-habillage-header-marque-root .bande-h .url{color:#B9AA02}
+    </style>
+    <div data-hf-id="hf-1nee1" class="bande-h" data-layout-allow-occlusion=""><span data-hf-id="hf-1nee2">MEG BUSINESS 360</span><span data-hf-id="hf-1nee3" class="url">megbusiness360.com</span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#yt-habillage-header-marque-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.bande-h'),{y:-96,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.05);
+      window.__timelines['yt-habillage-header-marque']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-ecran-haut-45-incline",
+  "type": "hyperframes:block",
+  "title": "Reel — écran haut 45 % incliné",
+  "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en haut, visage master sur le reste.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "split",
+    "haut",
+    "incline"
+  ],
+  "family": "reel-split-solo",
+  "familyTitle": "Reels — splits visage + 1 écran",
+  "variant": "haut 45 % incliné",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-ecran-haut-45-incline.html",
+      "target": "compositions/meg-reel-ecran-haut-45-incline.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

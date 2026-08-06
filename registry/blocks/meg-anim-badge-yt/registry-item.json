@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-badge-yt",
+  "type": "hyperframes:block",
+  "title": "Badge à retenir — YouTube 16:9",
+  "description": "Badge or « À RETENIR » qui tombe en haut de l'écran. 4 s, texte à remplacer.",
+  "tags": [
+    "meg",
+    "youtube",
+    "habillage",
+    "badge"
+  ],
+  "family": "anim-texte-yt",
+  "familyTitle": "Habillages texte — YouTube 16:9",
+  "variant": "badge",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-anim-badge-yt.html",
+      "target": "compositions/meg-anim-badge-yt.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

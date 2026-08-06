@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-habillage-bandes-header-footer",
+  "type": "hyperframes:block",
+  "title": "Reel — habillage bandes haut et bas",
+  "description": "Habillage plein cadre 9:16 : bandes haut et bas par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "overlay",
+    "bandes-header-footer"
+  ],
+  "family": "reel-habillage",
+  "familyTitle": "Reels — habillages plein cadre",
+  "variant": "bandes haut et bas",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-habillage-bandes-header-footer.html",
+      "target": "compositions/meg-reel-habillage-bandes-header-footer.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

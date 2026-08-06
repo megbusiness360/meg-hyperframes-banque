@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel — démo dans un vrai cadre d'appareil (ordinateur portable).
+     Remplacer la zone hachurée par la capture d'écran ; le visage reste en
+     bande basse (master recadré par le bloc). -->
+<div data-hf-id="hf-stkb0" id="reel-appareil-ordinateur-root" data-composition-id="reel-appareil-ordinateur" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="0" data-face-y="1300" data-face-w="1080" data-face-h="620" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-appareil-ordinateur-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-appareil-ordinateur-root .ecran-pc{position:absolute;z-index:3;left:110px;top:190px;width:860px;height:600px;box-sizing:border-box;border:18px solid #2F2C00;border-radius:34px 34px 0 0;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);display:flex;align-items:center;justify-content:center;opacity:0}
+#reel-appareil-ordinateur-root .ecran-pc .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:32px;font-weight:700;letter-spacing:.05em}
+#reel-appareil-ordinateur-root .socle{position:absolute;z-index:3;left:60px;top:790px;width:960px;height:40px;border-radius:0 0 30px 30px;background:#2F2C00;opacity:0}
+#reel-appareil-ordinateur-root .couture{position:absolute;z-index:4;left:0;top:1294px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
+#reel-appareil-ordinateur-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1300px;width:1080px;height:620px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-stkb1" class="ecran-pc" data-layout-allow-occlusion=""><span data-hf-id="hf-stkb2" class="etiquette">CAPTURE BUREAU — REMPLACER</span></div>
+    <div data-hf-id="hf-stkb3" class="socle"></div>
+    <div data-hf-id="hf-stkb4" class="couture"></div>
+    <div data-hf-id="hf-stkb5" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-appareil-ordinateur-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:0,y:1300,width:1080,height:620,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo([root.querySelector('.ecran-pc'),root.querySelector('.socle')],{y:70,opacity:0},{y:0,opacity:1,duration:.55,ease:'power3.out',stagger:.08},.08)
+        .to([root.querySelector('.ecran-pc'),root.querySelector('.socle')],{opacity:0,y:-50,duration:.35,ease:'power2.in'},5.60);
+      window.__timelines['reel-appareil-ordinateur']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

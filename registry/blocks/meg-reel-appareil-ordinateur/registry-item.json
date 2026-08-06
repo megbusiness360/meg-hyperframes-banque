@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-appareil-ordinateur",
+  "type": "hyperframes:block",
+  "title": "Reel — appareil ordinateur portable",
+  "description": "Layout 9:16 : démo dans un cadre ordinateur portable + visage master en bande basse. Remplacer l'écran hachuré par la capture.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "appareil",
+    "demo",
+    "ordinateur"
+  ],
+  "family": "reel-appareil",
+  "familyTitle": "Reels — cadres d'appareils",
+  "variant": "ordinateur portable",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-appareil-ordinateur.html",
+      "target": "compositions/meg-reel-appareil-ordinateur.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

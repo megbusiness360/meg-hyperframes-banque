@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Habillage Reel — quatre coins or. Le master reste plein cadre, l'habillage
+     se pose dessus (piste 2) et s'étire sur la durée voulue. -->
+<div data-hf-id="hf-1c700" id="reel-habillage-coins-or-root" data-composition-id="reel-habillage-coins-or" data-start="0" data-duration="6" data-width="1080" data-height="1920">
+    <style>
+      #reel-habillage-coins-or-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #reel-habillage-coins-or-root .coin{position:absolute;z-index:3;width:110px;height:110px;opacity:0}
+#reel-habillage-coins-or-root .coin path{fill:none;stroke:#B9AA02;stroke-width:10;stroke-linecap:round}
+#reel-habillage-coins-or-root .coin.a{left:52px;top:52px}#reel-habillage-coins-or-root .coin.b{right:52px;top:52px}#reel-habillage-coins-or-root .coin.c{left:52px;bottom:52px}#reel-habillage-coins-or-root .coin.d{right:52px;bottom:52px}
+    </style>
+    <svg data-hf-id="hf-1c701" class="coin a" viewBox="0 0 60 60"><path data-hf-id="hf-1c702" d="M6 54V14a8 8 0 0 1 8-8h40"></path></svg><svg data-hf-id="hf-1c703" class="coin b" viewBox="0 0 60 60"><path data-hf-id="hf-1c704" d="M6 6h40a8 8 0 0 1 8 8v40"></path></svg><svg data-hf-id="hf-1c705" class="coin c" viewBox="0 0 60 60"><path data-hf-id="hf-1c706" d="M6 6v40a8 8 0 0 0 8 8h40"></path></svg><svg data-hf-id="hf-1c707" class="coin d" viewBox="0 0 60 60"><path data-hf-id="hf-1c708" d="M54 6v40a8 8 0 0 1-8 8H6"></path></svg>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-habillage-coins-or-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelectorAll('.coin'),{opacity:0,scale:.6},{opacity:1,scale:1,duration:.45,ease:'back.out(1.6)',stagger:.08},.05);
+      window.__timelines['reel-habillage-coins-or']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

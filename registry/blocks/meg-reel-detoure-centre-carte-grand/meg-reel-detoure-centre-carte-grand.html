@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel DÉTOURÉ (style fond vert) — silhouette centre, écran carte.
+     Le master brut est masqué : le visage vient d'un asset ALPHA (export
+     détouré) qu'on pose à la place de la silhouette hachurée. L'écran
+     carte passe DERRIÈRE le présentateur — le geste MrBeast/react.
+     Jamais de PIP coin : la silhouette est ancrée au bord bas, grande. -->
+<div data-hf-id="hf-10mp0" id="reel-detoure-centre-carte-grand-root" data-composition-id="reel-detoure-centre-carte-grand" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-mode="alpha">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-detoure-centre-carte-grand-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-detoure-centre-carte-grand-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
+#reel-detoure-centre-carte-grand-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
+#reel-detoure-centre-carte-grand-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
+#reel-detoure-centre-carte-grand-root .ecran .sous{font-size:29px;font-weight:600;opacity:.62;letter-spacing:-.01em}
+#reel-detoure-centre-carte-grand-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
+#reel-detoure-centre-carte-grand-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
+#reel-detoure-centre-carte-grand-root .ecran .url{flex:1;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden}
+
+#reel-detoure-centre-carte-grand-root .silhouette{position:absolute;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:30px;opacity:0}
+#reel-detoure-centre-carte-grand-root .silhouette svg{width:100%;height:auto;display:block}
+#reel-detoure-centre-carte-grand-root .silhouette .tag{margin-top:-8px;padding:11px 24px;border-radius:20px;background:#2F2C00;color:#FFFCD6;font-size:30px;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+    </style>
+    <div data-hf-id="hf-10mp1" class="ecran" style="left:46px;top:46px;width:988px;height:900px;" data-layout-allow-occlusion=""><span data-hf-id="hf-10mp2" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-10mp3" class="sous">capture, démo, document</span></div>
+    <div data-hf-id="hf-10mp4" class="silhouette" style="left:180px;top:920px;width:720px;height:1000px;" data-layout-allow-occlusion="">
+    <svg data-hf-id="hf-10mp5" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs data-hf-id="hf-10mp6"><pattern data-hf-id="hf-10mp7" id="hachure-sil" width="14" height="14" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><rect data-hf-id="hf-10mp8" width="14" height="14" fill="rgba(47,44,0,.10)"></rect><rect data-hf-id="hf-10mp9" width="7" height="14" fill="rgba(47,44,0,.20)"></rect></pattern></defs>
+      <path data-hf-id="hf-10mpa" d="M100 18a44 44 0 0 1 44 44v14a44 44 0 0 1-15 33c34 12 57 38 63 74l4 57H4l4-57c6-36 29-62 63-74a44 44 0 0 1-15-33v-14a44 44 0 0 1 44-44z" fill="url(#hachure-sil)" stroke="rgba(47,44,0,.55)" stroke-width="4" stroke-dasharray="14 10"></path>
+    </svg>
+    <span data-hf-id="hf-10mpb" class="tag">VISAGE DÉTOURÉ — REMPLACER (alpha)</span>
+  </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-detoure-centre-carte-grand-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Le visage de ce layout vient d'un asset ALPHA (fond vert détouré)
+           posé à la place de la silhouette : fondu sortant rapide du master
+           brut à l'entrée, fondu de retour en sortie. Le fromTo part de
+           l'état naturel (visible) : rien ne fuit hors de la fenêtre du bloc. */
+        tl.fromTo(master,{autoAlpha:1},{autoAlpha:0,duration:.16,ease:'power2.in'},0)
+          .to(master,{autoAlpha:1,duration:.3,ease:'power2.out'},5.68);
+      }
+      tl.fromTo(root.querySelectorAll('.ecran'),{y:-70,opacity:0,scale:.97},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out',stagger:.12},.06)
+        .to(root.querySelectorAll('.ecran'),{opacity:0,y:-44,duration:.35,ease:'power2.in'},5.60);
+      const cadre=root.querySelector('.face-cadre');
+      if(cadre)tl.fromTo(cadre,{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},.2)
+        .to(cadre,{opacity:0,duration:.3,ease:'power2.in'},5.62);
+      tl.fromTo(root.querySelector('.silhouette'),{y:90,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.18)
+        .to(root.querySelector('.silhouette'),{opacity:0,y:60,duration:.35,ease:'power2.in'},5.62);
+      window.__timelines['reel-detoure-centre-carte-grand']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

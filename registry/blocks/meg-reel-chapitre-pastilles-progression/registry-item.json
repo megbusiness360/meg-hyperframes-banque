@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-chapitre-pastilles-progression",
+  "type": "hyperframes:block",
+  "title": "Reel — chapitre pastilles de progression",
+  "description": "Carton de chapitre 9:16 : pastilles de progression, posé par-dessus le master intact. Textes à remplacer.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "chapitre",
+    "pastilles-progression"
+  ],
+  "family": "reel-chapitre",
+  "familyTitle": "Reels — cartons de chapitre",
+  "variant": "pastilles de progression",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-reel-chapitre-pastilles-progression.html",
+      "target": "compositions/meg-reel-chapitre-pastilles-progression.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

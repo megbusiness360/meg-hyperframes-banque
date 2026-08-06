@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Comparatif YouTube AVANT/APRÈS — deux colonnes. L'APRÈS porte le
+     cadre crème, l'AVANT reste mat. Remplacer les deux zones. -->
+<div data-hf-id="hf-1pb00" id="yt-avant-apres-colonnes-root" data-composition-id="yt-avant-apres-colonnes" data-start="0" data-duration="6" data-width="1920" data-height="1080" data-face-x="0" data-face-y="750" data-face-w="1920" data-face-h="330" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #yt-avant-apres-colonnes-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-avant-apres-colonnes-root .col{position:absolute;z-index:3;top:40px;width:909px;height:670px;box-sizing:border-box;border-radius:30px;display:flex;align-items:flex-start;justify-content:center;padding-top:50px;opacity:0}
+#yt-avant-apres-colonnes-root .col.avant{left:40px;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.16) 0 18px,rgba(47,44,0,.06) 18px 36px);border:5px dashed rgba(47,44,0,.4)}
+#yt-avant-apres-colonnes-root .col.apres{left:971px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);border:7px solid #fffcd6;box-shadow:0 30px 70px rgba(0,0,0,.25)}
+#yt-avant-apres-colonnes-root .col .tag{padding:12px 30px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:34px;font-weight:700;letter-spacing:.06em}
+#yt-avant-apres-colonnes-root .col.apres .tag{background:#B9AA02;color:#2F2C00}
+#yt-avant-apres-colonnes-root .couture{position:absolute;z-index:4;left:0;top:744px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
+#yt-avant-apres-colonnes-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:750px;width:1920px;height:330px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-1pb01" class="col avant" data-layout-allow-occlusion=""><span data-hf-id="hf-1pb02" class="tag">AVANT</span></div>
+    <div data-hf-id="hf-1pb03" class="col apres" data-layout-allow-occlusion=""><span data-hf-id="hf-1pb04" class="tag">APRÈS</span></div>
+    <div data-hf-id="hf-1pb05" class="couture"></div>
+    <div data-hf-id="hf-1pb06" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#yt-avant-apres-colonnes-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+          {x:0,y:750,width:1920,height:330,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelector('.col.avant'),{x:-70,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},.08)
+        .fromTo(root.querySelector('.col.apres'),{x:70,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},.22)
+        .to(root.querySelectorAll('.col'),{opacity:0,duration:.35,ease:'power2.in'},5.60);
+      window.__timelines['yt-avant-apres-colonnes']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

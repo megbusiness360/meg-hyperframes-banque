@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-trio-colonne",
+  "type": "hyperframes:block",
+  "title": "Reel — trio visage pleine hauteur + colonne de 3 écrans",
+  "description": "Split 9:16 à trois écrans : visage pleine hauteur + colonne de 3 écrans, visage master recadré. Trois zones à remplacer indépendamment.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "trio",
+    "colonne"
+  ],
+  "family": "reel-split-trio",
+  "familyTitle": "Reels — splits visage + 3 écrans",
+  "variant": "visage pleine hauteur + colonne de 3 écrans",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-trio-colonne.html",
+      "target": "compositions/meg-reel-trio-colonne.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

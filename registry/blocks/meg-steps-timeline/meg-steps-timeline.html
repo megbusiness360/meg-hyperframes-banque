@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Frise d'étapes — un déroulé qui avance.
+     Trois étapes numérotées le long d'un fil vertical : le fil se trace, puis
+     chaque nœud s'allume en or quand la voix y arrive. C'est le bloc des
+     process (« d'abord, ensuite, enfin ») — pas une liste de points, un ordre.
+     Remplacer le titre, les numéros restent 1/2/3, éditer chaque intitulé. -->
+<div data-hf-id="hf-etf0" id="etapes-frise-root" data-composition-id="etapes-frise" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #etapes-frise-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #etapes-frise-root .standalone-stage{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:flex-end;justify-content:center;padding-bottom:220px;text-align:center;font-size:44px;font-weight:700;letter-spacing:-.02em}
+      #etapes-frise-root .carte{position:absolute;z-index:2;left:96px;top:150px;width:888px;box-sizing:border-box;padding:40px 46px 46px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.34);opacity:0}
+      #etapes-frise-root .titre{font-size:56px;line-height:1;font-weight:700;letter-spacing:-.03em;word-spacing:.04em}
+      #etapes-frise-root .frise{position:relative;margin-top:34px;padding-left:96px}
+      /* Le fil passe au centre des nœuds (72 px / 2 = 36) et se trace du haut
+         vers le bas : transform-origin top, jamais un height animé. */
+      /* Pas de transform en CSS : GSAP possède tout l'état transform, l'état
+         initial scaleY(0) est posé par le fromTo de la timeline. */
+      #etapes-frise-root .fil{position:absolute;left:34px;top:12px;bottom:12px;width:6px;border-radius:3px;background:rgba(47,44,0,.22);transform-origin:top}
+      #etapes-frise-root .etape{position:relative;display:flex;align-items:center;min-height:72px}
+      #etapes-frise-root .etape+.etape{margin-top:26px}
+      #etapes-frise-root .noeud{position:absolute;left:-96px;top:50%;width:72px;height:72px;margin-top:-36px;border-radius:50%;background:#2F2C00;color:#FFFCD6;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700}
+      /* L'allumage or est un disque superposé en scale : le numéro repasse à
+         l'encre dessus par simple contraste. */
+      #etapes-frise-root .noeud .allume{position:absolute;inset:0;border-radius:50%;background:#B9AA02;transform:scale(0)}
+      #etapes-frise-root .noeud .numero{position:relative;z-index:1}
+      #etapes-frise-root .noeud.est-allume .numero{color:#2F2C00}
+      #etapes-frise-root .intitule{font-size:40px;font-weight:600;letter-spacing:-.015em;line-height:1.08;opacity:.42}
+    </style>
+    <div data-hf-id="hf-etf1" class="standalone-stage" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-etf2">DERRIÈRE LA CARTE</div>
+    <div data-hf-id="hf-etf3" class="carte">
+      <div data-hf-id="hf-etf4" class="titre">La certification, dans l'ordre</div>
+      <div data-hf-id="hf-etf5" class="frise">
+        <div data-hf-id="hf-etf6" class="fil"></div>
+        <div data-hf-id="hf-etf7" class="etape"><span data-hf-id="hf-etf8" class="noeud"><span data-hf-id="hf-etf9" class="allume"></span><span data-hf-id="hf-etfA" class="numero">1</span></span><span data-hf-id="hf-etfB" class="intitule">Déclarer son activité</span></div>
+        <div data-hf-id="hf-etfC" class="etape"><span data-hf-id="hf-etfD" class="noeud"><span data-hf-id="hf-etfE" class="allume"></span><span data-hf-id="hf-etfF" class="numero">2</span></span><span data-hf-id="hf-etfG" class="intitule">Monter le dossier de preuves</span></div>
+        <div data-hf-id="hf-etfH" class="etape"><span data-hf-id="hf-etfI" class="noeud"><span data-hf-id="hf-etfJ" class="allume"></span><span data-hf-id="hf-etfK" class="numero">3</span></span><span data-hf-id="hf-etfL" class="intitule">Passer l'audit initial</span></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const etfRoot=document.querySelector('#etapes-frise-root');
+      if(!document.querySelector('#meg-master-frame'))etfRoot.querySelector('.standalone-stage').style.display='flex';
+      const etf=gsap.timeline({paused:true});
+      etf.fromTo(etfRoot.querySelector('.carte'),{y:-92,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.1)
+         .fromTo(etfRoot.querySelector('.fil'),{scaleY:0},{scaleY:1,duration:1.9,ease:'power1.inOut'},.66);
+      etfRoot.querySelectorAll('.etape').forEach((etape,i)=>{
+        /* Chaque nœud s'allume quand le fil le rejoint : les départs suivent le
+           tracé (≈ un tiers du fil par étape). */
+        const depart=.72+i*.68;
+        etf.to(etape.querySelector('.allume'),{scale:1,duration:.3,ease:'back.out(1.7)'},depart)
+           .add(()=>etape.querySelector('.noeud').classList.add('est-allume'),depart+.1)
+           .to(etape.querySelector('.intitule'),{opacity:1,duration:.32,ease:'power2.out'},depart+.08);
+      });
+      etf.to(etfRoot.querySelector('.carte'),{y:-12,duration:1.8,ease:'none'},2.4);
+      window.__timelines['etapes-frise']=etf;
+    </script>
+  </div>
+</body>
+</html>

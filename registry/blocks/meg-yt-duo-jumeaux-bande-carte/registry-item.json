@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-duo-jumeaux-bande-carte",
+  "type": "hyperframes:block",
+  "title": "YouTube — duo 2 écrans jumeaux + bande visage (carte)",
+  "description": "Split 16:9 à deux écrans : 2 écrans jumeaux + bande visage, visage master recadré. Style carte.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "duo",
+    "jumeaux-bande",
+    "carte"
+  ],
+  "family": "yt-split-duo",
+  "familyTitle": "YouTube — splits visage + 2 écrans",
+  "variant": "2 écrans jumeaux + bande visage carte",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-duo-jumeaux-bande-carte.html",
+      "target": "compositions/meg-yt-duo-jumeaux-bande-carte.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

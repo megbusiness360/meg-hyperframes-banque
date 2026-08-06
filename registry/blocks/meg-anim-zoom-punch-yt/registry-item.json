@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-zoom-punch-yt",
+  "type": "hyperframes:block",
+  "title": "Effet zoom punch — YouTube 16:9",
+  "description": "Coup de zoom sec sur le master (1 → 1.07 → 1) pour appuyer un mot fort. 1 s, se pose tel quel.",
+  "tags": [
+    "meg",
+    "youtube",
+    "effet",
+    "zoom"
+  ],
+  "family": "anim-camera-yt",
+  "familyTitle": "Effets caméra — YouTube 16:9",
+  "variant": "zoom punch",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-anim-zoom-punch-yt.html",
+      "target": "compositions/meg-anim-zoom-punch-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition glissement — le voile monte du bas et sort par le haut,
+     bord de fuite or. Couvre tout à t=0.5 : caler le cut à cet instant.
+     Aucun transform CSS : l'état hors champ est posé par le from du fromTo,
+     en px (piège GSAP gravé). -->
+<div data-hf-id="hf-1lnn0" id="anim-glisse-yt-root" data-composition-id="anim-glisse-yt" data-start="0" data-duration="1" data-width="1920" data-height="1080">
+    <style>
+      #anim-glisse-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-glisse-yt-root .voile-v{position:absolute;z-index:40;left:0;top:0;width:100%;height:112%;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
+#anim-glisse-yt-root .voile-v .bord-or{position:absolute;left:0;top:-8px;width:100%;height:26px;background:#B9AA02;box-shadow:0 0 54px rgba(185,170,2,.55)}
+    </style>
+    <div data-hf-id="hf-1lnn1" class="voile-v" data-layout-allow-occlusion="" data-layout-allow-overflow=""><div data-hf-id="hf-1lnn2" class="bord-or"></div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-glisse-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.voile-v'),{y:1231},{y:0,duration:.5,ease:'power2.in'},0)
+        .to(root.querySelector('.voile-v'),{y:-1253,duration:.5,ease:'power2.out'},.5);
+      window.__timelines['anim-glisse-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

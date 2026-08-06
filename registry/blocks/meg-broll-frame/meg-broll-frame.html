@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Cadre B-roll — un emplacement plein écran À PLANIFIER.
+     Ce bloc réserve la place d'un plan de coupe RÉEL (écran filmé, document,
+     geste) : fond crème plein cadre en Ken Burns lent + carte hublot hachurée
+     qui dit quoi tourner. Jamais publié tel quel : la règle MEG interdit le
+     B-roll IA et tout B-roll sans accord explicite — ce cadre est le rappel
+     visuel de ce gate. Éditer la consigne de tournage dans la carte. -->
+<div data-hf-id="hf-brf0" id="cadre-broll-root" data-composition-id="cadre-broll" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #cadre-broll-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      /* Plein cadre assumé : ce bloc REMPLACE l'image du master le temps du
+         plan de coupe, d'où l'occlusion autorisée. */
+      #cadre-broll-root .fond{position:absolute;inset:0;z-index:1;background:linear-gradient(168deg,#FFFEEC 0%,#FFFCD6 46%,#F4E9A8 100%)}
+      #cadre-broll-root .hublot{position:absolute;z-index:2;left:96px;top:420px;width:888px;height:640px;border-radius:44px;border:5px dashed rgba(47,44,0,.42);background:repeating-linear-gradient(-45deg,rgba(47,44,0,.05) 0 26px,rgba(47,44,0,0) 26px 52px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;color:#2F2C00;opacity:0}
+      #cadre-broll-root .badge{display:inline-flex;padding:14px 30px;border-radius:26px;background:#2F2C00;color:#FFFCD6;font-size:38px;font-weight:700;letter-spacing:.04em}
+      #cadre-broll-root .consigne{max-width:700px;text-align:center;font-size:40px;font-weight:600;letter-spacing:-.015em;line-height:1.14}
+      /* Pas de transform en CSS : GSAP possède tout l'état transform, l'état
+         initial scaleX(0) est posé par le fromTo de la timeline. */
+      #cadre-broll-root .filet{width:190px;height:8px;border-radius:4px;background:#B9AA02;transform-origin:center}
+    </style>
+    <div data-hf-id="hf-brf1" class="fond" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-brf2" class="hublot" data-layout-allow-occlusion="">
+      <span data-hf-id="hf-brf3" class="badge">B-ROLL À PLANIFIER</span>
+      <span data-hf-id="hf-brf4" class="consigne">Filmer l'écran EDOF pendant la saisie du dossier</span>
+      <span data-hf-id="hf-brf5" class="filet"></span>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const brfRoot=document.querySelector('#cadre-broll-root');
+      const brf=gsap.timeline({paused:true});
+      /* Ken Burns lent sur le fond : le futur plan de coupe hérite du même
+         mouvement, l'emplacement respire déjà comme la vidéo finale. */
+      brf.fromTo(brfRoot.querySelector('.fond'),{scale:1},{scale:1.04,transformOrigin:'50% 42%',duration:5,ease:'none'},0)
+         .fromTo(brfRoot.querySelector('.hublot'),{y:34,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.15)
+         .fromTo(brfRoot.querySelector('.filet'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.6);
+      window.__timelines['cadre-broll']=brf;
+    </script>
+  </div>
+</body>
+</html>

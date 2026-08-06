@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel AVANT/APRÈS — rideau coulissant. Les deux zones hachurées se
+     remplacent par les captures ; le résultat (APRÈS) porte toujours le
+     cadre crème, l'état de départ reste mat. -->
+<div data-hf-id="hf-10kn0" id="reel-avant-apres-rideau-root" data-composition-id="reel-avant-apres-rideau" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="0" data-face-y="1420" data-face-w="1080" data-face-h="500" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-avant-apres-rideau-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-avant-apres-rideau-root .scene-av{position:absolute;z-index:3;left:0;top:0;width:1080px;height:1414px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);overflow:hidden}
+#reel-avant-apres-rideau-root .scene-av .tag{position:absolute;right:60px;top:70px;padding:12px 30px;border-radius:999px;background:#B9AA02;color:#2F2C00;font-size:36px;font-weight:700;letter-spacing:.06em}
+#reel-avant-apres-rideau-root .volet-avant{position:absolute;left:0;top:0;width:78%;height:100%;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.16) 0 18px,rgba(47,44,0,.06) 18px 36px);overflow:hidden}
+#reel-avant-apres-rideau-root .volet-avant .tag2{position:absolute;left:60px;top:70px;padding:12px 30px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:36px;font-weight:700;letter-spacing:.06em}
+#reel-avant-apres-rideau-root .poignee{position:absolute;z-index:4;top:0;left:78%;width:10px;height:1414px;background:#B9AA02;box-shadow:0 0 40px rgba(185,170,2,.6)}
+#reel-avant-apres-rideau-root .couture{position:absolute;z-index:4;left:0;top:1414px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
+#reel-avant-apres-rideau-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1420px;width:1080px;height:500px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-10kn1" class="scene-av" data-layout-allow-occlusion=""><span data-hf-id="hf-10kn2" class="tag">APRÈS — REMPLACER</span><div data-hf-id="hf-10kn3" class="volet-avant"><span data-hf-id="hf-10kn4" class="tag2">AVANT — REMPLACER</span></div></div>
+    <div data-hf-id="hf-10kn5" class="poignee"></div>
+    <div data-hf-id="hf-10kn6" class="couture"></div>
+    <div data-hf-id="hf-10kn7" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-avant-apres-rideau-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:0,y:1420,width:1080,height:500,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      /* Le rideau AVANT se retire : width animé en px (jamais un transform CSS). */
+      tl.fromTo(root.querySelector('.volet-avant'),{width:842},{width:346,duration:1.4,ease:'power2.inOut'},.7)
+        .fromTo(root.querySelector('.poignee'),{x:0},{x:-496,duration:1.4,ease:'power2.inOut'},.7);
+      window.__timelines['reel-avant-apres-rideau']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

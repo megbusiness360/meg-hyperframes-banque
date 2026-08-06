@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-secousse-yt",
+  "type": "hyperframes:block",
+  "title": "Effet secousse — YouTube 16:9",
+  "description": "Secousse horizontale brève du master (±16 px) pour un mot choc ou une rupture. 0,8 s.",
+  "tags": [
+    "meg",
+    "youtube",
+    "effet",
+    "secousse"
+  ],
+  "family": "anim-camera-yt",
+  "familyTitle": "Effets caméra — YouTube 16:9",
+  "variant": "secousse",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 0.8,
+  "files": [
+    {
+      "path": "meg-anim-secousse-yt.html",
+      "target": "compositions/meg-anim-secousse-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

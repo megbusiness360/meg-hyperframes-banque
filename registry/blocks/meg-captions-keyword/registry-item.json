@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-captions-keyword",
+  "type": "hyperframes:block",
+  "title": "Sous-titres — mot-clé",
+  "description": "Gélule basse dont le mot balisé <em> passe en jaune clair et pop au moment exact où il est prononcé.",
+  "tags": [
+    "meg",
+    "captions",
+    "sous-titres",
+    "mot-cle",
+    "pop"
+  ],
+  "family": "captions",
+  "familyTitle": "Sous-titres",
+  "variant": "Mot-clé",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "meg-captions-keyword.html",
+      "target": "compositions/meg-captions-keyword.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

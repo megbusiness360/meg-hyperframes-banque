@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-intro-vs-teaser",
+  "type": "hyperframes:block",
+  "title": "Reel — intro teaser AVANT / APRÈS",
+  "description": "Intro 9:16 : teaser AVANT / APRÈS plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "intro",
+    "hook",
+    "vs-teaser"
+  ],
+  "family": "reel-intro",
+  "familyTitle": "Reels — intros & hooks",
+  "variant": "teaser AVANT / APRÈS",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-reel-intro-vs-teaser.html",
+      "target": "compositions/meg-reel-intro-vs-teaser.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

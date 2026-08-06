@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-bande-bas-33",
+  "type": "hyperframes:block",
+  "title": "Reel — écran dominant, bande visage bas 33 %",
+  "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (33 %) en bas. Jamais de PIP coin.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "bande",
+    "bas"
+  ],
+  "family": "reel-bande",
+  "familyTitle": "Reels — écran dominant + bande visage",
+  "variant": "bas 33 %",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-bande-bas-33.html",
+      "target": "compositions/meg-reel-bande-bas-33.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

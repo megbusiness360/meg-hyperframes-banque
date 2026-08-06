@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Sous-titres — mot-clé qui pop.
+     Même gélule et même ancre basse que le sous-titre global, mais LE mot qui
+     compte est balisé <em> par le montage : il passe en jaune clair et pop d'un
+     léger scale AU MOMENT EXACT où il est prononcé (le montage cale
+     data-pop-at, en secondes dans le bloc). Un seul mot marqué par phrase :
+     deux mots qui poppent, c'est zéro mot mis en avant. -->
+<div data-hf-id="hf-kwd0" id="sous-titres-mot-cle" data-composition-id="sous-titres-mot-cle" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+  <style>
+    @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+    #sous-titres-mot-cle{position:relative;width:1080px;height:1920px;font-family:'Clash Grotesk MEG',sans-serif}
+    #sous-titres-mot-cle .ancre-sous-titre{position:absolute;z-index:10;left:0;right:0;bottom:130px;display:flex;justify-content:center}
+    /* inline-block et PAS inline-flex : en flex, les nœuds texte deviennent
+       des items anonymes et les espaces autour du <em> sont supprimés
+       (« auditgratuitde »). */
+    #sous-titres-mot-cle .caption{display:inline-block;width:fit-content;max-width:940px;padding:14px 28px;border-radius:28px;background:rgba(47,44,0,.86);color:#FFFCD6;font-size:58px;font-weight:700;line-height:1;letter-spacing:-.028em;word-spacing:.04em;text-align:center;white-space:nowrap;text-shadow:0 3px 0 #2F2C00,0 0 16px rgba(47,44,0,.7)}
+    /* Le mot-clé n'est pas en italique : <em> ne porte que le marquage. Il vit
+       dans son propre inline-block pour pouvoir scaler sans bouger la ligne. */
+    #sous-titres-mot-cle .caption em{font-style:normal;display:inline-block;color:inherit}
+  </style>
+  <div data-hf-id="hf-kwd1" class="ancre-sous-titre"><div data-hf-id="hf-kwd2" class="caption" data-layout-allow-occlusion="" data-pop-at="0.9">un audit <em data-hf-id="hf-kwd3">gratuit</em> de votre dossier</div></div>
+
+  <script>
+    window.__timelines=window.__timelines||{};
+    const capKwd=document.querySelector('#sous-titres-mot-cle .caption');
+    capKwd.firstChild&&(capKwd.firstChild.textContent=capKwd.firstChild.textContent.replace(/^\s*\p{Ll}/u,c=>c.toUpperCase()));
+    const fitKwd=window.__hyperframes?.fitTextFontSize?.(capKwd.textContent.trim(),{maxWidth:884,baseFontSize:58,minFontSize:38,fontFamily:'Clash Grotesk MEG',fontWeight:700});
+    if(fitKwd?.fontSize)capKwd.style.fontSize=`${fitKwd.fontSize}px`;
+    const kwd=gsap.timeline({paused:true});
+    kwd.from('#sous-titres-mot-cle .caption',{opacity:0,y:24,duration:.3,ease:'power2.out'},.1);
+    const motCle=capKwd.querySelector('em');
+    if(motCle){
+      const popAt=Math.max(.35,parseFloat(capKwd.getAttribute('data-pop-at'))||.9);
+      /* Pop court et net : le mot passe à l'or MEG et reste marqué. Un retour
+         à la couleur de base annulerait la mise en avant ; le jaune pâle
+         #FFF3AE est écarté — indiscernable du crème sur la gélule sombre. */
+      kwd.to(motCle,{color:'#B9AA02',scale:1.16,duration:.14,ease:'power2.out'},popAt)
+         .to(motCle,{scale:1,duration:.18,ease:'power2.inOut'},popAt+.14);
+    }
+    window.__timelines['sous-titres-mot-cle']=kwd;
+  </script>
+ </div>
+</body>
+</html>

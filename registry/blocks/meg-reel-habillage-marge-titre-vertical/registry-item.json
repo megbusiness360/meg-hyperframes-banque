@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-habillage-marge-titre-vertical",
+  "type": "hyperframes:block",
+  "title": "Reel — habillage marge latérale + titre vertical",
+  "description": "Habillage plein cadre 9:16 : marge latérale + titre vertical par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "overlay",
+    "marge-titre-vertical"
+  ],
+  "family": "reel-habillage",
+  "familyTitle": "Reels — habillages plein cadre",
+  "variant": "marge latérale + titre vertical",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-habillage-marge-titre-vertical.html",
+      "target": "compositions/meg-reel-habillage-marge-titre-vertical.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

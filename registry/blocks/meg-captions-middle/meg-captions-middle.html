@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Sous-titres au milieu — pour les splits écran + visage.
+     Quand une preuve occupe le haut du cadre, un sous-titre en bas quitte le
+     regard : l'œil fait l'aller-retour preuve → bas d'écran et décroche. Ici la
+     gélule se pose SUR la couture entre les deux zones (style clip de podcast) :
+     on lit sans jamais quitter ni la preuve ni le visage.
+     data-ancre sur la gélule : "40" = couture des splits 40/60 (défaut),
+     "50" = couture des splits 50/50, "milieu" = centre exact du cadre. -->
+<div data-hf-id="hf-stm0" id="sous-titres-milieu" data-composition-id="sous-titres-milieu" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+  <style>
+    @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+    #sous-titres-milieu{position:relative;width:1080px;height:1920px;font-family:'Clash Grotesk MEG',sans-serif}
+    #sous-titres-milieu .ancre-sous-titre{position:absolute;z-index:10;left:0;right:0;display:flex;justify-content:center;transform:translateY(-50%)}
+    #sous-titres-milieu .ancre-sous-titre[data-ancre="40"]{top:773px}
+    #sous-titres-milieu .ancre-sous-titre[data-ancre="50"]{top:960px}
+    #sous-titres-milieu .ancre-sous-titre[data-ancre="milieu"]{top:940px}
+    /* Même gélule que le sous-titre global : une seule voix de captions. */
+    #sous-titres-milieu .caption{display:inline-flex;width:fit-content;max-width:940px;padding:14px 28px;border-radius:28px;background:rgba(47,44,0,.86);color:#FFFCD6;font-size:58px;font-weight:700;line-height:1;letter-spacing:-.028em;word-spacing:.04em;text-align:center;white-space:nowrap;text-shadow:0 3px 0 #2F2C00,0 0 16px rgba(47,44,0,.7)}
+  </style>
+  <div data-hf-id="hf-stm1" class="ancre-sous-titre" data-ancre="40"><div data-hf-id="hf-stm2" class="caption" data-layout-allow-occlusion="">un dossier complet</div></div>
+
+  <script>
+    window.__timelines=window.__timelines||{};
+    const capMid=document.querySelector('#sous-titres-milieu .caption');
+    /* Capitale initiale : même règle que le sous-titre global — la transcription
+       sort tout en minuscules, la suite de la phrase reste intacte. */
+    capMid.textContent=capMid.textContent.trim().replace(/^\p{Ll}/u,c=>c.toUpperCase());
+    const fitMid=window.__hyperframes?.fitTextFontSize?.(capMid.textContent.trim(),{maxWidth:884,baseFontSize:58,minFontSize:38,fontFamily:'Clash Grotesk MEG',fontWeight:700});
+    if(fitMid?.fontSize)capMid.style.fontSize=`${fitMid.fontSize}px`;
+    const stm=gsap.timeline({paused:true});
+    stm.from('#sous-titres-milieu .caption',{opacity:0,y:24,duration:.3,ease:'power2.out'},.1);
+    window.__timelines['sous-titres-milieu']=stm;
+  </script>
+ </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition volets — deux panneaux encre se ferment puis s'ouvrent.
+     À poser À CHEVAL sur un cut : les volets claquent (fermés à 0.4-0.5 s,
+     c'est là que le cut se cache) puis se rouvrent sur le plan suivant.
+     Filets or sur les bords intérieurs : la jointure se voit se fermer.
+     Plus solennel que le balayage — le garder pour les changements de
+     chapitre, pas pour les micro-cuts. Rien à régler. -->
+<div data-hf-id="hf-tvl0" id="transition-volets-root" data-composition-id="transition-volets" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+    <style>
+      #transition-volets-root{position:relative;width:100%;height:100%;overflow:hidden}
+      /* 52 % de large chacun : les volets se chevauchent de 2 % fermés,
+         aucune couture de sous-pixel au centre. Aucun transform en CSS :
+         GSAP possède tout l'état transform (un translateX CSS deviendrait un
+         offset px permanent qui s'additionnerait aux tweens) — l'état initial
+         hors champ est posé par gsap.set au chargement. */
+      #transition-volets-root .volet{position:absolute;z-index:40;top:0;width:52%;height:100%;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%)}
+      #transition-volets-root .volet.gauche{left:0}
+      #transition-volets-root .volet.droit{right:0}
+      #transition-volets-root .volet .filet{position:absolute;top:0;width:10px;height:100%;background:#B9AA02;box-shadow:0 0 44px rgba(185,170,2,.6)}
+      #transition-volets-root .volet.gauche .filet{right:0}
+      #transition-volets-root .volet.droit .filet{left:0}
+    </style>
+    <div data-hf-id="hf-tvl1" class="volet gauche" data-layout-allow-occlusion="" data-layout-allow-overflow=""><div data-hf-id="hf-tvl2" class="filet"></div></div>
+    <div data-hf-id="hf-tvl3" class="volet droit" data-layout-allow-occlusion="" data-layout-allow-overflow=""><div data-hf-id="hf-tvl4" class="filet"></div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const tvlRoot=document.querySelector('#transition-volets-root');
+      const tvlGauche=tvlRoot.querySelector('.volet.gauche');
+      const tvlDroit=tvlRoot.querySelector('.volet.droit');
+      const tvl=gsap.timeline({paused:true});
+      /* Hors champ dès le chargement, avant le premier rendu de la timeline :
+         ±590 px = un volet de 561,6 px entièrement caché. */
+      gsap.set([tvlGauche,tvlDroit],{x:(i)=>i===0?-590:590});
+      /* Fermeture sèche (power3.in : ça claque), courte tenue fermée pour
+         cacher le cut, réouverture plus douce sur le plan suivant. */
+      tvl.fromTo(tvlGauche,{x:-590},{x:0,duration:.4,ease:'power3.in'},0)
+         .fromTo(tvlDroit,{x:590},{x:0,duration:.4,ease:'power3.in'},0)
+         .to(tvlGauche,{x:-590,duration:.4,ease:'power3.out'},.5)
+         .to(tvlDroit,{x:590,duration:.4,ease:'power3.out'},.5);
+      window.__timelines['transition-volets']=tvl;
+    </script>
+  </div>
+</body>
+</html>

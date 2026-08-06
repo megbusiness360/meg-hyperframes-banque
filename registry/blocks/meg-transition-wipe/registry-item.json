@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-transition-wipe",
+  "type": "hyperframes:block",
+  "title": "Transition balayage",
+  "description": "Voile crème incliné qui balaie l'écran de gauche à droite, bord de fuite or — le cut se cache à mi-course.",
+  "tags": [
+    "meg",
+    "transition",
+    "balayage",
+    "wipe"
+  ],
+  "family": "transition",
+  "familyTitle": "Transitions",
+  "variant": "Balayage",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-transition-wipe.html",
+      "target": "compositions/meg-transition-wipe.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

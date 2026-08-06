@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-ecran-gauche-62-incline",
+  "type": "hyperframes:block",
+  "title": "YouTube — écran gauche 62 % incliné",
+  "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à gauche, visage master sur le reste.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "split",
+    "gauche",
+    "incline"
+  ],
+  "family": "yt-split-solo",
+  "familyTitle": "YouTube — splits visage + 1 écran",
+  "variant": "gauche 62 % incliné",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-ecran-gauche-62-incline.html",
+      "target": "compositions/meg-yt-ecran-gauche-62-incline.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

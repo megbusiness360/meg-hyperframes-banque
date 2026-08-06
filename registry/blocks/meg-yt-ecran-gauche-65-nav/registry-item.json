@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-ecran-gauche-65-nav",
+  "type": "hyperframes:block",
+  "title": "YouTube — écran gauche 65 % (fenêtre navigateur)",
+  "description": "Split 16:9 : écran fenêtre navigateur à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "split",
+    "gauche",
+    "nav"
+  ],
+  "family": "yt-split-solo",
+  "familyTitle": "YouTube — splits visage + 1 écran",
+  "variant": "gauche 65 % fenêtre navigateur",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-ecran-gauche-65-nav.html",
+      "target": "compositions/meg-yt-ecran-gauche-65-nav.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

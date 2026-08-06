@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-trio-colonne-droite",
+  "type": "hyperframes:block",
+  "title": "YouTube — trio colonne droite",
+  "description": "Split 16:9 à trois écrans empilés à droite, visage master pleine hauteur à gauche.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "trio"
+  ],
+  "family": "yt-split-trio",
+  "familyTitle": "YouTube — splits visage + 3 écrans",
+  "variant": "colonne droite",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-trio-colonne-droite.html",
+      "target": "compositions/meg-yt-trio-colonne-droite.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

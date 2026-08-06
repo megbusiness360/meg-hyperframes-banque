@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Accent flèche — une flèche or se trace et pointe. Déplacer le bloc
+     .accent-fleche (et sa rotation gsap.set) vers la cible. -->
+<div data-hf-id="hf-1t3s0" id="anim-accent-fleche-yt-root" data-composition-id="anim-accent-fleche-yt" data-start="0" data-duration="3" data-width="1920" data-height="1080">
+    <style>
+      #anim-accent-fleche-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-accent-fleche-yt-root .accent-fleche{position:absolute;z-index:30;left:1180px;top:560px;width:420px;height:240px;pointer-events:none}
+#anim-accent-fleche-yt-root .accent-fleche svg{width:100%;height:100%;display:block;overflow:visible}
+#anim-accent-fleche-yt-root .accent-fleche path{fill:none;stroke:#B9AA02;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:560;stroke-dashoffset:560;filter:drop-shadow(0 4px 18px rgba(185,170,2,.5))}
+    </style>
+    <div data-hf-id="hf-1t3s1" class="accent-fleche" data-layout-allow-occlusion=""><svg data-hf-id="hf-1t3s2" viewBox="0 0 420 240" aria-hidden="true"><path data-hf-id="hf-1t3s3" d="M18 40 C150 30 300 70 380 178 M380 178l-16-84 M380 178l-86-16"></path></svg></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-accent-fleche-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      gsap.set(root.querySelector('.accent-fleche'),{rotation:-35});
+      tl.to(root.querySelector('.accent-fleche path'),{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},.15)
+        .to(root.querySelector('.accent-fleche'),{opacity:0,duration:.3,ease:'power2.in'},2.6);
+      window.__timelines['anim-accent-fleche-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition trait — un éclair or traverse l'écran.
+     La ponctuation la plus légère de la banque : un trait or incliné file de
+     gauche à droite en 1 s. Il ne couvre PAS l'écran — il accompagne un
+     jump-cut ou souligne un enchaînement rapide, là où volets et balayage
+     seraient trop lourds. Rien à régler. -->
+<div data-hf-id="hf-ttr0" id="transition-trait-root" data-composition-id="transition-trait" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+    <style>
+      #transition-trait-root{position:relative;width:100%;height:100%;overflow:hidden}
+      /* Surhauteur + rotation : le trait traverse les coins sans laisser de
+         vide en haut ni en bas. Départ hors champ gauche. */
+      #transition-trait-root .trait{position:absolute;z-index:40;top:-12%;left:0;width:140px;height:124%;background:linear-gradient(90deg,rgba(185,170,2,0) 0%,#B9AA02 34%,#FFF3AE 52%,#B9AA02 66%,rgba(185,170,2,0) 100%);box-shadow:0 0 80px rgba(185,170,2,.5);transform:translateX(-320px) rotate(-8deg)}
+    </style>
+    <div data-hf-id="hf-ttr1" class="trait" data-layout-allow-occlusion="" data-layout-allow-overflow=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const ttrRoot=document.querySelector('#transition-trait-root');
+      const ttr=gsap.timeline({paused:true});
+      /* Un seul mouvement, très rapide au centre (power3.inOut) : l'éclair
+         semble accélérer en travers de l'image. */
+      ttr.fromTo(ttrRoot.querySelector('.trait'),{x:-320,rotation:-8},{x:1400,rotation:-8,duration:1,ease:'power3.inOut'},0);
+      window.__timelines['transition-trait']=ttr;
+    </script>
+  </div>
+</body>
+</html>

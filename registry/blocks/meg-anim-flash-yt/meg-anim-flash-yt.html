@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition flash — un voile crème qui claque. À poser À CHEVAL sur un
+     cut : opacité maximale à mi-course (0.3 s), c'est là que le cut se cache.
+     Pour les micro-cuts rapides ; le balayage et les volets restent pour les
+     changements de chapitre. -->
+<div data-hf-id="hf-owtd0" id="anim-flash-yt-root" data-composition-id="anim-flash-yt" data-start="0" data-duration="0.6" data-width="1920" data-height="1080">
+    <style>
+      #anim-flash-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-flash-yt-root .flash{position:absolute;inset:0;z-index:40;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);opacity:0}
+    </style>
+    <div data-hf-id="hf-owtd1" class="flash" data-layout-allow-occlusion=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-flash-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.flash'),{opacity:0},{opacity:1,duration:.3,ease:'power2.in'},0)
+        .to(root.querySelector('.flash'),{opacity:0,duration:.3,ease:'power2.out'},.3);
+      window.__timelines['anim-flash-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

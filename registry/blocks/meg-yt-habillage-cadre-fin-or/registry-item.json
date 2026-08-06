@@ -1,0 +1,34 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-habillage-cadre-fin-or",
+  "type": "hyperframes:block",
+  "title": "YouTube — habillage cadre fin or",
+  "description": "Habillage plein cadre 16:9 : cadre fin or par-dessus le master intact.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "habillage",
+    "overlay",
+    "cadre-fin-or"
+  ],
+  "family": "yt-habillage",
+  "familyTitle": "YouTube — habillages plein cadre",
+  "variant": "cadre fin or",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-habillage-cadre-fin-or.html",
+      "target": "compositions/meg-yt-habillage-cadre-fin-or.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

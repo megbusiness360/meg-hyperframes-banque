@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Comparaison — barres.
+     Trois ordres de grandeur côte à côte : les barres s'étirent l'une après
+     l'autre et la barre MEG est la seule en or — la hiérarchie se voit avant de
+     se lire. Chaque ligne porte son libellé, sa valeur affichée et sa longueur
+     relative (--pc, en % de la piste). Marquer la ligne à mettre en avant avec
+     la classe "meg". -->
+<div data-hf-id="hf-bar0" id="barres-data-root" data-composition-id="barres-data" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #barres-data-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #barres-data-root .standalone-stage{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:flex-end;justify-content:center;padding-bottom:220px;text-align:center;font-size:44px;font-weight:700;letter-spacing:-.02em}
+      #barres-data-root .carte{position:absolute;z-index:2;left:96px;top:150px;width:888px;box-sizing:border-box;padding:40px 46px 48px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.34);opacity:0}
+      #barres-data-root .titre{font-size:56px;line-height:1;font-weight:700;letter-spacing:-.03em;word-spacing:.04em}
+      #barres-data-root .ligne{margin-top:34px}
+      #barres-data-root .ligne .haut{display:flex;align-items:baseline;justify-content:space-between;font-size:34px;font-weight:600;letter-spacing:-.01em}
+      #barres-data-root .ligne .valeur{font-weight:700;font-variant-numeric:tabular-nums}
+      /* La piste reste visible : une barre sans piste ne dit pas « sur combien ». */
+      #barres-data-root .piste{margin-top:12px;height:54px;border-radius:99px;background:rgba(47,44,0,.10);overflow:hidden}
+      #barres-data-root .barre{width:var(--pc,50%);height:100%;border-radius:99px;background:rgba(47,44,0,.34);transform-origin:left center}
+      #barres-data-root .ligne.meg .barre{background:#B9AA02}
+      #barres-data-root .ligne.meg .haut{font-weight:700}
+    </style>
+    <div data-hf-id="hf-bar1" class="standalone-stage" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-bar2">DERRIÈRE LA CARTE</div>
+    <div data-hf-id="hf-bar3" class="carte">
+      <div data-hf-id="hf-bar4" class="titre">Délai moyen d'accès</div>
+      <div data-hf-id="hf-bar5" class="ligne">
+        <div data-hf-id="hf-bar6" class="haut"><span data-hf-id="hf-bar7">Seul, sans dossier</span><span data-hf-id="hf-bar8" class="valeur">18 mois</span></div>
+        <div data-hf-id="hf-bar9" class="piste"><div data-hf-id="hf-barA" class="barre" style="--pc:100%"></div></div>
+      </div>
+      <div data-hf-id="hf-barB" class="ligne">
+        <div data-hf-id="hf-barC" class="haut"><span data-hf-id="hf-barD">Dossier repris tard</span><span data-hf-id="hf-barE" class="valeur">9 mois</span></div>
+        <div data-hf-id="hf-barF" class="piste"><div data-hf-id="hf-barG" class="barre" style="--pc:50%"></div></div>
+      </div>
+      <div data-hf-id="hf-barH" class="ligne meg">
+        <div data-hf-id="hf-barI" class="haut"><span data-hf-id="hf-barJ">Accompagné MEG</span><span data-hf-id="hf-barK" class="valeur">3 mois</span></div>
+        <div data-hf-id="hf-barL" class="piste"><div data-hf-id="hf-barM" class="barre" style="--pc:17%"></div></div>
+      </div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const barRoot=document.querySelector('#barres-data-root');
+      if(!document.querySelector('#meg-master-frame'))barRoot.querySelector('.standalone-stage').style.display='flex';
+      const bar=gsap.timeline({paused:true});
+      bar.fromTo(barRoot.querySelector('.carte'),{y:-92,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.1)
+         /* Une barre après l'autre : trois barres simultanées, rien ne se compare. */
+         .fromTo(barRoot.querySelectorAll('.barre'),{scaleX:0},{scaleX:1,duration:.62,ease:'power3.out',stagger:.34},.6)
+         .to(barRoot.querySelector('.carte'),{y:-12,duration:2.2,ease:'none'},1.4);
+      window.__timelines['barres-data']=bar;
+    </script>
+  </div>
+</body>
+</html>

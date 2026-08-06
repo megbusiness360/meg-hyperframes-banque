@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-accent-surligneur-reel",
+  "type": "hyperframes:block",
+  "title": "Accent surligneur — Reel 9:16",
+  "description": "Trait de surligneur or semi-transparent qui balaie une ligne, comme au feutre. 3 s, repositionnable.",
+  "tags": [
+    "meg",
+    "reel",
+    "accent",
+    "surligneur"
+  ],
+  "family": "anim-accent-reel",
+  "familyTitle": "Accents graphiques — Reel 9:16",
+  "variant": "surligneur",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-anim-accent-surligneur-reel.html",
+      "target": "compositions/meg-anim-accent-surligneur-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

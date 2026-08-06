@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-detoure-droite-plein-grand",
+  "type": "hyperframes:block",
+  "title": "Reel — détouré droite (écran plein, grand)",
+  "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée droite en bas (grand). Remplacer la silhouette par l'asset alpha.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "detoure",
+    "fond-vert",
+    "droite"
+  ],
+  "family": "reel-detoure",
+  "familyTitle": "Reels — visage détouré (fond vert)",
+  "variant": "droite plein grand",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-detoure-droite-plein-grand.html",
+      "target": "compositions/meg-reel-detoure-droite-plein-grand.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

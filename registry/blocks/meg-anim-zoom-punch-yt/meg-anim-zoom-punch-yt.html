@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Effet zoom punch — le master prend un coup de zoom (1.07) et
+     redescend. À poser sur le mot fort de la phrase. Finit à l'identique :
+     aucun réglage, enchaînable. -->
+<div data-hf-id="hf-1b2t0" id="anim-zoom-punch-yt-root" data-composition-id="anim-zoom-punch-yt" data-start="0" data-duration="1" data-width="1920" data-height="1080">
+    <style>
+      #anim-zoom-punch-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-zoom-punch-yt-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    </style>
+    <div data-hf-id="hf-1b2t1" class="substitut" data-layout-allow-occlusion=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-zoom-punch-yt-root');
+      const tl=gsap.timeline({paused:true});
+      let cible=document.querySelector('#meg-master-frame');
+      if(!cible){const s=root.querySelector('.substitut');if(s){s.style.display='block';cible=s;}}
+      if(cible){
+        /* Punch d'emphase : sec à l'aller, retour souple — finit à scale 1,
+           le master ressort intact. */
+        tl.fromTo(cible,{scale:1},{scale:1.07,duration:.16,ease:'power2.out'},.08)
+          .to(cible,{scale:1,duration:.4,ease:'power2.inOut'},.3);
+      }
+      
+      window.__timelines['anim-zoom-punch-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

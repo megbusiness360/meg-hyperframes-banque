@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-intro-hook-avant-apres",
+  "type": "hyperframes:block",
+  "title": "Reel — intro hook avant/après empilé",
+  "description": "Intro 9:16 : hook avant/après empilé plein cadre + visage master en bande basse. Textes à remplacer, animations incluses.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "intro",
+    "hook",
+    "hook-avant-apres"
+  ],
+  "family": "reel-intro",
+  "familyTitle": "Reels — intros & hooks",
+  "variant": "hook avant/après empilé",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-reel-intro-hook-avant-apres.html",
+      "target": "compositions/meg-reel-intro-hook-avant-apres.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

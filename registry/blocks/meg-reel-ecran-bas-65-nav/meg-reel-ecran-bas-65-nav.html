@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel — écran bas 65 % (fenêtre navigateur).
+     Poser le bloc suffit : il recadre le master #meg-master-frame sur la zone
+     visage et le restaure plein cadre en sortie. Remplacer le contenu hachuré
+     de la zone écran par la capture/démo. Sous-titres : meg-captions-middle
+     se cale sur la couture. -->
+<div data-hf-id="hf-aj1e0" id="reel-ecran-bas-65-nav-root" data-composition-id="reel-ecran-bas-65-nav" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="46" data-face-y="46" data-face-w="988" data-face-h="615" data-face-r="34" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-ecran-bas-65-nav-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-ecran-bas-65-nav-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
+#reel-ecran-bas-65-nav-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
+#reel-ecran-bas-65-nav-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
+#reel-ecran-bas-65-nav-root .ecran .sous{font-size:29px;font-weight:600;opacity:.62;letter-spacing:-.01em}
+#reel-ecran-bas-65-nav-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
+#reel-ecran-bas-65-nav-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
+#reel-ecran-bas-65-nav-root .ecran .url{flex:1;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden}
+#reel-ecran-bas-65-nav-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:34px;pointer-events:none;opacity:0}
+#reel-ecran-bas-65-nav-root .standalone-face{display:none;position:absolute;z-index:2;left:46px;top:46px;width:988px;height:615px;border-radius:34px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-aj1e1" class="ecran nav" style="left:46px;top:683px;width:988px;height:1191px;padding-top:88px;" data-layout-allow-occlusion=""><div data-hf-id="hf-aj1e2" class="barre"><span data-hf-id="hf-aj1e3" class="pastille"></span><span data-hf-id="hf-aj1e4" class="pastille"></span><span data-hf-id="hf-aj1e5" class="pastille"></span><span data-hf-id="hf-aj1e6" class="url">megbusiness360.com</span></div><span data-hf-id="hf-aj1e7" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-aj1e8" class="sous">capture, démo, document</span></div>
+    <div data-hf-id="hf-aj1e9" class="face-cadre" style="left:39px;top:39px;width:1002px;height:629px;"></div>
+    <div data-hf-id="hf-aj1ea" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-aj1eb">RECADRÉ ICI</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-ecran-bas-65-nav-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:46,y:46,width:988,height:615,borderRadius:34,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelectorAll('.ecran'),{y:70,opacity:0,scale:.97},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out',stagger:.12},.06)
+        .to(root.querySelectorAll('.ecran'),{opacity:0,y:44,duration:.35,ease:'power2.in'},5.60);
+      const cadre=root.querySelector('.face-cadre');
+      if(cadre)tl.fromTo(cadre,{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},.2)
+        .to(cadre,{opacity:0,duration:.3,ease:'power2.in'},5.62);
+      window.__timelines['reel-ecran-bas-65-nav']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

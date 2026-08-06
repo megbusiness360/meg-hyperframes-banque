@@ -1,0 +1,34 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-habillage-vignette-focus",
+  "type": "hyperframes:block",
+  "title": "YouTube — habillage vignette de focus",
+  "description": "Habillage plein cadre 16:9 : vignette de focus par-dessus le master intact.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "habillage",
+    "overlay",
+    "vignette-focus"
+  ],
+  "family": "yt-habillage",
+  "familyTitle": "YouTube — habillages plein cadre",
+  "variant": "vignette de focus",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-habillage-vignette-focus.html",
+      "target": "compositions/meg-yt-habillage-vignette-focus.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

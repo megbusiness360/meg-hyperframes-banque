@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-outro-ecran-fin",
+  "type": "hyperframes:block",
+  "title": "YouTube — écran de fin",
+  "description": "Écran de fin 16:9 : visage master à gauche + deux emplacements vidéos suivantes à droite (zones end-screen YouTube).",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "outro",
+    "ecran-fin"
+  ],
+  "family": "yt-outro",
+  "familyTitle": "YouTube — outros & CTA",
+  "variant": "écran de fin",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 8,
+  "files": [
+    {
+      "path": "meg-yt-outro-ecran-fin.html",
+      "target": "compositions/meg-yt-outro-ecran-fin.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

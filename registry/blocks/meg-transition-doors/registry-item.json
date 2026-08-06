@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-transition-doors",
+  "type": "hyperframes:block",
+  "title": "Transition volets",
+  "description": "Deux panneaux encre à filets or qui claquent fermés (le cut se cache) puis se rouvrent — pour les changements de chapitre.",
+  "tags": [
+    "meg",
+    "transition",
+    "volets",
+    "chapitre"
+  ],
+  "family": "transition",
+  "familyTitle": "Transitions",
+  "variant": "Volets",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-transition-doors.html",
+      "target": "compositions/meg-transition-doors.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

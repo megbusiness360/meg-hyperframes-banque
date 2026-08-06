@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Lower third — bandeau d'identité (nom + rôle) qui glisse depuis la
+     gauche, filet or en tête. Remplacer les deux lignes ; la position basse
+     laisse la zone sous-titres libre. -->
+<div data-hf-id="hf-1sv10" id="anim-lower-third-yt-root" data-composition-id="anim-lower-third-yt" data-start="0" data-duration="5" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #anim-lower-third-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #anim-lower-third-yt-root .lt{position:absolute;z-index:30;left:60px;top:880px;display:flex;align-items:stretch;gap:0;opacity:0}
+#anim-lower-third-yt-root .lt .filet{width:12px;background:#B9AA02;border-radius:6px 0 0 6px}
+#anim-lower-third-yt-root .lt .corps{background:#FFFCD6;border-radius:0 22px 22px 0;padding:22px 40px 24px 30px;box-shadow:0 18px 44px rgba(0,0,0,.3);max-width:640px}
+#anim-lower-third-yt-root .lt .nom{font-size:44px;font-weight:700;color:#2F2C00;letter-spacing:-.02em}
+#anim-lower-third-yt-root .lt .role{margin-top:4px;font-size:30px;font-weight:600;color:#B9AA02}
+    </style>
+    <div data-hf-id="hf-1sv11" class="lt" data-layout-allow-occlusion=""><div data-hf-id="hf-1sv12" class="filet"></div><div data-hf-id="hf-1sv13" class="corps"><div data-hf-id="hf-1sv14" class="nom">Prénom Nom — à remplacer</div><div data-hf-id="hf-1sv15" class="role">Rôle ou titre — à remplacer</div></div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-lower-third-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.lt'),{x:-70,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},.1)
+        .to(root.querySelector('.lt'),{x:-50,opacity:0,duration:.4,ease:'power2.in'},4.4);
+      window.__timelines['anim-lower-third-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

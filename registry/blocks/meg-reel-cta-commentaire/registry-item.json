@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-cta-commentaire",
+  "type": "hyperframes:block",
+  "title": "Reel — CTA appel au commentaire",
+  "description": "Fin de Reel : appel au commentaire. Textes à remplacer, animations incluses.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "cta",
+    "outro",
+    "commentaire"
+  ],
+  "family": "reel-cta",
+  "familyTitle": "Reels — CTA & outros",
+  "variant": "appel au commentaire",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-reel-cta-commentaire.html",
+      "target": "compositions/meg-reel-cta-commentaire.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

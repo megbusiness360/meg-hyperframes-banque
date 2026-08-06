@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-accent-cercle-yt",
+  "type": "hyperframes:block",
+  "title": "Accent cercle or — YouTube 16:9",
+  "description": "Ellipse or tracée à la main autour du centre de l'écran, pour entourer un élément. 3 s, repositionnable.",
+  "tags": [
+    "meg",
+    "youtube",
+    "accent",
+    "cercle"
+  ],
+  "family": "anim-accent-yt",
+  "familyTitle": "Accents graphiques — YouTube 16:9",
+  "variant": "cercle or",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-anim-accent-cercle-yt.html",
+      "target": "compositions/meg-anim-accent-cercle-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

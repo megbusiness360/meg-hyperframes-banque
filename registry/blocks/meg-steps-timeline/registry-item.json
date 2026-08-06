@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-steps-timeline",
+  "type": "hyperframes:block",
+  "title": "Frise d'étapes",
+  "description": "Fil vertical qui se trace et trois nœuds numérotés qui s'allument en or quand la voix y arrive.",
+  "tags": [
+    "meg",
+    "etapes",
+    "frise",
+    "process"
+  ],
+  "family": "etapes",
+  "familyTitle": "Étapes",
+  "variant": "Frise verticale",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-steps-timeline.html",
+      "target": "compositions/meg-steps-timeline.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

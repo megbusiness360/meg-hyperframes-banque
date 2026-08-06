@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Étiquette-flèche — pointer un détail.
+     Quand la preuve est à l'écran, dire « regardez ici » à l'oral ne suffit
+     pas : l'étiquette pop, puis la flèche or SE TRACE jusqu'au détail exact.
+     Régler data-cible-x / data-cible-y sur le groupe (le point visé, dans le
+     repère 1080×1920) et le texte de l'étiquette ; la courbe et la pointe se
+     recalculent toutes seules. -->
+<div data-hf-id="hf-efl0" id="etiquette-fleche-root" data-composition-id="etiquette-fleche" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #etiquette-fleche-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #etiquette-fleche-root .trace{position:absolute;inset:0;z-index:9;pointer-events:none}
+      #etiquette-fleche-root .trace path{fill:none;stroke:#B9AA02;stroke-width:11;stroke-linecap:round}
+      #etiquette-fleche-root .trace .pointe{fill:#B9AA02;stroke:none;opacity:0}
+      #etiquette-fleche-root .etiquette{position:absolute;z-index:10;left:88px;top:1128px;display:inline-flex;padding:16px 30px;border-radius:26px;background:#FFFCD6;color:#2F2C00;font-size:42px;font-weight:700;letter-spacing:-.02em;box-shadow:0 14px 34px rgba(47,44,0,.30);opacity:0}
+    </style>
+    <svg data-hf-id="hf-efl1" class="trace" viewBox="0 0 1080 1920" aria-hidden="true">
+      <path data-hf-id="hf-efl2" class="courbe" d=""/>
+      <path data-hf-id="hf-efl3" class="pointe" d=""/>
+    </svg>
+    <div data-hf-id="hf-efl4" class="etiquette" data-cible-x="740" data-cible-y="470">Le montant exact, ici</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const eflRoot=document.querySelector('#etiquette-fleche-root');
+      const eflEtiquette=eflRoot.querySelector('.etiquette');
+      const eflCourbe=eflRoot.querySelector('.courbe');
+      const eflPointe=eflRoot.querySelector('.pointe');
+      const tx=parseFloat(eflEtiquette.getAttribute('data-cible-x'))||740;
+      const ty=parseFloat(eflEtiquette.getAttribute('data-cible-y'))||470;
+      /* Départ : coin haut-droit de l'étiquette, où qu'elle soit posée. */
+      const eflBox={x:eflEtiquette.offsetLeft,y:eflEtiquette.offsetTop,w:eflEtiquette.offsetWidth};
+      const sx=eflBox.x+eflBox.w-34,sy=eflBox.y-6;
+      /* Contrôle décalé perpendiculairement au segment : la flèche s'incurve au
+         lieu de tirer un trait de règle. Le décalage suit la longueur. */
+      const dx=tx-sx,dy=ty-sy,dist=Math.hypot(dx,dy);
+      const cx=sx+dx/2-dy/dist*.24*dist,cy=sy+dy/2+dx/dist*.24*dist;
+      /* La courbe s'arrête 46 px avant la cible : la pointe occupe ce dernier
+         segment, sinon le trait dépasse sous le triangle. */
+      const t=1-46/dist;
+      const ex=(1-t)*(1-t)*sx+2*(1-t)*t*cx+t*t*tx;
+      const ey=(1-t)*(1-t)*sy+2*(1-t)*t*cy+t*t*ty;
+      eflCourbe.setAttribute('d',`M${sx},${sy} Q${cx},${cy} ${ex},${ey}`);
+      const ang=Math.atan2(ty-ey,tx-ex);
+      const p1=[tx,ty],p2=[tx-Math.cos(ang-.42)*54,ty-Math.sin(ang-.42)*54],p3=[tx-Math.cos(ang+.42)*54,ty-Math.sin(ang+.42)*54];
+      eflPointe.setAttribute('d',`M${p1[0]},${p1[1]} L${p2[0]},${p2[1]} L${p3[0]},${p3[1]} Z`);
+      const eflLong=eflCourbe.getTotalLength();
+      eflCourbe.style.strokeDasharray=eflLong;
+      eflCourbe.style.strokeDashoffset=eflLong;
+      const efl=gsap.timeline({paused:true});
+      efl.fromTo(eflEtiquette,{y:26,opacity:0},{y:0,opacity:1,duration:.36,ease:'power3.out'},.1)
+         .to(eflCourbe,{strokeDashoffset:0,duration:.52,ease:'power2.inOut'},.42)
+         .to(eflPointe,{opacity:1,duration:.14,ease:'power2.out'},.9)
+         /* Micro-pulsation de la pointe : garde l'œil sur la cible sans gigoter. */
+         .fromTo(eflPointe,{scale:1,transformOrigin:'center'},{scale:1.18,duration:.5,ease:'power1.inOut',yoyo:true,repeat:3},1.1);
+      window.__timelines['etiquette-fleche']=efl;
+    </script>
+  </div>
+</body>
+</html>

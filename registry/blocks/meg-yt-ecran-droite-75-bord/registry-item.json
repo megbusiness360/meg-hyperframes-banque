@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-ecran-droite-75-bord",
+  "type": "hyperframes:block",
+  "title": "YouTube — écran droite 75 % (bord à bord)",
+  "description": "Split 16:9 : écran bord à bord à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "split",
+    "droite",
+    "bord"
+  ],
+  "family": "yt-split-solo",
+  "familyTitle": "YouTube — splits visage + 1 écran",
+  "variant": "droite 75 % bord à bord",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-yt-ecran-droite-75-bord.html",
+      "target": "compositions/meg-yt-ecran-droite-75-bord.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

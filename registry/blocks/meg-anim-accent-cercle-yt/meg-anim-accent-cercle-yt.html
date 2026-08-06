@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Accent cercle — une ellipse or se trace autour de la zone centrale
+     (stroke-dashoffset). Déplacer le bloc .accent-zone sur l'élément à
+     entourer ; le tracé et la sortie suivent. -->
+<div data-hf-id="hf-1rm70" id="anim-accent-cercle-yt-root" data-composition-id="anim-accent-cercle-yt" data-start="0" data-duration="3" data-width="1920" data-height="1080">
+    <style>
+      #anim-accent-cercle-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-accent-cercle-yt-root .accent-zone{position:absolute;z-index:30;left:60px;top:390px;width:600px;height:280px;pointer-events:none}
+#anim-accent-cercle-yt-root .accent-zone svg{width:100%;height:100%;display:block;overflow:visible}
+#anim-accent-cercle-yt-root .accent-zone ellipse{fill:none;stroke:#B9AA02;stroke-width:11;stroke-linecap:round;stroke-dasharray:1520;stroke-dashoffset:1520;filter:drop-shadow(0 4px 18px rgba(185,170,2,.5))}
+    </style>
+    <div data-hf-id="hf-1rm71" class="accent-zone" data-layout-allow-occlusion=""><svg data-hf-id="hf-1rm72" viewBox="0 0 700 300" aria-hidden="true"><ellipse data-hf-id="hf-1rm73" cx="350" cy="150" rx="330" ry="128"></ellipse></svg></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-accent-cercle-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.to(root.querySelector('.accent-zone ellipse'),{strokeDashoffset:0,duration:.7,ease:'power2.inOut'},.15)
+        .to(root.querySelector('.accent-zone'),{opacity:0,duration:.3,ease:'power2.in'},2.6);
+      window.__timelines['anim-accent-cercle-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

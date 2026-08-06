@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-preuve-temoignage",
+  "type": "hyperframes:block",
+  "title": "Reel — témoignage + capture",
+  "description": "Layout preuve sociale 9:16 : citation client en carte + capture d'avis hachurée + visage master en bande basse.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "preuve-sociale",
+    "temoignage"
+  ],
+  "family": "reel-preuve-sociale",
+  "familyTitle": "Reels — preuve sociale",
+  "variant": "témoignage + capture",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-preuve-temoignage.html",
+      "target": "compositions/meg-reel-preuve-temoignage.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

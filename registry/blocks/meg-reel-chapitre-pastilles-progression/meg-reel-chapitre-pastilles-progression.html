@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Carton de chapitre Reel — pastilles de progression. Le master reste plein cadre,
+     l'habillage passe dessus puis s'efface. Remplacer numéro et libellé. -->
+<div data-hf-id="hf-1md70" id="reel-chapitre-pastilles-progression-root" data-composition-id="reel-chapitre-pastilles-progression" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-chapitre-pastilles-progression-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-chapitre-pastilles-progression-root .rail{position:absolute;z-index:3;left:50%;top:120px;display:flex;gap:26px;opacity:0}
+#reel-chapitre-pastilles-progression-root .pastille-prog{width:34px;height:34px;border-radius:50%;background:rgba(255,252,214,.38);border:3px solid #FFFCD6}
+#reel-chapitre-pastilles-progression-root .pastille-prog.active{background:#B9AA02;border-color:#B9AA02}
+#reel-chapitre-pastilles-progression-root .etiq{position:absolute;z-index:3;left:50%;top:180px;padding:12px 30px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:34px;font-weight:700;letter-spacing:.05em;opacity:0}
+    </style>
+    <div data-hf-id="hf-1md71" class="rail"><span data-hf-id="hf-1md72" class="pastille-prog"></span><span data-hf-id="hf-1md73" class="pastille-prog active"></span><span data-hf-id="hf-1md74" class="pastille-prog"></span><span data-hf-id="hf-1md75" class="pastille-prog"></span></div><div data-hf-id="hf-1md76" class="etiq">PARTIE 2 / 4 — À REMPLACER</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-chapitre-pastilles-progression-root');
+      const tl=gsap.timeline({paused:true});
+      
+      gsap.set(root.querySelector('.rail'),{xPercent:-50});gsap.set(root.querySelector('.etiq'),{xPercent:-50});
+      tl.fromTo(root.querySelector('.rail'),{y:-30,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.05)
+        .fromTo(root.querySelector('.etiq'),{y:-20,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.2)
+        .fromTo(root.querySelector('.pastille-prog.active'),{scale:1},{scale:1.35,duration:.3,ease:'back.out(2)',yoyo:true,repeat:1},.5)
+        .to([root.querySelector('.rail'),root.querySelector('.etiq')],{opacity:0,duration:.35,ease:'power2.in'},3.55);
+      window.__timelines['reel-chapitre-pastilles-progression']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

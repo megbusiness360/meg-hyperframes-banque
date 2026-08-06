@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- CTA/outro Reel — flèche vers la description. Remplacer les textes ; l'appel à l'action
+     reste indirect (règles MEG : on montre où continuer, on ne supplie pas). -->
+<div data-hf-id="hf-1szp0" id="reel-cta-fleche-bas-root" data-composition-id="reel-cta-fleche-bas" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-cta-fleche-bas-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-cta-fleche-bas-root .groupe{position:absolute;z-index:3;left:50%;bottom:210px;display:flex;flex-direction:column;align-items:center;gap:18px;opacity:0}
+#reel-cta-fleche-bas-root .gelule{padding:16px 38px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700}
+#reel-cta-fleche-bas-root .fleche{width:64px;height:64px}
+#reel-cta-fleche-bas-root .fleche path{fill:none;stroke:#B9AA02;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <div data-hf-id="hf-1szp1" class="groupe"><span data-hf-id="hf-1szp2" class="gelule">Le lien est en description</span><svg data-hf-id="hf-1szp3" class="fleche" viewBox="0 0 48 48" aria-hidden="true"><path data-hf-id="hf-1szp4" d="M24 6v30M12 26l12 12 12-12"></path></svg></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-cta-fleche-bas-root');
+      const tl=gsap.timeline({paused:true});
+      
+      gsap.set(root.querySelector('.groupe'),{xPercent:-50});
+      tl.fromTo(root.querySelector('.groupe'),{y:40,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.1)
+        .fromTo(root.querySelector('.fleche'),{y:0},{y:16,duration:.5,ease:'power1.inOut',yoyo:true,repeat:3},.6)
+        .to(root.querySelector('.groupe'),{opacity:0,y:30,duration:.35,ease:'power2.in'},3.55);
+      window.__timelines['reel-cta-fleche-bas']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

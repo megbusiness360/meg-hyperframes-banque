@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-yt-chapitre-bandeau-lateral",
+  "type": "hyperframes:block",
+  "title": "YouTube — chapitre bandeau latéral",
+  "description": "Carton de chapitre 16:9 : bandeau latéral, posé par-dessus le master intact.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "layout",
+    "chapitre",
+    "bandeau-lateral"
+  ],
+  "family": "yt-chapitre",
+  "familyTitle": "YouTube — cartons de chapitre",
+  "variant": "bandeau latéral",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-yt-chapitre-bandeau-lateral.html",
+      "target": "compositions/meg-yt-chapitre-bandeau-lateral.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

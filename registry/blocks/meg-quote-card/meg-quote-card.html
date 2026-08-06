@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Citation — témoignage.
+     Une phrase de client ou un texte réglementaire cité mot pour mot. Le
+     guillemet or tracé signe la carte ; l'attribution reste discrète — c'est la
+     phrase qu'on retient, pas la mise en scène. Légère inclinaison : la carte
+     est posée, pas alignée comme un slide. Remplacer le texte, le nom et le
+     rôle ; garder la citation courte (deux à quatre lignes). -->
+<div data-hf-id="hf-cit0" id="citation-root" data-composition-id="citation" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #citation-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #citation-root .standalone-stage{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:flex-end;justify-content:center;padding-bottom:220px;text-align:center;font-size:44px;font-weight:700;letter-spacing:-.02em}
+      #citation-root .carte{position:absolute;z-index:2;left:88px;top:170px;width:904px;box-sizing:border-box;padding:100px 54px 46px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.36);transform:rotate(-2deg);opacity:0}
+      /* Le guillemet chevauche le bord haut : il appartient à la carte, pas au
+         texte — c'est lui qui dit « ceci est cité », sans le mot « témoignage ». */
+      #citation-root .guillemet{position:absolute;left:44px;top:-38px;width:118px;height:96px}
+      #citation-root .guillemet path{fill:#B9AA02}
+      #citation-root .texte{font-size:56px;line-height:1.14;font-weight:600;letter-spacing:-.02em;word-spacing:.05em}
+      #citation-root .attribution{margin-top:32px;display:flex;align-items:center;gap:18px;font-size:32px;font-weight:600;opacity:.82}
+      #citation-root .attribution .filet{width:64px;height:6px;border-radius:99px;background:#B9AA02;transform-origin:left center}
+    </style>
+    <div data-hf-id="hf-cit1" class="standalone-stage" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-cit2">DERRIÈRE LA CARTE</div>
+    <div data-hf-id="hf-cit3" class="carte">
+      <svg data-hf-id="hf-cit4" class="guillemet" viewBox="0 0 118 96" aria-hidden="true"><path data-hf-id="hf-cit5" d="M0 96V54C0 24 16 6 48 0l8 18C36 24 28 34 27 48h25v48Zm63 0V54c0-30 16-48 48-54l7 18c-19 6-27 16-28 30h25v48Z"/></svg>
+      <div data-hf-id="hf-cit6" class="texte">« On a récupéré notre certification en trois mois, sans une seule relance de notre côté. »</div>
+      <div data-hf-id="hf-cit7" class="attribution"><span data-hf-id="hf-cit8" class="filet"></span><span data-hf-id="hf-cit9">Directrice d'organisme de formation</span></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const citRoot=document.querySelector('#citation-root');
+      if(!document.querySelector('#meg-master-frame'))citRoot.querySelector('.standalone-stage').style.display='flex';
+      const cit=gsap.timeline({paused:true});
+      cit.fromTo(citRoot.querySelector('.carte'),{y:-96,rotate:-4,opacity:0},{y:0,rotate:-2,opacity:1,duration:.54,ease:'power3.out'},.1)
+         .fromTo(citRoot.querySelector('.guillemet'),{scale:.4,opacity:0},{scale:1,opacity:1,duration:.36,ease:'back.out(2.2)'},.4)
+         .fromTo(citRoot.querySelector('.attribution .filet'),{scaleX:0},{scaleX:1,duration:.36,ease:'power2.out'},.66)
+         .to(citRoot.querySelector('.carte'),{y:-12,duration:2.6,ease:'none'},1.1);
+      window.__timelines['citation']=cit;
+    </script>
+  </div>
+</body>
+</html>

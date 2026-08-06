@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Carton de chapitre YouTube — carton numéro. Master plein cadre intact,
+     habillage par-dessus. Remplacer numéro et libellé. -->
+<div data-hf-id="hf-1m2y0" id="yt-chapitre-carton-root" data-composition-id="yt-chapitre-carton" data-start="0" data-duration="4" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #yt-chapitre-carton-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-chapitre-carton-root .carton{position:absolute;z-index:3;left:120px;top:330px;width:760px;border-radius:40px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 40px 88px rgba(0,0,0,.4);padding:56px 64px;color:#2F2C00;opacity:0}
+#yt-chapitre-carton-root .num{font-size:130px;font-weight:700;color:#B9AA02;line-height:.9}
+#yt-chapitre-carton-root .chap{margin-top:12px;font-size:54px;font-weight:700;letter-spacing:-.02em;line-height:1.02}
+    </style>
+    <div data-hf-id="hf-1m2y1" class="carton" data-layout-allow-occlusion=""><div data-hf-id="hf-1m2y2" class="num">02</div><div data-hf-id="hf-1m2y3" class="chap">Titre du chapitre<br data-hf-id="hf-1m2y4">à remplacer</div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#yt-chapitre-carton-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.carton'),{y:60,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out'},.1)
+        .to(root.querySelector('.carton'),{opacity:0,y:-40,duration:.4,ease:'power2.in'},3.4);
+      window.__timelines['yt-chapitre-carton']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

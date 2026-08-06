@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Chiffre-clé — compteur.
+     Un chiffre annoncé à l'oral s'oublie ; un chiffre qui monte à l'écran se
+     retient. Carte crème contenue dans le tiers haut (le visage reste maître du
+     cadre), chiffre géant qui compte de zéro à la valeur, unité et contexte en
+     dessous. Régler data-valeur / data-prefixe / data-suffixe / data-label sur
+     la carte ; le formatage groupe les milliers à la française. -->
+<div data-hf-id="hf-sct0" id="stat-compteur-root" data-composition-id="stat-compteur" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #stat-compteur-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #stat-compteur-root .standalone-stage{display:none;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:flex-end;justify-content:center;padding-bottom:220px;text-align:center;font-size:44px;font-weight:700;letter-spacing:-.02em}
+      /* Carte calibrée au contenu, jamais pleine hauteur : le chiffre est
+         l'événement, le visage reste le fil conducteur en dessous. */
+      #stat-compteur-root .carte{position:absolute;z-index:2;left:96px;top:150px;width:888px;box-sizing:border-box;padding:40px 46px 46px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);color:#2F2C00;box-shadow:0 40px 88px rgba(0,0,0,.34);opacity:0}
+      #stat-compteur-root .kicker{display:inline-block;padding:10px 22px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:26px;font-weight:700;letter-spacing:.13em}
+      /* Tabular nums : sans ça le compteur tremble à chaque frame. */
+      #stat-compteur-root .chiffre{margin-top:18px;font-size:176px;line-height:.96;font-weight:700;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap}
+      #stat-compteur-root .label{margin-top:12px;font-size:44px;line-height:1.06;font-weight:600;letter-spacing:-.015em;word-spacing:.04em;opacity:.88}
+      #stat-compteur-root .filet{margin-top:24px;width:190px;height:8px;border-radius:99px;background:#B9AA02;transform-origin:left center}
+    </style>
+    <div data-hf-id="hf-sct1" class="standalone-stage" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-sct2">DERRIÈRE LA CARTE</div>
+    <div data-hf-id="hf-sct3" class="carte" data-valeur="12500" data-prefixe="" data-suffixe=" €" data-label="débloqués en moyenne par dossier">
+      <span data-hf-id="hf-sct4" class="kicker">LE CHIFFRE</span>
+      <div data-hf-id="hf-sct5" class="chiffre">0&nbsp;€</div>
+      <div data-hf-id="hf-sct6" class="label">débloqués en moyenne par dossier</div>
+      <div data-hf-id="hf-sct7" class="filet"></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      const sctRoot=document.querySelector('#stat-compteur-root');
+      const sctCarte=sctRoot.querySelector('.carte');
+      const sctChiffre=sctRoot.querySelector('.chiffre');
+      const sctValeur=parseFloat(sctCarte.getAttribute('data-valeur'))||0;
+      const sctPrefixe=sctCarte.getAttribute('data-prefixe')||'';
+      const sctSuffixe=sctCarte.getAttribute('data-suffixe')||'';
+      sctRoot.querySelector('.label').textContent=sctCarte.getAttribute('data-label')||'';
+      /* Groupement à l'espace simple : l'espace fine insécable rend mal avec
+         Clash (crénage), et un chiffre non groupé ne se lit pas. */
+      const sctFormat=v=>sctPrefixe+Math.round(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,' ')+sctSuffixe;
+      sctChiffre.textContent=sctFormat(0);
+      if(!document.querySelector('#meg-master-frame'))sctRoot.querySelector('.standalone-stage').style.display='flex';
+      const sct=gsap.timeline({paused:true});
+      const sctCompte={v:0};
+      sct.fromTo(sctCarte,{y:-92,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.1)
+         /* La montée ralentit en fin de course : les dernières unités se lisent. */
+         .to(sctCompte,{v:sctValeur,duration:1.7,ease:'power2.out',onUpdate:()=>{sctChiffre.textContent=sctFormat(sctCompte.v)}},.55)
+         .fromTo(sctRoot.querySelector('.filet'),{scaleX:0},{scaleX:1,duration:.4,ease:'power2.out'},.7)
+         .to(sctCarte,{y:-12,duration:2.4,ease:'none'},1.2);
+      window.__timelines['stat-compteur']=sct;
+    </script>
+  </div>
+</body>
+</html>

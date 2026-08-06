@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- CTA/outro Reel — récap 3 points + bande visage. Remplacer les textes ; l'appel à l'action
+     reste indirect (règles MEG : on montre où continuer, on ne supplie pas). -->
+<div data-hf-id="hf-q6up0" id="reel-cta-recap-root" data-composition-id="reel-cta-recap" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="0" data-face-y="1300" data-face-w="1080" data-face-h="620" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-cta-recap-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-cta-recap-root .scene{position:absolute;z-index:3;left:0;top:0;width:1080px;height:1300px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;justify-content:center;gap:34px;padding:80px 90px;color:#2F2C00}
+#reel-cta-recap-root .titre-recap{font-size:64px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+#reel-cta-recap-root .ligne{display:flex;gap:22px;align-items:center;font-size:44px;font-weight:600;opacity:0}
+#reel-cta-recap-root .coche{width:52px;height:52px;flex:none;border-radius:50%;background:#B9AA02;display:flex;align-items:center;justify-content:center}
+#reel-cta-recap-root .coche svg{width:30px;height:30px}
+#reel-cta-recap-root .coche path{fill:none;stroke:#2F2C00;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+#reel-cta-recap-root .couture{position:absolute;z-index:4;left:0;top:1294px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
+#reel-cta-recap-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1300px;width:1080px;height:620px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-q6up1" class="scene" data-layout-allow-occlusion=""><div data-hf-id="hf-q6up2" class="titre-recap">À retenir</div>
+      <div data-hf-id="hf-q6up3" class="ligne"><span data-hf-id="hf-q6up4" class="coche"><svg data-hf-id="hf-q6up5" viewBox="0 0 24 24"><path data-hf-id="hf-q6up6" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-q6up7">Premier point à remplacer</span></div>
+      <div data-hf-id="hf-q6up8" class="ligne"><span data-hf-id="hf-q6up9" class="coche"><svg data-hf-id="hf-q6upa" viewBox="0 0 24 24"><path data-hf-id="hf-q6upb" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-q6upc">Deuxième point à remplacer</span></div>
+      <div data-hf-id="hf-q6upd" class="ligne"><span data-hf-id="hf-q6upe" class="coche"><svg data-hf-id="hf-q6upf" viewBox="0 0 24 24"><path data-hf-id="hf-q6upg" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-q6uph">Troisième point à remplacer</span></div></div>
+    <div data-hf-id="hf-q6upi" class="couture"></div>
+    <div data-hf-id="hf-q6upj" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-cta-recap-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:0,y:1300,width:1080,height:620,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},4.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelector('.titre-recap'),{y:-30,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.08)
+        .fromTo(root.querySelectorAll('.ligne'),{x:-50,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out',stagger:.18},.3);
+      window.__timelines['reel-cta-recap']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-data-bars",
+  "type": "hyperframes:block",
+  "title": "Chiffres — barres comparées",
+  "description": "Trois barres horizontales qui s'étirent l'une après l'autre, la ligne MEG seule en or.",
+  "tags": [
+    "meg",
+    "data",
+    "barres",
+    "comparaison",
+    "stat"
+  ],
+  "family": "data",
+  "familyTitle": "Chiffres & data",
+  "variant": "Barres comparées",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-data-bars.html",
+      "target": "compositions/meg-data-bars.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

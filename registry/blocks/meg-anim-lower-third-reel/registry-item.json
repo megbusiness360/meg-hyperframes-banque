@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-lower-third-reel",
+  "type": "hyperframes:block",
+  "title": "Lower third identité — Reel 9:16",
+  "description": "Bandeau d'identité nom + rôle, entrée glissée, filet or. 5 s, textes à remplacer.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "lower-third"
+  ],
+  "family": "anim-texte-reel",
+  "familyTitle": "Habillages texte — Reel 9:16",
+  "variant": "lower third",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-anim-lower-third-reel.html",
+      "target": "compositions/meg-anim-lower-third-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

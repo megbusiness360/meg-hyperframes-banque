@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-recadrage-lent-yt",
+  "type": "hyperframes:block",
+  "title": "Effet recadrage lent — YouTube 16:9",
+  "description": "Zoom avant très lent du master (1 → 1.08) sur 8 s, pour tenir un plan face caméra. Poser juste avant un cut.",
+  "tags": [
+    "meg",
+    "youtube",
+    "effet",
+    "recadrage"
+  ],
+  "family": "anim-camera-yt",
+  "familyTitle": "Effets caméra — YouTube 16:9",
+  "variant": "recadrage lent",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 8,
+  "files": [
+    {
+      "path": "meg-anim-recadrage-lent-yt.html",
+      "target": "compositions/meg-anim-recadrage-lent-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

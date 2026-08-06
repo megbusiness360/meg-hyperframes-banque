@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Effet recadrage lent — micro-zoom continu qui garde un plan face
+     caméra vivant 8 s. Le retour à l'échelle 1 est instantané en toute fin :
+     poser le bloc juste avant un cut. -->
+<div data-hf-id="hf-neiq0" id="anim-recadrage-lent-reel-root" data-composition-id="anim-recadrage-lent-reel" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+    <style>
+      #anim-recadrage-lent-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-recadrage-lent-reel-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    </style>
+    <div data-hf-id="hf-neiq1" class="substitut" data-layout-allow-occlusion=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-recadrage-lent-reel-root');
+      const tl=gsap.timeline({paused:true});
+      let cible=document.querySelector('#meg-master-frame');
+      if(!cible){const s=root.querySelector('.substitut');if(s){s.style.display='block';cible=s;}}
+      if(cible){
+        /* Zoom lent continu, restauration instantanée à la toute fin :
+           poser le bloc juste AVANT un cut pour cacher le retour. */
+        tl.fromTo(cible,{scale:1},{scale:1.08,duration:7.9,ease:'none'},0)
+          .set(cible,{scale:1},8);
+      }
+      
+      window.__timelines['anim-recadrage-lent-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

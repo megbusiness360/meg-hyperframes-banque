@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-trio-pile-haut",
+  "type": "hyperframes:block",
+  "title": "Reel — trio 3 écrans empilés en haut",
+  "description": "Split 9:16 à trois écrans : 3 écrans empilés en haut, visage master recadré. Trois zones à remplacer indépendamment.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "trio",
+    "pile-haut"
+  ],
+  "family": "reel-split-trio",
+  "familyTitle": "Reels — splits visage + 3 écrans",
+  "variant": "3 écrans empilés en haut",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-trio-pile-haut.html",
+      "target": "compositions/meg-reel-trio-pile-haut.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

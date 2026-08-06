@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-transition-streak",
+  "type": "hyperframes:block",
+  "title": "Transition trait",
+  "description": "Éclair or incliné qui file de gauche à droite — la ponctuation légère des jump-cuts, sans couvrir l'écran.",
+  "tags": [
+    "meg",
+    "transition",
+    "trait",
+    "jump-cut"
+  ],
+  "family": "transition",
+  "familyTitle": "Transitions",
+  "variant": "Trait or",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-transition-streak.html",
+      "target": "compositions/meg-transition-streak.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition iris — un disque encre grandit depuis le centre jusqu'à
+     tout couvrir (t=0.5 : caler le cut), puis se résorbe. Liseré or.
+     Le disque est un élément propre animé en scale par GSAP (jamais de
+     transform CSS sur un élément tweené). -->
+<div data-hf-id="hf-1r2s0" id="anim-iris-reel-root" data-composition-id="anim-iris-reel" data-start="0" data-duration="1" data-width="1080" data-height="1920">
+    <style>
+      #anim-iris-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #anim-iris-reel-root .iris{position:absolute;z-index:40;left:-601px;top:-181px;width:2283px;height:2283px;border-radius:50%;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);box-shadow:inset 0 0 0 12px #B9AA02}
+    </style>
+    <div data-hf-id="hf-1r2s1" class="iris" data-layout-allow-occlusion="" data-layout-allow-overflow=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-iris-reel-root');
+      const tl=gsap.timeline({paused:true});
+      
+      tl.fromTo(root.querySelector('.iris'),{scale:0},{scale:1,duration:.5,ease:'power2.in'},0)
+        .to(root.querySelector('.iris'),{scale:0,duration:.5,ease:'power2.out'},.5);
+      window.__timelines['anim-iris-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

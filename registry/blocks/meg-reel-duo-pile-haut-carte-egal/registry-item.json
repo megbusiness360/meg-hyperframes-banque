@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-duo-pile-haut-carte-egal",
+  "type": "hyperframes:block",
+  "title": "Reel — duo 2 écrans empilés en haut (carte, egal)",
+  "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition égale, visage master recadré. Style carte.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "duo",
+    "pile-haut",
+    "carte"
+  ],
+  "family": "reel-split-duo",
+  "familyTitle": "Reels — splits visage + 2 écrans",
+  "variant": "pile-haut carte egal",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-duo-pile-haut-carte-egal.html",
+      "target": "compositions/meg-reel-duo-pile-haut-carte-egal.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

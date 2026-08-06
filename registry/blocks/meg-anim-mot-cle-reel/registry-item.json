@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-mot-cle-reel",
+  "type": "hyperframes:block",
+  "title": "Mot-clé pop — Reel 9:16",
+  "description": "Mot-clé unique qui claque au centre de l'écran sur fond gélule encre. 2,5 s, mot à remplacer.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "mot-cle"
+  ],
+  "family": "anim-texte-reel",
+  "familyTitle": "Habillages texte — Reel 9:16",
+  "variant": "mot-clé pop",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 2.5,
+  "files": [
+    {
+      "path": "meg-anim-mot-cle-reel.html",
+      "target": "compositions/meg-anim-mot-cle-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

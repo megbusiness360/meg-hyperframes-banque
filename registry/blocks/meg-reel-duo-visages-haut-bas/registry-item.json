@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-duo-visages-haut-bas",
+  "type": "hyperframes:block",
+  "title": "Reel — deux visages empilé 50/50",
+  "description": "Layout réaction/entretien 9:16 : master empilé 50/50 + zone invité à remplacer par le rush du second intervenant.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "duo-visages",
+    "reaction",
+    "haut-bas"
+  ],
+  "family": "reel-duo-visages",
+  "familyTitle": "Reels — deux visages (réaction/entretien)",
+  "variant": "empilé 50/50",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-duo-visages-haut-bas.html",
+      "target": "compositions/meg-reel-duo-visages-haut-bas.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

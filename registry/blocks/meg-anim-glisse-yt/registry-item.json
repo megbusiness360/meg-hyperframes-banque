@@ -1,0 +1,32 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-anim-glisse-yt",
+  "type": "hyperframes:block",
+  "title": "Transition glissement vertical — YouTube 16:9",
+  "description": "Voile crème qui monte du bas, couvre l'écran à mi-course, puis sort par le haut. 1 s, à cheval sur un cut.",
+  "tags": [
+    "meg",
+    "youtube",
+    "transition",
+    "glisse"
+  ],
+  "family": "anim-transition-yt",
+  "familyTitle": "Transitions — YouTube 16:9",
+  "variant": "glissement vertical",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 1,
+  "files": [
+    {
+      "path": "meg-anim-glisse-yt.html",
+      "target": "compositions/meg-anim-glisse-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

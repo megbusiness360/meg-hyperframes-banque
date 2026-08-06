@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Intro Reel — teaser AVANT / APRÈS. Le visage reste présent en bande basse
+     (master recadré par le bloc). Remplacer les textes, garder les animations.
+     Enchaîner sur un layout split une fois le hook posé. -->
+<div data-hf-id="hf-17bz0" id="reel-intro-vs-teaser-root" data-composition-id="reel-intro-vs-teaser" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="0" data-face-y="1300" data-face-w="1080" data-face-h="620" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-intro-vs-teaser-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-intro-vs-teaser-root .scene{position:absolute;z-index:3;left:0;top:0;width:1080px;height:1300px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px 70px;color:#2F2C00;text-align:center}
+#reel-intro-vs-teaser-root .couture{position:absolute;z-index:4;left:0;top:1294px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
+#reel-intro-vs-teaser-root .titre-geant{font-size:112px;line-height:.96;font-weight:700;letter-spacing:-.03em;word-spacing:.05em}
+#reel-intro-vs-teaser-root .sous-titre{font-size:44px;font-weight:600;opacity:.62}
+#reel-intro-vs-teaser-root .gelule{display:inline-block;padding:16px 36px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:36px;font-weight:700;letter-spacing:.06em}
+#reel-intro-vs-teaser-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1300px;width:1080px;height:620px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-17bz1" class="scene" data-layout-allow-occlusion="" style="flex-direction:row;gap:24px;padding:80px 46px;">
+      <div data-hf-id="hf-17bz2" class="carte-vs" style="flex:1;height:100%;border-radius:34px;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.16) 0 18px,rgba(47,44,0,.06) 18px 36px);border:5px dashed rgba(47,44,0,.4);display:flex;align-items:center;justify-content:center;"><span data-hf-id="hf-17bz3" class="gelule">AVANT</span></div>
+      <div data-hf-id="hf-17bz4" class="carte-vs" style="flex:1;height:100%;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);border:7px solid #fffcd6;box-shadow:0 30px 70px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;"><span data-hf-id="hf-17bz5" class="gelule" style="background:#B9AA02;color:#2F2C00;">APRÈS</span></div></div>
+    <div data-hf-id="hf-17bz6" class="couture"></div>
+    <div data-hf-id="hf-17bz7" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-intro-vs-teaser-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:0,y:1300,width:1080,height:620,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},4.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelectorAll('.carte-vs'),{y:70,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out',stagger:.18},.08);
+      tl.to(root.querySelector('.scene'),{opacity:0,duration:.35,ease:'power2.in'},4.6);
+      window.__timelines['reel-intro-vs-teaser']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

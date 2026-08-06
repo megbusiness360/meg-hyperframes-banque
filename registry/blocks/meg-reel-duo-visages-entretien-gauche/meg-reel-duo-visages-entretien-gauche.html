@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel à DEUX visages — hôte dominant à gauche. Le master (vous) est recadré
+     par le bloc ; la zone INVITÉ hachurée se remplace par le rush du second
+     intervenant (réaction, duo, entretien). -->
+<div data-hf-id="hf-gmc90" id="reel-duo-visages-entretien-gauche-root" data-composition-id="reel-duo-visages-entretien-gauche" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="46" data-face-y="300" data-face-w="610" data-face-h="1280" data-face-r="34" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-duo-visages-entretien-gauche-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-duo-visages-entretien-gauche-root .invite{position:absolute;z-index:3;left:678px;top:640px;width:356px;height:600px;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#2F2C00;opacity:0}
+#reel-duo-visages-entretien-gauche-root .invite .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:34px;font-weight:700;letter-spacing:.05em}
+#reel-duo-visages-entretien-gauche-root .invite .sous{font-size:26px;font-weight:600;opacity:.62}
+#reel-duo-visages-entretien-gauche-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:34px;pointer-events:none;opacity:0}
+#reel-duo-visages-entretien-gauche-root .standalone-face{display:none;position:absolute;z-index:2;left:46px;top:300px;width:610px;height:1280px;border-radius:34px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-gmc91" class="invite" data-layout-allow-occlusion=""><span data-hf-id="hf-gmc92" class="etiquette">INVITÉ — REMPLACER</span><span data-hf-id="hf-gmc93" class="sous">rush du second intervenant</span></div>
+    <div data-hf-id="hf-gmc94" class="face-cadre" style="left:39px;top:293px;width:624px;height:1294px;"></div>
+    <div data-hf-id="hf-gmc95" class="standalone-face" data-layout-allow-occlusion="">MASTER — VOUS</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-duo-visages-entretien-gauche-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:46,y:300,width:610,height:1280,borderRadius:34,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelector('.invite'),{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.14)
+        .to(root.querySelector('.invite'),{opacity:0,y:-40,duration:.35,ease:'power2.in'},5.60);
+      const cadre=root.querySelector('.face-cadre');
+      if(cadre)tl.fromTo(cadre,{opacity:0},{opacity:1,duration:.4},.2).to(cadre,{opacity:0,duration:.3},5.62);
+      window.__timelines['reel-duo-visages-entretien-gauche']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

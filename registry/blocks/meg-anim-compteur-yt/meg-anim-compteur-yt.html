@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Compteur — le chiffre monte de 0 à la valeur (data-valeur sur
+     .compteur-nombre, suffixe dans data-suffixe). Remplacer valeur et
+     légende. Le compteur se rembobine proprement au scrub. -->
+<div data-hf-id="hf-al5n0" id="anim-compteur-yt-root" data-composition-id="anim-compteur-yt" data-start="0" data-duration="4" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #anim-compteur-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #anim-compteur-yt-root .compteur{position:absolute;z-index:30;left:40px;top:330px;width:560px;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0}
+#anim-compteur-yt-root .compteur-nombre{font-size:200px;font-weight:700;color:#B9AA02;line-height:.95;letter-spacing:-.03em;-webkit-text-stroke:3px #2F2C00;font-variant-numeric:tabular-nums}
+#anim-compteur-yt-root .compteur-legende{font-size:44px;font-weight:700;color:#FFFCD6;background:#2F2C00;padding:14px 34px;border-radius:999px;letter-spacing:.02em}
+    </style>
+    <div data-hf-id="hf-al5n1" class="compteur" data-layout-allow-occlusion=""><div data-hf-id="hf-al5n2" class="compteur-nombre" data-valeur="87" data-suffixe=" %">0 %</div><div data-hf-id="hf-al5n3" class="compteur-legende">légende à remplacer</div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#anim-compteur-yt-root');
+      const tl=gsap.timeline({paused:true});
+      
+      const nEl=root.querySelector('.compteur-nombre');
+      const cible2={v:0};const fin=parseFloat(nEl.dataset.valeur)||0;const suf=nEl.dataset.suffixe||'';
+      tl.fromTo(root.querySelector('.compteur'),{y:40,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.1)
+        .to(cible2,{v:fin,duration:1.4,ease:'power2.out',onUpdate:()=>{nEl.textContent=Math.round(cible2.v)+suf;}},.3)
+        .to(root.querySelector('.compteur'),{opacity:0,duration:.35,ease:'power2.in'},3.55);
+      window.__timelines['anim-compteur-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>
