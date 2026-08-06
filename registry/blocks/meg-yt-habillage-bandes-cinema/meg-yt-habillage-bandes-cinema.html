@@ -21,7 +21,7 @@
       (()=>{
       const root=document.querySelector('#yt-habillage-bandes-cinema-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.to(root.querySelectorAll('.bande'),{height:120,duration:.7,ease:'power3.inOut'},.05);
       window.__timelines['yt-habillage-bandes-cinema']=tl;
       })();

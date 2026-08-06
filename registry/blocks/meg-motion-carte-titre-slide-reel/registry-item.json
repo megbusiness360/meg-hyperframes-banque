@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-carte-titre-slide-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Carte-titre interstitielle (glissée)",
+  "description": "Carte crème pleine qui glisse entre deux séquences : gélule + grand titre + filet or. 2,2 s, à poser sur un cut.",
+  "tags": [
+    "meg",
+    "motion",
+    "carte-titre",
+    "slide",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "carte-titre glissée",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 2.2,
+  "files": [
+    {
+      "path": "meg-motion-carte-titre-slide-reel.html",
+      "target": "compositions/meg-motion-carte-titre-slide-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

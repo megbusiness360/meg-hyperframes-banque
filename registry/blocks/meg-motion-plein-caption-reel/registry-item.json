@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-plein-caption-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Écran plein + caption centrale",
+  "description": "Écran bord à bord (capture, B-roll) + grande caption centrée en gélule. Remplacer la zone hachurée et le texte.",
+  "tags": [
+    "meg",
+    "motion",
+    "ecran",
+    "caption",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "plein + caption",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-motion-plein-caption-reel.html",
+      "target": "compositions/meg-motion-plein-caption-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

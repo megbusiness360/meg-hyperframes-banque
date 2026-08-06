@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Carte-titre interstitielle punch — respiration entre deux idées.
+     Remplacer gélule + titre. À cheval sur un cut, comme une transition. -->
+<div data-hf-id="hf-40h10" id="motion-carte-titre-punch-reel-root" data-composition-id="motion-carte-titre-punch-reel" data-start="0" data-duration="2.2" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-carte-titre-punch-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-carte-titre-punch-reel-root .carte-t{position:absolute;inset:0;z-index:30;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;text-align:center;padding:0 90px}
+#motion-carte-titre-punch-reel-root .gelule-t{padding:12px 32px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:32px;font-weight:700;letter-spacing:.12em}
+#motion-carte-titre-punch-reel-root .titre-t{color:#2F2C00;font-size:96px;font-weight:700;letter-spacing:-.03em;line-height:1}
+#motion-carte-titre-punch-reel-root .filet-t{width:280px;height:9px;border-radius:5px;background:#B9AA02;transform-origin:center}
+    </style>
+    <div data-hf-id="hf-40h11" class="carte-t" data-layout-allow-occlusion="">
+      <span data-hf-id="hf-40h12" class="gelule-t">PARTIE 2</span>
+      <div data-hf-id="hf-40h13" class="titre-t">Le titre de la<br data-hf-id="hf-40h14">séquence suivante</div>
+      <div data-hf-id="hf-40h15" class="filet-t"></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-carte-titre-punch-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const c=root.querySelector('.carte-t');
+      tl.fromTo(c,{scale:1.12,opacity:0},{scale:1,opacity:1,duration:.4,ease:'power3.out'},0)
+        .fromTo(root.querySelector('.titre-t'),{y:30,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.22)
+        .fromTo(root.querySelector('.filet-t'),{scaleX:0},{scaleX:1,duration:.35,ease:'power2.out'},.5)
+        .to(c,{scale:1.06,opacity:0,duration:.35,ease:'power2.in'},1.85);
+      window.__timelines['motion-carte-titre-punch-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

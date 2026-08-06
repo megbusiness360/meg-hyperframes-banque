@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-outro-ecran-fin",
   "type": "hyperframes:block",
-  "title": "YouTube — écran de fin",
+  "title": "Large — écran de fin",
   "description": "Écran de fin 16:9 : visage master à gauche + deux emplacements vidéos suivantes à droite (zones end-screen YouTube).",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "outro",
-    "ecran-fin"
+    "ecran-fin",
+    "meg-large"
   ],
   "family": "yt-outro",
-  "familyTitle": "YouTube — outros & CTA",
+  "familyTitle": "Large — outros & CTA",
   "variant": "écran de fin",
   "dimensions": {
     "width": 1920,

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Icône pop euro — ponctuation visuelle d'un mot (oui/non/vite/€).
+     Déplacer librement en zone neutre ; caler sur le mot dit. -->
+<div data-hf-id="hf-sa510" id="motion-icone-euro-reel-root" data-composition-id="motion-icone-euro-reel" data-start="0" data-duration="1.4" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-icone-euro-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-icone-euro-reel-root .badge-i{position:absolute;z-index:6;left:470px;top:1200px;width:150px;height:150px;border-radius:50%;background:#B9AA02;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 44px rgba(0,0,0,.35);opacity:0}
+#motion-icone-euro-reel-root .badge-i svg{width:86px;height:86px}
+#motion-icone-euro-reel-root .badge-i .sym{font-size:76px;font-weight:700;color:#2F2C00;line-height:1}
+#motion-icone-euro-reel-root .onde{position:absolute;z-index:5;left:455px;top:1185px;width:180px;height:180px;border-radius:50%;border:6px solid #B9AA02;opacity:0}
+    </style>
+    <div data-hf-id="hf-sa511" class="onde" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-sa512" class="badge-i" data-layout-allow-occlusion=""><span data-hf-id="hf-sa513" class="sym">€</span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-icone-euro-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const b=root.querySelector('.badge-i'),o=root.querySelector('.onde');
+      tl.fromTo(b,{scale:.3,rotation:-12,opacity:0},{scale:1,rotation:0,opacity:1,duration:.36,ease:'back.out(2.4)'},.05)
+        .fromTo(o,{scale:.8,opacity:.8},{scale:1.5,opacity:0,duration:.55,ease:'power2.out'},.28)
+        .to(b,{scale:1.06,duration:.55,ease:'none'},.45)
+        .to(b,{opacity:0,scale:1.15,duration:.25,ease:'power2.in'},1.12);
+      window.__timelines['motion-icone-euro-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-logo-reveal-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Logo reveal MEG",
+  "description": "Signature de marque : MEG + BUSINESS 360 + filet or qui se déploie sur carte crème. 2,5 s — ouverture ou fermeture de vidéo.",
+  "tags": [
+    "meg",
+    "motion",
+    "logo",
+    "marque",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "logo reveal",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 2.5,
+  "files": [
+    {
+      "path": "meg-motion-logo-reveal-reel.html",
+      "target": "compositions/meg-motion-logo-reveal-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

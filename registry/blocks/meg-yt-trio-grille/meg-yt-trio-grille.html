@@ -9,25 +9,27 @@
 <body>
 <!-- Layout YouTube — grille 2×2 : trois écrans + le visage dans le quart
      bas-droit. Pour les comparatifs multi-sources. Le bloc pilote le master. -->
-<div data-hf-id="hf-wwv00" id="yt-trio-grille-root" data-composition-id="yt-trio-grille" data-start="0" data-duration="6" data-width="1920" data-height="1080" data-face-x="971" data-face-y="540" data-face-w="909" data-face-h="500" data-face-r="30" data-face-mode="move">
+<div data-hf-id="hf-wwv00" id="yt-trio-grille-root" data-composition-id="yt-trio-grille" data-start="0" data-duration="6" data-width="1920" data-height="1080" data-face-x="974" data-face-y="548" data-face-w="906" data-face-h="492" data-face-r="30" data-face-mode="move">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #yt-trio-grille-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-trio-grille-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
       #yt-trio-grille-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
 #yt-trio-grille-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
 #yt-trio-grille-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:30px;font-weight:700;letter-spacing:.05em}
 
 #yt-trio-grille-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
 #yt-trio-grille-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
-#yt-trio-grille-root .ecran .url{flex:1;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden}
+#yt-trio-grille-root .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #yt-trio-grille-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:30px;pointer-events:none;opacity:0}
-#yt-trio-grille-root .standalone-face{display:none;position:absolute;z-index:2;left:971px;top:540px;width:909px;height:500px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+#yt-trio-grille-root .standalone-face{display:none;position:absolute;z-index:2;left:974px;top:548px;width:906px;height:492px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-wwv01" class="ecran" style="left:40px;top:40px;width:909px;height:480px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv02" class="etiquette">ÉCRAN 1</span></div>
-    <div data-hf-id="hf-wwv03" class="ecran" style="left:971px;top:40px;width:909px;height:480px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv04" class="etiquette">ÉCRAN 2</span></div>
-    <div data-hf-id="hf-wwv05" class="ecran" style="left:40px;top:540px;width:909px;height:500px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv06" class="etiquette">ÉCRAN 3</span></div>
-    <div data-hf-id="hf-wwv07" class="face-cadre" style="left:964px;top:533px;width:923px;height:514px;"></div>
-    <div data-hf-id="hf-wwv08" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-wwv09">RECADRÉ ICI</div>
+    <div data-hf-id="hf-wwv01" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-wwv02" class="ecran" style="left:40px;top:40px;width:906px;height:480px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv03" class="etiquette">ÉCRAN 1</span></div>
+    <div data-hf-id="hf-wwv04" class="ecran" style="left:974px;top:40px;width:906px;height:480px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv05" class="etiquette">ÉCRAN 2</span></div>
+    <div data-hf-id="hf-wwv06" class="ecran" style="left:40px;top:548px;width:906px;height:492px;" data-layout-allow-occlusion=""><span data-hf-id="hf-wwv07" class="etiquette">ÉCRAN 3</span></div>
+    <div data-hf-id="hf-wwv08" class="face-cadre" style="left:967px;top:541px;width:920px;height:506px;"></div>
+    <div data-hf-id="hf-wwv09" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-wwv0a">RECADRÉ ICI</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -37,10 +39,14 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
-          {x:971,y:540,width:909,height:500,borderRadius:30,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+          {x:974,y:548,width:906,height:492,borderRadius:30,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58)
+          .set(master,{clearProps:'zIndex'},6.00);
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}

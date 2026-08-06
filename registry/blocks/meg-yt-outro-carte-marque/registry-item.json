@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-outro-carte-marque",
   "type": "hyperframes:block",
-  "title": "YouTube — outro carte de marque",
+  "title": "Large — outro carte de marque",
   "description": "Outro 16:9 plein cadre : marque MEG + invitation indirecte + URL mise en avant.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "outro",
-    "marque"
+    "marque",
+    "meg-large"
   ],
   "family": "yt-outro",
-  "familyTitle": "YouTube — outros & CTA",
+  "familyTitle": "Large — outros & CTA",
   "variant": "carte de marque",
   "dimensions": {
     "width": 1920,

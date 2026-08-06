@@ -1,1 +1,38 @@
-{"$schema":"https://hyperframes.heygen.com/schema/registry-item.json","name":"meg-proof-split-50-top","type":"hyperframes:block","title":"Preuve haut 50 · Visage bas 50","description":"Partage à parts égales, preuve au-dessus du visage.","tags":["meg","preuve","separe","haut","50-50"],"family":"split","familyTitle":"Preuve + visage","variant":"Preuve haut 50 · Visage bas 50","dimensions":{"width":1080,"height":1920},"duration":5,"files":[{"path":"meg-proof-split-50-top.html","target":"compositions/meg-proof-split-50-top.html","type":"hyperframes:composition"},{"path":"assets/ClashGrotesk-Variable.woff2","target":"assets/ClashGrotesk-Variable.woff2","type":"hyperframes:asset"}],"preview":{"poster":"preview.jpg"}}
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-proof-split-50-top",
+  "type": "hyperframes:block",
+  "title": "Preuve haut 50 · Visage bas 50",
+  "description": "Partage à parts égales, preuve au-dessus du visage.",
+  "tags": [
+    "meg",
+    "preuve",
+    "separe",
+    "haut",
+    "50-50",
+    "meg-reel"
+  ],
+  "family": "split",
+  "familyTitle": "Preuve + visage",
+  "variant": "Preuve haut 50 · Visage bas 50",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-proof-split-50-top.html",
+      "target": "compositions/meg-proof-split-50-top.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

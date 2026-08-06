@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-pile-broll-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Pile de texte sur B-roll",
+  "description": "Trois grandes lignes en gélules qui s'empilent au centre du cadre — à poser sur un plan B-roll (jamais sur le visage).",
+  "tags": [
+    "meg",
+    "motion",
+    "texte",
+    "broll",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "pile B-roll",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4.5,
+  "files": [
+    {
+      "path": "meg-motion-pile-broll-reel.html",
+      "target": "compositions/meg-motion-pile-broll-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

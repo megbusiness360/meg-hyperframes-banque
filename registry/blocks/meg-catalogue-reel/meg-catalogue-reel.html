@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Couverture « MEG - Reel » — carte d'identité du catalogue vertical.
+     Repère visuel dans la banque, jamais posée dans un montage client. -->
+<div data-hf-id="hf-1n7h0" id="catalogue-reel-root" data-composition-id="catalogue-reel" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #catalogue-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #catalogue-reel-root .scene{position:absolute;inset:0;z-index:2;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;align-items:center;text-align:center;padding:150px 70px 0}
+#catalogue-reel-root .gelule{padding:14px 36px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:34px;font-weight:700;letter-spacing:.14em;opacity:0}
+#catalogue-reel-root .titre{margin-top:56px;color:#2F2C00;font-size:168px;font-weight:700;letter-spacing:-.03em;line-height:.95;opacity:0}
+#catalogue-reel-root .titre .or{color:#B9AA02}
+#catalogue-reel-root .filet{margin-top:44px;width:340px;height:10px;border-radius:6px;background:#B9AA02;transform-origin:center}
+#catalogue-reel-root .sous{margin-top:40px;color:#2F2C00;font-size:42px;font-weight:600;opacity:.62;line-height:1.3}
+
+#catalogue-reel-root .minis{position:absolute;z-index:3;display:flex;gap:34px;opacity:0}
+#catalogue-reel-root .mini{box-sizing:border-box;border:5px solid #2F2C00;border-radius:22px;background:#FFFEEC;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:10px}
+#catalogue-reel-root .mini .z-ecran{flex:1;border-radius:12px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px)}
+#catalogue-reel-root .mini .z-face{border-radius:12px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%)}
+#catalogue-reel-root .mini .rang2{flex:1;display:flex;gap:8px}
+#catalogue-reel-root .mini .rang2 .z-ecran,#catalogue-reel-root .mini .rang2 .z-face{flex:1;height:auto}
+#catalogue-reel-root .minis{left:131px;top:1010px}
+#catalogue-reel-root .mini{width:250px;height:444px}
+#catalogue-reel-root .mini .z-face{height:180px}
+#catalogue-reel-root .familles{position:absolute;z-index:3;left:70px;right:70px;bottom:130px;color:#2F2C00;font-size:34px;font-weight:600;opacity:0;line-height:1.5}
+    </style>
+    <div data-hf-id="hf-1n7h1" class="scene" data-layout-allow-occlusion="">
+      <span data-hf-id="hf-1n7h2" class="gelule">BANQUE MEG</span>
+      <div data-hf-id="hf-1n7h3" class="titre">MEG - <span data-hf-id="hf-1n7h4" class="or">Reel</span></div>
+      <div data-hf-id="hf-1n7h5" class="filet"></div>
+      <div data-hf-id="hf-1n7h6" class="sous">Layouts &amp; animations 9:16<br data-hf-id="hf-1n7h7">Reels · Shorts · TikTok</div>
+    </div>
+    <div data-hf-id="hf-1n7h8" class="minis" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-1n7h9" class="mini"><div data-hf-id="hf-1n7ha" class="z-ecran"></div><div data-hf-id="hf-1n7hb" class="z-face"></div></div>
+      <div data-hf-id="hf-1n7hc" class="mini"><div data-hf-id="hf-1n7hd" class="z-ecran"></div><div data-hf-id="hf-1n7he" class="z-ecran"></div><div data-hf-id="hf-1n7hf" class="z-face"></div></div>
+      <div data-hf-id="hf-1n7hg" class="mini"><div data-hf-id="hf-1n7hh" class="z-face" style="height:270px"></div><div data-hf-id="hf-1n7hi" class="z-ecran"></div></div>
+    </div>
+    <div data-hf-id="hf-1n7hj" class="familles">Splits · duos · trios · détourés · intros<br data-hf-id="hf-1n7hk">chapitres · CTA · avant/après · effets</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#catalogue-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.gelule'),{y:-24,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.05)
+        .fromTo(root.querySelector('.titre'),{y:40,opacity:0},{y:0,opacity:1,duration:.55,ease:'power3.out'},.15)
+        .fromTo(root.querySelector('.filet'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.45)
+        .fromTo(root.querySelector('.sous'),{opacity:0},{opacity:.62,duration:.4},.6)
+        .fromTo(root.querySelector('.minis'),{y:50,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.7)
+        .fromTo(root.querySelectorAll('.mini'),{scale:.92},{scale:1,duration:.45,ease:'back.out(1.5)',stagger:.1},.7)
+        .fromTo(root.querySelector('.familles'),{opacity:0},{opacity:1,duration:.4},1);
+      window.__timelines['catalogue-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

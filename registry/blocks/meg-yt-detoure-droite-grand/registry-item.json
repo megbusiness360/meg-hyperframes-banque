@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-detoure-droite-grand",
   "type": "hyperframes:block",
-  "title": "YouTube — détouré droite (grand)",
+  "title": "Large — détouré droite (grand)",
   "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à droite (grand). Remplacer par l'asset alpha.",
   "tags": [
     "meg",
@@ -11,10 +11,11 @@
     "layout",
     "detoure",
     "fond-vert",
-    "droite"
+    "droite",
+    "meg-large"
   ],
   "family": "yt-detoure",
-  "familyTitle": "YouTube — visage détouré (fond vert)",
+  "familyTitle": "Large — visage détouré (fond vert)",
   "variant": "droite grand",
   "dimensions": {
     "width": 1920,

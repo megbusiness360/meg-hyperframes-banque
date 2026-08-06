@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-duo-pile-droite-carte",
   "type": "hyperframes:block",
-  "title": "YouTube — duo 2 écrans empilés à droite (carte)",
+  "title": "Large — duo 2 écrans empilés à droite (carte)",
   "description": "Split 16:9 à deux écrans : 2 écrans empilés à droite, visage master recadré. Style carte.",
   "tags": [
     "meg",
@@ -11,10 +11,11 @@
     "layout",
     "duo",
     "pile-droite",
-    "carte"
+    "carte",
+    "meg-large"
   ],
   "family": "yt-split-duo",
-  "familyTitle": "YouTube — splits visage + 2 écrans",
+  "familyTitle": "Large — splits visage + 2 écrans",
   "variant": "2 écrans empilés à droite carte",
   "dimensions": {
     "width": 1920,

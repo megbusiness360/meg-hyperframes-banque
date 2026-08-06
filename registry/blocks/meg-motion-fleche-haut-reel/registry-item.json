@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-fleche-haut-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Sticker flèche vers le haut",
+  "description": "Flèche sticker qui pop et pointe vers le haut (preuve, visage, élément) + étiquette éditable.",
+  "tags": [
+    "meg",
+    "motion",
+    "sticker",
+    "fleche",
+    "haut",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "flèche vers le haut",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 2.5,
+  "files": [
+    {
+      "path": "meg-motion-fleche-haut-reel.html",
+      "target": "compositions/meg-motion-fleche-haut-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Bandeau preuve — une « notification » crème avec coche or : titre =
+     le résultat, sous-ligne = le contexte. Remplacer les deux textes. -->
+<div data-hf-id="hf-1htd0" id="motion-bandeau-preuve-yt-root" data-composition-id="motion-bandeau-preuve-yt" data-start="0" data-duration="3.5" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-bandeau-preuve-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-bandeau-preuve-yt-root .notif{position:absolute;z-index:6;left:40px;top:40px;width:780px;display:flex;align-items:center;gap:24px;padding:22px 30px;border-radius:28px;background:#FFFCD6;box-shadow:0 18px 50px rgba(0,0,0,.35);opacity:0}
+#motion-bandeau-preuve-yt-root .coche{flex:none;width:74px;height:74px;border-radius:50%;background:#B9AA02;display:flex;align-items:center;justify-content:center}
+#motion-bandeau-preuve-yt-root .coche svg{width:40px;height:40px}
+#motion-bandeau-preuve-yt-root .txts{min-width:0}
+#motion-bandeau-preuve-yt-root .titre-notif{color:#2F2C00;font-size:36px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#motion-bandeau-preuve-yt-root .sous-notif{margin-top:4px;color:#2F2C00;opacity:.6;font-size:27px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    </style>
+    <div data-hf-id="hf-1htd1" class="notif" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-1htd2" class="coche"><svg data-hf-id="hf-1htd3" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path data-hf-id="hf-1htd4" d="M8 21l8 8 16-18" stroke="#2F2C00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+      <div data-hf-id="hf-1htd5" class="txts"><div data-hf-id="hf-1htd6" class="titre-notif">Dossier validé — 12 480 € financés</div><div data-hf-id="hf-1htd7" class="sous-notif">Résultat à remplacer par votre preuve</div></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-bandeau-preuve-yt-root');
+      const tl=gsap.timeline({paused:true});
+
+      const n=root.querySelector('.notif');
+      tl.fromTo(n,{y:-130,opacity:0},{y:0,opacity:1,duration:.5,ease:'back.out(1.4)'},.1)
+        .fromTo(root.querySelector('.coche'),{scale:.4},{scale:1,duration:.4,ease:'back.out(2.5)'},.35)
+        .to(n,{y:-40,opacity:0,duration:.35,ease:'power2.in'},3.1);
+      window.__timelines['motion-bandeau-preuve-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

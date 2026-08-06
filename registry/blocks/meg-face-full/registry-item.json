@@ -1,1 +1,33 @@
-{"$schema":"https://hyperframes.heygen.com/schema/registry-item.json","name":"meg-face-full","type":"hyperframes:block","title":"Plein cadre","description":"Vidéo maître plein cadre.","tags":["meg","visage","maitre"],"dimensions":{"width":1080,"height":1920},"duration":15,"files":[{"path":"meg-face-full.html","target":"compositions/meg-face-full.html","type":"hyperframes:composition"},{"path":"assets/ClashGrotesk-Variable.woff2","target":"assets/ClashGrotesk-Variable.woff2","type":"hyperframes:asset"}],"preview":{"poster":"preview.jpg"}}
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-face-full",
+  "type": "hyperframes:block",
+  "title": "Plein cadre",
+  "description": "Vidéo maître plein cadre.",
+  "tags": [
+    "meg",
+    "visage",
+    "maitre",
+    "meg-reel"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 15,
+  "files": [
+    {
+      "path": "meg-face-full.html",
+      "target": "compositions/meg-face-full.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

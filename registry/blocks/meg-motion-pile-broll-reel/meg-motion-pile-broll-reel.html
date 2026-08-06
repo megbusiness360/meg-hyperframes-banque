@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Pile de texte B-roll — la phrase clé en 3 segments GROS, centrés.
+     À poser sur un plan B-roll/écran, pas sur le master visage. Éditer les
+     3 lignes ; la classe "or" marque le mot fort. -->
+<div data-hf-id="hf-wunu0" id="motion-pile-broll-reel-root" data-composition-id="motion-pile-broll-reel" data-start="0" data-duration="4.5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-pile-broll-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-pile-broll-reel-root .pile-b{position:absolute;z-index:6;left:70px;right:70px;top:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+#motion-pile-broll-reel-root .lb{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:72px;opacity:0}
+#motion-pile-broll-reel-root .lb .or{color:#FFF3AE}
+    </style>
+    <div data-hf-id="hf-wunu1" class="pile-b" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-wunu2" class="lb">3 documents.</div>
+      <div data-hf-id="hf-wunu3" class="lb">15 minutes.</div>
+      <div data-hf-id="hf-wunu4" class="lb"><span data-hf-id="hf-wunu5" class="or">0 refus.</span></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-pile-broll-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const lb=root.querySelectorAll('.lb');
+      tl.fromTo(lb[0],{y:40,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.42,ease:'back.out(1.5)'},.15)
+        .fromTo(lb[1],{y:40,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.42,ease:'back.out(1.5)'},1.15)
+        .fromTo(lb[2],{y:40,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.42,ease:'back.out(1.5)'},2.15)
+        .to(lb,{opacity:0,y:-26,duration:.32,ease:'power2.in',stagger:.05},4);
+      window.__timelines['motion-pile-broll-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

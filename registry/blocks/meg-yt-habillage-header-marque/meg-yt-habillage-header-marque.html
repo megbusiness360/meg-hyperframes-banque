@@ -22,7 +22,7 @@
       (()=>{
       const root=document.querySelector('#yt-habillage-header-marque-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.bande-h'),{y:-96,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.05);
       window.__timelines['yt-habillage-header-marque']=tl;
       })();

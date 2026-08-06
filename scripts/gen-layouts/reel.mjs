@@ -9,7 +9,7 @@ import {
   silhouetteCss, silhouetteDiv,
 } from "./lib.mjs";
 
-const W = 1080, H = 1920, M = 46, SEAM = 22, R = 34;
+const W = 1080, H = 1920, M = 46, SEAM = 30, R = 34;
 const CW = W - 2 * M; // 988 — largeur utile carte
 
 const cadreCss = (sel) =>
@@ -121,7 +121,7 @@ for (const [arr, meta] of Object.entries(duoArrs)) {
   for (const style of ["carte", "nav"]) {
     for (const emp of ["egal", "domine"]) {
       const nav = style === "nav";
-      const gap = 24;
+      const gap = 28;
       let ecrans = [], face;
       if (arr === "pile-haut" || arr === "pile-bas") {
         const zoneH = Math.round(H * 0.55) - M - SEAM / 2;
@@ -182,11 +182,11 @@ master : visage ${meta.face}.`,
 /* ————— R3 · Visage + 3 écrans (4) ————— */
 const trios = [
   { key: "pile-haut", txt: "3 écrans empilés en haut", ecrans: () => {
-      const zoneH = Math.round(H * 0.58), gap = 20, h = Math.round((zoneH - 2 * gap) / 3);
+      const zoneH = Math.round(H * 0.58), gap = 28, h = Math.round((zoneH - 2 * gap) / 3);
       return [0, 1, 2].map((i) => ({ x: M, y: M + i * (h + gap), w: CW, h, label: `ÉCRAN ${i + 1}` }));
     }, face: () => ({ x: M, y: M + Math.round(H * 0.58) + SEAM, w: CW, h: H - (M + Math.round(H * 0.58) + SEAM) - M, r: R }) },
   { key: "grille-2-1", txt: "2 écrans côte à côte + 1 large dessous", ecrans: () => {
-      const gap = 20, h1 = 430, wDemi = Math.round((CW - gap) / 2);
+      const gap = 28, h1 = 430, wDemi = Math.round((CW - gap) / 2);
       return [
         { x: M, y: M, w: wDemi, h: h1, label: "ÉCRAN 1" },
         { x: M + wDemi + gap, y: M, w: CW - gap - wDemi, h: h1, label: "ÉCRAN 2" },
@@ -194,7 +194,7 @@ const trios = [
       ];
     }, face: () => ({ x: M, y: M + 430 + 20 + 560 + SEAM, w: CW, h: H - (M + 430 + 20 + 560 + SEAM) - M, r: R }) },
   { key: "grille-1-2", txt: "1 écran large + 2 côte à côte dessous", ecrans: () => {
-      const gap = 20, h1 = 560, h2 = 430, wDemi = Math.round((CW - gap) / 2);
+      const gap = 28, h1 = 560, h2 = 430, wDemi = Math.round((CW - gap) / 2);
       return [
         { x: M, y: M, w: CW, h: h1, label: "ÉCRAN 1 — REMPLACER" },
         { x: M, y: M + h1 + gap, w: wDemi, h: h2, label: "ÉCRAN 2" },
@@ -202,9 +202,9 @@ const trios = [
       ];
     }, face: () => ({ x: M, y: M + 560 + 20 + 430 + SEAM, w: CW, h: H - (M + 560 + 20 + 430 + SEAM) - M, r: R }) },
   { key: "colonne", txt: "visage pleine hauteur + colonne de 3 écrans", ecrans: () => {
-      const gap = 20, colW = 400, colX = W - M - colW, h = Math.round((H - 2 * M - 2 * gap) / 3);
+      const gap = 28, colW = 400, colX = W - M - colW, h = Math.round((H - 2 * M - 2 * gap) / 3);
       return [0, 1, 2].map((i) => ({ x: colX, y: M + i * (h + gap), w: colW, h, label: `ÉCRAN ${i + 1}` }));
-    }, face: () => ({ x: M, y: M, w: W - 2 * M - 400 - 24, h: H - 2 * M, r: R }) },
+    }, face: () => ({ x: M, y: M, w: W - 2 * M - 400 - SEAM, h: H - 2 * M, r: R }) },
 ];
 for (const t of trios) {
   const face = t.face();
@@ -382,7 +382,7 @@ Enchaîner sur un layout split une fois le hook posé.`,
 /* ————— R7 · Chapitres (4) ————— */
 const chapitres = [
   { key: "carton-numero", txt: "carton numéro plein",
-    css: `%R% .carton{position:absolute;z-index:3;left:120px;top:600px;width:840px;border-radius:44px;background:${GRAD_CARTE};box-shadow:0 40px 88px rgba(0,0,0,.4);padding:64px 70px;color:${PAL.encre};opacity:0}
+    css: `%R% .carton{position:absolute;z-index:3;left:120px;top:1140px;width:840px;border-radius:44px;background:${GRAD_CARTE};box-shadow:0 40px 88px rgba(0,0,0,.4);padding:64px 70px;color:${PAL.encre};opacity:0}
 %R% .num{font-size:150px;font-weight:700;color:${PAL.or};line-height:.9}
 %R% .chap{margin-top:14px;font-size:60px;font-weight:700;letter-spacing:-.02em;line-height:1.02}`,
     html: `<div class="carton" data-layout-allow-occlusion=""><div class="num">02</div><div class="chap">Titre du chapitre<br>à remplacer</div></div>`,
@@ -634,7 +634,7 @@ en bas. Le titre est une vraie ligne éditable (pas un sous-titre) :
 remplacer le texte, garder le soulignement animé.`,
       css: [
         ecranCss("%R%"),
-        `%R% .titre-couture{position:absolute;z-index:4;left:${M}px;top:${titreY}px;width:${CW}px;text-align:center;color:${PAL.creme};font-size:66px;font-weight:700;letter-spacing:-.02em;text-shadow:0 6px 30px rgba(0,0,0,.55);opacity:0}
+        `%R% .titre-couture{position:absolute;z-index:4;left:${M}px;top:${titreY}px;width:${CW}px;text-align:center;color:${PAL.encre};font-size:66px;font-weight:700;letter-spacing:-.02em;opacity:0}
 %R% .souligne{position:absolute;z-index:4;left:50%;top:${titreY + 104}px;width:340px;height:9px;margin-left:-170px;border-radius:5px;background:${PAL.or};transform-origin:center}`,
         cadreCss("%R%"), standaloneCss("%R%", face),
       ].join("\n"),
@@ -753,9 +753,9 @@ const avantApres = [
         .fromTo(root.querySelector('.poignee'),{x:0},{x:-496,duration:1.4,ease:'power2.inOut'},.7);`,
   },
   { key: "duo-cartes", txt: "deux cartes inclinées", faceGeom: { x: 0, y: H - 500, w: W, h: 500, r: 0 },
-    css: [`%R% .carte-av{position:absolute;z-index:3;width:640px;height:840px;box-sizing:border-box;border-radius:${R}px;display:flex;align-items:flex-start;justify-content:center;padding-top:50px;opacity:0}
-%R% .carte-av.avant{left:60px;top:180px;background:${HACHURE_SOMBRE};border:5px dashed rgba(47,44,0,.4)}
-%R% .carte-av.apres{left:380px;top:330px;background:${HACHURE};border:7px solid #fffcd6;box-shadow:0 40px 90px rgba(0,0,0,.4)}
+    css: [`%R% .carte-av{position:absolute;z-index:3;width:470px;height:820px;box-sizing:border-box;border-radius:${R}px;display:flex;align-items:flex-start;justify-content:center;padding-top:50px;opacity:0}
+%R% .carte-av.avant{left:46px;top:200px;background:${HACHURE_SOMBRE};border:5px dashed rgba(47,44,0,.4)}
+%R% .carte-av.apres{left:564px;top:330px;background:${HACHURE};border:7px solid #fffcd6;box-shadow:0 40px 90px rgba(0,0,0,.4)}
 %R% .carte-av .tag{padding:12px 30px;border-radius:999px;background:${PAL.encre};color:${PAL.creme};font-size:34px;font-weight:700;letter-spacing:.06em}
 %R% .carte-av.apres .tag{background:${PAL.or};color:${PAL.encre}}
 %R% .couture{position:absolute;z-index:4;left:0;top:${H - 506}px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}`,
@@ -829,7 +829,7 @@ blocks.push(emit({
   faceGeom: { x: 0, y: H - 560, w: W, h: 560, r: 0 },
   comment: `Layout Reel preuve sociale — mur de 6 logos. Remplacer chaque tuile
 hachurée par un logo réel (clients, certifications, partenaires).`,
-  css: [`%R% .titre-mur{position:absolute;z-index:3;left:${M}px;top:70px;width:${CW}px;text-align:center;color:${PAL.creme};font-size:58px;font-weight:700;letter-spacing:-.02em;text-shadow:0 6px 30px rgba(0,0,0,.55);opacity:0}
+  css: [`%R% .titre-mur{position:absolute;z-index:3;left:${M}px;top:70px;width:${CW}px;text-align:center;color:${PAL.encre};font-size:58px;font-weight:700;letter-spacing:-.02em;opacity:0}
 %R% .tuile{position:absolute;z-index:3;width:${Math.round((CW - 2 * 20) / 2)}px;height:300px;box-sizing:border-box;border-radius:${R}px;border:7px solid #fffcd6;background:${HACHURE};box-shadow:0 24px 60px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:${PAL.encre};font-size:30px;font-weight:700;letter-spacing:.05em;opacity:0}`,
     standaloneCss("%R%", { x: 0, y: H - 560, w: W, h: 560, r: 0 }),
     `%R% .couture{position:absolute;z-index:4;left:0;top:${H - 566}px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}`].join("\n"),

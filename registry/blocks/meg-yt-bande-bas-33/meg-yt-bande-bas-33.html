@@ -14,14 +14,16 @@
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #yt-bande-bas-33-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #yt-bande-bas-33-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
       #yt-bande-bas-33-root .grand-ecran{position:absolute;z-index:3;left:0;top:0;width:1920px;height:718px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);display:flex;align-items:center;justify-content:center;opacity:0}
 #yt-bande-bas-33-root .grand-ecran .etiquette{padding:14px 30px;border-radius:24px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
 #yt-bande-bas-33-root .couture{position:absolute;z-index:4;left:0;top:718px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
 #yt-bande-bas-33-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:724px;width:1920px;height:356px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-uoxc1" class="grand-ecran" data-layout-allow-occlusion=""><span data-hf-id="hf-uoxc2" class="etiquette">ÉCRAN — REMPLACER</span></div>
-    <div data-hf-id="hf-uoxc3" class="couture"></div>
-    <div data-hf-id="hf-uoxc4" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <div data-hf-id="hf-uoxc1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-uoxc2" class="grand-ecran" data-layout-allow-occlusion=""><span data-hf-id="hf-uoxc3" class="etiquette">ÉCRAN — REMPLACER</span></div>
+    <div data-hf-id="hf-uoxc4" class="couture"></div>
+    <div data-hf-id="hf-uoxc5" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -31,10 +33,22 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
           {x:0,y:724,width:1920,height:356,borderRadius:0,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58)
+          .set(master,{clearProps:'zIndex'},6.00);
+        /* Biais visage : pendant le recadrage, la fenêtre cover vise le haut
+           du rush (le visage), pas le centre géométrique. Valeur d'origine
+           restaurée en sortie — le bloc suivant repart d'un master intact. */
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 6%'},0).set(vid,{objectPosition:op0},6.00);
+        }
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}

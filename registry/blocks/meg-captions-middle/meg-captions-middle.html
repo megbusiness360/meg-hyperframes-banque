@@ -12,20 +12,22 @@
      regard : l'œil fait l'aller-retour preuve → bas d'écran et décroche. Ici la
      gélule se pose SUR la couture entre les deux zones (style clip de podcast) :
      on lit sans jamais quitter ni la preuve ni le visage.
-     data-ancre sur la gélule : "40" = couture des splits 40/60 (défaut),
+     data-ancre sur la gélule : "libre" = sous le visage, plein cadre (défaut —
+     jamais sur la ligne des yeux), "40" = couture des splits 40/60,
      "50" = couture des splits 50/50, "milieu" = centre exact du cadre. -->
 <div data-hf-id="hf-stm0" id="sous-titres-milieu" data-composition-id="sous-titres-milieu" data-start="0" data-duration="15" data-width="1080" data-height="1920">
   <style>
     @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
     #sous-titres-milieu{position:relative;width:1080px;height:1920px;font-family:'Clash Grotesk MEG',sans-serif}
     #sous-titres-milieu .ancre-sous-titre{position:absolute;z-index:10;left:0;right:0;display:flex;justify-content:center;transform:translateY(-50%)}
+    #sous-titres-milieu .ancre-sous-titre[data-ancre="libre"]{top:1130px}
     #sous-titres-milieu .ancre-sous-titre[data-ancre="40"]{top:773px}
     #sous-titres-milieu .ancre-sous-titre[data-ancre="50"]{top:960px}
     #sous-titres-milieu .ancre-sous-titre[data-ancre="milieu"]{top:940px}
     /* Même gélule que le sous-titre global : une seule voix de captions. */
     #sous-titres-milieu .caption{display:inline-flex;width:fit-content;max-width:940px;padding:14px 28px;border-radius:28px;background:rgba(47,44,0,.86);color:#FFFCD6;font-size:58px;font-weight:700;line-height:1;letter-spacing:-.028em;word-spacing:.04em;text-align:center;white-space:nowrap;text-shadow:0 3px 0 #2F2C00,0 0 16px rgba(47,44,0,.7)}
   </style>
-  <div data-hf-id="hf-stm1" class="ancre-sous-titre" data-ancre="40"><div data-hf-id="hf-stm2" class="caption" data-layout-allow-occlusion="">un dossier complet</div></div>
+  <div data-hf-id="hf-stm1" class="ancre-sous-titre" data-ancre="libre"><div data-hf-id="hf-stm2" class="caption" data-layout-allow-occlusion="">un dossier complet</div></div>
 
   <script>
     window.__timelines=window.__timelines||{};

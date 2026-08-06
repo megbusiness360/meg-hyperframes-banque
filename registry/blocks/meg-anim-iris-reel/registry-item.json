@@ -3,12 +3,13 @@
   "name": "meg-anim-iris-reel",
   "type": "hyperframes:block",
   "title": "Transition iris — Reel 9:16",
-  "description": "Disque encre qui se referme sur le centre puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.",
+  "description": "Disque encre qui se referme sur le visage puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.",
   "tags": [
     "meg",
     "reel",
     "transition",
-    "iris"
+    "iris",
+    "meg-reel"
   ],
   "family": "anim-transition-reel",
   "familyTitle": "Transitions — Reel 9:16",

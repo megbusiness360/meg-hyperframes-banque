@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-catalogue-reel",
+  "type": "hyperframes:block",
+  "title": "MEG - Reel",
+  "description": "Couverture du catalogue vertical 1080×1920 : tous les blocs « Reel — … » qui suivent appartiennent à ce catalogue (layouts, intros, chapitres, CTA, animations 9:16).",
+  "tags": [
+    "meg",
+    "catalogue",
+    "reel",
+    "9-16",
+    "meg-reel"
+  ],
+  "family": "catalogue",
+  "familyTitle": "Catalogues MEG",
+  "variant": "Reel 9:16",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-catalogue-reel.html",
+      "target": "compositions/meg-catalogue-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

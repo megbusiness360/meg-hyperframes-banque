@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Couverture « MEG - Large » — carte d'identité du catalogue horizontal.
+     Repère visuel dans la banque, jamais posée dans un montage client. -->
+<div data-hf-id="hf-zojx0" id="catalogue-large-root" data-composition-id="catalogue-large" data-start="0" data-duration="4" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #catalogue-large-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #catalogue-large-root .scene{position:absolute;inset:0;z-index:2;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;justify-content:center;padding:0 0 0 120px}
+#catalogue-large-root .gelule{align-self:flex-start;padding:12px 32px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:30px;font-weight:700;letter-spacing:.14em;opacity:0}
+#catalogue-large-root .titre{margin-top:40px;color:#2F2C00;font-size:150px;font-weight:700;letter-spacing:-.03em;line-height:.95;opacity:0}
+#catalogue-large-root .titre .or{color:#B9AA02}
+#catalogue-large-root .filet{margin-top:36px;width:300px;height:10px;border-radius:6px;background:#B9AA02;transform-origin:left}
+#catalogue-large-root .sous{margin-top:34px;color:#2F2C00;font-size:36px;font-weight:600;opacity:.62;line-height:1.35}
+#catalogue-large-root .familles{margin-top:60px;color:#2F2C00;font-size:29px;font-weight:600;opacity:0;line-height:1.5}
+
+#catalogue-large-root .minis{position:absolute;z-index:3;display:flex;gap:34px;opacity:0}
+#catalogue-large-root .mini{box-sizing:border-box;border:5px solid #2F2C00;border-radius:22px;background:#FFFEEC;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:10px}
+#catalogue-large-root .mini .z-ecran{flex:1;border-radius:12px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px)}
+#catalogue-large-root .mini .z-face{border-radius:12px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%)}
+#catalogue-large-root .mini .rang2{flex:1;display:flex;gap:8px}
+#catalogue-large-root .mini .rang2 .z-ecran,#catalogue-large-root .mini .rang2 .z-face{flex:1;height:auto}
+#catalogue-large-root .minis{right:110px;top:123px;flex-direction:column;gap:30px}
+#catalogue-large-root .mini{width:460px;height:258px;flex-direction:row}
+#catalogue-large-root .mini .z-face{width:170px}
+    </style>
+    <div data-hf-id="hf-zojx1" class="scene" data-layout-allow-occlusion="">
+      <span data-hf-id="hf-zojx2" class="gelule">BANQUE MEG</span>
+      <div data-hf-id="hf-zojx3" class="titre">MEG - <span data-hf-id="hf-zojx4" class="or">Large</span></div>
+      <div data-hf-id="hf-zojx5" class="filet"></div>
+      <div data-hf-id="hf-zojx6" class="sous">Layouts &amp; animations 16:9<br data-hf-id="hf-zojx7">YouTube · formations · webinaires</div>
+      <div data-hf-id="hf-zojx8" class="familles">Splits · duos · trios · détourés · bandes<br data-hf-id="hf-zojx9">intros · chapitres · outros · effets</div>
+    </div>
+    <div data-hf-id="hf-zojxa" class="minis" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-zojxb" class="mini"><div data-hf-id="hf-zojxc" class="z-ecran"></div><div data-hf-id="hf-zojxd" class="z-face"></div></div>
+      <div data-hf-id="hf-zojxe" class="mini"><div data-hf-id="hf-zojxf" class="z-face"></div><div data-hf-id="hf-zojxg" class="z-ecran"></div></div>
+      <div data-hf-id="hf-zojxh" class="mini"><div data-hf-id="hf-zojxi" class="z-ecran"></div><div data-hf-id="hf-zojxj" class="z-ecran"></div><div data-hf-id="hf-zojxk" class="z-face"></div></div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#catalogue-large-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.gelule'),{y:-24,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.05)
+        .fromTo(root.querySelector('.titre'),{y:40,opacity:0},{y:0,opacity:1,duration:.55,ease:'power3.out'},.15)
+        .fromTo(root.querySelector('.filet'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.45)
+        .fromTo(root.querySelector('.sous'),{opacity:0},{opacity:.62,duration:.4},.6)
+        .fromTo(root.querySelector('.minis'),{x:60,opacity:0},{x:0,opacity:1,duration:.5,ease:'power3.out'},.7)
+        .fromTo(root.querySelectorAll('.mini'),{scale:.92},{scale:1,duration:.45,ease:'back.out(1.5)',stagger:.1},.7)
+        .fromTo(root.querySelector('.familles'),{opacity:0},{opacity:1,duration:.4},1);
+      window.__timelines['catalogue-large']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

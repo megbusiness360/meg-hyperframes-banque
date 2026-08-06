@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Écran plein + caption — le plan de preuve occupe TOUT le cadre, la
+     phrase clé au centre. Remplacer la zone hachurée (capture/B-roll) et la
+     caption. Le master visage reste derrière, masqué par l'écran. -->
+<div data-hf-id="hf-1pzl0" id="motion-plein-caption-yt-root" data-composition-id="motion-plein-caption-yt" data-start="0" data-duration="4" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-plein-caption-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-plein-caption-yt-root .plein{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);display:flex;align-items:flex-start;justify-content:center;padding-top:70px}
+#motion-plein-caption-yt-root .plein .tag-p{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:32px;letter-spacing:.05em;opacity:.85}
+#motion-plein-caption-yt-root .cap-c{position:absolute;z-index:6;left:70px;right:70px;top:0;height:100%;display:flex;align-items:center;justify-content:center;opacity:0}
+#motion-plein-caption-yt-root .cap-c span{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:58px;text-align:center}
+#motion-plein-caption-yt-root .cap-c .or{color:#FFF3AE}
+    </style>
+    <div data-hf-id="hf-1pzl1" class="plein" data-layout-allow-occlusion=""><span data-hf-id="hf-1pzl2" class="tag-p">ÉCRAN PLEIN CADRE — REMPLACER</span></div>
+    <div data-hf-id="hf-1pzl3" class="cap-c" data-layout-allow-occlusion=""><span data-hf-id="hf-1pzl4">La phrase clé <span data-hf-id="hf-1pzl5" class="or">au centre</span></span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-plein-caption-yt-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.plein'),{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},0)
+        .fromTo(root.querySelector('.cap-c'),{scale:.92,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(1.6)'},.3)
+        .to([root.querySelector('.plein'),root.querySelector('.cap-c')],{opacity:0,duration:.35,ease:'power2.in'},3.55);
+      window.__timelines['motion-plein-caption-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

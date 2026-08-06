@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-chapitre-bandeau-lateral",
   "type": "hyperframes:block",
-  "title": "YouTube — chapitre bandeau latéral",
+  "title": "Large — chapitre bandeau latéral",
   "description": "Carton de chapitre 16:9 : bandeau latéral, posé par-dessus le master intact.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "chapitre",
-    "bandeau-lateral"
+    "bandeau-lateral",
+    "meg-large"
   ],
   "family": "yt-chapitre",
-  "familyTitle": "YouTube — cartons de chapitre",
+  "familyTitle": "Large — cartons de chapitre",
   "variant": "bandeau latéral",
   "dimensions": {
     "width": 1920,

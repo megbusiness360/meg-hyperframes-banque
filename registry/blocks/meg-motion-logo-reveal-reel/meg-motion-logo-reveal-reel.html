@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Logo reveal — signature MEG Business 360 sur carte crème. Ne pas
+     éditer les textes (identité de marque) ; durée courte, ouverture/fin. -->
+<div data-hf-id="hf-u2p30" id="motion-logo-reveal-reel-root" data-composition-id="motion-logo-reveal-reel" data-start="0" data-duration="2.5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-logo-reveal-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-logo-reveal-reel-root .marque{position:absolute;inset:0;z-index:30;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+#motion-logo-reveal-reel-root .meg{color:#2F2C00;font-size:220px;font-weight:700;letter-spacing:-.02em;line-height:1;opacity:0}
+#motion-logo-reveal-reel-root .b360{color:#2F2C00;font-size:44px;font-weight:600;letter-spacing:.38em;text-indent:.38em;opacity:0}
+#motion-logo-reveal-reel-root .filet-m{width:300px;height:10px;border-radius:6px;background:#B9AA02;transform-origin:center}
+    </style>
+    <div data-hf-id="hf-u2p31" class="marque" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-u2p32" class="meg">MEG</div>
+      <div data-hf-id="hf-u2p33" class="filet-m"></div>
+      <div data-hf-id="hf-u2p34" class="b360">BUSINESS 360</div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-logo-reveal-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.meg'),{y:44,opacity:0},{y:0,opacity:1,duration:.5,ease:'power4.out'},.1)
+        .fromTo(root.querySelector('.filet-m'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.4)
+        .fromTo(root.querySelector('.b360'),{opacity:0,letterSpacing:'.6em'},{opacity:1,letterSpacing:'.38em',duration:.55,ease:'power2.out'},.6)
+        .to(root.querySelector('.marque'),{opacity:0,duration:.4,ease:'power2.in'},2.05);
+      window.__timelines['motion-logo-reveal-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

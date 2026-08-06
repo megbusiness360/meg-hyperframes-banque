@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Sticker flèche vers le bas — pointer ce dont on parle. Déplacer le bloc
+     pour viser l'élément ; éditer l'étiquette. -->
+<div data-hf-id="hf-1f4x0" id="motion-fleche-bas-reel-root" data-composition-id="motion-fleche-bas-reel" data-start="0" data-duration="2.5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-fleche-bas-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-fleche-bas-reel-root .fleche{position:absolute;z-index:6;left:600px;top:1180px;width:260px;height:300px;opacity:0}
+#motion-fleche-bas-reel-root .fleche svg{width:100%;height:100%;overflow:visible}
+#motion-fleche-bas-reel-root .etiq-f{position:absolute;z-index:6;left:560px;top:1080px;padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:36px;opacity:0}
+    </style>
+    <div data-hf-id="hf-1f4x1" class="fleche" data-layout-allow-occlusion=""><svg data-hf-id="hf-1f4x2" viewBox="0 0 260 300" fill="none" aria-hidden="true">
+      <path data-hf-id="hf-1f4x3" d="M130 280 C 60 220, 70 120, 118 52" stroke="#2F2C00" stroke-width="26" stroke-linecap="round"></path>
+      <path data-hf-id="hf-1f4x4" d="M130 280 C 60 220, 70 120, 118 52" stroke="#FFFCD6" stroke-width="13" stroke-linecap="round"></path>
+      <path data-hf-id="hf-1f4x5" d="M70 78 L120 36 L138 100" stroke="#2F2C00" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+      <path data-hf-id="hf-1f4x6" d="M70 78 L120 36 L138 100" stroke="#FFFCD6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+    </svg></div>
+    <div data-hf-id="hf-1f4x7" class="etiq-f" data-layout-allow-occlusion="">C'est ici que ça se joue</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-fleche-bas-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const f=root.querySelector('.fleche'),e=root.querySelector('.etiq-f');
+      gsap.set(f,{rotation:180});
+      tl.fromTo(f,{scale:.5,opacity:0},{scale:1,opacity:1,duration:.4,ease:'back.out(2)'},.1)
+        .fromTo(e,{y:24,opacity:0},{y:0,opacity:1,duration:.38,ease:'power3.out'},.35)
+        .fromTo(f,{rotation:175},{rotation:185,duration:.5,ease:'sine.inOut',yoyo:true,repeat:2},.55)
+        .to([f,e],{opacity:0,duration:.3,ease:'power2.in'},2.15);
+      window.__timelines['motion-fleche-bas-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

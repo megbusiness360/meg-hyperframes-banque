@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-habillage-header-marque",
   "type": "hyperframes:block",
-  "title": "YouTube — habillage bande de marque haute",
+  "title": "Large — habillage bande de marque haute",
   "description": "Habillage plein cadre 16:9 : bande de marque haute par-dessus le master intact.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "habillage",
     "overlay",
-    "header-marque"
+    "header-marque",
+    "meg-large"
   ],
   "family": "yt-habillage",
-  "familyTitle": "YouTube — habillages plein cadre",
+  "familyTitle": "Large — habillages plein cadre",
   "variant": "bande de marque haute",
   "dimensions": {
     "width": 1920,

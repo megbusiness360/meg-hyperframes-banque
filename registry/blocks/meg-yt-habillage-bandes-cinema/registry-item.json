@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-habillage-bandes-cinema",
   "type": "hyperframes:block",
-  "title": "YouTube — habillage bandes cinéma",
+  "title": "Large — habillage bandes cinéma",
   "description": "Habillage plein cadre 16:9 : bandes cinéma par-dessus le master intact.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "habillage",
     "overlay",
-    "bandes-cinema"
+    "bandes-cinema",
+    "meg-large"
   ],
   "family": "yt-habillage",
-  "familyTitle": "YouTube — habillages plein cadre",
+  "familyTitle": "Large — habillages plein cadre",
   "variant": "bandes cinéma",
   "dimensions": {
     "width": 1920,

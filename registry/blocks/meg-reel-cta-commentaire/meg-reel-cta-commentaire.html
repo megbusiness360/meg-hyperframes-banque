@@ -23,7 +23,7 @@
       (()=>{
       const root=document.querySelector('#reel-cta-commentaire-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.bulle'),{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.1)
         .fromTo(root.querySelector('.trait'),{scaleX:0},{scaleX:1,duration:.5,ease:'power2.out'},.5)
         .to(root.querySelector('.bulle'),{opacity:0,y:40,duration:.35,ease:'power2.in'},3.55);

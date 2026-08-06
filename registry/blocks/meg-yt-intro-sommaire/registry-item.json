@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-intro-sommaire",
   "type": "hyperframes:block",
-  "title": "YouTube — intro sommaire",
+  "title": "Large — intro sommaire",
   "description": "Intro 16:9 : sommaire 3 points à gauche + visage master pleine hauteur à droite.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "intro",
-    "sommaire"
+    "sommaire",
+    "meg-large"
   ],
   "family": "yt-intro",
-  "familyTitle": "YouTube — intros & hooks",
+  "familyTitle": "Large — intros & hooks",
   "variant": "sommaire 3 points",
   "dimensions": {
     "width": 1920,

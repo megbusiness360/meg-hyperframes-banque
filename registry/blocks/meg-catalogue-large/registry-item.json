@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-catalogue-large",
+  "type": "hyperframes:block",
+  "title": "MEG - Large",
+  "description": "Couverture du catalogue horizontal 1920×1080 : tous les blocs « Large — … » qui suivent appartiennent à ce catalogue (layouts, intros, chapitres, outros, animations 16:9).",
+  "tags": [
+    "meg",
+    "catalogue",
+    "large",
+    "16-9",
+    "meg-large"
+  ],
+  "family": "catalogue",
+  "familyTitle": "Catalogues MEG",
+  "variant": "Large 16:9",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-catalogue-large.html",
+      "target": "compositions/meg-catalogue-large.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

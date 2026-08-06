@@ -1,1 +1,57 @@
-{"$schema":"https://hyperframes.heygen.com/schema/registry-item.json","name":"meg-tiktok-title-classic","type":"hyperframes:block","title":"Titre TikTok","description":"Une ou deux lignes mesurées, silhouette SVG fusionnée et coins adaptatifs.","tags":["meg","tiktok","titre","adaptatif"],"dimensions":{"width":1080,"height":1920},"duration":3,"files":[{"path":"meg-tiktok-title-classic.html","target":"compositions/meg-tiktok-title-classic.html","type":"hyperframes:composition"},{"path":"assets/ClashGrotesk-Variable.woff2","target":"assets/ClashGrotesk-Variable.woff2","type":"hyperframes:asset"}],"preview":{"poster":"preview.jpg"},"family":"titre","familyTitle":"Titre TikTok","variant":"Encre MEG","presets":[{"id":"B","title":"Encre MEG","poster":"preview-B.jpg","note":"forme encre #2F2C00, texte crème — sur fond vidéo clair"},{"id":"A","title":"Crème","poster":"preview-A.jpg","note":"forme crème #FFFCD6, texte encre — sur fond vidéo sombre"},{"id":"E","title":"Jaune clair","poster":"preview-E.jpg","note":"forme #FFF3AE, texte encre — sur fond vidéo sombre"}]}
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-tiktok-title-classic",
+  "type": "hyperframes:block",
+  "title": "Titre TikTok",
+  "description": "Une ou deux lignes mesurées, silhouette SVG fusionnée et coins adaptatifs.",
+  "tags": [
+    "meg",
+    "tiktok",
+    "titre",
+    "adaptatif",
+    "meg-reel"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-tiktok-title-classic.html",
+      "target": "compositions/meg-tiktok-title-classic.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  },
+  "family": "titre",
+  "familyTitle": "Titre TikTok",
+  "variant": "Encre MEG",
+  "presets": [
+    {
+      "id": "B",
+      "title": "Encre MEG",
+      "poster": "preview-B.jpg",
+      "note": "forme encre #2F2C00, texte crème — sur fond vidéo clair"
+    },
+    {
+      "id": "A",
+      "title": "Crème",
+      "poster": "preview-A.jpg",
+      "note": "forme crème #FFFCD6, texte encre — sur fond vidéo sombre"
+    },
+    {
+      "id": "E",
+      "title": "Jaune clair",
+      "poster": "preview-E.jpg",
+      "note": "forme #FFF3AE, texte encre — sur fond vidéo sombre"
+    }
+  ]
+}

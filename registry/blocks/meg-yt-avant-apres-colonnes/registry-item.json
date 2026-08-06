@@ -2,17 +2,18 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-avant-apres-colonnes",
   "type": "hyperframes:block",
-  "title": "YouTube — avant/après deux colonnes",
+  "title": "Large — avant/après deux colonnes",
   "description": "Comparatif 16:9 : colonnes AVANT/APRÈS côte à côte + visage master en bande basse.",
   "tags": [
     "meg",
     "youtube",
     "16-9",
     "layout",
-    "avant-apres"
+    "avant-apres",
+    "meg-large"
   ],
   "family": "yt-avant-apres",
-  "familyTitle": "YouTube — avant/après",
+  "familyTitle": "Large — avant/après",
   "variant": "deux colonnes",
   "dimensions": {
     "width": 1920,

@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-avant-apres-cartes",
   "type": "hyperframes:block",
-  "title": "YouTube — avant/après cartes inclinées",
+  "title": "Large — avant/après cartes inclinées",
   "description": "Comparatif 16:9 : deux cartes inclinées qui se chevauchent + visage master en bande basse.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "avant-apres",
-    "cartes"
+    "cartes",
+    "meg-large"
   ],
   "family": "yt-avant-apres",
-  "familyTitle": "YouTube — avant/après",
+  "familyTitle": "Large — avant/après",
   "variant": "cartes inclinées",
   "dimensions": {
     "width": 1920,

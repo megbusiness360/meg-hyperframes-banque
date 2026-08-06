@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-typo-escalier-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Typo cinétique en escalier",
+  "description": "Texte animé : la phrase arrive par blocs de mots qui s'empilent (en escalier) et restent à l'écran. Chaque ligne est éditable, le mot fort passe en or.",
+  "tags": [
+    "meg",
+    "motion",
+    "texte",
+    "typo-cinetique",
+    "escalier",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "typo en escalier",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-motion-typo-escalier-reel.html",
+      "target": "compositions/meg-motion-typo-escalier-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

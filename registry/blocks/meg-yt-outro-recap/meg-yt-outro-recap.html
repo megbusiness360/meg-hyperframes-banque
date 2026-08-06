@@ -13,7 +13,8 @@
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #yt-outro-recap-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
-      #yt-outro-recap-root .panneau{position:absolute;z-index:3;left:40px;top:40px;width:1188px;height:1000px;border-radius:30px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 34px 78px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center;gap:34px;padding:70px 80px;color:#2F2C00;opacity:0}
+      #yt-outro-recap-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
+      #yt-outro-recap-root .panneau{position:absolute;z-index:3;left:40px;top:40px;width:1182px;height:1000px;border-radius:30px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 34px 78px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center;gap:34px;padding:70px 80px;color:#2F2C00;opacity:0}
 #yt-outro-recap-root .titre-recap{font-size:58px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
 #yt-outro-recap-root .ligne{display:flex;gap:22px;align-items:center;font-size:42px;font-weight:600;opacity:0}
 #yt-outro-recap-root .coche{width:50px;height:50px;flex:none;border-radius:50%;background:#B9AA02;display:flex;align-items:center;justify-content:center}
@@ -22,12 +23,13 @@
 #yt-outro-recap-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:30px;pointer-events:none;opacity:0}
 #yt-outro-recap-root .standalone-face{display:none;position:absolute;z-index:2;left:1250px;top:40px;width:630px;height:1000px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-fmsm1" class="panneau" data-layout-allow-occlusion=""><div data-hf-id="hf-fmsm2" class="titre-recap">À retenir</div>
-    <div data-hf-id="hf-fmsm3" class="ligne"><span data-hf-id="hf-fmsm4" class="coche"><svg data-hf-id="hf-fmsm5" viewBox="0 0 24 24"><path data-hf-id="hf-fmsm6" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsm7">Premier point à remplacer</span></div>
-    <div data-hf-id="hf-fmsm8" class="ligne"><span data-hf-id="hf-fmsm9" class="coche"><svg data-hf-id="hf-fmsma" viewBox="0 0 24 24"><path data-hf-id="hf-fmsmb" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsmc">Deuxième point à remplacer</span></div>
-    <div data-hf-id="hf-fmsmd" class="ligne"><span data-hf-id="hf-fmsme" class="coche"><svg data-hf-id="hf-fmsmf" viewBox="0 0 24 24"><path data-hf-id="hf-fmsmg" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsmh">Troisième point à remplacer</span></div></div>
-    <div data-hf-id="hf-fmsmi" class="face-cadre" style="left:1243px;top:33px;width:644px;height:1014px;"></div>
-    <div data-hf-id="hf-fmsmj" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-fmsmk">RECADRÉ ICI</div>
+    <div data-hf-id="hf-fmsm1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-fmsm2" class="panneau" data-layout-allow-occlusion=""><div data-hf-id="hf-fmsm3" class="titre-recap">À retenir</div>
+    <div data-hf-id="hf-fmsm4" class="ligne"><span data-hf-id="hf-fmsm5" class="coche"><svg data-hf-id="hf-fmsm6" viewBox="0 0 24 24"><path data-hf-id="hf-fmsm7" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsm8">Premier point à remplacer</span></div>
+    <div data-hf-id="hf-fmsm9" class="ligne"><span data-hf-id="hf-fmsma" class="coche"><svg data-hf-id="hf-fmsmb" viewBox="0 0 24 24"><path data-hf-id="hf-fmsmc" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsmd">Deuxième point à remplacer</span></div>
+    <div data-hf-id="hf-fmsme" class="ligne"><span data-hf-id="hf-fmsmf" class="coche"><svg data-hf-id="hf-fmsmg" viewBox="0 0 24 24"><path data-hf-id="hf-fmsmh" d="M5 12.5l4.2 4.2L19 7"></path></svg></span><span data-hf-id="hf-fmsmi">Troisième point à remplacer</span></div></div>
+    <div data-hf-id="hf-fmsmj" class="face-cadre" style="left:1243px;top:33px;width:644px;height:1014px;"></div>
+    <div data-hf-id="hf-fmsmk" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-fmsml">RECADRÉ ICI</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -37,10 +39,14 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
           {x:1250,y:40,width:630,height:1000,borderRadius:30,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},5.58)
+          .set(master,{clearProps:'zIndex'},6.00);
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Chips cumulatives en colonne — une énumération qui se construit à
+     l'écran, chip par chip, et reste. Remplacer les 3 textes ; caler chaque
+     apparition sur le point dit dans l'audio. -->
+<div data-hf-id="hf-1d1s0" id="motion-chips-colonne-yt-root" data-composition-id="motion-chips-colonne-yt" data-start="0" data-duration="5" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-chips-colonne-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-chips-colonne-yt-root .chips{position:absolute;z-index:6;display:flex;left:80px;top:340px;flex-direction:column;align-items:flex-start;gap:18px}
+#motion-chips-colonne-yt-root .chip{padding:14px 30px;border-radius:22px;background:#FFFCD6;color:#2F2C00;font-size:38px;font-weight:700;letter-spacing:-.015em;box-shadow:0 12px 34px rgba(0,0,0,.3),inset 0 -8px 0 #B9AA02;opacity:0}
+    </style>
+    <div data-hf-id="hf-1d1s1" class="chips" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-1d1s2" class="chip">1 · Le programme détaillé</div>
+      <div data-hf-id="hf-1d1s3" class="chip">2 · Les preuves d'assiduité</div>
+      <div data-hf-id="hf-1d1s4" class="chip">3 · La facture conforme</div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-chips-colonne-yt-root');
+      const tl=gsap.timeline({paused:true});
+
+      const chips=root.querySelectorAll('.chip');
+      tl.fromTo(chips[0],{y:30,opacity:0,scale:.94},{y:0,opacity:1,scale:1,duration:.38,ease:'back.out(1.6)'},.15)
+        .fromTo(chips[1],{y:30,opacity:0,scale:.94},{y:0,opacity:1,scale:1,duration:.38,ease:'back.out(1.6)'},1.25)
+        .fromTo(chips[2],{y:30,opacity:0,scale:.94},{y:0,opacity:1,scale:1,duration:.38,ease:'back.out(1.6)'},2.35)
+        .to(chips,{opacity:0,y:-20,duration:.32,ease:'power2.in',stagger:.05},4.5);
+      window.__timelines['motion-chips-colonne-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

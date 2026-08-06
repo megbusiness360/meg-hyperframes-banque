@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Objet détouré + phrase — remplacer la zone hachurée par l'ASSET ALPHA
+     de l'objet (jamais d'image avec fond), puis éditer la phrase. -->
+<div data-hf-id="hf-n6e10" id="motion-objet-phrase-reel-root" data-composition-id="motion-objet-phrase-reel" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-objet-phrase-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-objet-phrase-reel-root .objet{position:absolute;z-index:6;left:220px;top:560px;width:640px;height:640px;box-sizing:border-box;border:5px dashed rgba(255,252,214,.7);border-radius:38px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);display:flex;align-items:center;justify-content:center;box-shadow:0 30px 70px rgba(0,0,0,.35);opacity:0}
+#motion-objet-phrase-reel-root .objet .tag{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:30px;letter-spacing:.05em}
+#motion-objet-phrase-reel-root .phrase{position:absolute;z-index:6;left:70px;right:70px;top:1280px;text-align:center;opacity:0}
+#motion-objet-phrase-reel-root .phrase span{display:inline-block;padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:48px;}
+#motion-objet-phrase-reel-root .phrase .or{color:#FFF3AE}
+    </style>
+    <div data-hf-id="hf-n6e11" class="objet" data-layout-allow-occlusion=""><span data-hf-id="hf-n6e12" class="tag">OBJET ALPHA — REMPLACER</span></div>
+    <div data-hf-id="hf-n6e13" class="phrase" data-layout-allow-occlusion=""><span data-hf-id="hf-n6e14">Le document qui <span data-hf-id="hf-n6e15" class="or">change tout</span></span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-objet-phrase-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.objet'),{scale:.7,rotation:-6,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:'back.out(1.8)'},.1)
+        .fromTo(root.querySelector('.phrase'),{y:30,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.5)
+        .to([root.querySelector('.objet'),root.querySelector('.phrase')],{opacity:0,duration:.35,ease:'power2.in'},3.55);
+      window.__timelines['motion-objet-phrase-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

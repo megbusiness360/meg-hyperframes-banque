@@ -2,17 +2,18 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-trio-colonne-droite",
   "type": "hyperframes:block",
-  "title": "YouTube — trio colonne droite",
+  "title": "Large — trio colonne droite",
   "description": "Split 16:9 à trois écrans empilés à droite, visage master pleine hauteur à gauche.",
   "tags": [
     "meg",
     "youtube",
     "16-9",
     "layout",
-    "trio"
+    "trio",
+    "meg-large"
   ],
   "family": "yt-split-trio",
-  "familyTitle": "YouTube — splits visage + 3 écrans",
+  "familyTitle": "Large — splits visage + 3 écrans",
   "variant": "colonne droite",
   "dimensions": {
     "width": 1920,

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Icône pop check 16:9 — ponctuation d'un point validé, tiers gauche
+     (zone neutre gravée). Déplacer librement ; caler sur le mot. -->
+<div data-hf-id="hf-343i0" id="motion-icone-check-yt-root" data-composition-id="motion-icone-check-yt" data-start="0" data-duration="1.4" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-icone-check-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-icone-check-yt-root .badge-i{position:absolute;z-index:6;left:200px;top:440px;width:140px;height:140px;border-radius:50%;background:#B9AA02;display:flex;align-items:center;justify-content:center;box-shadow:0 16px 44px rgba(0,0,0,.35);opacity:0}
+#motion-icone-check-yt-root .badge-i svg{width:80px;height:80px}
+#motion-icone-check-yt-root .onde{position:absolute;z-index:5;left:186px;top:426px;width:168px;height:168px;border-radius:50%;border:6px solid #B9AA02;opacity:0}
+    </style>
+    <div data-hf-id="hf-343i1" class="onde" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-343i2" class="badge-i" data-layout-allow-occlusion=""><svg data-hf-id="hf-343i3" viewBox="0 0 86 86" aria-hidden="true"><path data-hf-id="hf-343i4" d="M20 42l16 16 30-36" stroke="#2F2C00" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-icone-check-yt-root');
+      const tl=gsap.timeline({paused:true});
+
+      const b=root.querySelector('.badge-i'),o=root.querySelector('.onde');
+      tl.fromTo(b,{scale:.3,rotation:-12,opacity:0},{scale:1,rotation:0,opacity:1,duration:.36,ease:'back.out(2.4)'},.05)
+        .fromTo(o,{scale:.8,opacity:.8},{scale:1.5,opacity:0,duration:.55,ease:'power2.out'},.28)
+        .to(b,{scale:1.06,duration:.55,ease:'none'},.45)
+        .to(b,{opacity:0,scale:1.15,duration:.25,ease:'power2.in'},1.12);
+      window.__timelines['motion-icone-check-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>
