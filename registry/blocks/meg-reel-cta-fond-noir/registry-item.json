@@ -1,0 +1,43 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-cta-fond-noir",
+  "type": "hyperframes:block",
+  "title": "Reel — CTA fond noir, question + contact",
+  "description": "CTA/outro Reel 9:16 : fond noir plein cadre, question directe centrée + pastille contact. Registre minimaliste sans carte ni logo, contraste maximal — variante sobre des CTA MEG.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "cta",
+    "outro",
+    "noir",
+    "contact",
+    "minimaliste",
+    "meg-reel",
+    "meg-reel-folder-cta-outros"
+  ],
+  "family": "reel-cta",
+  "familyTitle": "Reels — CTA & outros",
+  "variant": "fond noir + contact",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-reel-cta-fond-noir.html",
+      "target": "compositions/meg-reel-cta-fond-noir.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

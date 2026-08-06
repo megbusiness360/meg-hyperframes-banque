@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
+     flottante en médaillon (repère MEG "trois tirés" remplace le badge
+     fournisseur de la référence). Coupe B-roll plein cadre en bas. Remplacer
+     le titre et la zone hachurée par la preuve réelle ; enchaîner sur un
+     layout standard une fois le hook posé. -->
+<div data-hf-id="hf-oxec0" id="reel-intro-hook-bulle-titre-root" data-composition-id="reel-intro-hook-bulle-titre" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="0" data-face-y="0" data-face-w="1080" data-face-h="840" data-face-r="0" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-intro-hook-bulle-titre-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-intro-hook-bulle-titre-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
+      #reel-intro-hook-bulle-titre-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
+#reel-intro-hook-bulle-titre-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
+#reel-intro-hook-bulle-titre-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
+#reel-intro-hook-bulle-titre-root .ecran .sous{font-size:29px;font-weight:600;opacity:.62;letter-spacing:-.01em}
+#reel-intro-hook-bulle-titre-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
+#reel-intro-hook-bulle-titre-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
+#reel-intro-hook-bulle-titre-root .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#reel-intro-hook-bulle-titre-root .bulle-titre{position:absolute;z-index:4;left:46px;top:724px;width:988px;min-height:224px;border-radius:34px;background:#FFFEEC;box-shadow:0 30px 70px rgba(0,0,0,.35);padding:60px 58px 42px;color:#2F2C00;opacity:0}
+#reel-intro-hook-bulle-titre-root .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
+#reel-intro-hook-bulle-titre-root .badge-meg{position:absolute;z-index:5;left:54px;top:670px;width:108px;height:108px;border-radius:50%;background:#FFFEEC;border:6px solid #B9AA02;box-shadow:0 14px 30px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;opacity:0}
+#reel-intro-hook-bulle-titre-root .badge-meg svg{width:52px;height:52px}
+    </style>
+    <div data-hf-id="hf-oxec1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-oxec2" class="ecran bord" style="left:0px;top:840px;width:1080px;height:1080px;" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec3" class="etiquette">COUPE B-ROLL — REMPLACER</span><span data-hf-id="hf-oxec4" class="sous">preuve, capture, plan tourné</span></div>
+    <div data-hf-id="hf-oxec5" class="bulle-titre" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec6" class="txt">Elle a financé sa formation sans avancer un centime</span></div>
+    <div data-hf-id="hf-oxec7" class="badge-meg" data-qa-allow-bleed=""><svg data-hf-id="hf-oxec8" viewBox="0 0 48 48" aria-hidden="true"><rect data-hf-id="hf-oxec9" x="21" y="3" width="6" height="17" rx="3" fill="#2F2C00" transform="rotate(18 24 11.5)"/><rect data-hf-id="hf-oxeca" x="21" y="3" width="6" height="24" rx="3" fill="#2F2C00" transform="rotate(34 24 15)"/><rect data-hf-id="hf-oxecb" x="21" y="3" width="6" height="30" rx="3" fill="#2F2C00" transform="rotate(50 24 18)"/></svg></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-intro-hook-bulle-titre-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
+           le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:0,y:0,width:1080,height:840,borderRadius:0,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},4.58)
+          .set(master,{clearProps:'zIndex'},5.00);
+        /* Biais visage : pendant le recadrage, la fenêtre cover vise le haut
+           du rush (le visage), pas le centre géométrique. Valeur d'origine
+           restaurée en sortie — le bloc suivant repart d'un master intact. */
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 36%'},0).set(vid,{objectPosition:op0},5.00);
+        }
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      tl.fromTo(root.querySelectorAll('.ecran'),{y:-70,opacity:0,scale:.97},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out',stagger:.12},.06)
+        .to(root.querySelectorAll('.ecran'),{opacity:0,y:-44,duration:.35,ease:'power2.in'},4.60);
+      const cadre=root.querySelector('.face-cadre');
+      if(cadre)tl.fromTo(cadre,{opacity:0},{opacity:1,duration:.4,ease:'power2.out'},.2)
+        .to(cadre,{opacity:0,duration:.3,ease:'power2.in'},4.62);
+
+      tl.fromTo(root.querySelector('.bulle-titre'),{y:-46,opacity:0},{y:0,opacity:1,duration:.5,ease:'back.out(1.5)'},.16)
+        .to(root.querySelector('.bulle-titre'),{opacity:0,y:-20,duration:.3,ease:'power2.in'},4.6);
+      tl.fromTo(root.querySelector('.badge-meg'),{scale:.4,opacity:0},{scale:1,opacity:1,duration:.42,ease:'back.out(1.7)'},.38)
+        .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);
+      window.__timelines['reel-intro-hook-bulle-titre']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>
