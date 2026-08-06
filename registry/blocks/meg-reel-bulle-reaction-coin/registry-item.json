@@ -1,0 +1,41 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-bulle-reaction-coin",
+  "type": "hyperframes:block",
+  "title": "Reel — bulle réaction, visage flottant coin bas-gauche",
+  "description": "Layout 9:16 : écran plein cadre (capture, démo, réaction) + visage master en bulle circulaire flottante coin bas-gauche, hors zones UI natives. Format réaction / j'ai testé.",
+  "tags": [
+    "meg",
+    "reel",
+    "layout",
+    "bulle-reaction",
+    "reaction",
+    "coin",
+    "meg-reel",
+    "meg-reel-folder-ecran-visage"
+  ],
+  "family": "reel-bulle-reaction",
+  "familyTitle": "Reels — bulle réaction (visage flottant)",
+  "variant": "coin bas-gauche",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-bulle-reaction-coin.html",
+      "target": "compositions/meg-reel-bulle-reaction-coin.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

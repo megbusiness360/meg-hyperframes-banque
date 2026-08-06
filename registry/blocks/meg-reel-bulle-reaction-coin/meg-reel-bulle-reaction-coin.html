@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Layout Reel "bulle réaction" — écran plein cadre domine (capture,
+     démo, stat), le visage du présentateur flotte dans une BULLE CIRCULAIRE
+     coin bas-gauche, hors zones UI natives (profil haut, icônes droite,
+     légende basse). Format réaction / "j'ai testé" / commentaire en direct
+     sur un contenu plein écran. Remplacer la zone hachurée par le contenu réel. -->
+<div data-hf-id="hf-htxp0" id="reel-bulle-reaction-coin-root" data-composition-id="reel-bulle-reaction-coin" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="56" data-face-y="1292" data-face-w="328" data-face-h="328" data-face-r="164" data-face-mode="move">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #reel-bulle-reaction-coin-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-bulle-reaction-coin-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
+      #reel-bulle-reaction-coin-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
+#reel-bulle-reaction-coin-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
+#reel-bulle-reaction-coin-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
+#reel-bulle-reaction-coin-root .ecran .sous{font-size:29px;font-weight:600;opacity:.62;letter-spacing:-.01em}
+#reel-bulle-reaction-coin-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
+#reel-bulle-reaction-coin-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
+#reel-bulle-reaction-coin-root .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#reel-bulle-reaction-coin-root .ecran{z-index:0}
+#reel-bulle-reaction-coin-root .fond-scene{z-index:-1}
+#reel-bulle-reaction-coin-root .bulle-anneau{position:absolute;z-index:5;left:49px;top:1285px;width:342px;height:342px;border-radius:50%;border:7px solid #B9AA02;box-shadow:0 24px 54px rgba(0,0,0,.45);pointer-events:none;opacity:0}
+#reel-bulle-reaction-coin-root .bulle-micro{position:absolute;z-index:6;left:322px;top:1558px;width:56px;height:56px;border-radius:50%;background:#2F2C00;border:4px solid #FFFCD6;pointer-events:none;opacity:0}
+#reel-bulle-reaction-coin-root .standalone-face{display:none;position:absolute;z-index:2;left:56px;top:1292px;width:328px;height:328px;border-radius:164px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+    </style>
+    <div data-hf-id="hf-htxp1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-htxp2" class="ecran bord" style="left:0px;top:0px;width:1080px;height:1920px;" data-layout-allow-occlusion=""><span data-hf-id="hf-htxp3" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-htxp4" class="sous">capture, démo, stat plein écran</span></div>
+    <div data-hf-id="hf-htxp5" class="bulle-anneau" data-qa-allow-bleed=""></div>
+    <div data-hf-id="hf-htxp6" class="bulle-micro"></div>
+    <div data-hf-id="hf-htxp7" class="standalone-face" data-layout-allow-occlusion="">VISAGE — BULLE</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-bulle-reaction-coin-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Même recadrage "move" que le reste de la banque (x/y/width/
+           height/borderRadius, biais visage, restauration en sortie) —
+           AUCUN z-index en GSAP ici. L'écran couvre TOUT le cadre et la
+           bulle doit rester visible PAR-DESSUS — contrairement aux
+           layouts visage+écran classiques où le master occupe une zone
+           complémentaire. Ordre obtenu en CSS pure : .ecran/.fond-scene
+           passent sous le z-index par défaut du master (harnais/Studio
+           = 1, jamais modifié ici) — voir l'override local dans `css`
+           plus bas. Un .set(zIndex,4)+clearProps avait d'abord semblé
+           nécessaire (1re version commitée) mais un test de seek non
+           monotone (forward→backward→forward) a montré que clearProps
+           ne se réapplique pas de façon fiable après un aller-retour
+           arrière (zIndex lu "auto"), un quirk GSAP confirmé pré-existant
+           sur toute la banque via masterScript() partagé — mais dont la
+           conséquence serait ici une bulle ENTIÈREMENT masquée par
+           l'écran plein cadre en cas de seek arrière, contrairement aux
+           layouts existants (cartes z3+ sur une zone complémentaire
+           seulement). D'où un ordre 100% CSS, robuste à tout sens de
+           scrub. */
+        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:56,y:1292,width:328,height:328,borderRadius:164,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 36%'},0).set(vid,{objectPosition:op0},6.00);
+        }
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }
+      /* L'écran ne ressort PAS : le master plein cadre (toujours au-dessus
+         de l'écran par CSS, voir override + commentaire master ci-dessus)
+         le recouvre déjà en revenant à sa taille pleine avant la fin du
+         bloc. Un fondu sortant sur l'écran ici créerait un flash crème
+         (fond-scene) pendant la fenêtre où le master n'a pas encore fini
+         de regrandir — écart volontaire à la convention des autres
+         familles où l'écran, lui, ne se fait jamais recouvrir. */
+      tl.fromTo(root.querySelector('.ecran'),{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.5,ease:'power2.out'},0);
+      tl.fromTo(root.querySelector('.bulle-anneau'),{scale:.6,opacity:0,y:24},{scale:1,opacity:1,y:0,duration:.5,ease:'back.out(1.7)'},.18)
+        .to(root.querySelector('.bulle-anneau'),{opacity:0,scale:.85,duration:.35,ease:'power2.in'},5.58);
+      tl.fromTo(root.querySelector('.bulle-micro'),{scale:.4,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(1.7)'},.3)
+        .to(root.querySelector('.bulle-micro'),{opacity:0,duration:.3,ease:'power2.in'},5.58);
+      window.__timelines['reel-bulle-reaction-coin']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

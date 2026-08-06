@@ -171,6 +171,7 @@
     {"name":"meg-motion-icone-euro-reel","type":"hyperframes:block"},
     {"name":"meg-motion-cadre-accent-reel","type":"hyperframes:block"},
     {"name":"meg-motion-plein-caption-reel","type":"hyperframes:block"},
+    {"name":"meg-reel-bulle-reaction-coin","type":"hyperframes:block"},
     {"name":"meg-catalogue-large","type":"hyperframes:block"},
     {"name":"meg-yt-ecran-droite-55-carte","type":"hyperframes:block"},
     {"name":"meg-yt-ecran-droite-55-nav","type":"hyperframes:block"},

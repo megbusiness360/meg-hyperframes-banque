@@ -853,4 +853,106 @@ hachurée par un logo réel (clients, certifications, partenaires).`,
         .to([root.querySelector('.titre-mur'),...root.querySelectorAll('.tuile')],{opacity:0,duration:.35,ease:'power2.in'},${(DUR - 0.4).toFixed(2)});`,
 }));
 
+/* ————— R15 · Bulle réaction — visage flottant coin (1) —————
+ * Écran plein cadre dominant (capture, démo, réaction) + visage master
+ * dans une BULLE CIRCULAIRE flottante coin bas-gauche, hors zones UI
+ * natives. Format "réaction / j'ai testé" — un seul variant (validé
+ * Mohamed 06/08/2026). Écart volontaire à la convention "jamais de PIP
+ * coin" (bande/silhouette plein) : ici l'écran couvre tout le cadre et
+ * la bulle est le point d'entrée demandé explicitement, pas un repli. */
+{
+  const bulle = { x: 56, y: H - 300 - 328, w: 328, h: 328, r: 164 }; // r = w/2 → cercle parfait
+  const bias = "50% 36%"; // même calcul que emit() pour visH≈0.56 en portrait
+
+  const bulleMasterJs = (g, dur) => {
+    const exitAt = Math.max(0.5, dur - 0.42).toFixed(2);
+    const endAt = dur.toFixed(2);
+    return `
+      const master=document.querySelector('#meg-master-frame');
+      if(master){
+        /* Même recadrage "move" que le reste de la banque (x/y/width/
+           height/borderRadius, biais visage, restauration en sortie) —
+           AUCUN z-index en GSAP ici. L'écran couvre TOUT le cadre et la
+           bulle doit rester visible PAR-DESSUS — contrairement aux
+           layouts visage+écran classiques où le master occupe une zone
+           complémentaire. Ordre obtenu en CSS pure : .ecran/.fond-scene
+           passent sous le z-index par défaut du master (harnais/Studio
+           = 1, jamais modifié ici) — voir l'override local dans \`css\`
+           plus bas. Un .set(zIndex,4)+clearProps avait d'abord semblé
+           nécessaire (1re version commitée) mais un test de seek non
+           monotone (forward→backward→forward) a montré que clearProps
+           ne se réapplique pas de façon fiable après un aller-retour
+           arrière (zIndex lu "auto"), un quirk GSAP confirmé pré-existant
+           sur toute la banque via masterScript() partagé — mais dont la
+           conséquence serait ici une bulle ENTIÈREMENT masquée par
+           l'écran plein cadre en cas de seek arrière, contrairement aux
+           layouts existants (cartes z3+ sur une zone complémentaire
+           seulement). D'où un ordre 100% CSS, robuste à tout sens de
+           scrub. */
+        tl.fromTo(master,{x:0,y:0,width:${W},height:${H},borderRadius:0},
+          {x:${g.x},y:${g.y},width:${g.w},height:${g.h},borderRadius:${g.r},duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:${W},height:${H},borderRadius:0,duration:.42,ease:'power3.in'},${exitAt});
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'${bias}'},0).set(vid,{objectPosition:op0},${endAt});
+        }
+      }else{
+        const sa=root.querySelector('.standalone-face');
+        if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
+      }`;
+  };
+
+  blocks.push(emit({
+    name: "meg-reel-bulle-reaction-coin",
+    title: "Reel — bulle réaction, visage flottant coin bas-gauche",
+    desc: "Layout 9:16 : écran plein cadre (capture, démo, réaction) + visage master en bulle circulaire flottante coin bas-gauche, hors zones UI natives. Format réaction / j'ai testé.",
+    tags: ["reel", "layout", "bulle-reaction", "reaction", "coin"],
+    family: "reel-bulle-reaction",
+    familyTitle: "Reels — bulle réaction (visage flottant)",
+    variant: "coin bas-gauche",
+    ratio: "reel", duration: DUR,
+    faceGeom: bulle,
+    master: bulleMasterJs(bulle, DUR),
+    comment: `Layout Reel "bulle réaction" — écran plein cadre domine (capture,
+démo, stat), le visage du présentateur flotte dans une BULLE CIRCULAIRE
+coin bas-gauche, hors zones UI natives (profil haut, icônes droite,
+légende basse). Format réaction / "j'ai testé" / commentaire en direct
+sur un contenu plein écran. Remplacer la zone hachurée par le contenu réel.`,
+    css: [
+      ecranCss("%R%"),
+      // Override local à ce bloc seulement : passe .ecran ET .fond-scene
+      // SOUS le z-index par défaut du master (1) au lieu du z3/z1 habituel
+      // — même sélecteur/spécificité que les règles partagées ci-dessus et
+      // dans emit(), gagne par ordre de cascade (règle plus tardive) sans
+      // toucher lib.mjs. Voir le commentaire du master ci-dessus pour le
+      // pourquoi (remplace un .set(zIndex)/clearProps GSAP jugé fragile).
+      `%R% .ecran{z-index:0}
+%R% .fond-scene{z-index:-1}`,
+      `%R% .bulle-anneau{position:absolute;z-index:5;left:${bulle.x - 7}px;top:${bulle.y - 7}px;width:${bulle.w + 14}px;height:${bulle.h + 14}px;border-radius:50%;border:7px solid ${PAL.or};box-shadow:0 24px 54px rgba(0,0,0,.45);pointer-events:none;opacity:0}
+%R% .bulle-micro{position:absolute;z-index:6;left:${bulle.x + bulle.w - 62}px;top:${bulle.y + bulle.h - 62}px;width:56px;height:56px;border-radius:50%;background:${PAL.encre};border:4px solid ${PAL.creme};pointer-events:none;opacity:0}`,
+      standaloneCss("%R%", bulle),
+    ].join("\n"),
+    html: [
+      ecranDiv({ x: 0, y: 0, w: W, h: H, label: "ÉCRAN — REMPLACER", sub: "capture, démo, stat plein écran", bord: true }),
+      `<div class="bulle-anneau" data-qa-allow-bleed=""></div>`,
+      `<div class="bulle-micro"></div>`,
+      standaloneHtml("VISAGE — BULLE"),
+    ].join("\n    "),
+    script: `
+      /* L'écran ne ressort PAS : le master plein cadre (toujours au-dessus
+         de l'écran par CSS, voir override + commentaire master ci-dessus)
+         le recouvre déjà en revenant à sa taille pleine avant la fin du
+         bloc. Un fondu sortant sur l'écran ici créerait un flash crème
+         (fond-scene) pendant la fenêtre où le master n'a pas encore fini
+         de regrandir — écart volontaire à la convention des autres
+         familles où l'écran, lui, ne se fait jamais recouvrir. */
+      tl.fromTo(root.querySelector('.ecran'),{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.5,ease:'power2.out'},0);
+      tl.fromTo(root.querySelector('.bulle-anneau'),{scale:.6,opacity:0,y:24},{scale:1,opacity:1,y:0,duration:.5,ease:'back.out(1.7)'},.18)
+        .to(root.querySelector('.bulle-anneau'),{opacity:0,scale:.85,duration:.35,ease:'power2.in'},5.58);
+      tl.fromTo(root.querySelector('.bulle-micro'),{scale:.4,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(1.7)'},.3)
+        .to(root.querySelector('.bulle-micro'),{opacity:0,duration:.3,ease:'power2.in'},5.58);`,
+  }));
+}
+
 export const reelBlocks = blocks;
