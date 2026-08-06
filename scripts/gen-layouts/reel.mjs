@@ -439,12 +439,12 @@ l'habillage passe dessus puis s'efface. Remplacer numéro et libellé.`,
 
 /* ————— R8 · CTA / outro (4) ————— */
 const ctas = [
-  { key: "carte-marque", txt: "carte de marque plein cadre", dur: 5, faceMode: "none", occl: true,
+  { key: "carte-marque", txt: "carte de marque plein cadre", dur: 5, faceMode: "none", occl: true, logoVariant: "light",
     css: `%R% .fond{position:absolute;inset:0;z-index:3;background:${GRAD_SOMBRE};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px;color:${PAL.creme};text-align:center;opacity:0}
-%R% .marque{font-size:88px;font-weight:700;letter-spacing:-.02em}
+%R% .marque{display:block;width:480px;height:auto;object-fit:contain}
 %R% .url-avant{font-size:56px;font-weight:700;color:${PAL.or};letter-spacing:.02em}
 %R% .invit{font-size:42px;font-weight:600;opacity:.85;max-width:820px;line-height:1.2}`,
-    html: `<div class="fond" data-layout-allow-occlusion=""><div class="marque">MEG Business 360</div><div class="invit">On regarde votre dossier ensemble sur</div><div class="url-avant">megbusiness360.com</div></div>`,
+    html: `<div class="fond" data-layout-allow-occlusion=""><img class="marque" src="assets/meg-logo-light.png" alt="Logo MEG Business 360"><div class="invit">On regarde votre dossier ensemble sur</div><div class="url-avant">megbusiness360.com</div></div>`,
     script: `tl.fromTo(root.querySelector('.fond'),{opacity:0},{opacity:1,duration:.5,ease:'power2.out'},.05)
         .fromTo(root.querySelector('.marque'),{y:40,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.2)
         .fromTo(root.querySelector('.invit'),{y:30,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.42)
@@ -496,6 +496,7 @@ for (const c of ctas) {
     ratio: "reel", duration: c.dur,
     faceGeom: c.faceGeom ?? null,
     faceMode: c.faceGeom ? "move" : "none",
+    logoVariant: c.logoVariant ?? null,
     comment: `CTA/outro Reel — ${c.txt}. Remplacer les textes ; l'appel à l'action
 reste indirect (règles MEG : on montre où continuer, on ne supplie pas).`,
     css: c.css,
@@ -570,10 +571,11 @@ const habillages = [
     css: `%R% .vignette{position:absolute;z-index:3;inset:0;background:radial-gradient(72% 62% at 50% 44%,rgba(0,0,0,0) 58%,rgba(31,29,0,.52) 100%);pointer-events:none;opacity:0}`,
     html: `<div class="vignette" data-layout-allow-occlusion=""></div>`,
     script: `tl.fromTo(root.querySelector('.vignette'),{opacity:0},{opacity:1,duration:.8,ease:'power2.out'},.05);` },
-  { key: "bandes-header-footer", txt: "bandes haut et bas",
+  { key: "bandes-header-footer", txt: "bandes haut et bas", logoVariant: "dark",
     css: `%R% .bande-h{position:absolute;z-index:3;left:0;top:0;width:100%;height:140px;background:${PAL.creme};display:flex;align-items:center;justify-content:center;color:${PAL.encre};font-size:40px;font-weight:700;letter-spacing:.08em;opacity:0}
+%R% .bande-h .logo-officiel{display:block;width:150px;height:auto;object-fit:contain}
 %R% .bande-b{position:absolute;z-index:3;left:0;bottom:0;width:100%;height:110px;background:${PAL.encre};display:flex;align-items:center;justify-content:center;color:${PAL.or};font-size:34px;font-weight:700;letter-spacing:.06em;opacity:0}`,
-    html: `<div class="bande-h" data-layout-allow-occlusion="">MEG BUSINESS 360</div><div class="bande-b" data-layout-allow-occlusion="">megbusiness360.com</div>`,
+    html: `<div class="bande-h" data-layout-allow-occlusion=""><img class="logo-officiel" src="assets/meg-logo-dark.png" alt="Logo MEG Business 360"></div><div class="bande-b" data-layout-allow-occlusion="">megbusiness360.com</div>`,
     script: `tl.fromTo(root.querySelector('.bande-h'),{y:-140,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.05)
         .fromTo(root.querySelector('.bande-b'),{y:110,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.12);` },
   { key: "marge-titre-vertical", txt: "marge latérale + titre vertical",
@@ -606,6 +608,7 @@ for (const hb of habillages) {
     ratio: "reel", duration: DUR,
     faceMode: "none",
     needsFont: !["cadre-fin-or", "cadre-creme-epais", "coins-or", "vignette-focus", "filet-progression", "halo-cinema"].includes(hb.key),
+    logoVariant: hb.logoVariant ?? null,
     comment: `Habillage Reel — ${hb.txt}. Le master reste plein cadre, l'habillage
 se pose dessus (piste 2) et s'étire sur la durée voulue.`,
     css: hb.css,

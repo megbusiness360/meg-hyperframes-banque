@@ -19,6 +19,13 @@ import { catalogueBlocks } from "./catalogues.mjs";
 const racine = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const blocksRoot = join(racine, "registry", "blocks");
 const registryPath = join(racine, "registry", "registry.json");
+const logoPaths = {
+  dark: join(racine, "scripts", "gen-layouts", "assets", "meg-logo-dark.png"),
+  light: join(racine, "scripts", "gen-layouts", "assets", "meg-logo-light.png"),
+};
+for (const [variant, path] of Object.entries(logoPaths)) {
+  if (!existsSync(path)) throw new Error(`Logo MEG officiel ${variant} introuvable`);
+}
 
 // Blocs retirés du registre (dépréciation validée) — le dossier est supprimé
 // par git, cette liste empêche toute résurrection à la régénération.
@@ -40,7 +47,7 @@ for (const b of all) {
   vus.add(b.name);
 }
 
-for (const b of all) writeBlock(blocksRoot, fontPath, b);
+for (const b of all) writeBlock(blocksRoot, fontPath, logoPaths, b);
 
 // ——— Reconstruction du registre en deux partitions ———
 const registry = JSON.parse(readFileSync(registryPath, "utf8"));

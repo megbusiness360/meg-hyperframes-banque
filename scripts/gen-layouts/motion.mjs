@@ -272,26 +272,24 @@ for (const ratio of ["reel", "yt"]) {
   blocks.push(emit({
     name: `meg-motion-logo-reveal-${ratio}`,
     title: `${C.prefix} — Logo reveal MEG`,
-    desc: "Signature de marque : MEG + BUSINESS 360 + filet or qui se déploie sur carte crème. 2,5 s — ouverture ou fermeture de vidéo.",
+    desc: "Signature de marque : logo MEG officiel + filet or qui se déploie sur carte crème. 2,5 s — ouverture ou fermeture de vidéo.",
     tags: ["motion", "logo", "marque"],
     family: C.famille, familyTitle: C.familleTitre,
     variant: "logo reveal",
     ratio, duration: 2.5, faceMode: "none", posterAt: 1.2,
-    comment: `Logo reveal — signature MEG Business 360 sur carte crème. Ne pas
-éditer les textes (identité de marque) ; durée courte, ouverture/fin.`,
+    logoVariant: "dark",
+    comment: `Logo reveal — logo MEG officiel sur carte crème. Ne pas remplacer,
+déformer ni recadrer le logo ; durée courte, ouverture/fin.`,
     css: `%R% .marque{position:absolute;inset:0;z-index:30;background:${GRAD_CARTE};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
-%R% .meg{color:${PAL.encre};font-size:${ratio === "reel" ? 220 : 190}px;font-weight:700;letter-spacing:-.02em;line-height:1;opacity:0}
-%R% .b360{color:${PAL.encre};font-size:${ratio === "reel" ? 44 : 40}px;font-weight:600;letter-spacing:.38em;text-indent:.38em;opacity:0}
+%R% .logo-officiel{display:block;width:${ratio === "reel" ? 620 : 500}px;height:auto;object-fit:contain;opacity:0}
 %R% .filet-m{width:300px;height:10px;border-radius:6px;background:${PAL.or};transform-origin:center}`,
     html: `<div class="marque" data-layout-allow-occlusion="">
-      <div class="meg">MEG</div>
+      <img class="logo-officiel" src="assets/meg-logo-dark.png" alt="Logo MEG Business 360">
       <div class="filet-m"></div>
-      <div class="b360">BUSINESS 360</div>
     </div>`,
     script: `
-      tl.fromTo(root.querySelector('.meg'),{y:44,opacity:0},{y:0,opacity:1,duration:.5,ease:'power4.out'},.1)
+      tl.fromTo(root.querySelector('.logo-officiel'),{y:44,opacity:0},{y:0,opacity:1,duration:.5,ease:'power4.out'},.1)
         .fromTo(root.querySelector('.filet-m'),{scaleX:0},{scaleX:1,duration:.45,ease:'power2.out'},.4)
-        .fromTo(root.querySelector('.b360'),{opacity:0,y:10},{opacity:1,y:0,duration:.55,ease:'power2.out'},.6)
         .to(root.querySelector('.marque'),{opacity:0,duration:.4,ease:'power2.in'},2.05);`,
   }));
 }

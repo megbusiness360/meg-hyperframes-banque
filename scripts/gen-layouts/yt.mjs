@@ -420,13 +420,14 @@ blocks.push(emit({
   variant: "carte de marque",
   ratio: "yt", duration: 5,
   faceMode: "none",
+  logoVariant: "light",
   comment: `Outro YouTube — carte de marque plein cadre. L'invitation reste
 indirecte (règles MEG), l'URL est le geste graphique central.`,
   css: `%R% .fond{position:absolute;inset:0;z-index:3;background:${GRAD_SOMBRE};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;color:${PAL.creme};text-align:center;opacity:0}
-%R% .marque{font-size:76px;font-weight:700;letter-spacing:-.02em}
+%R% .marque{display:block;width:400px;height:auto;object-fit:contain}
 %R% .invit{font-size:38px;font-weight:600;opacity:.85;max-width:900px;line-height:1.2}
 %R% .url-avant{font-size:54px;font-weight:700;color:${PAL.or};letter-spacing:.02em}`,
-  html: `<div class="fond" data-layout-allow-occlusion=""><div class="marque">MEG Business 360</div><div class="invit">On regarde votre dossier ensemble sur</div><div class="url-avant">megbusiness360.com</div></div>`,
+  html: `<div class="fond" data-layout-allow-occlusion=""><img class="marque" src="assets/meg-logo-light.png" alt="Logo MEG Business 360"><div class="invit">On regarde votre dossier ensemble sur</div><div class="url-avant">megbusiness360.com</div></div>`,
   script: `
       tl.fromTo(root.querySelector('.fond'),{opacity:0},{opacity:1,duration:.5,ease:'power2.out'},.05)
         .fromTo(root.querySelector('.marque'),{y:36,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.2)
@@ -475,10 +476,11 @@ const habillagesYt = [
 %R% .bande.h{top:0}%R% .bande.b{bottom:0}`,
     html: `<div class="bande h" data-layout-allow-occlusion=""></div><div class="bande b" data-layout-allow-occlusion=""></div>`,
     script: `tl.to(root.querySelectorAll('.bande'),{height:120,duration:.7,ease:'power3.inOut'},.05);` },
-  { key: "header-marque", txt: "bande de marque haute", font: true,
+  { key: "header-marque", txt: "bande de marque haute", font: true, logoVariant: "dark",
     css: `%R% .bande-h{position:absolute;z-index:3;left:0;top:0;width:100%;height:96px;background:${PAL.creme};display:flex;align-items:center;justify-content:space-between;padding:0 60px;color:${PAL.encre};font-size:32px;font-weight:700;letter-spacing:.08em;opacity:0}
+%R% .bande-h .logo-officiel{display:block;width:112px;height:auto;object-fit:contain}
 %R% .bande-h .url{color:${PAL.or}}`,
-    html: `<div class="bande-h" data-layout-allow-occlusion=""><span>MEG BUSINESS 360</span><span class="url">megbusiness360.com</span></div>`,
+    html: `<div class="bande-h" data-layout-allow-occlusion=""><img class="logo-officiel" src="assets/meg-logo-dark.png" alt="Logo MEG Business 360"><span class="url">megbusiness360.com</span></div>`,
     script: `tl.fromTo(root.querySelector('.bande-h'),{y:-96,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},.05);` },
   { key: "vignette-focus", txt: "vignette de focus", font: false,
     css: `%R% .vignette{position:absolute;z-index:3;inset:0;background:radial-gradient(64% 70% at 50% 46%,rgba(0,0,0,0) 58%,rgba(31,29,0,.52) 100%);pointer-events:none;opacity:0}`,
@@ -497,6 +499,7 @@ for (const hb of habillagesYt) {
     ratio: "yt", duration: DUR,
     faceMode: "none",
     needsFont: hb.font,
+    logoVariant: hb.logoVariant ?? null,
     comment: `Habillage YouTube — ${hb.txt}. Master plein cadre intact, l'habillage
 se pose dessus et s'étire sur la durée voulue.`,
     css: hb.css,

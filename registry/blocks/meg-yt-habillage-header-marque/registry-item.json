@@ -32,6 +32,11 @@
       "path": "assets/ClashGrotesk-Variable.woff2",
       "target": "assets/ClashGrotesk-Variable.woff2",
       "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo-dark.png",
+      "target": "assets/meg-logo-dark.png",
+      "type": "hyperframes:asset"
     }
   ],
   "preview": {
