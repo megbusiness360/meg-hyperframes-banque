@@ -10,7 +10,8 @@
     "chiffre",
     "compteur",
     "stat",
-    "meg-reel"
+    "meg-reel",
+    "meg-reel-folder-motion-texte"
   ],
   "family": "data",
   "familyTitle": "Chiffres & data",

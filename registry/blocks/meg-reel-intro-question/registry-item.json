@@ -11,7 +11,8 @@
     "intro",
     "hook",
     "question",
-    "meg-reel"
+    "meg-reel",
+    "meg-reel-folder-intros"
   ],
   "family": "reel-intro",
   "familyTitle": "Reels — intros & hooks",

@@ -32,7 +32,17 @@ Les licences et crédits propres à chaque banque source restent dans son dossie
 
 1. Chercher d’abord un existant dans `registry/` et `sources/`.
 2. Adapter le rendu à la charte MEG et au contrat HyperFrames.
-3. Créer `registry/blocks/<nom>/registry-item.json` et le bloc HTML.
-4. Ajouter le bloc à `registry/registry.json`.
-5. Exécuter `hyperframes lint`, `hyperframes validate`, puis tester `hyperframes add` dans un projet neuf.
-6. Publier sur `main`. Toutes les timelines verront le nouveau bloc à leur prochaine synchronisation.
+3. Pour tout emplacement de marque, utiliser les fichiers officiels du générateur : `meg-logo-dark.png` sur fond clair et `meg-logo-light.png` sur fond sombre. Ne jamais recomposer le logo avec du texte.
+4. Créer `registry/blocks/<nom>/registry-item.json` et le bloc HTML.
+5. Ajouter le bloc à `registry/registry.json`, puis exécuter `node scripts/gen-layouts/index.mjs`. Le générateur ajoute automatiquement le layout à `MEG - Reel` ou `MEG - YouTube` et à son dossier selon ses dimensions et ses tags métier.
+6. Exécuter `hyperframes lint`, `hyperframes validate`, puis tester `hyperframes add` dans un projet neuf.
+7. Publier sur `main`. Toutes les timelines verront le nouveau bloc à leur prochaine synchronisation.
+
+## Organisation automatique du Studio
+
+La source unique reste Git. Aucun rangement manuel n’est nécessaire après publication.
+
+- `1080 × 1920` → `MEG - Reel`.
+- `1920 × 1080` → `MEG - YouTube`.
+- Chaque layout reçoit exactement un tag de dossier `meg-reel-folder-*` ou `meg-youtube-folder-*` lors de la régénération.
+- Les dossiers visibles sont : aperçu, intros, écran & visage, détourage, preuves & B-roll, motion & texte, transitions, chapitres, CTA & outros et habillages.

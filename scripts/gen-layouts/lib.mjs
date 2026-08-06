@@ -183,7 +183,7 @@ export function emit(spec) {
   const {
     name, title, desc, tags = [], family, familyTitle, variant,
     ratio, duration, comment, css, html, script, posterAt = 1.2,
-    needsFont = true, faceGeom = null, faceMode = "move", master = null,
+    needsFont = true, logoVariant = null, faceGeom = null, faceMode = "move", master = null,
     fond = true, faceBias = null,
   } = spec;
   const RA = RATIOS[ratio];
@@ -254,7 +254,7 @@ export function emit(spec) {
 `.replace(/[ \t]+$/gm, "");
 
   return {
-    name, doc, posterAt, ratio, duration, needsFont,
+    name, doc, posterAt, ratio, duration, needsFont, logoVariant,
     manifest: {
       $schema: "https://hyperframes.heygen.com/schema/registry-item.json",
       name,
@@ -272,13 +272,16 @@ export function emit(spec) {
         ...(needsFont
           ? [{ path: "assets/ClashGrotesk-Variable.woff2", target: "assets/ClashGrotesk-Variable.woff2", type: "hyperframes:asset" }]
           : []),
+        ...(logoVariant
+          ? [{ path: `assets/meg-logo-${logoVariant}.png`, target: `assets/meg-logo-${logoVariant}.png`, type: "hyperframes:asset" }]
+          : []),
       ],
       preview: { poster: "preview.jpg", video: "preview.mp4" },
     },
   };
 }
 
-export function writeBlock(blocksRoot, fontPath, block) {
+export function writeBlock(blocksRoot, fontPath, logoPaths, block) {
   const dir = join(blocksRoot, block.name);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, `${block.name}.html`), block.doc);
@@ -289,5 +292,14 @@ export function writeBlock(blocksRoot, fontPath, block) {
     if (!existsSync(join(assets, "ClashGrotesk-Variable.woff2"))) {
       copyFileSync(fontPath, join(assets, "ClashGrotesk-Variable.woff2"));
     }
+  }
+  if (block.logoVariant) {
+    const source = logoPaths[block.logoVariant];
+    if (!source || !existsSync(source)) {
+      throw new Error(`Logo MEG ${block.logoVariant} introuvable`);
+    }
+    const assets = join(dir, "assets");
+    mkdirSync(assets, { recursive: true });
+    copyFileSync(source, join(assets, `meg-logo-${block.logoVariant}.png`));
   }
 }

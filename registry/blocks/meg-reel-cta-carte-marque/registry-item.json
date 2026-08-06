@@ -11,7 +11,8 @@
     "cta",
     "outro",
     "carte-marque",
-    "meg-reel"
+    "meg-reel",
+    "meg-reel-folder-cta-outros"
   ],
   "family": "reel-cta",
   "familyTitle": "Reels — CTA & outros",
@@ -30,6 +31,11 @@
     {
       "path": "assets/ClashGrotesk-Variable.woff2",
       "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo-light.png",
+      "target": "assets/meg-logo-light.png",
       "type": "hyperframes:asset"
     }
   ],

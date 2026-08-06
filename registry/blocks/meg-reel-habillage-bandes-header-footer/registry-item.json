@@ -10,7 +10,8 @@
     "habillage",
     "overlay",
     "bandes-header-footer",
-    "meg-reel"
+    "meg-reel",
+    "meg-reel-folder-habillages"
   ],
   "family": "reel-habillage",
   "familyTitle": "Reels — habillages plein cadre",
@@ -29,6 +30,11 @@
     {
       "path": "assets/ClashGrotesk-Variable.woff2",
       "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    },
+    {
+      "path": "assets/meg-logo-dark.png",
+      "target": "assets/meg-logo-dark.png",
       "type": "hyperframes:asset"
     }
   ],
