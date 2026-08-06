@@ -595,6 +595,10 @@ const habillages = [
 %R% .halo-b{position:absolute;z-index:3;left:0;bottom:0;width:100%;height:420px;background:linear-gradient(0deg,rgba(31,29,0,.66) 0%,rgba(31,29,0,0) 100%);pointer-events:none;opacity:0}`,
     html: `<div class="halo-h" data-layout-allow-occlusion=""></div><div class="halo-b" data-layout-allow-occlusion=""></div>`,
     script: `tl.fromTo([root.querySelector('.halo-h'),root.querySelector('.halo-b')],{opacity:0},{opacity:1,duration:.7,ease:'power2.out'},.05);` },
+  { key: "marque-meg-coin", txt: "marque MEG persistante coin haut-droit", logoVariant: "light",
+    css: `%R% .marque-meg-coin{position:absolute;z-index:3;right:${M}px;top:64px;width:160px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));opacity:0}`,
+    html: `<img class="marque-meg-coin" src="assets/meg-logo-light.png" alt="Logo MEG Business 360" data-qa-allow-bleed="">`,
+    script: `tl.fromTo(root.querySelector('.marque-meg-coin'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.05);` },
 ];
 for (const hb of habillages) {
   blocks.push(emit({
@@ -607,7 +611,7 @@ for (const hb of habillages) {
     variant: hb.txt,
     ratio: "reel", duration: DUR,
     faceMode: "none",
-    needsFont: !["cadre-fin-or", "cadre-creme-epais", "coins-or", "vignette-focus", "filet-progression", "halo-cinema"].includes(hb.key),
+    needsFont: !["cadre-fin-or", "cadre-creme-epais", "coins-or", "vignette-focus", "filet-progression", "halo-cinema", "marque-meg-coin"].includes(hb.key),
     logoVariant: hb.logoVariant ?? null,
     comment: `Habillage Reel — ${hb.txt}. Le master reste plein cadre, l'habillage
 se pose dessus (piste 2) et s'étire sur la durée voulue.`,
@@ -961,38 +965,41 @@ sur un contenu plein écran. Remplacer la zone hachurée par le contenu réel.`,
  * réexamen pixel des 4 captures de référence envoyées par Mohamed :
  * - l'étiquette n'est pas un médaillon circulaire flottant mais une PASTILLE
  *   HEXAGONALE qui mord le coin haut-gauche de la bulle-titre (repère MEG
- *   "trois tirés" en lieu et place de l'icône fournisseur source) ;
- * - la référence porte un bandeau de marque PERSISTANT haut-droite pendant
- *   toute la bande visage (équivalent du wordmark fournisseur) — absent de
- *   la 1re passe, ajouté ici en wordmark "MEG" seul (texte, sans icône,
- *   fidèle à la référence qui n'accole pas son logo au wordmark). */
+ *   "trois tirés" en lieu et place de l'icône fournisseur source).
+ * 3e passe (06/08/2026) : le bandeau de marque persistant vu sur plusieurs
+ * captures de référence (dont le frame CTA noir n'en porte PAS) n'est PAS un
+ * élément de CE bloc — c'est un calque indépendant qui doit pouvoir chevaucher
+ * n'importe quelle durée/combinaison de blocs. Déplacé vers son propre
+ * habillage (piste 2) : voir R10, `meg-reel-habillage-marque-meg-coin`. Le
+ * souder ici en tween local aurait fait clignoter la marque à chaque coupure
+ * de bloc au lieu de rester stable — contraire à la référence. */
 blocks.push(emit({
   name: "meg-reel-intro-hook-bulle-titre",
   title: "Reel — hook bulle-titre + coupe B-roll",
-  desc: "Intro Reel 9:16 : visage bande haute avec bandeau de marque MEG persistant, bulle-titre flottante à cheval sur la couture (pastille hexagonale MEG mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\".",
+  desc: "Intro Reel 9:16 : visage bande haute, bulle-titre flottante à cheval sur la couture (pastille hexagonale MEG mordant le coin), coupe B-roll plein cadre en bas. Format hook \"révélation puis preuve\". Marque persistante : superposer l'habillage `meg-reel-habillage-marque-meg-coin`.",
   tags: ["reel", "layout", "intro", "hook", "bulle-titre", "broll"],
   family: "reel-intro",
   familyTitle: "Reels — intros & hooks",
   variant: "bulle-titre + broll bas",
   ratio: "reel",
   duration: 5,
-  comment: `Intro Reel "hook bulle-titre" — visage en bande haute avec bandeau
-de marque MEG persistant (haut-droite), bulle-titre flottante mordue au
-coin par une pastille hexagonale MEG (repère "trois tirés"). Coupe
-B-roll plein cadre en bas. Remplacer le titre et la zone hachurée par
-la preuve réelle ; enchaîner sur un layout standard une fois le hook posé.`,
+  comment: `Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
+flottante mordue au coin par une pastille hexagonale MEG (repère "trois
+tirés"). Coupe B-roll plein cadre en bas. Remplacer le titre et la zone
+hachurée par la preuve réelle ; enchaîner sur un layout standard une fois
+le hook posé. Pour une marque persistante en surimpression (bandeau
+haut-droite), empiler l'habillage meg-reel-habillage-marque-meg-coin sur
+une piste au-dessus — jamais en tween local à ce bloc.`,
   faceGeom: { x: 0, y: 0, w: W, h: 840, r: 0 },
   css: [
     ecranCss("%R%"),
     `%R% .bulle-titre{position:absolute;z-index:4;left:${M}px;top:724px;width:${CW}px;min-height:224px;border-radius:${R}px;background:${PAL.clair};box-shadow:0 30px 70px rgba(0,0,0,.35);padding:60px 58px 42px;color:${PAL.encre};opacity:0}
 %R% .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
 %R% .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:${PAL.clair};box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0}
-%R% .badge-meg svg{width:42px;height:42px}
-%R% .marque-meg{position:absolute;z-index:5;right:${M}px;top:64px;color:${PAL.clair};font-size:38px;font-weight:700;letter-spacing:.09em;text-shadow:0 2px 12px rgba(0,0,0,.5);opacity:0}`,
+%R% .badge-meg svg{width:42px;height:42px}`,
   ].join("\n"),
   html: [
     ecranDiv({ x: 0, y: 840, w: W, h: H - 840, label: "COUPE B-ROLL — REMPLACER", sub: "preuve, capture, plan tourné", bord: true }),
-    `<div class="marque-meg" data-qa-allow-bleed="">MEG</div>`,
     `<div class="bulle-titre" data-layout-allow-occlusion=""><span class="txt">Elle a financé sa formation sans avancer un centime</span></div>`,
     `<div class="badge-meg" data-qa-allow-bleed=""><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="21" y="3" width="6" height="17" rx="3" fill="${PAL.encre}" transform="rotate(18 24 11.5)"/><rect x="21" y="3" width="6" height="24" rx="3" fill="${PAL.encre}" transform="rotate(34 24 15)"/><rect x="21" y="3" width="6" height="30" rx="3" fill="${PAL.encre}" transform="rotate(50 24 18)"/></svg></div>`,
   ].join("\n    "),
@@ -1002,9 +1009,7 @@ la preuve réelle ; enchaîner sur un layout standard une fois le hook posé.`,
       tl.fromTo(root.querySelector('.bulle-titre'),{y:-46,opacity:0},{y:0,opacity:1,duration:.5,ease:'back.out(1.5)'},.16)
         .to(root.querySelector('.bulle-titre'),{opacity:0,y:-20,duration:.3,ease:'power2.in'},4.6);
       tl.fromTo(root.querySelector('.badge-meg'),{scale:.5,rotate:-14,opacity:0},{scale:1,rotate:0,opacity:1,duration:.42,ease:'back.out(1.8)'},.32)
-        .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);
-      tl.fromTo(root.querySelector('.marque-meg'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.5)
-        .to(root.querySelector('.marque-meg'),{opacity:0,duration:.25,ease:'power2.in'},4.45);`,
+        .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);`,
   ].join("\n"),
 }));
 

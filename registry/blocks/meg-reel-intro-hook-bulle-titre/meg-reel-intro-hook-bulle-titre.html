@@ -7,11 +7,13 @@
   <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
 </head>
 <body>
-<!-- Intro Reel "hook bulle-titre" — visage en bande haute avec bandeau
-     de marque MEG persistant (haut-droite), bulle-titre flottante mordue au
-     coin par une pastille hexagonale MEG (repère "trois tirés"). Coupe
-     B-roll plein cadre en bas. Remplacer le titre et la zone hachurée par
-     la preuve réelle ; enchaîner sur un layout standard une fois le hook posé. -->
+<!-- Intro Reel "hook bulle-titre" — visage en bande haute, bulle-titre
+     flottante mordue au coin par une pastille hexagonale MEG (repère "trois
+     tirés"). Coupe B-roll plein cadre en bas. Remplacer le titre et la zone
+     hachurée par la preuve réelle ; enchaîner sur un layout standard une fois
+     le hook posé. Pour une marque persistante en surimpression (bandeau
+     haut-droite), empiler l'habillage meg-reel-habillage-marque-meg-coin sur
+     une piste au-dessus — jamais en tween local à ce bloc. -->
 <div data-hf-id="hf-oxec0" id="reel-intro-hook-bulle-titre-root" data-composition-id="reel-intro-hook-bulle-titre" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="0" data-face-y="0" data-face-w="1080" data-face-h="840" data-face-r="0" data-face-mode="move">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
@@ -28,13 +30,11 @@
 #reel-intro-hook-bulle-titre-root .bulle-titre .txt{font-size:58px;font-weight:700;line-height:1.08;letter-spacing:-.02em}
 #reel-intro-hook-bulle-titre-root .badge-meg{position:absolute;z-index:5;left:70px;top:664px;width:96px;height:96px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:#FFFEEC;box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;opacity:0}
 #reel-intro-hook-bulle-titre-root .badge-meg svg{width:42px;height:42px}
-#reel-intro-hook-bulle-titre-root .marque-meg{position:absolute;z-index:5;right:46px;top:64px;color:#FFFEEC;font-size:38px;font-weight:700;letter-spacing:.09em;text-shadow:0 2px 12px rgba(0,0,0,.5);opacity:0}
     </style>
     <div data-hf-id="hf-oxec1" class="fond-scene" data-layout-allow-occlusion=""></div>
     <div data-hf-id="hf-oxec2" class="ecran bord" style="left:0px;top:840px;width:1080px;height:1080px;" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec3" class="etiquette">COUPE B-ROLL — REMPLACER</span><span data-hf-id="hf-oxec4" class="sous">preuve, capture, plan tourné</span></div>
-    <div data-hf-id="hf-oxec5" class="marque-meg" data-qa-allow-bleed="">MEG</div>
-    <div data-hf-id="hf-oxec6" class="bulle-titre" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec7" class="txt">Elle a financé sa formation sans avancer un centime</span></div>
-    <div data-hf-id="hf-oxec8" class="badge-meg" data-qa-allow-bleed=""><svg data-hf-id="hf-oxec9" viewBox="0 0 48 48" aria-hidden="true"><rect data-hf-id="hf-oxeca" x="21" y="3" width="6" height="17" rx="3" fill="#2F2C00" transform="rotate(18 24 11.5)"/><rect data-hf-id="hf-oxecb" x="21" y="3" width="6" height="24" rx="3" fill="#2F2C00" transform="rotate(34 24 15)"/><rect data-hf-id="hf-oxecc" x="21" y="3" width="6" height="30" rx="3" fill="#2F2C00" transform="rotate(50 24 18)"/></svg></div>
+    <div data-hf-id="hf-oxec5" class="bulle-titre" data-layout-allow-occlusion=""><span data-hf-id="hf-oxec6" class="txt">Elle a financé sa formation sans avancer un centime</span></div>
+    <div data-hf-id="hf-oxec7" class="badge-meg" data-qa-allow-bleed=""><svg data-hf-id="hf-oxec8" viewBox="0 0 48 48" aria-hidden="true"><rect data-hf-id="hf-oxec9" x="21" y="3" width="6" height="17" rx="3" fill="#2F2C00" transform="rotate(18 24 11.5)"/><rect data-hf-id="hf-oxeca" x="21" y="3" width="6" height="24" rx="3" fill="#2F2C00" transform="rotate(34 24 15)"/><rect data-hf-id="hf-oxecb" x="21" y="3" width="6" height="30" rx="3" fill="#2F2C00" transform="rotate(50 24 18)"/></svg></div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -74,8 +74,6 @@
         .to(root.querySelector('.bulle-titre'),{opacity:0,y:-20,duration:.3,ease:'power2.in'},4.6);
       tl.fromTo(root.querySelector('.badge-meg'),{scale:.5,rotate:-14,opacity:0},{scale:1,rotate:0,opacity:1,duration:.42,ease:'back.out(1.8)'},.32)
         .to(root.querySelector('.badge-meg'),{opacity:0,scale:.8,duration:.28,ease:'power2.in'},4.6);
-      tl.fromTo(root.querySelector('.marque-meg'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.5)
-        .to(root.querySelector('.marque-meg'),{opacity:0,duration:.25,ease:'power2.in'},4.45);
       window.__timelines['reel-intro-hook-bulle-titre']=tl;
       })();
     </script>

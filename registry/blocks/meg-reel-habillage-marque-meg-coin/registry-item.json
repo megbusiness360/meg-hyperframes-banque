@@ -1,0 +1,40 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-reel-habillage-marque-meg-coin",
+  "type": "hyperframes:block",
+  "title": "Reel — habillage marque MEG persistante coin haut-droit",
+  "description": "Habillage plein cadre 9:16 : marque MEG persistante coin haut-droit par-dessus le master intact. Se pose sur toute la durée d'une séquence.",
+  "tags": [
+    "meg",
+    "reel",
+    "habillage",
+    "overlay",
+    "marque-meg-coin",
+    "meg-reel",
+    "meg-reel-folder-habillages"
+  ],
+  "family": "reel-habillage",
+  "familyTitle": "Reels — habillages plein cadre",
+  "variant": "marque MEG persistante coin haut-droit",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-reel-habillage-marque-meg-coin.html",
+      "target": "compositions/meg-reel-habillage-marque-meg-coin.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/meg-logo-light.png",
+      "target": "assets/meg-logo-light.png",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

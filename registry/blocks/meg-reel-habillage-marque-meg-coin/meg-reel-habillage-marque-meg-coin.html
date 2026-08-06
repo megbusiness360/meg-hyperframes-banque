@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Habillage Reel — marque MEG persistante coin haut-droit. Le master reste plein cadre, l'habillage
+     se pose dessus (piste 2) et s'étire sur la durée voulue. -->
+<div data-hf-id="hf-1c6v0" id="reel-habillage-marque-meg-coin-root" data-composition-id="reel-habillage-marque-meg-coin" data-start="0" data-duration="6" data-width="1080" data-height="1920">
+    <style>
+      #reel-habillage-marque-meg-coin-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
+      #reel-habillage-marque-meg-coin-root .marque-meg-coin{position:absolute;z-index:3;right:46px;top:64px;width:160px;height:auto;object-fit:contain;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5));opacity:0}
+    </style>
+    <img data-hf-id="hf-1c6v1" class="marque-meg-coin" src="assets/meg-logo-light.png" alt="Logo MEG Business 360" data-qa-allow-bleed="">
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#reel-habillage-marque-meg-coin-root');
+      const tl=gsap.timeline({paused:true});
+
+      tl.fromTo(root.querySelector('.marque-meg-coin'),{opacity:0,y:-10},{opacity:1,y:0,duration:.4,ease:'power2.out'},.05);
+      window.__timelines['reel-habillage-marque-meg-coin']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>
