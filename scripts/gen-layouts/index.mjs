@@ -47,7 +47,44 @@ const registry = JSON.parse(readFileSync(registryPath, "utf8"));
 const noms = new Set(registry.items.map((i) => i.name));
 for (const b of all) if (!noms.has(b.name)) registry.items.push({ name: b.name, type: "hyperframes:block" });
 
-// Dimensions + patch idempotent du tag catalogue sur CHAQUE manifest
+// Taxonomie dynamique du Studio. Chaque bloc porte :
+// - exactement un format : meg-reel ou meg-large ;
+// - exactement un dossier, spécifique au format, par exemple
+//   meg-reel-folder-intros ou meg-youtube-folder-preuves.
+// Le Studio peut ainsi reconstruire les deux banques et leurs dossiers à
+// chaque lecture de Git, sans liste figée ni rangement manuel.
+const TAGS_DOSSIERS = [
+  "apercus", "intros", "ecran-visage", "detourage", "preuves",
+  "motion-texte", "transitions", "chapitres", "cta-outros", "habillages",
+];
+
+function dossierDe(manifest) {
+  const tags = new Set(Array.isArray(manifest.tags) ? manifest.tags : []);
+  const a = (...valeurs) => valeurs.some((valeur) => tags.has(valeur));
+  const nom = manifest.name ?? "";
+  if (a("catalogue")) return "apercus";
+  if (a("transition") || nom.includes("transition")) return "transitions";
+  if (a("habillage")) return "habillages";
+  if (a("intro", "hook")) return "intros";
+  if (a("chapitre")) return "chapitres";
+  if (a("cta", "outro")) return "cta-outros";
+  if (a("detoure", "detourage", "fond-vert", "corps-detoure")) return "detourage";
+  if (a("preuve", "preuve-sociale", "temoignage", "logos", "broll", "demo", "plan-de-coupe")) return "preuves";
+  if (a(
+    "motion", "typo-cinetique", "mot-cle", "sous-titres", "captions", "caption",
+    "data", "stat", "compteur", "checklist", "liste", "frise", "process",
+    "callout", "lower-third", "accent", "effet",
+  )) return "motion-texte";
+  return "ecran-visage";
+}
+
+function estTagDossier(tag) {
+  return TAGS_DOSSIERS.some((dossier) =>
+    tag === `meg-reel-folder-${dossier}` || tag === `meg-youtube-folder-${dossier}`,
+  );
+}
+
+// Dimensions + patch idempotent des tags catalogue sur CHAQUE manifest
 // (y compris les blocs socle non générés).
 function catalogueDe(item) {
   const manifestPath = join(blocksRoot, item.name, "registry-item.json");
@@ -55,9 +92,13 @@ function catalogueDe(item) {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const { width = 0, height = 0 } = manifest.dimensions ?? {};
   const cat = height >= width ? "meg-reel" : "meg-large";
+  const formatDossier = cat === "meg-reel" ? "reel" : "youtube";
+  const tagDossier = `meg-${formatDossier}-folder-${dossierDe(manifest)}`;
   const tags = Array.isArray(manifest.tags) ? manifest.tags : [];
-  const propres = tags.filter((t) => t !== "meg-reel" && t !== "meg-large");
-  const attendu = [...propres, cat];
+  const propres = tags.filter((t) =>
+    t !== "meg-reel" && t !== "meg-large" && !estTagDossier(t),
+  );
+  const attendu = [...propres, cat, tagDossier];
   if (JSON.stringify(tags) !== JSON.stringify(attendu)) {
     manifest.tags = attendu;
     writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");

@@ -10,7 +10,8 @@
     "layout",
     "chapitre",
     "carton-numero",
-    "meg-reel"
+    "meg-reel",
+    "meg-reel-folder-chapitres"
   ],
   "family": "reel-chapitre",
   "familyTitle": "Reels — cartons de chapitre",
