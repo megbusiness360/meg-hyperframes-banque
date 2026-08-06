@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-cta-pastille-lien-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Pastille CTA « LIEN EN BIO »",
+  "description": "Badge CTA persistant en zone neutre (torse, à gauche) : rond or qui pulse + étiquette « LIEN EN BIO ». Se pose sur plusieurs secondes sans gêner.",
+  "tags": [
+    "meg",
+    "motion",
+    "cta",
+    "pastille",
+    "lien",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "pastille LIEN EN BIO",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 6,
+  "files": [
+    {
+      "path": "meg-motion-cta-pastille-lien-reel.html",
+      "target": "compositions/meg-motion-cta-pastille-lien-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

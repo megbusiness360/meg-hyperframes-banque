@@ -10,23 +10,25 @@
 <!-- Layout Reel — écran incliné (-2,5°), plus vivant qu'une carte droite.
      L'inclinaison est posée par gsap.set (jamais de transform CSS : conflit
      GSAP). Remplacer le contenu hachuré par la capture. -->
-<div data-hf-id="hf-108y0" id="reel-ecran-haut-60-incline-root" data-composition-id="reel-ecran-haut-60-incline" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="46" data-face-y="1163" data-face-w="988" data-face-h="711" data-face-r="34" data-face-mode="move">
+<div data-hf-id="hf-108y0" id="reel-ecran-haut-60-incline-root" data-composition-id="reel-ecran-haut-60-incline" data-start="0" data-duration="6" data-width="1080" data-height="1920" data-face-x="46" data-face-y="1167" data-face-w="988" data-face-h="707" data-face-r="34" data-face-mode="move">
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #reel-ecran-haut-60-incline-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-ecran-haut-60-incline-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
       #reel-ecran-haut-60-incline-root .ecran{position:absolute;z-index:3;box-sizing:border-box;border:7px solid #fffcd6;border-radius:34px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);box-shadow:0 34px 78px rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#2F2C00;overflow:hidden;opacity:0}
 #reel-ecran-haut-60-incline-root .ecran.bord{border:0;border-radius:0;box-shadow:none}
 #reel-ecran-haut-60-incline-root .ecran .etiquette{padding:12px 26px;border-radius:22px;background:#2F2C00;color:#FFFCD6;font-size:40px;font-weight:700;letter-spacing:.05em}
 #reel-ecran-haut-60-incline-root .ecran .sous{font-size:29px;font-weight:600;opacity:.62;letter-spacing:-.01em}
 #reel-ecran-haut-60-incline-root .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:#FFFCD6;border-bottom:2px solid rgba(47,44,0,.10)}
 #reel-ecran-haut-60-incline-root .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
-#reel-ecran-haut-60-incline-root .ecran .url{flex:1;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden}
+#reel-ecran-haut-60-incline-root .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #reel-ecran-haut-60-incline-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:34px;pointer-events:none;opacity:0}
-#reel-ecran-haut-60-incline-root .standalone-face{display:none;position:absolute;z-index:2;left:46px;top:1163px;width:988px;height:711px;border-radius:34px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
+#reel-ecran-haut-60-incline-root .standalone-face{display:none;position:absolute;z-index:2;left:46px;top:1167px;width:988px;height:707px;border-radius:34px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-108y1" class="ecran penche" style="left:64px;top:46px;width:952px;height:1095px;" data-layout-allow-occlusion=""><span data-hf-id="hf-108y2" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-108y3" class="sous">capture, démo, document</span></div>
-    <div data-hf-id="hf-108y4" class="face-cadre" style="left:39px;top:1156px;width:1002px;height:725px;"></div>
-    <div data-hf-id="hf-108y5" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-108y6">RECADRÉ ICI</div>
+    <div data-hf-id="hf-108y1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-108y2" class="ecran penche" style="left:64px;top:46px;width:952px;height:1091px;" data-layout-allow-occlusion=""><span data-hf-id="hf-108y3" class="etiquette">ÉCRAN — REMPLACER</span><span data-hf-id="hf-108y4" class="sous">capture, démo, document</span></div>
+    <div data-hf-id="hf-108y5" class="face-cadre" style="left:39px;top:1160px;width:1002px;height:721px;"></div>
+    <div data-hf-id="hf-108y6" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-108y7">RECADRÉ ICI</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -36,16 +38,28 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
-          {x:46,y:1163,width:988,height:711,borderRadius:34,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+          {x:46,y:1167,width:988,height:707,borderRadius:34,duration:.42,ease:'power3.out'},0)
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58)
+          .set(master,{clearProps:'zIndex'},6.00);
+        /* Biais visage : pendant le recadrage, la fenêtre cover vise le haut
+           du rush (le visage), pas le centre géométrique. Valeur d'origine
+           restaurée en sortie — le bloc suivant repart d'un master intact. */
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 12%'},0).set(vid,{objectPosition:op0},6.00);
+        }
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
       }
       gsap.set(root.querySelector('.penche'),{rotation:-2.5});
-      
+
       tl.fromTo(root.querySelectorAll('.ecran'),{y:-70,opacity:0,scale:.97},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out',stagger:.12},.06)
         .to(root.querySelectorAll('.ecran'),{opacity:0,y:-44,duration:.35,ease:'power2.in'},5.60);
       const cadre=root.querySelector('.face-cadre');

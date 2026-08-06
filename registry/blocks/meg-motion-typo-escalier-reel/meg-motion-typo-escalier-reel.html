@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Typo cinétique — blocs de mots cumulés (en escalier). Remplacer le texte
+     ligne par ligne ; la classe "or" marque le mot fort. Se pose sur le
+     master en zone neutre, jamais sur les yeux/la bouche. -->
+<div data-hf-id="hf-59ko0" id="motion-typo-escalier-reel-root" data-composition-id="motion-typo-escalier-reel" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-typo-escalier-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-typo-escalier-reel-root .pile-typo{position:absolute;z-index:6;display:flex;flex-direction:column;gap:18px;left:70px;top:1130px;align-items:flex-start}
+#motion-typo-escalier-reel-root .ligne{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:54px;opacity:0}
+#motion-typo-escalier-reel-root .ligne:nth-child(2){margin-left:70px}
+#motion-typo-escalier-reel-root .ligne:nth-child(3){margin-left:140px}
+#motion-typo-escalier-reel-root .ligne .or{color:#FFF3AE}
+    </style>
+    <div data-hf-id="hf-59ko1" class="pile-typo" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-59ko2" class="ligne">Le CPF ne finance</div>
+      <div data-hf-id="hf-59ko3" class="ligne">plus <span data-hf-id="hf-59ko4" class="or">aucune formation</span></div>
+      <div data-hf-id="hf-59ko5" class="ligne">sans ce document</div>
+    </div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-typo-escalier-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const lignes=root.querySelectorAll('.ligne');
+      tl.fromTo(lignes[0],{y:34,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.1)
+        .fromTo(lignes[1],{y:34,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.75)
+        .fromTo(lignes[2],{y:34,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},1.4)
+        .to(lignes,{opacity:0,y:-24,duration:.35,ease:'power2.in',stagger:.05},4.45);
+      window.__timelines['motion-typo-escalier-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

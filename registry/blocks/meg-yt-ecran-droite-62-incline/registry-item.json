@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-ecran-droite-62-incline",
   "type": "hyperframes:block",
-  "title": "YouTube — écran droite 62 % incliné",
+  "title": "Large — écran droite 62 % incliné",
   "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à droite, visage master sur le reste.",
   "tags": [
     "meg",
@@ -11,10 +11,11 @@
     "layout",
     "split",
     "droite",
-    "incline"
+    "incline",
+    "meg-large"
   ],
   "family": "yt-split-solo",
-  "familyTitle": "YouTube — splits visage + 1 écran",
+  "familyTitle": "Large — splits visage + 1 écran",
   "variant": "droite 62 % incliné",
   "dimensions": {
     "width": 1920,

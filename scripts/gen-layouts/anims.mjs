@@ -65,20 +65,25 @@ en px (piège GSAP gravé).`,
         .to(root.querySelector('.voile-v'),{y:${-Math.round(H * 1.16)},duration:.5,ease:'power2.out'},.5);`,
   }));
 
+  // Iris centré sur le VISAGE (tiers haut du master), jamais sur le centre
+  // géométrique (= la bouche en 9:16). Rayon depuis ce foyer jusqu'au coin
+  // le plus lointain, pour couvrir tout le cadre au pic.
+  const icy = Math.round(H * (ratio === "reel" ? 0.33 : 0.30));
+  const irad = Math.round(Math.hypot(Math.max(cx, W - cx), Math.max(icy, H - icy))) + 40;
   blocks.push(emit({
     name: `meg-anim-iris-${ratio}`,
     title: `Transition iris — ${suffixe}`,
-    desc: `Disque encre qui se referme sur le centre puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.`,
+    desc: `Disque encre qui se referme sur le visage puis se rouvre. 1 s, à cheval sur un cut — la plus cinéma des transitions.`,
     tags: [ratio === "reel" ? "reel" : "youtube", "transition", "iris"],
     family: `anim-transition-${ratio}`,
     familyTitle: `Transitions — ${suffixe}`,
     variant: "iris",
     ratio, duration: 1, faceMode: "none", needsFont: false, posterAt: 0.3,
-    comment: `Transition iris — un disque encre grandit depuis le centre jusqu'à
-tout couvrir (t=0.5 : caler le cut), puis se résorbe. Liseré or.
-Le disque est un élément propre animé en scale par GSAP (jamais de
-transform CSS sur un élément tweené).`,
-    css: `%R% .iris{position:absolute;z-index:40;left:${cx - Math.round(Math.hypot(W, H) / 2) - 40}px;top:${cy - Math.round(Math.hypot(W, H) / 2) - 40}px;width:${Math.round(Math.hypot(W, H)) + 80}px;height:${Math.round(Math.hypot(W, H)) + 80}px;border-radius:50%;background:${GRAD_SOMBRE};box-shadow:inset 0 0 0 12px ${PAL.or}}`,
+    comment: `Transition iris — un disque encre grandit depuis le VISAGE (tiers
+haut du cadre) jusqu'à tout couvrir (t=0.5 : caler le cut), puis se
+résorbe. Liseré or. Le disque est un élément propre animé en scale par
+GSAP (jamais de transform CSS sur un élément tweené).`,
+    css: `%R% .iris{position:absolute;z-index:40;left:${cx - irad}px;top:${icy - irad}px;width:${irad * 2}px;height:${irad * 2}px;border-radius:50%;background:${GRAD_SOMBRE};box-shadow:inset 0 0 0 12px ${PAL.or}}`,
     html: `<div class="iris" data-layout-allow-occlusion="" data-layout-allow-overflow=""></div>`,
     script: `
       tl.fromTo(root.querySelector('.iris'),{scale:0},{scale:1,duration:.5,ease:'power2.in'},0)

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-chips-colonne-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Chips cumulatives en colonne",
+  "description": "Liste animée : chaque point arrive en chip surlignée et reste (en colonne). Pour énumérer 3 éléments pendant qu'ils sont dits.",
+  "tags": [
+    "meg",
+    "motion",
+    "texte",
+    "chips",
+    "colonne",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "chips en colonne",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-motion-chips-colonne-reel.html",
+      "target": "compositions/meg-motion-chips-colonne-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -9,7 +9,8 @@
     "data",
     "chiffre",
     "compteur",
-    "stat"
+    "stat",
+    "meg-reel"
   ],
   "family": "data",
   "familyTitle": "Chiffres & data",

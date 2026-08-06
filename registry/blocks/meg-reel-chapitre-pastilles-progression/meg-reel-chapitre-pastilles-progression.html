@@ -24,7 +24,7 @@
       (()=>{
       const root=document.querySelector('#reel-chapitre-pastilles-progression-root');
       const tl=gsap.timeline({paused:true});
-      
+
       gsap.set(root.querySelector('.rail'),{xPercent:-50});gsap.set(root.querySelector('.etiq'),{xPercent:-50});
       tl.fromTo(root.querySelector('.rail'),{y:-30,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.05)
         .fromTo(root.querySelector('.etiq'),{y:-20,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},.2)

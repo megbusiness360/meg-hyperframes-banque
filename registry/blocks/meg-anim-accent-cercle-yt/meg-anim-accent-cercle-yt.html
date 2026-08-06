@@ -23,7 +23,7 @@
       (()=>{
       const root=document.querySelector('#anim-accent-cercle-yt-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.to(root.querySelector('.accent-zone ellipse'),{strokeDashoffset:0,duration:.7,ease:'power2.inOut'},.15)
         .to(root.querySelector('.accent-zone'),{opacity:0,duration:.3,ease:'power2.in'},2.6);
       window.__timelines['anim-accent-cercle-yt']=tl;

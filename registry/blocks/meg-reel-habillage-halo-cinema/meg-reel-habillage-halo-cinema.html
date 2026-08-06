@@ -21,7 +21,7 @@
       (()=>{
       const root=document.querySelector('#reel-habillage-halo-cinema-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo([root.querySelector('.halo-h'),root.querySelector('.halo-b')],{opacity:0},{opacity:1,duration:.7,ease:'power2.out'},.05);
       window.__timelines['reel-habillage-halo-cinema']=tl;
       })();

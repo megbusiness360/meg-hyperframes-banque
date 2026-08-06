@@ -22,7 +22,7 @@
       (()=>{
       const root=document.querySelector('#anim-accent-fleche-reel-root');
       const tl=gsap.timeline({paused:true});
-      
+
       gsap.set(root.querySelector('.accent-fleche'),{rotation:0});
       tl.to(root.querySelector('.accent-fleche path'),{strokeDashoffset:0,duration:.6,ease:'power2.inOut'},.15)
         .to(root.querySelector('.accent-fleche'),{opacity:0,duration:.3,ease:'power2.in'},2.6);

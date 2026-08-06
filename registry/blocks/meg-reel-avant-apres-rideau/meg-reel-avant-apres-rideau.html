@@ -14,6 +14,7 @@
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #reel-avant-apres-rideau-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #reel-avant-apres-rideau-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
       #reel-avant-apres-rideau-root .scene-av{position:absolute;z-index:3;left:0;top:0;width:1080px;height:1414px;background:repeating-linear-gradient(-45deg,#ece9cc 0 18px,#fffcd6 18px 36px);overflow:hidden}
 #reel-avant-apres-rideau-root .scene-av .tag{position:absolute;right:60px;top:70px;padding:12px 30px;border-radius:999px;background:#B9AA02;color:#2F2C00;font-size:36px;font-weight:700;letter-spacing:.06em}
 #reel-avant-apres-rideau-root .volet-avant{position:absolute;left:0;top:0;width:78%;height:100%;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.16) 0 18px,rgba(47,44,0,.06) 18px 36px);overflow:hidden}
@@ -22,10 +23,11 @@
 #reel-avant-apres-rideau-root .couture{position:absolute;z-index:4;left:0;top:1414px;width:100%;height:6px;background:#B9AA02;box-shadow:0 0 34px rgba(185,170,2,.55)}
 #reel-avant-apres-rideau-root .standalone-face{display:none;position:absolute;z-index:2;left:0px;top:1420px;width:1080px;height:500px;border-radius:0px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-10kn1" class="scene-av" data-layout-allow-occlusion=""><span data-hf-id="hf-10kn2" class="tag">APRÈS — REMPLACER</span><div data-hf-id="hf-10kn3" class="volet-avant"><span data-hf-id="hf-10kn4" class="tag2">AVANT — REMPLACER</span></div></div>
-    <div data-hf-id="hf-10kn5" class="poignee"></div>
-    <div data-hf-id="hf-10kn6" class="couture"></div>
-    <div data-hf-id="hf-10kn7" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
+    <div data-hf-id="hf-10kn1" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-10kn2" class="scene-av" data-layout-allow-occlusion=""><span data-hf-id="hf-10kn3" class="tag">APRÈS — REMPLACER</span><div data-hf-id="hf-10kn4" class="volet-avant"><span data-hf-id="hf-10kn5" class="tag2">AVANT — REMPLACER</span></div></div>
+    <div data-hf-id="hf-10kn6" class="poignee"></div>
+    <div data-hf-id="hf-10kn7" class="couture"></div>
+    <div data-hf-id="hf-10kn8" class="standalone-face" data-layout-allow-occlusion="">MASTER — BANDE VISAGE</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -35,10 +37,22 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},
           {x:0,y:1420,width:1080,height:500,borderRadius:0,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58);
+          .to(master,{x:0,y:0,width:1080,height:1920,borderRadius:0,duration:.42,ease:'power3.in'},5.58)
+          .set(master,{clearProps:'zIndex'},6.00);
+        /* Biais visage : pendant le recadrage, la fenêtre cover vise le haut
+           du rush (le visage), pas le centre géométrique. Valeur d'origine
+           restaurée en sortie — le bloc suivant repart d'un master intact. */
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 6%'},0).set(vid,{objectPosition:op0},6.00);
+        }
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}

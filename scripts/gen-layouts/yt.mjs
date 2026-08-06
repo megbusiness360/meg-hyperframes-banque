@@ -8,7 +8,7 @@ import {
   silhouetteCss, silhouetteDiv,
 } from "./lib.mjs";
 
-const W = 1920, H = 1080, M = 40, SEAM = 22, R = 30;
+const W = 1920, H = 1080, M = 40, SEAM = 28, R = 30;
 const UH = H - 2 * M; // 1000 — hauteur utile
 
 const cadreCss = (sel) =>
@@ -39,11 +39,11 @@ for (const side of ["droite", "gauche"]) {
       const styleTxt = { carte: "carte crème", nav: "fenêtre navigateur", bord: "bord à bord" }[style];
       blocks.push(emit({
         name: `meg-yt-ecran-${side}-${part}-${style}`,
-        title: `YouTube — écran ${side} ${part} % (${styleTxt})`,
+        title: `Large — écran ${side} ${part} % (${styleTxt})`,
         desc: `Split 16:9 : écran ${styleTxt} à ${side} (${part} % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.`,
         tags: ["youtube", "16-9", "layout", "split", side, style],
         family: "yt-split-solo",
-        familyTitle: "YouTube — splits visage + 1 écran",
+        familyTitle: "Large — splits visage + 1 écran",
         variant: `${side} ${part} % ${styleTxt}`,
         ratio: "yt", duration: DUR,
         faceGeom: face,
@@ -74,11 +74,11 @@ for (const side of ["droite", "gauche"]) {
   const face = { x: fx, y: M, w: fw, h: UH, r: R };
   blocks.push(emit({
     name: `meg-yt-ecran-${side}-62-incline`,
-    title: `YouTube — écran ${side} 62 % incliné`,
+    title: `Large — écran ${side} 62 % incliné`,
     desc: `Split 16:9 dynamique : carte écran inclinée (-2°) à ${side}, visage master sur le reste.`,
     tags: ["youtube", "16-9", "layout", "split", side, "incline"],
     family: "yt-split-solo",
-    familyTitle: "YouTube — splits visage + 1 écran",
+    familyTitle: "Large — splits visage + 1 écran",
     variant: `${side} 62 % incliné`,
     ratio: "yt", duration: DUR,
     faceGeom: face,
@@ -104,11 +104,11 @@ for (const silPos of ["droite", "gauche"]) {
     const sx = silPos === "droite" ? W - sw + 20 : -20;
     blocks.push(emit({
       name: `meg-yt-detoure-${silPos}-${taille}`,
-      title: `YouTube — détouré ${silPos} (${taille})`,
+      title: `Large — détouré ${silPos} (${taille})`,
       desc: `Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à ${silPos} (${taille}). Remplacer par l'asset alpha.`,
       tags: ["youtube", "16-9", "layout", "detoure", "fond-vert", silPos],
       family: "yt-detoure",
-      familyTitle: "YouTube — visage détouré (fond vert)",
+      familyTitle: "Large — visage détouré (fond vert)",
       variant: `${silPos} ${taille}`,
       ratio: "yt", duration: DUR,
       faceMode: "hide",
@@ -136,11 +136,11 @@ for (const part of [25, 33]) {
   const face = { x: 0, y: H - bandH, w: W, h: bandH, r: 0 };
   blocks.push(emit({
     name: `meg-yt-bande-bas-${part}`,
-    title: `YouTube — écran dominant, bande visage bas ${part} %`,
+    title: `Large — écran dominant, bande visage bas ${part} %`,
     desc: `Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (${part} %) en bas.`,
     tags: ["youtube", "16-9", "layout", "bande"],
     family: "yt-bande",
-    familyTitle: "YouTube — écran dominant + bande visage",
+    familyTitle: "Large — écran dominant + bande visage",
     variant: `bas ${part} %`,
     ratio: "yt", duration: DUR,
     faceGeom: face,
@@ -167,34 +167,34 @@ zone hachurée.`,
 /* ————— Y3 · Visage + 2 écrans (8) ————— */
 const duosYt = [
   { key: "pile-droite", txt: "2 écrans empilés à droite", face: { x: M, y: M, w: 1000, h: UH, r: R },
-    ecrans: () => { const x = M + 1000 + SEAM, w = W - M - x, h = (UH - 20) / 2;
-      return [{ x, y: M, w, h, label: "ÉCRAN 1" }, { x, y: M + h + 20, w, h, label: "ÉCRAN 2" }]; } },
+    ecrans: () => { const x = M + 1000 + SEAM, w = W - M - x, h = (UH - 28) / 2;
+      return [{ x, y: M, w, h, label: "ÉCRAN 1" }, { x, y: M + h + 28, w, h, label: "ÉCRAN 2" }]; } },
   { key: "pile-gauche", txt: "2 écrans empilés à gauche", face: { x: M + 818 + SEAM, y: M, w: 1000, h: UH, r: R },
-    ecrans: () => { const w = 818, h = (UH - 20) / 2;
-      return [{ x: M, y: M, w, h, label: "ÉCRAN 1" }, { x: M, y: M + h + 20, w, h, label: "ÉCRAN 2" }]; } },
-  { key: "jumeaux-bande", txt: "2 écrans jumeaux + bande visage", face: { x: 0, y: 702, w: W, h: 378, r: 0 },
+    ecrans: () => { const w = 818, h = (UH - 28) / 2;
+      return [{ x: M, y: M, w, h, label: "ÉCRAN 1" }, { x: M, y: M + h + 28, w, h, label: "ÉCRAN 2" }]; } },
+  { key: "jumeaux-bande", txt: "2 écrans jumeaux + bande visage", face: { x: 0, y: 640, w: W, h: 440, r: 0 },
     ecrans: () => { const w = (W - 2 * M - SEAM) / 2;
-      return [{ x: M, y: M, w, h: 600, label: "ÉCRAN 1" }, { x: M + w + SEAM, y: M, w, h: 600, label: "ÉCRAN 2" }]; } },
+      return [{ x: M, y: M, w, h: 560, label: "ÉCRAN 1" }, { x: M + w + SEAM, y: M, w, h: 560, label: "ÉCRAN 2" }]; } },
   { key: "principal-second", txt: "écran principal + vignette dessous", face: { x: M, y: M, w: 1010, h: UH, r: R },
     ecrans: () => { const x = M + 1010 + SEAM, w = W - M - x;
-      return [{ x, y: M, w, h: 600, label: "ÉCRAN PRINCIPAL" }, { x, y: M + 620, w, h: 380, label: "ÉCRAN 2" }]; } },
+      return [{ x, y: M, w, h: 600, label: "ÉCRAN PRINCIPAL" }, { x, y: M + 628, w, h: 372, label: "ÉCRAN 2" }]; } },
 ];
 for (const d of duosYt) {
   for (const style of ["carte", "nav"]) {
     blocks.push(emit({
       name: `meg-yt-duo-${d.key}-${style}`,
-      title: `YouTube — duo ${d.txt} (${style})`,
+      title: `Large — duo ${d.txt} (${style})`,
       desc: `Split 16:9 à deux écrans : ${d.txt}, visage master recadré. Style ${style}.`,
       tags: ["youtube", "16-9", "layout", "duo", d.key, style],
       family: "yt-split-duo",
-      familyTitle: "YouTube — splits visage + 2 écrans",
+      familyTitle: "Large — splits visage + 2 écrans",
       variant: `${d.txt} ${style}`,
       ratio: "yt", duration: DUR,
       faceGeom: d.face,
       comment: `Layout YouTube à DEUX écrans — ${d.txt}. Chaque zone hachurée se
 remplace indépendamment ; le bloc pilote le master.`,
       css: [ecranCss("%R%", { fontSize: 32, sub: false }), cadreCss("%R%"),
-        d.key === "jumeaux-bande" ? `%R% .couture{position:absolute;z-index:4;left:0;top:696px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}` : "",
+        d.key === "jumeaux-bande" ? `%R% .couture{position:absolute;z-index:4;left:0;top:634px;width:100%;height:6px;background:${PAL.or};box-shadow:0 0 34px rgba(185,170,2,.55)}` : "",
         standaloneCss("%R%", d.face)].join("\n"),
       html: [
         ...d.ecrans().map((e) => ecranDiv({ ...e, nav: style === "nav", sub: "" })),
@@ -209,14 +209,14 @@ remplace indépendamment ; le bloc pilote le master.`,
 /* ————— Y4 · Visage + 3 écrans (2) ————— */
 {
   const face = { x: M, y: M, w: 1080, h: UH, r: R };
-  const x = M + 1080 + SEAM, w = W - M - x, h = (UH - 40) / 3;
+  const x = M + 1080 + SEAM, w = W - M - x, h = 314;
   blocks.push(emit({
     name: "meg-yt-trio-colonne-droite",
-    title: "YouTube — trio colonne droite",
+    title: "Large — trio colonne droite",
     desc: "Split 16:9 à trois écrans empilés à droite, visage master pleine hauteur à gauche.",
     tags: ["youtube", "16-9", "layout", "trio"],
     family: "yt-split-trio",
-    familyTitle: "YouTube — splits visage + 3 écrans",
+    familyTitle: "Large — splits visage + 3 écrans",
     variant: "colonne droite",
     ratio: "yt", duration: DUR,
     faceGeom: face,
@@ -224,7 +224,7 @@ remplace indépendamment ; le bloc pilote le master.`,
 3 temps commentés face caméra. Le bloc pilote le master.`,
     css: [ecranCss("%R%", { fontSize: 28, sub: false }), cadreCss("%R%"), standaloneCss("%R%", face)].join("\n"),
     html: [
-      ...[0, 1, 2].map((i) => ecranDiv({ x, y: M + i * (h + 20), w, h, label: `ÉCRAN ${i + 1}`, sub: "" })),
+      ...[0, 1, 2].map((i) => ecranDiv({ x, y: M + i * (h + 29), w, h, label: `ÉCRAN ${i + 1}`, sub: "" })),
       cadreDiv(face),
       standaloneHtml(),
     ].join("\n    "),
@@ -233,14 +233,14 @@ remplace indépendamment ; le bloc pilote le master.`,
 }
 {
   const w2 = (W - 2 * M - SEAM) / 2;
-  const face = { x: M + w2 + SEAM, y: M + 480 + 20, w: w2, h: 500, r: R };
+  const face = { x: M + w2 + SEAM, y: M + 508, w: w2, h: 492, r: R };
   blocks.push(emit({
     name: "meg-yt-trio-grille",
-    title: "YouTube — trio en grille",
+    title: "Large — trio en grille",
     desc: "Split 16:9 : 3 écrans en grille 2×2, visage master dans le quart bas-droit.",
     tags: ["youtube", "16-9", "layout", "trio", "grille"],
     family: "yt-split-trio",
-    familyTitle: "YouTube — splits visage + 3 écrans",
+    familyTitle: "Large — splits visage + 3 écrans",
     variant: "grille 2×2",
     ratio: "yt", duration: DUR,
     faceGeom: face,
@@ -250,7 +250,7 @@ bas-droit. Pour les comparatifs multi-sources. Le bloc pilote le master.`,
     html: [
       ecranDiv({ x: M, y: M, w: w2, h: 480, label: "ÉCRAN 1", sub: "" }),
       ecranDiv({ x: M + w2 + SEAM, y: M, w: w2, h: 480, label: "ÉCRAN 2", sub: "" }),
-      ecranDiv({ x: M, y: M + 500, w: w2, h: 500, label: "ÉCRAN 3", sub: "" }),
+      ecranDiv({ x: M, y: M + 508, w: w2, h: 492, label: "ÉCRAN 3", sub: "" }),
       cadreDiv(face),
       standaloneHtml(),
     ].join("\n    "),
@@ -284,11 +284,11 @@ const introsYt = [
 for (const it of introsYt) {
   blocks.push(emit({
     name: `meg-yt-intro-${it.key}`,
-    title: `YouTube — intro ${it.txt}`,
+    title: `Large — intro ${it.txt}`,
     desc: `Intro 16:9 : ${it.txt} plein cadre + visage master en bande basse. Textes à remplacer.`,
     tags: ["youtube", "16-9", "layout", "intro", it.key],
     family: "yt-intro",
-    familyTitle: "YouTube — intros & hooks",
+    familyTitle: "Large — intros & hooks",
     variant: it.txt,
     ratio: "yt", duration: 5,
     faceGeom: bandeYt,
@@ -304,11 +304,11 @@ animations incluses. Enchaîner sur un split une fois le hook posé.`,
   const face = { x: 1250, y: M, w: 630, h: UH, r: R };
   blocks.push(emit({
     name: "meg-yt-intro-sommaire",
-    title: "YouTube — intro sommaire",
+    title: "Large — intro sommaire",
     desc: "Intro 16:9 : sommaire 3 points à gauche + visage master pleine hauteur à droite.",
     tags: ["youtube", "16-9", "layout", "intro", "sommaire"],
     family: "yt-intro",
-    familyTitle: "YouTube — intros & hooks",
+    familyTitle: "Large — intros & hooks",
     variant: "sommaire 3 points",
     ratio: "yt", duration: 5,
     faceGeom: face,
@@ -363,11 +363,11 @@ const chapitresYt = [
 for (const c of chapitresYt) {
   blocks.push(emit({
     name: `meg-yt-chapitre-${c.key}`,
-    title: `YouTube — chapitre ${c.txt}`,
+    title: `Large — chapitre ${c.txt}`,
     desc: `Carton de chapitre 16:9 : ${c.txt}, posé par-dessus le master intact.`,
     tags: ["youtube", "16-9", "layout", "chapitre", c.key],
     family: "yt-chapitre",
-    familyTitle: "YouTube — cartons de chapitre",
+    familyTitle: "Large — cartons de chapitre",
     variant: c.txt,
     ratio: "yt", duration: 4,
     faceMode: "none",
@@ -382,11 +382,11 @@ habillage par-dessus. Remplacer numéro et libellé.`,
 /* ————— Y7 · Outros / CTA (3) ————— */
 blocks.push(emit({
   name: "meg-yt-outro-ecran-fin",
-  title: "YouTube — écran de fin",
+  title: "Large — écran de fin",
   desc: "Écran de fin 16:9 : visage master à gauche + deux emplacements vidéos suivantes à droite (zones end-screen YouTube).",
   tags: ["youtube", "16-9", "layout", "outro", "ecran-fin"],
   family: "yt-outro",
-  familyTitle: "YouTube — outros & CTA",
+  familyTitle: "Large — outros & CTA",
   variant: "écran de fin",
   ratio: "yt", duration: 8,
   faceGeom: { x: 70, y: 290, w: 640, h: 500, r: R },
@@ -412,11 +412,11 @@ qu'on active dans YouTube Studio. Durée 8 s (minimum end-screen 5 s).`,
 }));
 blocks.push(emit({
   name: "meg-yt-outro-carte-marque",
-  title: "YouTube — outro carte de marque",
+  title: "Large — outro carte de marque",
   desc: "Outro 16:9 plein cadre : marque MEG + invitation indirecte + URL mise en avant.",
   tags: ["youtube", "16-9", "layout", "outro", "marque"],
   family: "yt-outro",
-  familyTitle: "YouTube — outros & CTA",
+  familyTitle: "Large — outros & CTA",
   variant: "carte de marque",
   ratio: "yt", duration: 5,
   faceMode: "none",
@@ -435,11 +435,11 @@ indirecte (règles MEG), l'URL est le geste graphique central.`,
 }));
 blocks.push(emit({
   name: "meg-yt-outro-recap",
-  title: "YouTube — outro récap 3 points",
+  title: "Large — outro récap 3 points",
   desc: "Outro 16:9 : récapitulatif 3 points à gauche + visage master à droite.",
   tags: ["youtube", "16-9", "layout", "outro", "recap"],
   family: "yt-outro",
-  familyTitle: "YouTube — outros & CTA",
+  familyTitle: "Large — outros & CTA",
   variant: "récap 3 points",
   ratio: "yt", duration: 6,
   faceGeom: { x: 1250, y: M, w: 630, h: UH, r: R },
@@ -488,11 +488,11 @@ const habillagesYt = [
 for (const hb of habillagesYt) {
   blocks.push(emit({
     name: `meg-yt-habillage-${hb.key}`,
-    title: `YouTube — habillage ${hb.txt}`,
+    title: `Large — habillage ${hb.txt}`,
     desc: `Habillage plein cadre 16:9 : ${hb.txt} par-dessus le master intact.`,
     tags: ["youtube", "16-9", "habillage", "overlay", hb.key],
     family: "yt-habillage",
-    familyTitle: "YouTube — habillages plein cadre",
+    familyTitle: "Large — habillages plein cadre",
     variant: hb.txt,
     ratio: "yt", duration: DUR,
     faceMode: "none",
@@ -511,11 +511,11 @@ se pose dessus et s'étire sur la durée voulue.`,
   const face = { x: 0, y: H - 330, w: W, h: 330, r: 0 };
   blocks.push(emit({
     name: "meg-yt-avant-apres-colonnes",
-    title: "YouTube — avant/après deux colonnes",
+    title: "Large — avant/après deux colonnes",
     desc: "Comparatif 16:9 : colonnes AVANT/APRÈS côte à côte + visage master en bande basse.",
     tags: ["youtube", "16-9", "layout", "avant-apres"],
     family: "yt-avant-apres",
-    familyTitle: "YouTube — avant/après",
+    familyTitle: "Large — avant/après",
     variant: "deux colonnes",
     ratio: "yt", duration: DUR,
     faceGeom: face,
@@ -541,11 +541,11 @@ cadre crème, l'AVANT reste mat. Remplacer les deux zones.`,
   const face = { x: 0, y: H - 330, w: W, h: 330, r: 0 };
   blocks.push(emit({
     name: "meg-yt-avant-apres-cartes",
-    title: "YouTube — avant/après cartes inclinées",
+    title: "Large — avant/après cartes inclinées",
     desc: "Comparatif 16:9 : deux cartes inclinées qui se chevauchent + visage master en bande basse.",
     tags: ["youtube", "16-9", "layout", "avant-apres", "cartes"],
     family: "yt-avant-apres",
-    familyTitle: "YouTube — avant/après",
+    familyTitle: "Large — avant/après",
     variant: "cartes inclinées",
     ratio: "yt", duration: DUR,
     faceGeom: face,

@@ -1,1 +1,33 @@
-{"$schema":"https://hyperframes.heygen.com/schema/registry-item.json","name":"meg-masked-face-stage","type":"hyperframes:block","title":"Visage détouré","description":"Visage détouré avec cartes derrière le sujet.","tags":["meg","visage","detoure"],"dimensions":{"width":1080,"height":1920},"duration":5,"files":[{"path":"meg-masked-face-stage.html","target":"compositions/meg-masked-face-stage.html","type":"hyperframes:composition"},{"path":"assets/ClashGrotesk-Variable.woff2","target":"assets/ClashGrotesk-Variable.woff2","type":"hyperframes:asset"}],"preview":{"poster":"preview.jpg"}}
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-masked-face-stage",
+  "type": "hyperframes:block",
+  "title": "Visage détouré",
+  "description": "Visage détouré avec cartes derrière le sujet.",
+  "tags": [
+    "meg",
+    "visage",
+    "detoure",
+    "meg-reel"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-masked-face-stage.html",
+      "target": "compositions/meg-masked-face-stage.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

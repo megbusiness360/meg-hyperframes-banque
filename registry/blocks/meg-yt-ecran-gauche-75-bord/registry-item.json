@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-ecran-gauche-75-bord",
   "type": "hyperframes:block",
-  "title": "YouTube — écran gauche 75 % (bord à bord)",
+  "title": "Large — écran gauche 75 % (bord à bord)",
   "description": "Split 16:9 : écran bord à bord à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
   "tags": [
     "meg",
@@ -11,10 +11,11 @@
     "layout",
     "split",
     "gauche",
-    "bord"
+    "bord",
+    "meg-large"
   ],
   "family": "yt-split-solo",
-  "familyTitle": "YouTube — splits visage + 1 écran",
+  "familyTitle": "Large — splits visage + 1 écran",
   "variant": "gauche 75 % bord à bord",
   "dimensions": {
     "width": 1920,

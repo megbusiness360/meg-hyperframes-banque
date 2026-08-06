@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-trio-grille",
   "type": "hyperframes:block",
-  "title": "YouTube — trio en grille",
+  "title": "Large — trio en grille",
   "description": "Split 16:9 : 3 écrans en grille 2×2, visage master dans le quart bas-droit.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "trio",
-    "grille"
+    "grille",
+    "meg-large"
   ],
   "family": "yt-split-trio",
-  "familyTitle": "YouTube — splits visage + 3 écrans",
+  "familyTitle": "Large — splits visage + 3 écrans",
   "variant": "grille 2×2",
   "dimensions": {
     "width": 1920,

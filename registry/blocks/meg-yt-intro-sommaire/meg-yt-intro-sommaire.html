@@ -13,19 +13,21 @@
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #yt-intro-sommaire-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
-      #yt-intro-sommaire-root .panneau{position:absolute;z-index:3;left:40px;top:40px;width:1188px;height:1000px;border-radius:30px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 34px 78px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center;gap:38px;padding:70px 80px;color:#2F2C00;opacity:0}
+      #yt-intro-sommaire-root .fond-scene{position:absolute;inset:0;z-index:1;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%)}
+      #yt-intro-sommaire-root .panneau{position:absolute;z-index:3;left:40px;top:40px;width:1182px;height:1000px;border-radius:30px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 34px 78px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:center;gap:38px;padding:70px 80px;color:#2F2C00;opacity:0}
 #yt-intro-sommaire-root .gelule{align-self:flex-start;display:inline-block;padding:14px 32px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-size:30px;font-weight:700;letter-spacing:.06em}
 #yt-intro-sommaire-root .point{display:flex;gap:24px;align-items:center;font-size:50px;font-weight:700;opacity:0}
 #yt-intro-sommaire-root .point .n{color:#B9AA02}
 #yt-intro-sommaire-root .face-cadre{position:absolute;z-index:5;border:7px solid #fffcd6;border-radius:30px;pointer-events:none;opacity:0}
 #yt-intro-sommaire-root .standalone-face{display:none;position:absolute;z-index:2;left:1250px;top:40px;width:630px;height:1000px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15;}
     </style>
-    <div data-hf-id="hf-1sf21" class="panneau" data-layout-allow-occlusion=""><span data-hf-id="hf-1sf22" class="gelule">AU PROGRAMME</span>
-      <div data-hf-id="hf-1sf23" class="point"><span data-hf-id="hf-1sf24" class="n">1.</span><span data-hf-id="hf-1sf25">Premier point à remplacer</span></div>
-      <div data-hf-id="hf-1sf26" class="point"><span data-hf-id="hf-1sf27" class="n">2.</span><span data-hf-id="hf-1sf28">Deuxième point à remplacer</span></div>
-      <div data-hf-id="hf-1sf29" class="point"><span data-hf-id="hf-1sf2a" class="n">3.</span><span data-hf-id="hf-1sf2b">Troisième point à remplacer</span></div></div>
-    <div data-hf-id="hf-1sf2c" class="face-cadre" style="left:1243px;top:33px;width:644px;height:1014px;"></div>
-    <div data-hf-id="hf-1sf2d" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-1sf2e">RECADRÉ ICI</div>
+    <div data-hf-id="hf-1sf21" class="fond-scene" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-1sf22" class="panneau" data-layout-allow-occlusion=""><span data-hf-id="hf-1sf23" class="gelule">AU PROGRAMME</span>
+      <div data-hf-id="hf-1sf24" class="point"><span data-hf-id="hf-1sf25" class="n">1.</span><span data-hf-id="hf-1sf26">Premier point à remplacer</span></div>
+      <div data-hf-id="hf-1sf27" class="point"><span data-hf-id="hf-1sf28" class="n">2.</span><span data-hf-id="hf-1sf29">Deuxième point à remplacer</span></div>
+      <div data-hf-id="hf-1sf2a" class="point"><span data-hf-id="hf-1sf2b" class="n">3.</span><span data-hf-id="hf-1sf2c">Troisième point à remplacer</span></div></div>
+    <div data-hf-id="hf-1sf2d" class="face-cadre" style="left:1243px;top:33px;width:644px;height:1014px;"></div>
+    <div data-hf-id="hf-1sf2e" class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br data-hf-id="hf-1sf2f">RECADRÉ ICI</div>
     <script>
       window.__timelines=window.__timelines||{};
       (()=>{
@@ -35,10 +37,14 @@
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},
           {x:1250,y:40,width:630,height:1000,borderRadius:30,duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},4.58);
+          .to(master,{x:0,y:0,width:1920,height:1080,borderRadius:0,duration:.42,ease:'power3.in'},4.58)
+          .set(master,{clearProps:'zIndex'},5.00);
       }else{
         const sa=root.querySelector('.standalone-face');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}

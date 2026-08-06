@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-ecran-droite-55-carte",
   "type": "hyperframes:block",
-  "title": "YouTube — écran droite 55 % (carte crème)",
+  "title": "Large — écran droite 55 % (carte crème)",
   "description": "Split 16:9 : écran carte crème à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
   "tags": [
     "meg",
@@ -11,10 +11,11 @@
     "layout",
     "split",
     "droite",
-    "carte"
+    "carte",
+    "meg-large"
   ],
   "family": "yt-split-solo",
-  "familyTitle": "YouTube — splits visage + 1 écran",
+  "familyTitle": "Large — splits visage + 1 écran",
   "variant": "droite 55 % carte crème",
   "dimensions": {
     "width": 1920,

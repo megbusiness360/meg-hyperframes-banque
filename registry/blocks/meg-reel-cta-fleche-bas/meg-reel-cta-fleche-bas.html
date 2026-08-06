@@ -24,7 +24,7 @@
       (()=>{
       const root=document.querySelector('#reel-cta-fleche-bas-root');
       const tl=gsap.timeline({paused:true});
-      
+
       gsap.set(root.querySelector('.groupe'),{xPercent:-50});
       tl.fromTo(root.querySelector('.groupe'),{y:40,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.1)
         .fromTo(root.querySelector('.fleche'),{y:0},{y:16,duration:.5,ease:'power1.inOut',yoyo:true,repeat:3},.6)

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-icone-eclair-reel",
+  "type": "hyperframes:block",
+  "title": "Reel — Icône pop (eclair)",
+  "description": "Icône eclair qui claque en zone neutre pour ponctuer le propos (validation, refus, rapidité, argent).",
+  "tags": [
+    "meg",
+    "motion",
+    "icone",
+    "eclair",
+    "meg-reel"
+  ],
+  "family": "motion-reel",
+  "familyTitle": "Reel — motion design & textes animés",
+  "variant": "icône eclair",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 1.4,
+  "files": [
+    {
+      "path": "meg-motion-icone-eclair-reel.html",
+      "target": "compositions/meg-motion-icone-eclair-reel.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-intro-titre-plein",
   "type": "hyperframes:block",
-  "title": "YouTube — intro grand titre",
+  "title": "Large — intro grand titre",
   "description": "Intro 16:9 : grand titre plein cadre + visage master en bande basse. Textes à remplacer.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "intro",
-    "titre-plein"
+    "titre-plein",
+    "meg-large"
   ],
   "family": "yt-intro",
-  "familyTitle": "YouTube — intros & hooks",
+  "familyTitle": "Large — intros & hooks",
   "variant": "grand titre",
   "dimensions": {
     "width": 1920,

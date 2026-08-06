@@ -24,7 +24,7 @@
       (()=>{
       const root=document.querySelector('#yt-chapitre-barre-basse-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.barre-chap'),{y:36,opacity:0},{y:0,opacity:1,duration:.45,ease:'power3.out'},.08)
         .fromTo(root.querySelector('.jauge'),{scaleX:0},{scaleX:.5,duration:1.6,ease:'power1.inOut'},.5)
         .to(root.querySelector('.barre-chap'),{opacity:0,y:26,duration:.35,ease:'power2.in'},3.55);

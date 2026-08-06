@@ -20,7 +20,7 @@
       (()=>{
       const root=document.querySelector('#yt-habillage-cadre-fin-or-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.cadre'),{opacity:0,scale:1.03},{opacity:1,scale:1,duration:.5,ease:'power2.out'},.05);
       window.__timelines['yt-habillage-cadre-fin-or']=tl;
       })();

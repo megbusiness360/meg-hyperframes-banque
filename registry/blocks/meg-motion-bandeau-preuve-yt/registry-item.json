@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-bandeau-preuve-yt",
+  "type": "hyperframes:block",
+  "title": "Large — Bandeau preuve (notification)",
+  "description": "Bandeau style notification qui glisse du haut : coche or + résultat chiffré. Pour appuyer une preuve dite (montant financé, dossier validé…).",
+  "tags": [
+    "meg",
+    "motion",
+    "preuve",
+    "notification",
+    "meg-large"
+  ],
+  "family": "motion-yt",
+  "familyTitle": "Large — motion design & textes animés",
+  "variant": "bandeau preuve",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 3.5,
+  "files": [
+    {
+      "path": "meg-motion-bandeau-preuve-yt.html",
+      "target": "compositions/meg-motion-bandeau-preuve-yt.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

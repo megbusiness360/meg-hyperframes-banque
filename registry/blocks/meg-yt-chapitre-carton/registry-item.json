@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-chapitre-carton",
   "type": "hyperframes:block",
-  "title": "YouTube — chapitre carton numéro",
+  "title": "Large — chapitre carton numéro",
   "description": "Carton de chapitre 16:9 : carton numéro, posé par-dessus le master intact.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "chapitre",
-    "carton"
+    "carton",
+    "meg-large"
   ],
   "family": "yt-chapitre",
-  "familyTitle": "YouTube — cartons de chapitre",
+  "familyTitle": "Large — cartons de chapitre",
   "variant": "carton numéro",
   "dimensions": {
     "width": 1920,

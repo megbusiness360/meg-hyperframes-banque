@@ -22,7 +22,7 @@
       (()=>{
       const root=document.querySelector('#reel-habillage-marge-titre-vertical-root');
       const tl=gsap.timeline({paused:true});
-      
+
       gsap.set(root.querySelector('.titre-v'),{rotation:-90,xPercent:-50,yPercent:-50});
       tl.to(root.querySelector('.filet'),{height:1560,duration:.9,ease:'power2.inOut'},.05)
         .fromTo(root.querySelector('.titre-v'),{opacity:0},{opacity:1,duration:.5},.5);

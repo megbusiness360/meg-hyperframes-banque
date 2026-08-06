@@ -13,7 +13,7 @@
     <style>
       @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
       #reel-chapitre-carton-numero-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
-      #reel-chapitre-carton-numero-root .carton{position:absolute;z-index:3;left:120px;top:600px;width:840px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 40px 88px rgba(0,0,0,.4);padding:64px 70px;color:#2F2C00;opacity:0}
+      #reel-chapitre-carton-numero-root .carton{position:absolute;z-index:3;left:120px;top:1140px;width:840px;border-radius:44px;background:linear-gradient(158deg,#FFFEEC 0%,#FFFCD6 52%,#F4E9A8 100%);box-shadow:0 40px 88px rgba(0,0,0,.4);padding:64px 70px;color:#2F2C00;opacity:0}
 #reel-chapitre-carton-numero-root .num{font-size:150px;font-weight:700;color:#B9AA02;line-height:.9}
 #reel-chapitre-carton-numero-root .chap{margin-top:14px;font-size:60px;font-weight:700;letter-spacing:-.02em;line-height:1.02}
     </style>
@@ -23,7 +23,7 @@
       (()=>{
       const root=document.querySelector('#reel-chapitre-carton-numero-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.carton'),{y:70,opacity:0,scale:.95},{y:0,opacity:1,scale:1,duration:.5,ease:'power3.out'},.1)
         .to(root.querySelector('.carton'),{opacity:0,y:-50,duration:.4,ease:'power2.in'},3.4);
       window.__timelines['reel-chapitre-carton-numero']=tl;

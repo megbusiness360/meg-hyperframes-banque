@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Mot-clé pop plein or — LE mot fort du discours, posé à l'instant où il
+     est dit (règle MEG : le mot pop au mot exact). Un seul mot, court. -->
+<div data-hf-id="hf-1mh20" id="motion-mot-pop-or-yt-root" data-composition-id="motion-mot-pop-or-yt" data-start="0" data-duration="1.6" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-mot-pop-or-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-mot-pop-or-yt-root .mot{position:absolute;z-index:6;font-weight:700;letter-spacing:-.03em;opacity:0;left:80px;top:620px;font-size:120px;color:#B9AA02;-webkit-text-stroke:3px #2F2C00;text-shadow:0 10px 40px rgba(0,0,0,.35)}
+    </style>
+    <div data-hf-id="hf-1mh21" class="mot" data-layout-allow-occlusion="">GRATUIT</div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-mot-pop-or-yt-root');
+      const tl=gsap.timeline({paused:true});
+
+      const mot=root.querySelector('.mot');
+      tl.fromTo(mot,{scale:.4,rotation:-5,opacity:0},{scale:1,rotation:0,opacity:1,duration:.34,ease:'back.out(2.2)'},.05)
+        .to(mot,{scale:1.05,duration:.85,ease:'none'},.42)
+        .to(mot,{opacity:0,scale:1.12,duration:.28,ease:'power2.in'},1.3);
+      window.__timelines['motion-mot-pop-or-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-intro-hook-chiffre",
   "type": "hyperframes:block",
-  "title": "YouTube — intro chiffre choc",
+  "title": "Large — intro chiffre choc",
   "description": "Intro 16:9 : chiffre choc plein cadre + visage master en bande basse. Textes à remplacer.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "intro",
-    "hook-chiffre"
+    "hook-chiffre",
+    "meg-large"
   ],
   "family": "yt-intro",
-  "familyTitle": "YouTube — intros & hooks",
+  "familyTitle": "Large — intros & hooks",
   "variant": "chiffre choc",
   "dimensions": {
     "width": 1920,

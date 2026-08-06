@@ -7,14 +7,14 @@
   <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
 </head>
 <body>
-<!-- Transition iris — un disque encre grandit depuis le centre jusqu'à
-     tout couvrir (t=0.5 : caler le cut), puis se résorbe. Liseré or.
-     Le disque est un élément propre animé en scale par GSAP (jamais de
-     transform CSS sur un élément tweené). -->
+<!-- Transition iris — un disque encre grandit depuis le VISAGE (tiers
+     haut du cadre) jusqu'à tout couvrir (t=0.5 : caler le cut), puis se
+     résorbe. Liseré or. Le disque est un élément propre animé en scale par
+     GSAP (jamais de transform CSS sur un élément tweené). -->
 <div data-hf-id="hf-1k0s0" id="anim-iris-yt-root" data-composition-id="anim-iris-yt" data-start="0" data-duration="1" data-width="1920" data-height="1080">
     <style>
       #anim-iris-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:sans-serif}
-      #anim-iris-yt-root .iris{position:absolute;z-index:40;left:-181px;top:-601px;width:2283px;height:2283px;border-radius:50%;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);box-shadow:inset 0 0 0 12px #B9AA02}
+      #anim-iris-yt-root .iris{position:absolute;z-index:40;left:-302px;top:-938px;width:2524px;height:2524px;border-radius:50%;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);box-shadow:inset 0 0 0 12px #B9AA02}
     </style>
     <div data-hf-id="hf-1k0s1" class="iris" data-layout-allow-occlusion="" data-layout-allow-overflow=""></div>
     <script>
@@ -22,7 +22,7 @@
       (()=>{
       const root=document.querySelector('#anim-iris-yt-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.iris'),{scale:0},{scale:1,duration:.5,ease:'power2.in'},0)
         .to(root.querySelector('.iris'),{scale:0,duration:.5,ease:'power2.out'},.5);
       window.__timelines['anim-iris-yt']=tl;

@@ -22,7 +22,7 @@
       (()=>{
       const root=document.querySelector('#reel-habillage-coins-or-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelectorAll('.coin'),{opacity:0,scale:.6},{opacity:1,scale:1,duration:.45,ease:'back.out(1.6)',stagger:.08},.05);
       window.__timelines['reel-habillage-coins-or']=tl;
       })();

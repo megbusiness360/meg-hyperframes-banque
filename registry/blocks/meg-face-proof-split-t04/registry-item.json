@@ -1,1 +1,38 @@
-{"$schema":"https://hyperframes.heygen.com/schema/registry-item.json","name":"meg-face-proof-split-t04","type":"hyperframes:block","title":"Preuve haut 40 · Visage bas 60","description":"Preuve haute 40 %, visage bas 60 % ; transition, rayon et sous-titre synchronisés.","tags":["meg","preuve","separe","haut","40-60"],"dimensions":{"width":1080,"height":1920},"duration":5,"files":[{"path":"meg-face-proof-split-t04.html","target":"compositions/meg-face-proof-split-t04.html","type":"hyperframes:composition"},{"path":"assets/ClashGrotesk-Variable.woff2","target":"assets/ClashGrotesk-Variable.woff2","type":"hyperframes:asset"}],"preview":{"poster":"preview.jpg"},"family":"split","familyTitle":"Preuve + visage","variant":"Preuve haut 40 · Visage bas 60"}
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-face-proof-split-t04",
+  "type": "hyperframes:block",
+  "title": "Preuve haut 40 · Visage bas 60",
+  "description": "Preuve haute 40 %, visage bas 60 % ; transition, rayon et sous-titre synchronisés.",
+  "tags": [
+    "meg",
+    "preuve",
+    "separe",
+    "haut",
+    "40-60",
+    "meg-reel"
+  ],
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-face-proof-split-t04.html",
+      "target": "compositions/meg-face-proof-split-t04.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  },
+  "family": "split",
+  "familyTitle": "Preuve + visage",
+  "variant": "Preuve haut 40 · Visage bas 60"
+}

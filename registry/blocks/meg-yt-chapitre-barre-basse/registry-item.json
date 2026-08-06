@@ -2,7 +2,7 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-chapitre-barre-basse",
   "type": "hyperframes:block",
-  "title": "YouTube — chapitre barre basse + jauge",
+  "title": "Large — chapitre barre basse + jauge",
   "description": "Carton de chapitre 16:9 : barre basse + jauge, posé par-dessus le master intact.",
   "tags": [
     "meg",
@@ -10,10 +10,11 @@
     "16-9",
     "layout",
     "chapitre",
-    "barre-basse"
+    "barre-basse",
+    "meg-large"
   ],
   "family": "yt-chapitre",
-  "familyTitle": "YouTube — cartons de chapitre",
+  "familyTitle": "Large — cartons de chapitre",
   "variant": "barre basse + jauge",
   "dimensions": {
     "width": 1920,

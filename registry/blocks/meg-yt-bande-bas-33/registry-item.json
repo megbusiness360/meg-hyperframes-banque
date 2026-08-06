@@ -2,17 +2,18 @@
   "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
   "name": "meg-yt-bande-bas-33",
   "type": "hyperframes:block",
-  "title": "YouTube — écran dominant, bande visage bas 33 %",
+  "title": "Large — écran dominant, bande visage bas 33 %",
   "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (33 %) en bas.",
   "tags": [
     "meg",
     "youtube",
     "16-9",
     "layout",
-    "bande"
+    "bande",
+    "meg-large"
   ],
   "family": "yt-bande",
-  "familyTitle": "YouTube — écran dominant + bande visage",
+  "familyTitle": "Large — écran dominant + bande visage",
   "variant": "bas 33 %",
   "dimensions": {
     "width": 1920,

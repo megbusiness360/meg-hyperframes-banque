@@ -71,9 +71,10 @@ export function injectHfIds(html, prefix, startAt = 1) {
 // mode 'hide'  → master masqué pendant le bloc (layouts détourés : le visage
 //                vient d'un asset alpha posé dans la zone silhouette).
 // mode 'none'  → master intact (habillages, titres, overlays).
-export function masterScript({ mode = "move", geom, W, H, dur, standaloneSel = ".standalone-face" }) {
+export function masterScript({ mode = "move", geom, W, H, dur, bias = null, standaloneSel = ".standalone-face" }) {
   if (mode === "none") return "";
   const exitAt = Math.max(0.5, dur - 0.42).toFixed(2);
+  const endAt = dur.toFixed(2);
   if (mode === "hide") {
     const backAt = Math.max(0.3, dur - 0.32).toFixed(2);
     return `
@@ -82,21 +83,40 @@ export function masterScript({ mode = "move", geom, W, H, dur, standaloneSel = "
         /* Le visage de ce layout vient d'un asset ALPHA (fond vert détouré)
            posé à la place de la silhouette : fondu sortant rapide du master
            brut à l'entrée, fondu de retour en sortie. Le fromTo part de
-           l'état naturel (visible) : rien ne fuit hors de la fenêtre du bloc. */
-        tl.fromTo(master,{autoAlpha:1},{autoAlpha:0,duration:.16,ease:'power2.in'},0)
-          .to(master,{autoAlpha:1,duration:.3,ease:'power2.out'},${backAt});
+           l'état naturel (visible) : rien ne fuit hors de la fenêtre du bloc.
+           z-index 2 pendant le bloc : le master fond AU-DESSUS du fond de
+           scène crème (z1), jamais coupé net par lui. */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{autoAlpha:1},{autoAlpha:0,duration:.16,ease:'power2.in'},0)
+          .to(master,{autoAlpha:1,duration:.3,ease:'power2.out'},${backAt})
+          .set(master,{clearProps:'zIndex'},${endAt});
       }`;
   }
   const g = geom;
+  const biasJs = bias
+    ? `
+        /* Biais visage : pendant le recadrage, la fenêtre cover vise le haut
+           du rush (le visage), pas le centre géométrique. Valeur d'origine
+           restaurée en sortie — le bloc suivant repart d'un master intact. */
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'${bias}'},0).set(vid,{objectPosition:op0},${endAt});
+        }`
+    : "";
   return `
       const master=document.querySelector('#meg-master-frame');
       if(master){
         /* Drag & drop pur : le bloc recadre le master lui-même. Entrée depuis
            le plein cadre, sortie qui LE RESTAURE — le bloc suivant repart
-           toujours d'un master plein cadre. */
-        tl.fromTo(master,{x:0,y:0,width:${W},height:${H},borderRadius:0},
+           toujours d'un master plein cadre. z-index 2 pendant le bloc : le
+           master passe AU-DESSUS du fond de scène crème (z1) et SOUS les
+           cartes du bloc (z3+). */
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:${W},height:${H},borderRadius:0},
           {x:${g.x},y:${g.y},width:${g.w},height:${g.h},borderRadius:${g.r},duration:.42,ease:'power3.out'},0)
-          .to(master,{x:0,y:0,width:${W},height:${H},borderRadius:0,duration:.42,ease:'power3.in'},${exitAt});
+          .to(master,{x:0,y:0,width:${W},height:${H},borderRadius:0,duration:.42,ease:'power3.in'},${exitAt})
+          .set(master,{clearProps:'zIndex'},${endAt});${biasJs}
       }else{
         const sa=root.querySelector('${standaloneSel}');
         if(sa){sa.style.display='flex';tl.fromTo(sa,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);}
@@ -122,7 +142,7 @@ ${sel} .ecran .etiquette{padding:12px 26px;border-radius:22px;background:${PAL.e
 ${sub ? `${sel} .ecran .sous{font-size:${Math.round(fontSize * 0.72)}px;font-weight:600;opacity:.62;letter-spacing:-.01em}` : ""}
 ${sel} .ecran .barre{position:absolute;left:0;top:0;right:0;display:flex;align-items:center;gap:14px;height:88px;padding:0 26px;background:${PAL.creme};border-bottom:2px solid rgba(47,44,0,.10)}
 ${sel} .ecran .pastille{width:16px;height:16px;border-radius:50%;background:rgba(47,44,0,.18)}
-${sel} .ecran .url{flex:1;margin-left:8px;padding:11px 24px;border-radius:999px;background:${PAL.clair};color:${PAL.encre};font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden}`;
+${sel} .ecran .url{flex:1;min-width:0;margin-left:8px;padding:11px 24px;border-radius:999px;background:${PAL.clair};color:${PAL.encre};font-size:28px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}`;
 }
 
 export function ecranDiv({ x, y, w, h, label = "ÉCRAN — REMPLACER", sub = "capture, démo, document", nav = false, bord = false, extraClass = "", extraStyle = "" }) {
@@ -139,9 +159,9 @@ export function silhouetteCss(sel) {
   return `
 ${sel} .silhouette{position:absolute;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:30px;opacity:0}
 ${sel} .silhouette svg{width:100%;height:auto;display:block}
-${sel} .silhouette .tag{margin-top:-8px;padding:11px 24px;border-radius:20px;background:${PAL.encre};color:${PAL.creme};font-size:30px;font-weight:700;letter-spacing:.04em;white-space:nowrap}`;
+${sel} .silhouette .tag{margin-top:-8px;padding:11px 24px;border-radius:20px;background:${PAL.encre};color:${PAL.creme};font-size:30px;font-weight:700;letter-spacing:.04em;white-space:nowrap;max-width:calc(100% - 8px);overflow:hidden;text-overflow:ellipsis}`;
 }
-export function silhouetteDiv({ x, y, w, h, tag = "VISAGE DÉTOURÉ — REMPLACER (alpha)" }) {
+export function silhouetteDiv({ x, y, w, h, tag = "VISAGE DÉTOURÉ (alpha)" }) {
   // Buste simple tracé : tête + épaules, hachures encre, liseré pointillé.
   return `<div class="silhouette" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;" data-layout-allow-occlusion="">
     <svg viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -164,6 +184,7 @@ export function emit(spec) {
     name, title, desc, tags = [], family, familyTitle, variant,
     ratio, duration, comment, css, html, script, posterAt = 1.2,
     needsFont = true, faceGeom = null, faceMode = "move", master = null,
+    fond = true, faceBias = null,
   } = spec;
   const RA = RATIOS[ratio];
   const compId = name.replace(/^meg-/, "");
@@ -175,11 +196,28 @@ export function emit(spec) {
     ? ` data-face-x="${faceGeom.x}" data-face-y="${faceGeom.y}" data-face-w="${faceGeom.w}" data-face-h="${faceGeom.h}" data-face-r="${faceGeom.r}" data-face-mode="${faceMode}"`
     : faceMode === "hide" ? ` data-face-mode="alpha"` : "";
 
-  const scopedCss = css.replaceAll("%R%", R).trim();
-  const bodyHtml = injectHfIds(html.replaceAll("%R%", R).trim(), prefix);
+  // Biais visage auto : plus la fenêtre du bloc rogne la hauteur du rush
+  // (cover), plus la fenêtre vise haut — le visage vit dans le tiers haut du
+  // master MEG. Surchargeable par bloc (faceBias), désactivable (false).
+  let bias = faceBias === false ? null : faceBias;
+  if (bias == null && faceBias !== false && faceGeom) {
+    const scale = Math.max(faceGeom.w / RA.w, faceGeom.h / RA.h);
+    const visH = faceGeom.h / scale / RA.h;
+    bias = visH < 0.4 ? "50% 6%" : visH < 0.75 ? "50% 12%" : visH < 0.96 ? "50% 25%" : null;
+  }
+
+  // Fond de scène crème : dès que le master quitte le plein cadre (move) ou
+  // disparaît (hide), le hors-zone doit être crème MEG, jamais le noir du
+  // studio. z1 sous le master (z2) et les cartes (z3+).
+  const withFond = fond !== false && (faceGeom !== null || faceMode === "hide");
+  const fondCss = withFond ? `${R} .fond-scene{position:absolute;inset:0;z-index:1;background:${GRAD_CARTE}}\n      ` : "";
+  const fondHtml = withFond ? `<div class="fond-scene" data-layout-allow-occlusion=""></div>\n    ` : "";
+
+  const scopedCss = fondCss + css.replaceAll("%R%", R).trim();
+  const bodyHtml = injectHfIds(fondHtml + html.replaceAll("%R%", R).trim(), prefix);
 
   const masterJs = master === null
-    ? masterScript({ mode: faceGeom ? "move" : faceMode === "hide" ? "hide" : "none", geom: faceGeom, W: RA.w, H: RA.h, dur: duration })
+    ? masterScript({ mode: faceGeom ? "move" : faceMode === "hide" ? "hide" : "none", geom: faceGeom, W: RA.w, H: RA.h, dur: duration, bias })
     : master;
 
   const doc = `<!doctype html>
@@ -211,7 +249,7 @@ export function emit(spec) {
   </div>
 </body>
 </html>
-`;
+`.replace(/[ \t]+$/gm, "");
 
   return {
     name, doc, posterAt, ratio, duration, needsFont,
@@ -221,7 +259,7 @@ export function emit(spec) {
       type: "hyperframes:block",
       title,
       description: desc,
-      tags: ["meg", ...tags],
+      tags: ["meg", ratio === "reel" ? "meg-reel" : "meg-large", ...tags],
       family,
       familyTitle,
       variant,

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Pastille CTA persistante « LIEN EN BIO » — badge discret posé au torse
+     côté gauche (zone neutre gravée), pulsation légère. Étiquette éditable. -->
+<div data-hf-id="hf-p7ln0" id="motion-cta-pastille-lien-reel-root" data-composition-id="motion-cta-pastille-lien-reel" data-start="0" data-duration="6" data-width="1080" data-height="1920">
+    <style>
+      @font-face{font-family:'Clash Grotesk MEG';src:url('assets/ClashGrotesk-Variable.woff2') format('woff2');font-weight:200 700;font-style:normal;font-display:block}
+      #motion-cta-pastille-lien-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Clash Grotesk MEG',sans-serif}
+      #motion-cta-pastille-lien-reel-root .pastille-cta{position:absolute;z-index:6;left:70px;top:1150px;display:flex;align-items:center;gap:18px;opacity:0}
+#motion-cta-pastille-lien-reel-root .rond{width:92px;height:92px;border-radius:50%;background:#B9AA02;color:#2F2C00;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:700;box-shadow:0 12px 34px rgba(0,0,0,.35)}
+#motion-cta-pastille-lien-reel-root .lab{padding:16px 32px;border-radius:26px;background:rgba(47,44,0,.88);color:#FFFCD6;font-weight:700;letter-spacing:-.02em;font-size:36px;}
+    </style>
+    <div data-hf-id="hf-p7ln1" class="pastille-cta" data-layout-allow-occlusion=""><div data-hf-id="hf-p7ln2" class="rond">↑</div><div data-hf-id="hf-p7ln3" class="lab">LIEN EN BIO</div></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+      const root=document.querySelector('#motion-cta-pastille-lien-reel-root');
+      const tl=gsap.timeline({paused:true});
+
+      const p=root.querySelector('.pastille-cta'),rond=root.querySelector('.rond');
+      tl.fromTo(p,{x:-40,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},.1)
+        .fromTo(rond,{scale:1},{scale:1.1,duration:.55,ease:'sine.inOut',yoyo:true,repeat:7},.7)
+        .to(p,{x:-30,opacity:0,duration:.35,ease:'power2.in'},5.6);
+      window.__timelines['motion-cta-pastille-lien-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

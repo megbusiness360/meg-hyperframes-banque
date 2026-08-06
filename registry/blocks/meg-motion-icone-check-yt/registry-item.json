@@ -1,0 +1,38 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-motion-icone-check-yt",
+  "type": "hyperframes:block",
+  "title": "Large — Icône pop (check)",
+  "description": "Coche or qui claque en tiers gauche pour valider un point dit.",
+  "tags": [
+    "meg",
+    "motion",
+    "icone",
+    "check",
+    "meg-large"
+  ],
+  "family": "motion-yt",
+  "familyTitle": "Large — motion design & textes animés",
+  "variant": "icône check",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 1.4,
+  "files": [
+    {
+      "path": "meg-motion-icone-check-yt.html",
+      "target": "compositions/meg-motion-icone-check-yt.html",
+      "type": "hyperframes:composition"
+    },
+    {
+      "path": "assets/ClashGrotesk-Variable.woff2",
+      "target": "assets/ClashGrotesk-Variable.woff2",
+      "type": "hyperframes:asset"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg",
+    "video": "preview.mp4"
+  }
+}

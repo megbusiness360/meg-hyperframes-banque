@@ -23,7 +23,7 @@
       (()=>{
       const root=document.querySelector('#anim-glisse-yt-root');
       const tl=gsap.timeline({paused:true});
-      
+
       tl.fromTo(root.querySelector('.voile-v'),{y:1231},{y:0,duration:.5,ease:'power2.in'},0)
         .to(root.querySelector('.voile-v'),{y:-1253,duration:.5,ease:'power2.out'},.5);
       window.__timelines['anim-glisse-yt']=tl;
