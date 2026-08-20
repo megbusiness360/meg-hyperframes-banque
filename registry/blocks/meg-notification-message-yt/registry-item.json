@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-notification-message-yt",
+  "type": "hyperframes:block",
+  "title": "Notification messagerie — YouTube 16:9",
+  "description": "Carte sombre de notification avec avatar or, Client OF, WhatsApp et message modifiable. Entrée 0,5 s, tenue 2,5 s, sortie 0,5 s.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "notification",
+    "messagerie",
+    "overlay",
+    "motion",
+    "meg-large",
+    "meg-youtube-folder-motion-texte"
+  ],
+  "family": "notification-message-yt",
+  "familyTitle": "Notifications messagerie — YouTube 16:9",
+  "variant": "Client OF / WhatsApp",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 3.5,
+  "files": [
+    {
+      "path": "meg-notification-message-yt.html",
+      "target": "compositions/meg-notification-message-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

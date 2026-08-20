@@ -1,0 +1,15 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-preuve-curseur-clic-yt",
+  "type": "hyperframes:block",
+  "title": "Preuve écran — curseur et clic (YouTube)",
+  "description": "Cadre preuve crème à droite à 65 %, curseur paramétrable, ripple et zoom sur la zone cliquée ; visage master à gauche.",
+  "tags": ["meg", "youtube", "16-9", "preuve", "curseur", "clic", "interaction", "meg-large", "meg-youtube-folder-preuves"],
+  "family": "preuve-ecran-interaction",
+  "familyTitle": "Preuves écran — interactions guidées",
+  "variant": "curseur et clic",
+  "dimensions": {"width": 1920, "height": 1080},
+  "duration": 4,
+  "files": [{"path": "meg-preuve-curseur-clic-yt.html", "target": "compositions/meg-preuve-curseur-clic-yt.html", "type": "hyperframes:composition"}],
+  "preview": {"poster": "preview.jpg"}
+}

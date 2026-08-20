@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-transition-whip-yt",
+  "type": "hyperframes:block",
+  "title": "Transition whip pan — YouTube 16:9",
+  "description": "Whip pan de 0,6 s : le master file latéralement avec scaleX et flou simulé, flash crème au centre, puis revient proprement.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "transition",
+    "whip-pan",
+    "motion-blur",
+    "meg-large",
+    "meg-youtube-folder-transitions"
+  ],
+  "family": "transition-whip-yt",
+  "familyTitle": "Transitions whip pan — YouTube 16:9",
+  "variant": "Whip pan crème",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 0.6,
+  "files": [
+    {
+      "path": "meg-transition-whip-yt.html",
+      "target": "compositions/meg-transition-whip-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

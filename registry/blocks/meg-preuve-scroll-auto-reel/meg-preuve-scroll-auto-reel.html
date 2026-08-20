@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Preuve écran — scroll automatique en deux paliers, Reel 9:16.
+     Le contenu neutre est volontairement long (~2,5 fois la fenêtre).
+     Remplacer uniquement .preuve-media par la capture réelle. -->
+<div id="meg-preuve-scroll-auto-reel-root" data-composition-id="meg-preuve-scroll-auto-reel" data-start="0" data-duration="5" data-width="1080" data-height="1920" data-face-x="46" data-face-y="879" data-face-w="988" data-face-h="995" data-face-r="34" data-face-mode="move">
+  <style>
+    #meg-preuve-scroll-auto-reel-root{position:relative;width:100%;height:100%;overflow:hidden;background:#FFFCD6;color:#2F2C00;font-family:'Clash Grotesk','Clash Grotesk MEG',sans-serif}
+    #meg-preuve-scroll-auto-reel-root .fond-scene{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-preuve-scroll-auto-reel-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B,#2F2C00);display:none}
+    #meg-preuve-scroll-auto-reel-root .preuve-cadre{position:absolute;z-index:3;left:46px;top:46px;width:988px;height:803px;border:7px solid #FFFCD6;border-radius:34px;background:#FFFEEC;box-shadow:0 28px 64px rgba(47,44,0,.30);overflow:hidden;opacity:0}
+    #meg-preuve-scroll-auto-reel-root .navigateur-barre{height:78px;display:flex;align-items:center;gap:14px;padding:0 24px;background:#3B3B3B;border-bottom:3px solid #B9AA02;color:#FFFCD6}
+    #meg-preuve-scroll-auto-reel-root .point{width:15px;height:15px;border-radius:50%;background:#FFFCD6;flex:none}
+    #meg-preuve-scroll-auto-reel-root .url{flex:1;min-width:0;margin-left:10px;padding:10px 22px;border:2px solid #B9AA02;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:700;letter-spacing:.03em;white-space:nowrap;overflow:hidden}
+    #meg-preuve-scroll-auto-reel-root .preuve-viewport{position:absolute;left:7px;right:7px;top:78px;bottom:7px;overflow:hidden;background:#FFFEEC}
+    #meg-preuve-scroll-auto-reel-root .media-stage{position:absolute;left:0;top:0;width:100%;height:1800px;background:#FFFEEC}
+    #meg-preuve-scroll-auto-reel-root .preuve-media{position:absolute;inset:0;padding:34px 52px 64px 42px;background:#FFFEEC}
+    #meg-preuve-scroll-auto-reel-root .preuve-titre{font-family:'Cabinet Grotesk',sans-serif;font-size:30px;font-weight:800;letter-spacing:.04em}
+    #meg-preuve-scroll-auto-reel-root .preuve-meta{margin-top:12px;color:#3B3B3B;font-family:'Cabinet Grotesk',sans-serif;font-size:21px;font-weight:700}
+    #meg-preuve-scroll-auto-reel-root .ligne{height:17px;margin-top:40px;border-radius:9px;background:#E4DCA8}
+    #meg-preuve-scroll-auto-reel-root .ligne.l1{width:82%}.ligne.l2{width:63%}.ligne.l3{width:91%}.ligne.l4{width:58%}.ligne.l5{width:76%}.ligne.l6{width:46%}.ligne.l7{width:88%}.ligne.l8{width:69%}.ligne.l9{width:55%}.ligne.l10{width:83%}.ligne.l11{width:62%}.ligne.l12{width:90%}.ligne.l13{width:48%}.ligne.l14{width:74%}.ligne.l15{width:87%}.ligne.l16{width:57%}.ligne.l17{width:79%}.ligne.l18{width:66%}.ligne.l19{width:92%}.ligne.l20{width:53%}.ligne.l21{width:72%}.ligne.l22{width:61%}
+    #meg-preuve-scroll-auto-reel-root .ligne-or{height:12px;margin-top:34px;border-radius:7px;background:#B9AA02}
+    #meg-preuve-scroll-auto-reel-root .ligne-or.o1{width:70%}#meg-preuve-scroll-auto-reel-root .ligne-or.o2{width:54%}
+    #meg-preuve-scroll-auto-reel-root .section-neutre{margin-top:36px;padding:26px 30px;border:3px solid #E4DCA8;border-radius:24px;background:#FFFCD6}
+    #meg-preuve-scroll-auto-reel-root .section-neutre .ligne{margin-top:16px;height:13px}
+    #meg-preuve-scroll-auto-reel-root .section-neutre .ligne:first-child{margin-top:0;width:58%}
+    #meg-preuve-scroll-auto-reel-root .scroll-rail{position:absolute;z-index:4;right:14px;top:20px;width:3px;height:calc(100% - 40px);border-radius:3px;background:#E4DCA8}
+    #meg-preuve-scroll-auto-reel-root .scroll-thumb{position:absolute;z-index:5;right:13px;top:20px;width:5px;height:86px;border-radius:5px;background:#B9AA02}
+    #meg-preuve-scroll-auto-reel-root .face-cadre{position:absolute;z-index:5;left:39px;top:872px;width:1002px;height:1009px;border:7px solid #FFFCD6;border-radius:34px;pointer-events:none;opacity:0}
+    #meg-preuve-scroll-auto-reel-root .standalone-face{display:none;position:absolute;z-index:2;left:46px;top:879px;width:988px;height:995px;border-radius:34px;background:linear-gradient(180deg,#3B3B3B,#2F2C00);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-family:'Cabinet Grotesk',sans-serif;font-size:38px;font-weight:800;line-height:1.15}
+  </style>
+  <div class="fond-scene" data-layout-allow-occlusion=""></div>
+  <div class="substitut" data-layout-allow-occlusion=""></div>
+  <div class="preuve-cadre" data-layout-allow-occlusion="">
+    <div class="navigateur-barre"><span class="point"></span><span class="point"></span><span class="point"></span><span class="url">preuve.neutre / défilement</span></div>
+    <div class="preuve-viewport" data-layout-allow-overflow="">
+      <div class="media-stage" data-layout-allow-overflow="">
+        <!-- remplacer par la capture réelle : 22 lignes neutres pour prouver le scroll. -->
+        <div class="preuve-media">
+          <div class="preuve-titre">DOSSIER À PARCOURIR</div>
+          <div class="preuve-meta">contenu neutre · source remplaçable</div>
+          <div class="ligne l1"></div><div class="ligne l2"></div><div class="ligne l3"></div><div class="ligne-or o1"></div>
+          <div class="ligne l4"></div><div class="ligne l5"></div><div class="ligne l6"></div><div class="ligne l7"></div><div class="ligne l8"></div>
+          <div class="ligne-or o2"></div><div class="ligne l9"></div><div class="ligne l10"></div><div class="ligne l11"></div><div class="ligne l12"></div>
+          <div class="section-neutre"><div class="ligne"></div><div class="ligne"></div><div class="ligne"></div></div>
+          <div class="ligne l13"></div><div class="ligne l14"></div><div class="ligne l15"></div><div class="ligne l16"></div><div class="ligne l17"></div>
+          <div class="ligne l18"></div><div class="ligne l19"></div><div class="ligne l20"></div><div class="ligne l21"></div><div class="ligne l22"></div>
+        </div>
+      </div>
+      <div class="scroll-rail"></div><div class="scroll-thumb"></div>
+    </div>
+  </div>
+  <div class="face-cadre" data-layout-allow-occlusion=""></div>
+  <div class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br>RECADRÉ ICI</div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=> {
+      const root=document.querySelector('#meg-preuve-scroll-auto-reel-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      const cadre=root.querySelector('.preuve-cadre');
+      const faceCadre=root.querySelector('.face-cadre');
+      const viewport=root.querySelector('.preuve-viewport');
+      const stage=root.querySelector('.media-stage');
+      const rail=root.querySelector('.scroll-rail');
+      const thumb=root.querySelector('.scroll-thumb');
+      const maxScroll=Math.max(0,stage.clientHeight-viewport.clientHeight);
+      const thumbTravel=Math.max(0,rail.clientHeight-thumb.clientHeight);
+      const palier1=-Math.round(maxScroll*.46);
+      const palier2=-Math.round(maxScroll*.92);
+      if(master){
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},{x:46,y:879,width:988,height:995,borderRadius:34,duration:.42,ease:'power3.out'},0)
+          .set(master,{x:0,y:0,width:1080,height:1920,borderRadius:0},5)
+          .set(master,{clearProps:'zIndex'},5);
+        const vid=master.querySelector('video,img');
+        if(vid){
+          const op0=vid.style.objectPosition||getComputedStyle(vid).objectPosition||'50% 50%';
+          tl.set(vid,{objectPosition:'50% 36%'},0).set(vid,{objectPosition:op0},5);
+        }
+      }else{
+        const fallback=root.querySelector('.substitut');
+        const standalone=root.querySelector('.standalone-face');
+        if(fallback)fallback.style.display='block';
+        if(standalone)standalone.style.display='flex';
+        tl.fromTo(standalone,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);
+      }
+      tl.fromTo(cadre,{y:-60,opacity:0},{y:0,opacity:1,duration:.46,ease:'power3.out'},.04)
+        .fromTo(faceCadre,{opacity:0},{opacity:1,duration:.38,ease:'power2.out'},.18)
+        .to(stage,{y:palier1,duration:1.05,ease:'power2.inOut'},.42)
+        .to(thumb,{y:thumbTravel*.46,duration:1.05,ease:'power2.inOut'},.42)
+        .to(stage,{y:palier2,duration:1.10,ease:'power2.inOut'},2.27)
+        .to(thumb,{y:thumbTravel*.92,duration:1.10,ease:'power2.inOut'},2.27);
+      window.__timelines['meg-preuve-scroll-auto-reel']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/MKEEQN57GWBZOSYWCRODNJOOZNPLMAKN/5SPTSZGHEACWWLF34DQ4WAA4OGU6PQIF/KN7DX4F6PXB74R6L2K2Y4NH3CB7FC53Q.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/P6VJ47S3OYMUC7HYSJLTK7PEIK5O2NPQ/TK62VLUWA76PMTK2XWBNDZB7QVXJGYE3/I5W5NEJGYVFUC5I4XOXVET63OE5PSVHJ.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/ZX6AQLSFYVDPN2URWO2MQFGTYYOHIS64/TPYPKOYWFQVNJHLLRXD4KFYX4LUOUW4Z/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Notification messagerie YouTube — carte sombre compacte, marges de 48 px,
+     arrivée par le haut avec un rebond lisible puis sortie douce. -->
+<div data-hf-id="hf-nmy0" id="notification-message-yt-root" data-composition-id="notification-message-yt" data-start="0" data-duration="3.5" data-width="1920" data-height="1080">
+  <style>
+    #notification-message-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif}
+    #notification-message-yt-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    #notification-message-yt-root .carte-message{position:absolute;z-index:20;left:64px;top:52px;width:980px;min-height:214px;padding:24px 28px;display:grid;grid-template-columns:76px 1fr;column-gap:22px;align-items:start;border-radius:28px;background:#3B3B3B;color:#FFFEEC;box-shadow:0 18px 44px rgba(47,44,0,.38);opacity:0}
+    #notification-message-yt-root .avatar{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#B9AA02;color:#2F2C00;font-family:'Clash Grotesk',sans-serif;font-size:26px;font-weight:700}
+    #notification-message-yt-root .meta{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-top:1px}
+    #notification-message-yt-root .nom{font-family:'Clash Grotesk',sans-serif;font-size:28px;font-weight:600;line-height:1.05}
+    #notification-message-yt-root .heure{font-size:21px;color:#FFFCD6;opacity:.72;white-space:nowrap}
+    #notification-message-yt-root .app{margin-top:7px;font-size:20px;font-weight:700;letter-spacing:.04em;color:#FFFCD6;opacity:.82}
+    #notification-message-yt-root .message{grid-column:2;margin-top:16px;max-width:790px;font-size:26px;font-weight:400;line-height:1.18;color:#FFFEEC}
+  </style>
+  <div data-hf-id="hf-nmy1" class="substitut" data-layout-allow-occlusion=""></div>
+  <div data-hf-id="hf-nmy2" class="carte-message" data-layout-allow-occlusion="">
+    <div data-hf-id="hf-nmy3" class="avatar" aria-hidden="true">OF</div>
+    <div data-hf-id="hf-nmy4" class="contenu">
+      <div data-hf-id="hf-nmy5" class="meta"><span data-hf-id="hf-nmy6" class="nom">Client OF</span><span data-hf-id="hf-nmy7" class="heure">14:32</span></div>
+      <div data-hf-id="hf-nmy8" class="app">WhatsApp</div>
+    </div>
+    <div data-hf-id="hf-nmy9" class="message"></div>
+  </div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=>{
+      const MESSAGE='Dossier accepté, merci Mohamed 🙏';
+      const root=document.querySelector('#notification-message-yt-root');
+      const card=root.querySelector('.carte-message');
+      root.querySelector('.message').textContent=MESSAGE;
+      const tl=gsap.timeline({paused:true});
+      tl.fromTo(card,{y:-290,opacity:0},{y:0,opacity:1,duration:.5,ease:'back.out(1.35)'},0)
+        .fromTo(card,{y:0,opacity:1},{y:-290,opacity:0,duration:.5,ease:'power2.in'},3);
+      window.__timelines['notification-message-yt']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

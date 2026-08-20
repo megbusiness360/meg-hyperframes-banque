@@ -1,0 +1,36 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-captions-karaoke-yt",
+  "type": "hyperframes:block",
+  "title": "Sous-titres karaoke — YouTube 16:9",
+  "description": "Groupe de trois ou quatre mots en bas du cadre : le mot actif passe sur une pastille or puis revient à l'état sombre. Démo 4 s.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "captions",
+    "sous-titres",
+    "karaoke",
+    "mot-a-mot",
+    "meg-large",
+    "meg-youtube-folder-motion-texte"
+  ],
+  "family": "captions-karaoke-yt",
+  "familyTitle": "Sous-titres karaoke — YouTube 16:9",
+  "variant": "Mot actif sur pastille or",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-captions-karaoke-yt.html",
+      "target": "compositions/meg-captions-karaoke-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

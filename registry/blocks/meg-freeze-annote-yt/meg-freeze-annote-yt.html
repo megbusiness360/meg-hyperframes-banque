@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/MKEEQN57GWBZOSYWCRODNJOOZNPLMAKN/5SPTSZGHEACWWLF34DQ4WAA4OGU6PQIF/KN7DX4F6PXB74R6L2K2Y4NH3CB7FC53Q.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/P6VJ47S3OYMUC7HYSJLTK7PEIK5O2NPQ/TK62VLUWA76PMTK2XWBNDZB7QVXJGYE3/I5W5NEJGYVFUC5I4XOXVET63OE5PSVHJ.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/ZX6AQLSFYVDPN2URWO2MQFGTYYOHIS64/TPYPKOYWFQVNJHLLRXD4KFYX4LUOUW4Z/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Freeze annoté YouTube — badge PAUSE, annotation dessinée à la main et
+     filtre désaturé très léger, tout est hard-killé avant la fin du bloc. -->
+<div data-hf-id="hf-fay0" id="freeze-annote-yt-root" data-composition-id="freeze-annote-yt" data-start="0" data-duration="3" data-width="1920" data-height="1080">
+  <style>
+    #freeze-annote-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif}
+    #freeze-annote-yt-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    #freeze-annote-yt-root .badge{position:absolute;z-index:30;left:48px;top:40px;padding:12px 22px;border-radius:999px;background:#B9AA02;color:#2F2C00;font-family:'Clash Grotesk',sans-serif;font-size:27px;font-weight:700;letter-spacing:.08em;box-shadow:0 8px 18px rgba(47,44,0,.28);opacity:0}
+    #freeze-annote-yt-root .annotation{position:absolute;z-index:29;pointer-events:none;opacity:0}
+    #freeze-annote-yt-root .annotation svg{display:block;width:100%;height:100%;overflow:visible}
+    #freeze-annote-yt-root .ellipse{fill:none;stroke:#EC4046;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 3px 10px rgba(47,44,0,.34))}
+    #freeze-annote-yt-root .arrow{fill:none;stroke:#EC4046;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;filter:drop-shadow(0 3px 10px rgba(47,44,0,.34))}
+  </style>
+  <div data-hf-id="hf-fay1" class="substitut" data-layout-allow-occlusion=""></div>
+  <div data-hf-id="hf-fay2" class="badge" data-layout-allow-occlusion="">PAUSE</div>
+  <div data-hf-id="hf-fay3" class="annotation" data-layout-allow-occlusion="">
+    <svg data-hf-id="hf-fay4" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+      <path data-hf-id="hf-fay5" class="ellipse" d="M95 360 C70 190 205 58 480 74 C770 48 935 188 900 360 C928 525 745 650 485 620 C220 660 70 520 95 360 Z"></path>
+      <path data-hf-id="hf-fay6" class="arrow" d="M820 625 C880 590 920 550 950 500 M950 500 L940 550 M950 500 L900 510"></path>
+    </svg>
+  </div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=>{
+      /* Zone de l'annotation, exprimée en pourcentage pour rester réglable. */
+      const ZONE={x:57,y:57,w:34,h:28};
+      const root=document.querySelector('#freeze-annote-yt-root');
+      const annotation=root.querySelector('.annotation');
+      annotation.style.left=`${ZONE.x}%`;
+      annotation.style.top=`${ZONE.y}%`;
+      annotation.style.width=`${ZONE.w}%`;
+      annotation.style.height=`${ZONE.h}%`;
+      let cible=document.querySelector('#meg-master-frame');
+      if(!cible){const s=root.querySelector('.substitut');if(s){s.style.display='block';cible=s;}}
+      const tl=gsap.timeline({paused:true});
+      if(cible){
+        tl.fromTo(cible,{filter:'saturate(1)'},{filter:'saturate(.85)',duration:.25,ease:'power1.out'},0)
+          .fromTo(cible,{filter:'saturate(.85)'},{filter:'saturate(1)',duration:.2,ease:'power1.in'},2.55)
+          .set(cible,{clearProps:'filter'},2.99);
+      }
+      const badge=root.querySelector('.badge');
+      const ellipse=root.querySelector('.ellipse');
+      const arrow=root.querySelector('.arrow');
+      tl.fromTo(badge,{y:-22,opacity:0},{y:0,opacity:1,duration:.28,ease:'back.out(1.3)'},.15)
+        .fromTo(annotation,{opacity:0},{opacity:1,duration:.12,ease:'power2.out'},.32)
+        .fromTo(ellipse,{strokeDashoffset:1000},{strokeDashoffset:0,duration:.72,ease:'power2.out'},.38)
+        .fromTo(arrow,{strokeDashoffset:200},{strokeDashoffset:0,duration:.3,ease:'power2.out'},1.05)
+        .fromTo(annotation,{opacity:1},{opacity:0,duration:.18,ease:'power2.in'},2.58)
+        .fromTo(badge,{opacity:1},{opacity:0,duration:.18,ease:'power2.in'},2.58);
+      window.__timelines['freeze-annote-yt']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#FFFCD6}
+    *{box-sizing:border-box}
+    #meg-detoure-occlusion-titre-yt-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif;color:#2F2C00}
+    #meg-detoure-occlusion-titre-yt-root .fond{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-detoure-occlusion-titre-yt-root .motif{position:absolute;inset:-3%;z-index:1;pointer-events:none;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.045) 0 18px,rgba(255,252,214,0) 18px 36px)}
+    #meg-detoure-occlusion-titre-yt-root .titre{position:absolute;z-index:3;top:126px;left:190px;right:190px;margin:0;text-align:center;white-space:nowrap;font-family:'Clash Grotesk',sans-serif;font-size:134px;line-height:.88;font-weight:700;letter-spacing:-.035em;color:#2F2C00;opacity:0}
+    #meg-detoure-occlusion-titre-yt-root .contour{position:absolute;z-index:4;left:460px;top:94px;width:1000px;height:900px;border:3px solid #B9AA02;border-radius:50%;pointer-events:none;opacity:0}
+    #meg-detoure-occlusion-titre-yt-root .substitut{position:absolute;z-index:5;left:0;top:0;width:100%;height:100%;display:none;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);clip-path:ellipse(26% 42% at 50% 55%);-webkit-mask-image:radial-gradient(ellipse 26% 42% at 50% 55%,#2F2C00 0 96%,transparent 100%);mask-image:radial-gradient(ellipse 26% 42% at 50% 55%,#2F2C00 0 96%,transparent 100%);filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+    .alpha-source{position:absolute;inset:0;z-index:6;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+    .meg-demo-silhouette-yt{clip-path:ellipse(26% 42% at 50% 55%);-webkit-mask-image:radial-gradient(ellipse 26% 42% at 50% 55%,#2F2C00 0 96%,transparent 100%);mask-image:radial-gradient(ellipse 26% 42% at 50% 55%,#2F2C00 0 96%,transparent 100%);filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+  </style>
+</head>
+<body>
+  <!-- Détouré YouTube : titre centré dans le tiers haut, silhouette au-dessus.
+       #meg-alpha-frame est facultatif et doit rester aligné sur le master unique.
+       Le masque ellipse est la démonstration sûre quand aucun alpha n'est injecté. -->
+  <div data-hf-id="hf-b2doy0" id="meg-detoure-occlusion-titre-yt-root" data-composition-id="meg-detoure-occlusion-titre-yt" data-start="0" data-duration="4" data-width="1920" data-height="1080" data-format="yt" data-face-mode="alpha-or-demo">
+    <div data-hf-id="hf-b2doy1" class="fond" data-layout-allow-occlusion="" data-qa-allow-bleed=""></div>
+    <div data-hf-id="hf-b2doy2" class="motif" data-layout-allow-occlusion="" data-qa-allow-bleed=""></div>
+    <h1 data-hf-id="hf-b2doy3" class="titre" aria-label="Titre paramétrable"></h1>
+    <div data-hf-id="hf-b2doy4" class="contour" aria-hidden="true" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-b2doy5" class="substitut" aria-hidden="true" data-layout-allow-occlusion=""></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+        const TITRE='QUALIOPI';
+        const root=document.querySelector('#meg-detoure-occlusion-titre-yt-root');
+        const titre=root.querySelector('.titre');
+        const fond=root.querySelector('.fond');
+        const contour=root.querySelector('.contour');
+        const substitut=root.querySelector('.substitut');
+        const master=document.querySelector('#meg-master-frame');
+        const alpha=document.querySelector('#meg-alpha-frame');
+        const alphaIsInsideMaster=Boolean(master&&alpha&&master.contains(alpha));
+        const MODE_DEMO=!alpha;
+        titre.textContent=TITRE;
+        const fitText=(element,maxWidth,maxSize,minSize)=>{
+          let size=maxSize;
+          element.style.fontSize=`${size}px`;
+          while(size>minSize&&element.scrollWidth>maxWidth){size-=2;element.style.fontSize=`${size}px`;}
+        };
+        fitText(titre,1540,134,56);
+        let source=alpha||master||substitut;
+        if(MODE_DEMO){
+          if(master){
+            master.classList.add('meg-demo-silhouette-yt');
+            source=master;
+          }else{
+            substitut.style.display='block';
+            source=substitut;
+          }
+        }else{
+          alpha.classList.add('alpha-source');
+          if(master&&master!==alpha)master.style.opacity='1';
+        }
+        if(source)source.style.pointerEvents='none';
+        const tl=gsap.timeline({paused:true});
+        if(source===master||source===alpha)tl.set(source,{zIndex:6},0);
+        tl.fromTo(fond,{scale:1},{scale:1.03,duration:4,ease:'sine.inOut'},0)
+          .fromTo(titre,{y:-42,opacity:0},{y:0,opacity:1,duration:.54,ease:'power3.out'},.06)
+          .fromTo(source,{y:48,opacity:0},{y:0,opacity:1,duration:.58,ease:'power3.out'},.20)
+          .fromTo(contour,{opacity:0},{opacity:1,duration:.38,ease:'power2.out'},.62)
+          .to(source,{y:28,opacity:0,duration:.34,ease:'power2.in'},3.54)
+          .to(contour,{opacity:0,duration:.30,ease:'power2.in'},3.60)
+          .set(source,{clearProps:'opacity,transform,zIndex'},4.00);
+        if(alpha&&master&&master!==alpha&&!alphaIsInsideMaster){
+          tl.fromTo(master,{opacity:1},{opacity:0,duration:.16,ease:'power2.in'},0)
+            .to(master,{opacity:1,duration:.14,ease:'power2.out'},3.82);
+        }
+        window.__timelines['meg-detoure-occlusion-titre-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-preuve-loupe-document-reel",
+  "type": "hyperframes:block",
+  "title": "Preuve document — loupe (Reel)",
+  "description": "Document A4 centré dans un cadre preuve haut 55 %, loupe or ×2 sur une zone paramétrable avec étiquette ; visage master en bas.",
+  "tags": ["meg", "reel", "preuve", "loupe", "document", "zoom", "meg-reel", "meg-reel-folder-preuves"],
+  "family": "preuve-document-loupe",
+  "familyTitle": "Preuves documentaires — loupes",
+  "variant": "document A4 et loupe",
+  "dimensions": {"width": 1080, "height": 1920},
+  "duration": 4,
+  "files": [{"path": "meg-preuve-loupe-document-reel.html", "target": "compositions/meg-preuve-loupe-document-reel.html", "type": "hyperframes:composition"}],
+  "preview": {"poster": "preview.jpg"}
+}

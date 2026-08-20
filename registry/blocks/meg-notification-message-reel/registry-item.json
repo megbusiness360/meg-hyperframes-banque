@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-notification-message-reel",
+  "type": "hyperframes:block",
+  "title": "Notification messagerie — Reel 9:16",
+  "description": "Carte sombre de notification avec avatar or, Client OF, WhatsApp et message modifiable. Entrée 0,5 s, tenue 2,5 s, sortie 0,5 s.",
+  "tags": [
+    "meg",
+    "reel",
+    "notification",
+    "messagerie",
+    "overlay",
+    "motion",
+    "meg-reel",
+    "meg-reel-folder-motion-texte"
+  ],
+  "family": "notification-message-reel",
+  "familyTitle": "Notifications messagerie — Reel 9:16",
+  "variant": "Client OF / WhatsApp",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 3.5,
+  "files": [
+    {
+      "path": "meg-notification-message-reel.html",
+      "target": "compositions/meg-notification-message-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

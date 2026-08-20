@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Preuve écran — loupe documentaire, YouTube 16:9.
+     Document A4 à gauche (55 %), visage master à droite. La loupe
+     duplique le contenu et agrandit une zone paramétrable. -->
+<div id="meg-preuve-loupe-document-yt-root" data-composition-id="meg-preuve-loupe-document-yt" data-start="0" data-duration="4" data-width="1920" data-height="1080" data-face-x="1080" data-face-y="40" data-face-w="800" data-face-h="1000" data-face-r="30" data-face-mode="move">
+  <style>
+    #meg-preuve-loupe-document-yt-root{position:relative;width:100%;height:100%;overflow:hidden;background:#FFFCD6;color:#2F2C00;font-family:'Clash Grotesk','Clash Grotesk MEG',sans-serif}
+    #meg-preuve-loupe-document-yt-root .fond-scene{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-preuve-loupe-document-yt-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B,#2F2C00);display:none}
+    #meg-preuve-loupe-document-yt-root .preuve-cadre{position:absolute;z-index:3;left:40px;top:40px;width:1012px;height:1000px;border:7px solid #FFFCD6;border-radius:30px;background:#FFFEEC;box-shadow:0 28px 64px rgba(47,44,0,.30);overflow:hidden;opacity:0}
+    #meg-preuve-loupe-document-yt-root .navigateur-barre{height:82px;display:flex;align-items:center;gap:15px;padding:0 26px;background:#3B3B3B;border-bottom:3px solid #B9AA02;color:#FFFCD6}
+    #meg-preuve-loupe-document-yt-root .point{width:16px;height:16px;border-radius:50%;background:#FFFCD6;flex:none}
+    #meg-preuve-loupe-document-yt-root .url{flex:1;min-width:0;margin-left:12px;padding:11px 24px;border:2px solid #B9AA02;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-family:'Cabinet Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:.03em;white-space:nowrap;overflow:hidden}
+    #meg-preuve-loupe-document-yt-root .preuve-viewport{position:absolute;left:7px;right:7px;top:82px;bottom:7px;overflow:hidden;background:#FFFEEC}
+    #meg-preuve-loupe-document-yt-root .preuve-media{position:absolute;inset:0}
+    #meg-preuve-loupe-document-yt-root .doc-shell{position:absolute;left:214px;top:54px;width:570px;height:790px;border:4px solid #FFFCD6;border-radius:20px;background:#FFFEEC;box-shadow:0 24px 46px rgba(47,44,0,.24);overflow:hidden}
+    #meg-preuve-loupe-document-yt-root .doc-body{position:absolute;inset:0;padding:42px 40px;background:#FFFEEC}
+    #meg-preuve-loupe-document-yt-root .doc-kicker{font-family:'Cabinet Grotesk',sans-serif;font-size:20px;font-weight:800;letter-spacing:.11em;color:#B9AA02}
+    #meg-preuve-loupe-document-yt-root .doc-title{margin-top:16px;font-family:'Clash Grotesk',sans-serif;font-size:32px;font-weight:700;line-height:1.04}
+    #meg-preuve-loupe-document-yt-root .doc-line{height:12px;margin-top:22px;border-radius:7px;background:#E4DCA8}
+    #meg-preuve-loupe-document-yt-root .doc-line.d1{width:86%}.doc-line.d2{width:61%}.doc-line.d3{width:92%}.doc-line.d4{width:70%}.doc-line.d5{width:48%}.doc-line.d6{width:83%}.doc-line.d7{width:65%}.doc-line.d8{width:91%}.doc-line.d9{width:57%}.doc-line.d10{width:76%}.doc-line.d11{width:46%}.doc-line.d12{width:82%}
+    #meg-preuve-loupe-document-yt-root .doc-line-or{height:11px;margin-top:30px;border-radius:7px;background:#B9AA02}
+    #meg-preuve-loupe-document-yt-root .doc-line-or.o1{width:68%}#meg-preuve-loupe-document-yt-root .doc-line-or.o2{width:54%}
+    #meg-preuve-loupe-document-yt-root .zone-reperage{position:absolute;border:3px solid #B9AA02;border-radius:10px;opacity:0;pointer-events:none}
+    #meg-preuve-loupe-document-yt-root .loupe{position:absolute;z-index:8;left:520px;top:460px;width:410px;height:238px;border:2.5px solid #B9AA02;border-radius:12px;background:#FFFEEC;box-shadow:0 20px 44px rgba(47,44,0,.34);overflow:hidden;opacity:0;transform-origin:50% 50%}
+    #meg-preuve-loupe-document-yt-root .loupe-window{position:absolute;inset:0;overflow:hidden}
+    #meg-preuve-loupe-document-yt-root .loupe-content{position:absolute;left:0;top:0;background:#FFFEEC;transform-origin:0 0}
+    #meg-preuve-loupe-document-yt-root .etiquette-loupe{position:absolute;z-index:9;left:520px;top:716px;padding:12px 24px;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:800;letter-spacing:.035em;opacity:0}
+    #meg-preuve-loupe-document-yt-root .face-cadre{position:absolute;z-index:5;left:1073px;top:33px;width:814px;height:1014px;border:7px solid #FFFCD6;border-radius:30px;pointer-events:none;opacity:0}
+    #meg-preuve-loupe-document-yt-root .standalone-face{display:none;position:absolute;z-index:2;left:1080px;top:40px;width:800px;height:1000px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B,#2F2C00);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-family:'Cabinet Grotesk',sans-serif;font-size:38px;font-weight:800;line-height:1.15}
+  </style>
+  <div class="fond-scene" data-layout-allow-occlusion=""></div>
+  <div class="substitut" data-layout-allow-occlusion=""></div>
+  <div class="preuve-cadre" data-layout-allow-occlusion="">
+    <div class="navigateur-barre"><span class="point"></span><span class="point"></span><span class="point"></span><span class="url">preuve.neutre / document</span></div>
+    <div class="preuve-viewport" data-layout-allow-overflow="">
+      <!-- remplacer par la capture réelle : le document reste A4 et centré. -->
+      <div class="preuve-media" data-layout-allow-overflow="">
+       <div class="doc-shell">
+        <div class="doc-body">
+          <div class="doc-kicker">DOCUMENT À LIRE</div><div class="doc-title">Référence neutre</div>
+          <div class="doc-line d1"></div><div class="doc-line d2"></div><div class="doc-line d3"></div><div class="doc-line-or o1"></div>
+          <div class="doc-line d4"></div><div class="doc-line d5"></div><div class="doc-line d6"></div><div class="doc-line d7"></div>
+          <div class="doc-line-or o2"></div><div class="doc-line d8"></div><div class="doc-line d9"></div><div class="doc-line d10"></div><div class="doc-line d11"></div><div class="doc-line d12"></div>
+        </div>
+        <div class="zone-reperage"></div>
+       </div>
+       <div class="loupe" data-layout-allow-overflow=""><div class="loupe-window" data-layout-allow-overflow=""><div class="loupe-content">
+        <div class="doc-body">
+          <div class="doc-kicker">DOCUMENT À LIRE</div><div class="doc-title">Référence neutre</div>
+          <div class="doc-line d1"></div><div class="doc-line d2"></div><div class="doc-line d3"></div><div class="doc-line-or o1"></div>
+          <div class="doc-line d4"></div><div class="doc-line d5"></div><div class="doc-line d6"></div><div class="doc-line d7"></div>
+          <div class="doc-line-or o2"></div><div class="doc-line d8"></div><div class="doc-line d9"></div><div class="doc-line d10"></div><div class="doc-line d11"></div><div class="doc-line d12"></div>
+        </div>
+       </div></div></div>
+       <div class="etiquette-loupe"></div>
+      </div>
+    </div>
+  </div>
+  <div class="face-cadre" data-layout-allow-occlusion=""></div>
+  <div class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br>RECADRÉ ICI</div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=> {
+      const root=document.querySelector('#meg-preuve-loupe-document-yt-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      const cadre=root.querySelector('.preuve-cadre');
+      const faceCadre=root.querySelector('.face-cadre');
+      const doc=root.querySelector('.doc-shell');
+      const zone=root.querySelector('.zone-reperage');
+      const loupe=root.querySelector('.loupe');
+      const loupeWindow=root.querySelector('.loupe-window');
+      const loupeContent=root.querySelector('.loupe-content');
+      const label=root.querySelector('.etiquette-loupe');
+      const ZONE={x:34,y:42,w:26,h:16};
+      const ETIQUETTE='Article L.6323-6';
+      zone.style.left=ZONE.x+'%';zone.style.top=ZONE.y+'%';zone.style.width=ZONE.w+'%';zone.style.height=ZONE.h+'%';
+      label.textContent=ETIQUETTE;
+      const dw=doc.clientWidth,dh=doc.clientHeight,lw=loupeWindow.clientWidth,lh=loupeWindow.clientHeight;
+      const cx=((ZONE.x+ZONE.w/2)/100)*dw*2;
+      const cy=((ZONE.y+ZONE.h/2)/100)*dh*2;
+      tl.set(loupeContent,{width:dw,height:dh,scale:2,x:lw/2-cx,y:lh/2-cy,transformOrigin:'0 0'},0);
+      if(master){
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},{x:1080,y:40,width:800,height:1000,borderRadius:30,duration:.42,ease:'power3.out'},0)
+          .set(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},4)
+          .set(master,{clearProps:'zIndex'},4);
+      }else{
+        const fallback=root.querySelector('.substitut');
+        const standalone=root.querySelector('.standalone-face');
+        if(fallback)fallback.style.display='block';
+        if(standalone)standalone.style.display='flex';
+        tl.fromTo(standalone,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);
+      }
+      tl.fromTo(cadre,{x:-70,opacity:0},{x:0,opacity:1,duration:.46,ease:'power3.out'},.04)
+        .fromTo(faceCadre,{opacity:0},{opacity:1,duration:.38,ease:'power2.out'},.18)
+        .fromTo(zone,{opacity:0},{opacity:1,duration:.34,ease:'power2.out'},.55)
+        .fromTo(loupe,{scale:.6,opacity:0},{scale:1,opacity:1,duration:.42,ease:'power3.out'},.64)
+        .fromTo(label,{y:18,opacity:0},{y:0,opacity:1,duration:.32,ease:'power2.out'},.82)
+        .to(loupe,{scale:.6,opacity:0,duration:.35,ease:'power2.in'},3.24)
+        .to(label,{y:12,opacity:0,duration:.25,ease:'power2.in'},3.24)
+        .to(zone,{opacity:0,duration:.25,ease:'power2.in'},3.24);
+      window.__timelines['meg-preuve-loupe-document-yt']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-detoure-occlusion-titre-reel",
+  "type": "hyperframes:block",
+  "title": "Détouré — occlusion titre (Reel)",
+  "description": "Titre Clash Grotesk qui passe derrière une silhouette centrée issue du master, avec liseré or et masque ellipse de démonstration si aucun alpha n'est fourni.",
+  "tags": [
+    "meg",
+    "reel",
+    "9-16",
+    "detoure",
+    "occlusion",
+    "titre",
+    "alpha",
+    "meg-reel-folder-detourage"
+  ],
+  "family": "detoure-occlusion-titre",
+  "familyTitle": "Détouré — titre derrière le visage",
+  "variant": "Reel 9:16",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-detoure-occlusion-titre-reel.html",
+      "target": "compositions/meg-detoure-occlusion-titre-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

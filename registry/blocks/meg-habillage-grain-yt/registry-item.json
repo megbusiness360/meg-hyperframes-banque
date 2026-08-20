@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-habillage-grain-yt",
+  "type": "hyperframes:block",
+  "title": "Habillage grain et light leak — YouTube 16:9",
+  "description": "Habillage plein cadre sans texte : grain fin à 10 %, vignette douce et light leak or à 15 % qui dérive en huit secondes.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "habillage",
+    "grain",
+    "texture",
+    "vignette",
+    "light-leak",
+    "meg-large",
+    "meg-youtube-folder-habillages"
+  ],
+  "family": "habillage-grain-yt",
+  "familyTitle": "Habillages plein cadre — YouTube 16:9",
+  "variant": "Grain, vignette et light leak",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 8,
+  "files": [
+    {
+      "path": "meg-habillage-grain-yt.html",
+      "target": "compositions/meg-habillage-grain-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

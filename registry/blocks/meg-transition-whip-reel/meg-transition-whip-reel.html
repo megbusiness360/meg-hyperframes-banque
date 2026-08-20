@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/MKEEQN57GWBZOSYWCRODNJOOZNPLMAKN/5SPTSZGHEACWWLF34DQ4WAA4OGU6PQIF/KN7DX4F6PXB74R6L2K2Y4NH3CB7FC53Q.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/P6VJ47S3OYMUC7HYSJLTK7PEIK5O2NPQ/TK62VLUWA76PMTK2XWBNDZB7QVXJGYE3/I5W5NEJGYVFUC5I4XOXVET63OE5PSVHJ.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/ZX6AQLSFYVDPN2URWO2MQFGTYYOHIS64/TPYPKOYWFQVNJHLLRXD4KFYX4LUOUW4Z/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Transition whip pan — le master file latéralement avec une compression
+     horizontale et un flou de mouvement simulé. Le voile crème claque au
+     milieu, puis le master revient exactement à son état plein cadre. -->
+<div data-hf-id="hf-twr0" id="transition-whip-reel-root" data-composition-id="transition-whip-reel" data-start="0" data-duration="0.6" data-width="1080" data-height="1920">
+  <style>
+    #transition-whip-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif}
+    #transition-whip-reel-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    #transition-whip-reel-root .flash{position:absolute;inset:0;z-index:40;background:#FFFCD6;opacity:0;pointer-events:none}
+  </style>
+  <div data-hf-id="hf-twr1" class="substitut" data-layout-allow-occlusion=""></div>
+  <div data-hf-id="hf-twr2" class="flash" data-layout-allow-occlusion=""></div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=>{
+      const root=document.querySelector('#transition-whip-reel-root');
+      const tl=gsap.timeline({paused:true});
+      let cible=document.querySelector('#meg-master-frame');
+      if(!cible){const s=root.querySelector('.substitut');if(s){s.style.display='block';cible=s;}}
+      if(cible){
+        /* La séquence aller, traversée et retour reste dans une seule timeline. */
+        tl.fromTo(cible,{x:0,scaleX:1,filter:'blur(0px)'},{x:-210,scaleX:1.06,filter:'blur(9px)',duration:.16,ease:'power3.in'},0)
+          .fromTo(cible,{x:-210,scaleX:1.06,filter:'blur(9px)'},{x:210,scaleX:1.1,filter:'blur(15px)',duration:.22,ease:'power1.inOut'},.16)
+          .fromTo(cible,{x:210,scaleX:1.1,filter:'blur(15px)'},{x:0,scaleX:1,filter:'blur(0px)',duration:.22,ease:'power3.out'},.38);
+      }
+      const flash=root.querySelector('.flash');
+      tl.fromTo(flash,{opacity:0},{opacity:1,duration:.08,ease:'power2.in'},.25)
+        .fromTo(flash,{opacity:1},{opacity:0,duration:.12,ease:'power2.out'},.33);
+      window.__timelines['transition-whip-reel']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

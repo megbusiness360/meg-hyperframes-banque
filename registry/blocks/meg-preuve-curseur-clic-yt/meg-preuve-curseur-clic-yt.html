@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Preuve écran — curseur et clic, YouTube 16:9.
+     Écran à droite 65 % et visage master à gauche, selon le gabarit
+     canonique meg-yt-ecran-droite-65-carte. -->
+<div id="meg-preuve-curseur-clic-yt-root" data-composition-id="meg-preuve-curseur-clic-yt" data-start="0" data-duration="4" data-width="1920" data-height="1080" data-face-x="40" data-face-y="40" data-face-w="618" data-face-h="1000" data-face-r="30" data-face-mode="move">
+  <style>
+    #meg-preuve-curseur-clic-yt-root{position:relative;width:100%;height:100%;overflow:hidden;background:#FFFCD6;color:#2F2C00;font-family:'Clash Grotesk','Clash Grotesk MEG',sans-serif}
+    #meg-preuve-curseur-clic-yt-root .fond-scene{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-preuve-curseur-clic-yt-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B,#2F2C00);display:none}
+    #meg-preuve-curseur-clic-yt-root .preuve-cadre{position:absolute;z-index:3;left:686px;top:40px;width:1194px;height:1000px;border:7px solid #FFFCD6;border-radius:30px;background:#FFFEEC;box-shadow:0 28px 64px rgba(47,44,0,.30);overflow:hidden;opacity:0}
+    #meg-preuve-curseur-clic-yt-root .navigateur-barre{height:82px;display:flex;align-items:center;gap:15px;padding:0 26px;background:#3B3B3B;border-bottom:3px solid #B9AA02;color:#FFFCD6}
+    #meg-preuve-curseur-clic-yt-root .point{width:16px;height:16px;border-radius:50%;background:#FFFCD6;flex:none}
+    #meg-preuve-curseur-clic-yt-root .url{flex:1;min-width:0;margin-left:12px;padding:11px 24px;border:2px solid #B9AA02;border-radius:999px;background:#2F2C00;color:#FFFCD6;font-family:'Cabinet Grotesk',sans-serif;font-size:26px;font-weight:700;letter-spacing:.03em;white-space:nowrap;overflow:hidden}
+    #meg-preuve-curseur-clic-yt-root .preuve-viewport{position:absolute;left:7px;right:7px;top:82px;bottom:7px;overflow:hidden;background:#FFFEEC}
+    #meg-preuve-curseur-clic-yt-root .media-stage{position:absolute;inset:0;transform-origin:50% 50%}
+    #meg-preuve-curseur-clic-yt-root .preuve-media{position:absolute;inset:0;padding:42px 64px 56px 54px;background:#FFFEEC}
+    #meg-preuve-curseur-clic-yt-root .preuve-titre{font-family:'Cabinet Grotesk',sans-serif;font-size:34px;font-weight:800;letter-spacing:.04em;color:#2F2C00}
+    #meg-preuve-curseur-clic-yt-root .preuve-meta{margin-top:14px;color:#3B3B3B;font-family:'Cabinet Grotesk',sans-serif;font-size:24px;font-weight:700}
+    #meg-preuve-curseur-clic-yt-root .ligne{height:19px;margin-top:27px;border-radius:10px;background:#E4DCA8}
+    #meg-preuve-curseur-clic-yt-root .ligne.l1{width:84%}.ligne.l2{width:67%}.ligne.l3{width:92%}.ligne.l4{width:58%}.ligne.l5{width:78%}.ligne.l6{width:45%}
+    #meg-preuve-curseur-clic-yt-root .ligne-or{height:13px;margin-top:38px;width:72%;border-radius:7px;background:#B9AA02}
+    #meg-preuve-curseur-clic-yt-root .bloc-neutre{margin-top:38px;padding:30px 36px;border:3px solid #E4DCA8;border-radius:24px;background:#FFFCD6}
+    #meg-preuve-curseur-clic-yt-root .bloc-neutre .ligne{margin-top:18px;height:14px}
+    #meg-preuve-curseur-clic-yt-root .bloc-neutre .ligne:first-child{margin-top:0;width:62%}
+    #meg-preuve-curseur-clic-yt-root .bloc-neutre .ligne:last-child{width:48%}
+    #meg-preuve-curseur-clic-yt-root .zone-clic{position:absolute;left:58%;top:53%;width:22%;height:14%;border:2px solid #B9AA02;border-radius:12px;opacity:0;transform-origin:50% 50%;pointer-events:none}
+    #meg-preuve-curseur-clic-yt-root .ripple{position:absolute;left:0;top:0;width:48px;height:48px;border:3px solid #B9AA02;border-radius:50%;opacity:0;pointer-events:none}
+    #meg-preuve-curseur-clic-yt-root .faux-curseur{position:absolute;left:0;top:0;width:30px;height:38px;overflow:visible;opacity:0;filter:drop-shadow(0 3px 3px rgba(47,44,0,.28));pointer-events:none}
+    #meg-preuve-curseur-clic-yt-root .face-cadre{position:absolute;z-index:5;left:33px;top:33px;width:632px;height:1014px;border:7px solid #FFFCD6;border-radius:30px;pointer-events:none;opacity:0}
+    #meg-preuve-curseur-clic-yt-root .standalone-face{display:none;position:absolute;z-index:2;left:40px;top:40px;width:618px;height:1000px;border-radius:30px;background:linear-gradient(180deg,#3B3B3B,#2F2C00);color:#FFFCD6;align-items:center;justify-content:center;text-align:center;font-family:'Cabinet Grotesk',sans-serif;font-size:38px;font-weight:800;line-height:1.15}
+  </style>
+  <div class="fond-scene" data-layout-allow-occlusion=""></div>
+  <div class="substitut" data-layout-allow-occlusion=""></div>
+  <div class="preuve-cadre" data-layout-allow-occlusion="">
+    <div class="navigateur-barre"><span class="point"></span><span class="point"></span><span class="point"></span><span class="url">preuve.neutre / dossier</span></div>
+    <div class="preuve-viewport" data-layout-allow-overflow="">
+      <div class="media-stage" data-layout-allow-overflow="">
+        <!-- remplacer par la capture réelle : le conteneur reste cadré et animé. -->
+        <div class="preuve-media">
+          <div class="preuve-titre">RÉSULTAT À VÉRIFIER</div>
+          <div class="preuve-meta">lecture neutre · source remplaçable</div>
+          <div class="ligne l1"></div><div class="ligne l2"></div><div class="ligne l3"></div>
+          <div class="ligne-or"></div><div class="ligne l4"></div><div class="ligne l5"></div><div class="ligne l6"></div>
+          <div class="bloc-neutre"><div class="ligne"></div><div class="ligne"></div><div class="ligne"></div></div>
+        </div>
+        <div class="zone-clic"></div>
+      </div>
+      <div class="ripple"></div>
+      <svg class="faux-curseur" viewBox="0 0 30 38" aria-hidden="true">
+        <path d="M2 2v31.5l8.2-7.8 5.2 10.3 4.2-2.1-5.1-10.2h11.1L2 2Z" fill="#2F2C00" stroke="#FFFCD6" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="face-cadre" data-layout-allow-occlusion=""></div>
+  <div class="standalone-face" data-layout-allow-occlusion="">MASTER CONTINU<br>RECADRÉ ICI</div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=> {
+      const root=document.querySelector('#meg-preuve-curseur-clic-yt-root');
+      const tl=gsap.timeline({paused:true});
+      const master=document.querySelector('#meg-master-frame');
+      const cadre=root.querySelector('.preuve-cadre');
+      const faceCadre=root.querySelector('.face-cadre');
+      const stage=root.querySelector('.media-stage');
+      const viewport=root.querySelector('.preuve-viewport');
+      const cursor=root.querySelector('.faux-curseur');
+      const ripple=root.querySelector('.ripple');
+      const highlight=root.querySelector('.zone-clic');
+      const PARCOURS=[{x:15,y:18},{x:43,y:43},{x:67,y:61}];
+      const CLIC={x:58,y:53,w:22,h:14};
+      const clickPoint={x:CLIC.x+CLIC.w/2,y:CLIC.y+CLIC.h/2};
+      const vw=viewport.clientWidth;
+      const vh=viewport.clientHeight;
+      const pointPx=(p)=>({x:(p.x/100)*vw-8,y:(p.y/100)*vh-7});
+      const endPx=pointPx(clickPoint);
+      const p0=pointPx(PARCOURS[0]),p1=pointPx(PARCOURS[1]),p2=pointPx(PARCOURS[2]);
+      if(master){
+        tl.set(master,{zIndex:2},0)
+          .fromTo(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},{x:40,y:40,width:618,height:1000,borderRadius:30,duration:.42,ease:'power3.out'},0)
+          .set(master,{x:0,y:0,width:1920,height:1080,borderRadius:0},4)
+          .set(master,{clearProps:'zIndex'},4);
+      }else{
+        const fallback=root.querySelector('.substitut');
+        const standalone=root.querySelector('.standalone-face');
+        if(fallback)fallback.style.display='block';
+        if(standalone)standalone.style.display='flex';
+        tl.fromTo(standalone,{opacity:0},{opacity:1,duration:.42,ease:'power2.out'},0);
+      }
+      tl.fromTo(cadre,{x:70,opacity:0},{x:0,opacity:1,duration:.46,ease:'power3.out'},.04)
+        .fromTo(faceCadre,{opacity:0},{opacity:1,duration:.38,ease:'power2.out'},.18)
+        .set(cursor,{x:p0.x,y:p0.y,opacity:1},.25)
+        .to(cursor,{x:p1.x,y:p1.y,duration:.56,ease:'power2.inOut'},.45)
+        .to(cursor,{x:p2.x,y:p2.y,duration:.44,ease:'power2.inOut'},1.01)
+        .to(cursor,{x:endPx.x,y:endPx.y,duration:.18,ease:'power2.inOut'},1.72)
+        .set(stage,{transformOrigin:CLIC.x+'% '+CLIC.y+'%'},1.90)
+        .fromTo(ripple,{x:endPx.x-8,y:endPx.y-8,scale:.4,opacity:.5},{scale:1.6,opacity:0,duration:.48,ease:'power2.out'},1.90)
+        .fromTo(highlight,{opacity:0,scale:.94},{opacity:1,scale:1,duration:.16,ease:'power3.out'},1.90)
+        .to(highlight,{opacity:0,duration:.6,ease:'none'},2.50)
+        .fromTo(stage,{scale:1},{scale:1.12,duration:.5,ease:'power2.out'},1.92)
+        .to(stage,{scale:1,duration:.5,ease:'power2.inOut'},2.42);
+      window.__timelines['meg-preuve-curseur-clic-yt']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

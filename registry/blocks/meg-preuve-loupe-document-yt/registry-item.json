@@ -1,0 +1,15 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-preuve-loupe-document-yt",
+  "type": "hyperframes:block",
+  "title": "Preuve document — loupe (YouTube)",
+  "description": "Document A4 à gauche dans un cadre preuve 55 %, loupe or ×2 sur une zone paramétrable avec étiquette ; visage master à droite.",
+  "tags": ["meg", "youtube", "16-9", "preuve", "loupe", "document", "zoom", "meg-large", "meg-youtube-folder-preuves"],
+  "family": "preuve-document-loupe",
+  "familyTitle": "Preuves documentaires — loupes",
+  "variant": "document A4 et loupe",
+  "dimensions": {"width": 1920, "height": 1080},
+  "duration": 4,
+  "files": [{"path": "meg-preuve-loupe-document-yt.html", "target": "compositions/meg-preuve-loupe-document-yt.html", "type": "hyperframes:composition"}],
+  "preview": {"poster": "preview.jpg"}
+}

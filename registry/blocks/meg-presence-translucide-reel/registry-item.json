@@ -1,0 +1,34 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-presence-translucide-reel",
+  "type": "hyperframes:block",
+  "title": "Présence translucide sur preuve (Reel)",
+  "description": "Cadre preuve plein écran lisible sous le wrapper du master unique à 0,25 d'opacité, avec pastille paramétrable en bas.",
+  "tags": [
+    "meg",
+    "reel",
+    "9-16",
+    "presence",
+    "translucide",
+    "preuve",
+    "meg-reel-folder-preuves"
+  ],
+  "family": "presence-translucide",
+  "familyTitle": "Présence translucide sur preuve",
+  "variant": "Reel 9:16",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "duration": 5,
+  "files": [
+    {
+      "path": "meg-presence-translucide-reel.html",
+      "target": "compositions/meg-presence-translucide-reel.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

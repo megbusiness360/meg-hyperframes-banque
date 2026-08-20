@@ -1,0 +1,15 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-preuve-scroll-auto-reel",
+  "type": "hyperframes:block",
+  "title": "Preuve écran — scroll automatique (Reel)",
+  "description": "Cadre preuve crème en haut à 45 %, contenu neutre de 2,5 fois la fenêtre et scroll en deux paliers avec pouce or ; visage master en bande basse.",
+  "tags": ["meg", "reel", "preuve", "scroll", "défilement", "animation", "meg-reel", "meg-reel-folder-preuves"],
+  "family": "preuve-ecran-scroll",
+  "familyTitle": "Preuves écran — défilements guidés",
+  "variant": "scroll en deux paliers",
+  "dimensions": {"width": 1080, "height": 1920},
+  "duration": 5,
+  "files": [{"path": "meg-preuve-scroll-auto-reel.html", "target": "compositions/meg-preuve-scroll-auto-reel.html", "type": "hyperframes:composition"}],
+  "preview": {"poster": "preview.jpg"}
+}

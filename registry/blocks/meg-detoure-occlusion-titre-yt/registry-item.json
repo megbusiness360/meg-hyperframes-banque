@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-detoure-occlusion-titre-yt",
+  "type": "hyperframes:block",
+  "title": "Détouré — occlusion titre (YouTube)",
+  "description": "Titre Clash Grotesk qui passe derrière une silhouette centrée issue du master, avec liseré or et masque ellipse de démonstration si aucun alpha n'est fourni.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "detoure",
+    "occlusion",
+    "titre",
+    "alpha",
+    "meg-youtube-folder-detourage"
+  ],
+  "family": "detoure-occlusion-titre",
+  "familyTitle": "Détouré — titre derrière le visage",
+  "variant": "YouTube 16:9",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 4,
+  "files": [
+    {
+      "path": "meg-detoure-occlusion-titre-yt.html",
+      "target": "compositions/meg-detoure-occlusion-titre-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

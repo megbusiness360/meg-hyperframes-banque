@@ -1,0 +1,35 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-transition-flash-yt",
+  "type": "hyperframes:block",
+  "title": "Transition flash crème — YouTube 16:9",
+  "description": "Voile crème 0,5 s avec léger zoom du master (1 → 1,04 → 1), montée puis disparition nette.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "transition",
+    "flash",
+    "creme",
+    "meg-large",
+    "meg-youtube-folder-transitions"
+  ],
+  "family": "transition-flash-yt",
+  "familyTitle": "Transitions flash — YouTube 16:9",
+  "variant": "Flash crème",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 0.5,
+  "files": [
+    {
+      "path": "meg-transition-flash-yt.html",
+      "target": "compositions/meg-transition-flash-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

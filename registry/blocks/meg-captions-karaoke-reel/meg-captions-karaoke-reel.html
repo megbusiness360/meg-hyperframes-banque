@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/MKEEQN57GWBZOSYWCRODNJOOZNPLMAKN/5SPTSZGHEACWWLF34DQ4WAA4OGU6PQIF/KN7DX4F6PXB74R6L2K2Y4NH3CB7FC53Q.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Clash Grotesk';src:url('https://cdn.fontshare.com/wf/P6VJ47S3OYMUC7HYSJLTK7PEIK5O2NPQ/TK62VLUWA76PMTK2XWBNDZB7QVXJGYE3/I5W5NEJGYVFUC5I4XOXVET63OE5PSVHJ.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/J6PPRPKWXDUIYA47IXLEQB4R4OPVYDQH/N2ZXAXWEHVMLISD2TIXJC7EF4GOY43L4/NXM4Z4TDCMYWBZ7AVI2N6DQ5VMWNENMU.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/XMXWOHABYLQDJ42L65EFRYNVRY37HQCB/B2O4O6V3JMFM2WDCYQI3A47L5U4THDUL/WN5274VQ3AUBDFP74GB4EC4XYJ3EKVNE.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Cabinet Grotesk';src:url('https://cdn.fontshare.com/wf/ZX6AQLSFYVDPN2URWO2MQFGTYYOHIS64/TPYPKOYWFQVNJHLLRXD4KFYX4LUOUW4Z/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}html,body{margin:0;width:100%;height:100%;overflow:hidden}*{box-sizing:border-box}</style>
+</head>
+<body>
+<!-- Sous-titres karaoke — trois ou quatre mots restent groupés dans la zone
+     basse du visage. Chaque mot actif passe sur une pastille or, puis revient
+     à l'état sombre afin que le bloc puisse repartir proprement en boucle. -->
+<div data-hf-id="hf-ckr0" id="captions-karaoke-reel-root" data-composition-id="captions-karaoke-reel" data-start="0" data-duration="4" data-width="1080" data-height="1920">
+  <style>
+    #captions-karaoke-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif}
+    #captions-karaoke-reel-root .substitut{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);display:none}
+    #captions-karaoke-reel-root .ancre-sous-titre{position:absolute;z-index:10;left:48px;right:48px;bottom:130px;min-height:112px;display:flex;align-items:center;justify-content:center}
+    #captions-karaoke-reel-root .karaoke-line{display:flex;align-items:center;justify-content:center;gap:32px;max-width:984px;overflow:visible;white-space:nowrap}
+    #captions-karaoke-reel-root .mot{display:inline-flex;align-items:center;justify-content:center;min-height:82px;padding:14px 22px;border-radius:24px;background:#3B3B3B;color:#FFFEEC;font-family:'Clash Grotesk',sans-serif;font-size:58px;font-weight:600;line-height:1;letter-spacing:-.025em;box-shadow:0 6px 22px rgba(47,44,0,.34)}
+  </style>
+  <div data-hf-id="hf-ckr1" class="substitut" data-layout-allow-occlusion=""></div>
+  <div data-hf-id="hf-ckr2" class="ancre-sous-titre" data-layout-allow-occlusion=""><div data-hf-id="hf-ckr3" class="karaoke-line"></div></div>
+  <script>
+    window.__timelines=window.__timelines||{};
+    (()=>{
+      /* Variable de montage : conserver trois ou quatre mots courts. */
+      const MOTS=['Votre','dossier','est','accepté'];
+      const root=document.querySelector('#captions-karaoke-reel-root');
+      const line=root.querySelector('.karaoke-line');
+      const mots=MOTS.slice(0,4);
+      line.textContent='';
+      mots.forEach((mot)=>{const el=document.createElement('span');el.className='mot';el.textContent=mot;line.appendChild(el);});
+      const elements=[...line.querySelectorAll('.mot')];
+      const tl=gsap.timeline({paused:true});
+      /* Chaque passage a un état de départ explicite et le dernier mot revient
+         au sombre avant 4 s : un nouvel enchaînement ne garde aucun highlight. */
+      elements.forEach((el,i)=>{
+        const at=.22+i*.82;
+        tl.fromTo(el,{backgroundColor:'#3B3B3B',color:'#FFFEEC',scale:1},{backgroundColor:'#B9AA02',color:'#2F2C00',scale:1.06,duration:.12,ease:'power2.out'},at)
+          .fromTo(el,{scale:1.06},{scale:1,duration:.14,ease:'power2.inOut'},at+.12)
+          .fromTo(el,{backgroundColor:'#B9AA02',color:'#2F2C00',scale:1},{backgroundColor:'#3B3B3B',color:'#FFFEEC',duration:.16,ease:'power1.out'},at+.42);
+      });
+      window.__timelines['captions-karaoke-reel']=tl;
+    })();
+  </script>
+</div>
+</body>
+</html>

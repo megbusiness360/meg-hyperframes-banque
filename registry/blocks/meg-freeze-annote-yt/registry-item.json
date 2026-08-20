@@ -1,0 +1,37 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-freeze-annote-yt",
+  "type": "hyperframes:block",
+  "title": "Freeze annoté — YouTube 16:9",
+  "description": "Pause simulée avec badge PAUSE, ellipse rouge irrégulière et flèche courte autour d'une zone réglable en pourcentage. Le master est légèrement désaturé puis restauré.",
+  "tags": [
+    "meg",
+    "youtube",
+    "16-9",
+    "freeze-frame",
+    "annotation",
+    "pause",
+    "callout",
+    "accent",
+    "meg-large",
+    "meg-youtube-folder-motion-texte"
+  ],
+  "family": "freeze-annote-yt",
+  "familyTitle": "Freeze annoté — YouTube 16:9",
+  "variant": "Ellipse et flèche",
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "duration": 3,
+  "files": [
+    {
+      "path": "meg-freeze-annote-yt.html",
+      "target": "compositions/meg-freeze-annote-yt.html",
+      "type": "hyperframes:composition"
+    }
+  ],
+  "preview": {
+    "poster": "preview.jpg"
+  }
+}

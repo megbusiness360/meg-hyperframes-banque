@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#FFFCD6}
+    *{box-sizing:border-box}
+    #meg-detoure-occlusion-titre-reel-root{position:relative;width:100%;height:100%;overflow:hidden;font-family:'Cabinet Grotesk',sans-serif;color:#2F2C00}
+    #meg-detoure-occlusion-titre-reel-root .fond{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-detoure-occlusion-titre-reel-root .motif{position:absolute;inset:-3%;z-index:1;pointer-events:none;background:repeating-linear-gradient(-45deg,rgba(47,44,0,.045) 0 18px,rgba(255,252,214,0) 18px 36px)}
+    #meg-detoure-occlusion-titre-reel-root .titre{position:absolute;z-index:3;top:358px;left:72px;right:72px;margin:0;text-align:center;white-space:nowrap;font-family:'Clash Grotesk',sans-serif;font-size:142px;line-height:.88;font-weight:700;letter-spacing:-.035em;color:#2F2C00;opacity:0}
+    #meg-detoure-occlusion-titre-reel-root .contour{position:absolute;z-index:4;left:125px;top:430px;width:830px;height:1480px;border:3px solid #B9AA02;border-radius:50%;pointer-events:none;opacity:0}
+    #meg-detoure-occlusion-titre-reel-root .substitut{position:absolute;z-index:5;left:0;top:0;width:100%;height:100%;display:none;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);clip-path:ellipse(44% 40% at 50% 63%);-webkit-mask-image:radial-gradient(ellipse 44% 40% at 50% 63%,#2F2C00 0 96%,transparent 100%);mask-image:radial-gradient(ellipse 44% 40% at 50% 63%,#2F2C00 0 96%,transparent 100%);filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+    .alpha-source{position:absolute;inset:0;z-index:6;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+    .meg-demo-silhouette-reel{clip-path:ellipse(44% 40% at 50% 63%);-webkit-mask-image:radial-gradient(ellipse 44% 40% at 50% 63%,#2F2C00 0 96%,transparent 100%);mask-image:radial-gradient(ellipse 44% 40% at 50% 63%,#2F2C00 0 96%,transparent 100%);filter:drop-shadow(0 0 0 #B9AA02) drop-shadow(0 0 5px rgba(185,170,2,.55))}
+    #meg-detoure-occlusion-titre-reel-root .mode-note{position:absolute;z-index:7;left:36px;bottom:32px;padding:10px 18px;border-radius:999px;background:#3B3B3B;color:#FFFEEC;font:700 20px/1 'Cabinet Grotesk',sans-serif;letter-spacing:.04em;opacity:.0;pointer-events:none}
+  </style>
+</head>
+<body>
+  <!-- Détouré Reel : le titre reste derrière une seule silhouette issue du master.
+       Le harnais peut fournir #meg-alpha-frame (même master, alpha alignée).
+       Sans alpha, MODE_DEMO applique un masque ellipse au master unique. -->
+  <div data-hf-id="hf-b2dor0" id="meg-detoure-occlusion-titre-reel-root" data-composition-id="meg-detoure-occlusion-titre-reel" data-start="0" data-duration="4" data-width="1080" data-height="1920" data-format="reel" data-face-mode="alpha-or-demo">
+    <div data-hf-id="hf-b2dor1" class="fond" data-layout-allow-occlusion="" data-qa-allow-bleed=""></div>
+    <div data-hf-id="hf-b2dor2" class="motif" data-layout-allow-occlusion="" data-qa-allow-bleed=""></div>
+    <h1 data-hf-id="hf-b2dor3" class="titre" aria-label="Titre paramétrable"></h1>
+    <div data-hf-id="hf-b2dor4" class="contour" aria-hidden="true" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-b2dor5" class="substitut" aria-hidden="true" data-layout-allow-occlusion=""></div>
+    <span data-hf-id="hf-b2dor6" class="mode-note" aria-hidden="true">MODE DÉMO</span>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+        const TITRE='QUALIOPI';
+        const root=document.querySelector('#meg-detoure-occlusion-titre-reel-root');
+        const titre=root.querySelector('.titre');
+        const fond=root.querySelector('.fond');
+        const contour=root.querySelector('.contour');
+        const substitut=root.querySelector('.substitut');
+        const master=document.querySelector('#meg-master-frame');
+        const alpha=document.querySelector('#meg-alpha-frame');
+        const alphaIsInsideMaster=Boolean(master&&alpha&&master.contains(alpha));
+        const MODE_DEMO=!alpha;
+        titre.textContent=TITRE;
+        const fitText=(element,maxWidth,maxSize,minSize)=>{
+          let size=maxSize;
+          element.style.fontSize=`${size}px`;
+          while(size>minSize&&element.scrollWidth>maxWidth){size-=2;element.style.fontSize=`${size}px`;}
+        };
+        fitText(titre,936,142,56);
+        let source=alpha||master||substitut;
+        if(MODE_DEMO){
+          if(master){
+            master.classList.add('meg-demo-silhouette-reel');
+            source=master;
+          }else{
+            substitut.style.display='block';
+            source=substitut;
+          }
+        }else{
+          alpha.classList.add('alpha-source');
+          if(master&&master!==alpha)master.style.opacity='1';
+        }
+        if(source){source.style.pointerEvents='none';}
+        const tl=gsap.timeline({paused:true});
+        if(source===master||source===alpha)tl.set(source,{zIndex:6},0);
+        tl.fromTo(fond,{scale:1},{scale:1.03,duration:4,ease:'sine.inOut'},0)
+          .fromTo(titre,{y:-58,opacity:0},{y:0,opacity:1,duration:.54,ease:'power3.out'},.06)
+          .fromTo(source,{y:64,opacity:0},{y:0,opacity:1,duration:.58,ease:'power3.out'},.20)
+          .fromTo(contour,{opacity:0},{opacity:1,duration:.38,ease:'power2.out'},.62)
+          .to(source,{y:36,opacity:0,duration:.34,ease:'power2.in'},3.54)
+          .to(contour,{opacity:0,duration:.30,ease:'power2.in'},3.60)
+          .set(source,{clearProps:'opacity,transform,zIndex'},4.00);
+        if(alpha&&master&&master!==alpha&&!alphaIsInsideMaster){
+          tl.fromTo(master,{opacity:1},{opacity:0,duration:.16,ease:'power2.in'},0)
+            .to(master,{opacity:1,duration:.14,ease:'power2.out'},3.82);
+        }
+        window.__timelines['meg-detoure-occlusion-titre-reel']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>

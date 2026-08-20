@@ -1,0 +1,15 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "meg-preuve-scroll-auto-yt",
+  "type": "hyperframes:block",
+  "title": "Preuve écran — scroll automatique (YouTube)",
+  "description": "Cadre preuve crème à droite à 65 %, contenu neutre de 2,5 fois la fenêtre et scroll en deux paliers avec pouce or ; visage master à gauche.",
+  "tags": ["meg", "youtube", "16-9", "preuve", "scroll", "défilement", "animation", "meg-large", "meg-youtube-folder-preuves"],
+  "family": "preuve-ecran-scroll",
+  "familyTitle": "Preuves écran — défilements guidés",
+  "variant": "scroll en deux paliers",
+  "dimensions": {"width": 1920, "height": 1080},
+  "duration": 5,
+  "files": [{"path": "meg-preuve-scroll-auto-yt.html", "target": "compositions/meg-preuve-scroll-auto-yt.html", "type": "hyperframes:composition"}],
+  "preview": {"poster": "preview.jpg"}
+}

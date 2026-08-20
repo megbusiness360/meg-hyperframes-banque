@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1920,height=1080">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@700,600&f[]=cabinet-grotesk@400,700,800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#FFFCD6}
+    *{box-sizing:border-box}
+    #meg-presence-translucide-yt-root{position:relative;width:100%;height:100%;overflow:hidden;background:#FFFCD6;font-family:'Cabinet Grotesk',sans-serif;color:#2F2C00}
+    #meg-presence-translucide-yt-root .fond{position:absolute;inset:0;z-index:1;background:#FFFCD6}
+    #meg-presence-translucide-yt-root .preuve{position:absolute;z-index:2;inset:28px;border:3px solid #E4DCA8;border-radius:24px;overflow:hidden;background:#FFFEEC;box-shadow:0 20px 46px rgba(47,44,0,.14)}
+    #meg-presence-translucide-yt-root .barre{position:absolute;left:0;right:0;top:0;height:78px;display:flex;align-items:center;gap:16px;padding:0 26px;background:#3B3B3B;border-bottom:3px solid #E4DCA8}
+    #meg-presence-translucide-yt-root .pastille{width:16px;height:16px;flex:none;border-radius:50%;background:#FFFCD6}
+    #meg-presence-translucide-yt-root .url{display:flex;align-items:center;gap:16px;margin-left:12px;padding:10px 22px;border-radius:999px;background:#FFFEEC;color:#2F2C00;font:700 23px/1 'Cabinet Grotesk',sans-serif;letter-spacing:.02em}
+    #meg-presence-translucide-yt-root .url .trait-or{width:66px;height:7px;border-radius:7px;background:#B9AA02}
+    #meg-presence-translucide-yt-root .corps{position:absolute;left:0;right:0;top:78px;bottom:0;padding:50px 56px;background:#FFFEEC}
+    #meg-presence-translucide-yt-root .entete{width:45%;height:18px;border-radius:10px;background:#3B3B3B;opacity:.82}
+    #meg-presence-translucide-yt-root .sous-entete{width:28%;height:12px;margin-top:14px;border-radius:8px;background:#E4DCA8}
+    #meg-presence-translucide-yt-root .grille{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:46px}
+    #meg-presence-translucide-yt-root .carte{height:148px;padding:22px;border:3px solid #E4DCA8;border-radius:18px;background:#FFFCD6}
+    #meg-presence-translucide-yt-root .carte .trait{height:12px;margin-bottom:14px;border-radius:8px;background:#E4DCA8}
+    #meg-presence-translucide-yt-root .carte .trait-court{width:58%;height:10px;border-radius:8px;background:#3B3B3B;opacity:.55}
+    #meg-presence-translucide-yt-root .ligne-or{width:52%;height:10px;margin-top:42px;border-radius:10px;background:#B9AA02}
+    #meg-presence-translucide-yt-root .ligne-or + .ligne-or{width:36%;margin-top:18px}
+    #meg-presence-translucide-yt-root .substitut{position:absolute;z-index:4;inset:0;display:none;background:linear-gradient(180deg,#3B3B3B 0%,#2F2C00 100%);opacity:.25;pointer-events:none}
+    #meg-presence-translucide-yt-root .legende{position:absolute;z-index:8;left:28px;right:28px;bottom:24px;display:flex;justify-content:center;align-items:center;min-height:48px;padding:10px 24px;border-radius:999px;background:#3B3B3B;color:#FFFEEC;font:700 23px/1 'Cabinet Grotesk',sans-serif;letter-spacing:.03em;opacity:0}
+    #meg-presence-translucide-yt-root .mot-or{color:#B9AA02}
+    .meg-presence-master-wrap-yt{position:absolute;z-index:6;inset:0;pointer-events:none;opacity:1}
+  </style>
+</head>
+<body>
+  <!-- Présence translucide YouTube : la preuve reste lisible sous le wrapper
+       du master unique. La valeur 0,25 est choisie pour conserver les traits
+       gris et les deux lignes or visibles pendant la présence. -->
+  <div data-hf-id="hf-b2pty0" id="meg-presence-translucide-yt-root" data-composition-id="meg-presence-translucide-yt" data-start="0" data-duration="5" data-width="1920" data-height="1080" data-format="yt">
+    <div data-hf-id="hf-b2pty1" class="fond" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-b2pty2" class="preuve" data-layout-allow-occlusion="">
+      <div data-hf-id="hf-b2pty3" class="barre"><span data-hf-id="hf-b2pty4" class="pastille"></span><span data-hf-id="hf-b2pty5" class="pastille"></span><span data-hf-id="hf-b2pty6" class="pastille"></span><span data-hf-id="hf-b2pty7" class="url"><span data-hf-id="hf-b2pty8" class="trait-or"></span>preuve.megbusiness360.com</span></div>
+      <div data-hf-id="hf-b2pty9" class="corps"><div data-hf-id="hf-2pty0" class="entete"></div><div data-hf-id="hf-2pty1" class="sous-entete"></div><div data-hf-id="hf-2pty2" class="grille"><div data-hf-id="hf-2pty3" class="carte"><div data-hf-id="hf-2pty4" class="trait"></div><div data-hf-id="hf-2pty5" class="trait-court"></div></div><div data-hf-id="hf-2pty6" class="carte"><div data-hf-id="hf-2pty7" class="trait"></div><div data-hf-id="hf-2pty8" class="trait-court"></div></div><div data-hf-id="hf-2pty9" class="carte"><div data-hf-id="hf-2ptyA" class="trait"></div><div data-hf-id="hf-2ptyB" class="trait-court"></div></div></div><div data-hf-id="hf-2ptyC" class="ligne-or"></div><div data-hf-id="hf-2ptyD" class="ligne-or"></div></div>
+    </div>
+    <div data-hf-id="hf-b2ptyA" class="substitut" aria-hidden="true" data-layout-allow-occlusion=""></div>
+    <div data-hf-id="hf-b2ptyB" class="legende"><span data-hf-id="hf-b2ptyC">preuve <span data-hf-id="hf-b2ptyD" class="mot-or">plein écran</span></span></div>
+    <script>
+      window.__timelines=window.__timelines||{};
+      (()=>{
+        const LEGENDE='preuve plein écran';
+        const OPACITE_MASTER=.25;
+        const root=document.querySelector('#meg-presence-translucide-yt-root');
+        const legende=root.querySelector('.legende');
+        const substitut=root.querySelector('.substitut');
+        const master=document.querySelector('#meg-master-frame');
+        legende.setAttribute('aria-label',LEGENDE);
+        let wrapper=null;
+        if(master){
+          wrapper=master.closest('.meg-presence-master-wrap-yt');
+          if(!wrapper){
+            wrapper=document.createElement('div');
+            wrapper.id='meg-presence-master-wrap-yt';
+            wrapper.className='meg-presence-master-wrap-yt';
+            master.parentNode.insertBefore(wrapper,master);
+            wrapper.appendChild(master);
+          }
+        }else{
+          substitut.style.display='block';
+          wrapper=substitut;
+        }
+        const tl=gsap.timeline({paused:true});
+        tl.fromTo(wrapper,{y:14,scale:1.02,opacity:0},{y:0,scale:1,opacity:OPACITE_MASTER,duration:.6,ease:'power2.out'},0)
+          .fromTo(legende,{y:14,opacity:0},{y:0,opacity:1,duration:.38,ease:'power3.out'},.34)
+          .to(wrapper,{y:-12,scale:1.015,opacity:0,duration:.62,ease:'power2.in'},4.08)
+          .to(legende,{y:10,opacity:0,duration:.34,ease:'power2.in'},4.34)
+          .set(wrapper,{clearProps:'opacity,transform,zIndex'},5.00);
+        window.__timelines['meg-presence-translucide-yt']=tl;
+      })();
+    </script>
+  </div>
+</body>
+</html>
