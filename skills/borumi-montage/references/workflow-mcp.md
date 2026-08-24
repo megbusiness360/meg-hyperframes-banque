@@ -33,13 +33,41 @@ Garder les transactions petites : titre, captions et curseur/zooms sont des chan
   "placement": {"range": [0, 2995]},
   "content": {"media_id": "<media_id>"},
   "properties": {
-    "position": {"kind": "custom", "x_ratio": 0.5, "y_ratio": 0.5, "width_ratio": 1, "height_ratio": 1},
+    "position": {"kind": "custom", "x_ratio": 0, "y_ratio": 0, "width_ratio": 1, "height_ratio": 1},
     "lock_aspect_ratio": false
   }
 }
 ```
 
+Dans Borumi, `x_ratio` et `y_ratio` désignent le coin supérieur gauche du
+media, pas son centre. Un overlay plein cadre commence donc toujours à `0,0`.
+
 Remplacer `2995` par la fin exacte du layout de hook.
+
+### Media overlay chrome / étapes / preuve
+
+Rendre d’abord le PNG local (sans réseau) avec
+`borumi/scripts/render-overlay.mjs`, puis suivre le même flux `import_media` →
+`media_overlay` :
+
+```json
+{
+  "type": "media_overlay",
+  "placement": {"range": [0, 12353]},
+  "content": {"media_id": "<media_id>"},
+  "properties": {
+    "position": {"kind": "custom", "x_ratio": 0, "y_ratio": 0, "width_ratio": 1, "height_ratio": 1},
+    "lock_aspect_ratio": false
+  }
+}
+```
+
+Le renderer couvre `brand-chrome`, `steps` (5/6/7 items) et `proof-chrome` en
+`reel` ou `youtube`. Le transparent conserve le montage dessous ; le media
+reste déplaçable/remplaçable mais son design interne n’est pas éditable.
+Utiliser les textes/formes natifs lorsque l’éditabilité est prioritaire et
+réserver le PNG aux habillages fixes qui doivent rester visuellement
+identiques.
 
 ### Captions MEG
 

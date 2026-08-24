@@ -13,8 +13,9 @@ pour conserver un layout personnalisé dans le stockage global et le revoir
 dans **All**. **Built-in** appartient à l’application : le kit ne peut pas y
 ajouter de cartes et ne modifie ni ne re-signe le bundle Borumi.
 
-`layouts/favorite-layout-presets.json` est le payload Borumi exact (83
-géométries uniques). Les noms, familles et formats lisibles sont dans
+`layouts/favorite-layout-presets.json` est le payload Borumi exact (86
+géométries uniques : 83 issues de l’inventaire historique et 3 layouts
+validés en situation réelle). Les noms, familles et formats lisibles sont dans
 `layouts/manifest.json` uniquement ; aucune métadonnée n’est injectée dans le
 payload envoyé à Borumi.
 
@@ -34,7 +35,7 @@ node borumi/scripts/install.mjs --install
 ```
 
 L’installation exige que Borumi soit fermé. Elle vérifie l’intégrité SQLite,
-crée une sauvegarde horodatée, fusionne les 83 géométries avec les favoris
+crée une sauvegarde horodatée, fusionne les 86 géométries avec les favoris
 existants (sans supprimer les favoris de l’utilisateur), installe
 `ClashGrotesk-Variable.ttf` dans les polices utilisateur et synchronise le
 skill vers `${CODEX_HOME:-~/.codex}/skills/borumi-montage`. Elle est idempotente.
@@ -66,3 +67,39 @@ validation explicite du projet.
 
 Les quatre logos officiels ne sont pas dupliqués ici : ils restent dans
 `scripts/gen-layouts/assets/`.
+
+## Overlays transparents pour Borumi
+
+Le renderer local fabrique trois habillages PNG transparents, sans réseau et
+sans dépendance Remotion :
+
+```bash
+node borumi/scripts/render-overlay.mjs \
+  --json '{"format":"reel","type":"brand-chrome","label":"PREUVE"}' \
+  --output /tmp/meg-brand-chrome.png
+```
+
+`format` vaut `reel` (`1080×1920`) ou `youtube` (`1920×1080`). `type` vaut
+`brand-chrome` (cartouche en haut à gauche + vrai logo MEG en haut à droite),
+`steps` (liste à gauche de 5, 6 ou 7 entrées, numéros, état actif optionnel et
+logo haut-droite), ou `proof-chrome` (fenêtre preuve/B-roll transparente sur
+le fond violet MEG avec le même chrome). Les entrées JSON peuvent venir de `--input fichier.json` ou de
+`--stdin` ; elles sont bornées, échappées et refusées clairement si elles ne
+respectent pas le contrat. Voir
+[`skills/borumi-montage/references/overlay-rendering.md`](../skills/borumi-montage/references/overlay-rendering.md)
+pour le schéma complet.
+
+Le PNG est vérifié par `sips` (dimensions attendues, format PNG et alpha). Les
+couleurs sont limitées à `#FFFCD6`, `#FFF3AE`, `#2F2C00`, `#5C4F1C`, `#B9AA02`
+et `#8F8DE0`, avec Clash Grotesk et les logos de
+`scripts/gen-layouts/assets/`. Importer le résultat dans Borumi avec
+`import_media`, puis l’ajouter comme `media_overlay` plein cadre. Le media
+reste remplaçable et déplaçable, mais son contenu interne n’est pas éditable ;
+préférer les éléments natifs pour le texte/les formes fixes et conserver
+HyperFrames pour l’animation, l’occlusion ou les transitions.
+
+Vérification ciblée :
+
+```bash
+node borumi/scripts/overlay-self-test.mjs
+```

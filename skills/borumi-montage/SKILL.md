@@ -32,6 +32,16 @@ Utiliser ce skill pour toute création ou modification d’un projet Borumi. Il 
 - Preset A (défaut) : fond crème `#FFFCD6`, texte encre `#2F2C00` ; preset B : fond encre `#2F2C00`, texte crème `#FFFCD6` ; preset E : fond jaune doux `#FFF3AE`, texte encre `#2F2C00`. Les trois utilisent Clash Grotesk Semibold 600 et suivent la largeur réelle de chaque ligne.
 - Le script accepte une ou deux lignes uniquement : une troisième ligne est refusée, sans promesse de mise en page à trois lignes.
 
+## Overlays chrome, étapes et preuve
+
+- Pour un habillage fixe, utiliser `borumi/scripts/render-overlay.mjs` depuis la racine du dépôt. Le renderer est macOS-only (`sips` + SVG), sans réseau ni Remotion, et vérifie toujours le PNG transparent final.
+- Contrat minimal : `format: "reel"` (`1080×1920`) ou `"youtube"` (`1920×1080`), `type: "brand-chrome"`, `"steps"` ou `"proof-chrome"`, puis `output` en `.png`. Les données peuvent venir de `--json`, `--input` ou `--stdin` ; aucune chaîne JSON n’est exécutée comme du code.
+- `brand-chrome` pose le cartouche haut-gauche et le vrai logo MEG haut-droite dans une pastille crème. `proof-chrome` reprend ce chrome, pose le fond violet MEG autour et garde une grande fenêtre transparente pour la preuve/B-roll. `steps` dessine à gauche une liste de 5, 6 ou 7 items numérotés ; `activeIndex` (index zéro) ou un seul item `active: true` indique l’état actif. La variante YouTube 7 items est compactée pour ne pas collisionner avec les captions.
+- Exemple : `node borumi/scripts/render-overlay.mjs --json '{"format":"reel","type":"proof-chrome","label":"PREUVE"}' --output /tmp/meg-proof.png`.
+- Importer le PNG avec `import_media`, puis l’ajouter comme `media_overlay` plein cadre sur la plage utile. Le media reste déplaçable/remplaçable mais n’est pas éditable en interne ; utiliser un élément natif quand l’éditabilité du texte ou de la forme prime. Le routage détaillé et le schéma JSON sont dans [overlay-rendering.md](references/overlay-rendering.md).
+- Palette strictement limitée à `#FFFCD6`, `#FFF3AE`, `#2F2C00`, `#5C4F1C`, `#B9AA02`, `#8F8DE0` ; police Clash Grotesk ; logos officiels chargés depuis `scripts/gen-layouts/assets/`.
+- Vérifier le lot avec `node borumi/scripts/overlay-self-test.mjs` : tous les types, 5/6/7 items, les deux formats, dimensions/alpha `sips` et erreurs d’entrée.
+
 ## Captions MEG
 
 - Une seule piste sur toute la durée utile, issue du transcript Borumi corrigé.

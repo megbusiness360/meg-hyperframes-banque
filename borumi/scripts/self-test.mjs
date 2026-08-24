@@ -14,7 +14,7 @@ const PRESETS_FILE = path.join(REPO_ROOT, "borumi", "layouts", "favorite-layout-
 const MANIFEST_FILE = path.join(REPO_ROOT, "borumi", "layouts", "manifest.json");
 const INSTALLER = path.join(REPO_ROOT, "borumi", "scripts", "install.mjs");
 const RENDERER = path.join(REPO_ROOT, "borumi", "scripts", "render-title.mjs");
-const EXPECTED_COUNT = 83;
+const EXPECTED_COUNT = 86;
 
 function stable(value) {
   if (Array.isArray(value)) return `[${value.map(stable).join(",")}]`;
@@ -151,7 +151,7 @@ function runInstallerInstall(directory) {
   const args = [INSTALLER, "--install", "--settings-db", database, "--code-home", codeHome, "--font-dir", fontDir];
   const first = JSON.parse(run(process.execPath, args, {env}));
   const second = JSON.parse(run(process.execPath, args, {env}));
-  if (first.database?.installedPresetCount !== 84 || second.database?.installedPresetCount !== 84 || second.database?.existingPresetCount !== 84) {
+  if (first.database?.installedPresetCount !== 87 || second.database?.installedPresetCount !== 87 || second.database?.existingPresetCount !== 87) {
     throw new Error(`Installateur non idempotent : first=${first.database?.installedPresetCount}, second=${second.database?.installedPresetCount}.`);
   }
   const stored = JSON.parse(run("/usr/bin/sqlite3", ["-noheader", database, "SELECT value FROM settings WHERE key='favorite_layout_presets';"]).trim());

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kit": "MEG Borumi favorite layout presets",
-  "presetCount": 83,
+  "presetCount": 86,
   "source": {
     "report": "import-hyperframes-layouts-to-borumi.report.json",
     "payload": "favorite-layout-presets.json",
@@ -4007,6 +4007,129 @@
           },
           "html": "borumi-native",
           "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-083",
+      "presetIndex": 83,
+      "name": "meg-reel-preuve-ecran-seul",
+      "title": "MEG Reel · Preuve écran seul",
+      "family": "proof",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.02962963,\"height_ratio\":0.861458333,\"kind\":\"Screen\",\"width_ratio\":0.896296296,\"x_ratio\":0.051851852,\"y_ratio\":0.109375}]",
+      "tags": [
+        "ecran-seul",
+        "layout",
+        "meg",
+        "meg-reel-folder-preuves",
+        "preuve",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-preuve-ecran-seul",
+          "title": "MEG Reel · Preuve écran seul",
+          "description": "Preuve écran seule, centrée dans le canevas Reel avec marges sûres.",
+          "family": "proof",
+          "familyTitle": "Preuve écran seul",
+          "variant": "écran seul",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "borumi-native",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-084",
+      "presetIndex": 84,
+      "name": "meg-youtube-etapes-camera-droite",
+      "title": "MEG YouTube · Étapes caméra seule à droite",
+      "family": "steps",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.599166667,\"x_ratio\":0.38,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "camera",
+        "droite",
+        "etapes",
+        "layout",
+        "meg",
+        "meg-youtube-folder-ecran-visage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-youtube-etapes-camera-droite",
+          "title": "MEG YouTube · Étapes caméra seule à droite",
+          "description": "Canevas YouTube : caméra seule à droite, avec espace à gauche pour une liste d’étapes.",
+          "family": "steps",
+          "familyTitle": "Étapes et caméra",
+          "variant": "caméra seule à droite",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "borumi-native",
+          "staticFace": false,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-085",
+      "presetIndex": 85,
+      "name": "meg-youtube-preuve-ecran-seul",
+      "title": "MEG YouTube · Preuve écran seul",
+      "family": "proof",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.013541667,\"height_ratio\":0.768518519,\"kind\":\"Screen\",\"width_ratio\":0.933333333,\"x_ratio\":0.033333333,\"y_ratio\":0.172222222}]",
+      "tags": [
+        "16-9",
+        "ecran-seul",
+        "layout",
+        "meg",
+        "meg-youtube-folder-preuves",
+        "preuve",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-youtube-preuve-ecran-seul",
+          "title": "MEG YouTube · Preuve écran seul",
+          "description": "Preuve écran seule, centrée dans le canevas YouTube avec marges sûres.",
+          "family": "proof",
+          "familyTitle": "Preuve écran seul",
+          "variant": "écran seul",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "borumi-native",
+          "staticFace": false,
           "staticScreens": 1
         }
       ]

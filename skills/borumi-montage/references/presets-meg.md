@@ -86,12 +86,33 @@ Utiliser `{"kind":"fullscreen","layer_id":"camera_1","fit":"cover"}`. Garder les
 - Animation, entrée/sortie, occlusion, compteur, rail animé, callout, transition, appareil et avant/après animé : conserver HyperFrames, rendre localement puis importer comme overlay ou B-roll. Dans Borumi, le média rendu reste remplaçable, mais son contenu interne n’est pas éditable.
 - Un `media_overlay` Borumi est toujours au-dessus de la composition. Pour placer une animation entre l’écran et le visage détouré, la composer dans HyperFrames avec occlusion, ou utiliser une véritable source visuelle supplémentaire ; le MCP Borumi n’expose pas de `z-index` d’overlay.
 
+## Overlays chrome, étapes et preuve
+
+Le renderer `borumi/scripts/render-overlay.mjs` couvre les habillages fixes qui
+doivent rester cohérents entre plusieurs projets :
+
+```json
+{"format":"reel","type":"brand-chrome","label":"PREUVE","output":"/tmp/meg-brand.png"}
+```
+
+- `brand-chrome` : cartouche haut-gauche + logo officiel MEG haut-droite dans
+  une pastille crème ; transparent partout ailleurs.
+- `steps` : liste gauche de 5, 6 ou 7 items, numérotés, avec un seul
+  `activeIndex` (index zéro) ou un item `active: true` facultatif.
+- `proof-chrome` : même chrome, fond violet MEG autour et grande fenêtre
+  transparente pour laisser le B-roll visible sous l’overlay.
+
+Les formats sont `reel` (`1080×1920`) et `youtube` (`1920×1080`). Importer le
+PNG rendu avec `import_media`, puis l’ajouter comme `media_overlay` plein
+cadre. Revenir à des formes et textes natifs si l’éditabilité est prioritaire ;
+les animations, transitions et occlusions restent dans HyperFrames.
+
 ## Bibliothèque native installée le 24 août 2026
 
 - Inventaire HyperFrames contrôlé : `274` blocs.
 - Compatibilité : `109` layouts natifs, `70` overlays simples reconstructibles, `13` médias uniquement, `82` motion design uniquement.
-- Les `109` blocs de layout donnent `83` géométries Borumi uniques après déduplication, dont `56` Reel/Story et `27` YouTube 16:9.
-- État restauré le 24 août 2026 : `83` presets MEG générés + `1` favori utilisateur conservé = `84` favoris globaux. La déduplication est volontaire : plusieurs blocs HyperFrames ne diffèrent que par un habillage non porté par le payload de layout Borumi.
+- Les `109` blocs de layout donnent `83` géométries Borumi uniques après déduplication. Le kit ajoute `3` layouts validés en situation réelle, soit `86` presets portables : `57` Reel/Story et `29` YouTube 16:9.
+- État local antérieur : `83` presets MEG installés + `1` favori utilisateur conservé = `84` favoris globaux. À la prochaine installation avec Borumi fermé, les `86` presets du kit seront fusionnés avec ce favori, soit `87` au total. La déduplication est volontaire : plusieurs blocs HyperFrames ne diffèrent que par un habillage non porté par le payload de layout Borumi.
 - L’interface Borumi n’affiche ni nom ni catégorie pour un favori custom. Le format se reconnaît par sa miniature et se contrôle dans un canevas 9:16 ou 16:9.
 - `All` affiche ces favoris avec les built-ins et les layouts du projet ; ce n’est pas une bibliothèque indépendante. Si Mohamed retire une étoile, restaurer le preset global avant de poursuivre.
 - Import reproductible : `node borumi/scripts/install.mjs --install` depuis la racine du dépôt, Borumi fermé.
@@ -110,7 +131,7 @@ Sources : `scripts/gen-layouts/assets/` depuis la racine du dépôt. Les PNG con
 
 ## Routage de la banque HyperFrames
 
-- Géométries de layouts : utiliser les `83` favoris globaux déjà installés.
+- Géométries de layouts : utiliser les `86` favoris du kit portable après installation ; dans les projets courants, les trois nouveaux layouts sont déjà enregistrés comme segments natifs.
 - Overlays simples : reconstruire nativement dans le projet au moment de l’usage ; Borumi ne propose pas de bibliothèque globale de presets d’éléments personnalisés via MCP.
 - Titres TikTok complexes : PNG transparent paramétré.
 - Motion design : garder HyperFrames comme moteur source et importer seulement le rendu local nécessaire.

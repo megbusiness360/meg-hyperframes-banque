@@ -22,7 +22,7 @@ const KIT_PRESETS_RELATIVE = path.join("borumi", "layouts", "favorite-layout-pre
 const KIT_MANIFEST_RELATIVE = path.join("borumi", "layouts", "manifest.json");
 const KIT_FONT_RELATIVE = path.join("borumi", "assets", "fonts", "ClashGrotesk-Variable.ttf");
 const KIT_SKILL_RELATIVE = path.join("skills", "borumi-montage");
-const EXPECTED_PRESET_COUNT = 83;
+const EXPECTED_PRESET_COUNT = 86;
 const SUPPORTED_KINDS = new Set(["Camera", "Screen"]);
 const SUPPORTED_SOURCE_KEYS = [
   "source",
@@ -178,7 +178,7 @@ function validateKit(repoRoot) {
     }
   }
   if (!manifest || manifest.schemaVersion !== 1 || manifest.presetCount !== EXPECTED_PRESET_COUNT || !Array.isArray(manifest.presets) || manifest.presets.length !== EXPECTED_PRESET_COUNT) {
-    throw new Error("Manifest Borumi incomplet ou incohérent avec les 83 presets.");
+    throw new Error(`Manifest Borumi incomplet ou incohérent avec les ${EXPECTED_PRESET_COUNT} presets.`);
   }
   const manifestIds = new Set();
   for (const entry of manifest.presets) {

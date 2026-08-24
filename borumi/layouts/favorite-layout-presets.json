@@ -6650,5 +6650,122 @@
         "hide_on_cursor_overlap": null
       }
     ]
+  },
+  {
+    "kind": "Custom",
+    "sources": [
+      {
+        "source": {
+          "content_kind": {
+            "kind": "Screen"
+          },
+          "layer_index": 0
+        },
+        "x_ratio": 0.051851852,
+        "y_ratio": 0.109375,
+        "width_ratio": 0.896296296,
+        "height_ratio": 0.861458333,
+        "border_radius_ratio": 0.02962963,
+        "lock_aspect_ratio": false,
+        "overflow": false,
+        "corner_shape": {
+          "kind": "Regular"
+        },
+        "is_shadow_style_aware": true,
+        "shadow_style": {
+          "x_offset_ratio": 0,
+          "y_offset_ratio": 0.018518519,
+          "blur_ratio": 0.018518519,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 100
+          }
+        },
+        "stroke_style": null,
+        "video_background_override": null,
+        "face_tracking_mode_override": null,
+        "hide_on_cursor_overlap": null
+      }
+    ]
+  },
+  {
+    "kind": "Custom",
+    "sources": [
+      {
+        "source": {
+          "content_kind": {
+            "kind": "Camera"
+          },
+          "layer_index": 0
+        },
+        "x_ratio": 0.38,
+        "y_ratio": 0.037037037,
+        "width_ratio": 0.599166667,
+        "height_ratio": 0.925925926,
+        "border_radius_ratio": 0.015625,
+        "lock_aspect_ratio": false,
+        "overflow": false,
+        "corner_shape": {
+          "kind": "Regular"
+        },
+        "is_shadow_style_aware": true,
+        "shadow_style": {
+          "x_offset_ratio": 0,
+          "y_offset_ratio": 0.010416667,
+          "blur_ratio": 0.010416667,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 100
+          }
+        },
+        "stroke_style": null,
+        "video_background_override": null,
+        "face_tracking_mode_override": null,
+        "hide_on_cursor_overlap": null
+      }
+    ]
+  },
+  {
+    "kind": "Custom",
+    "sources": [
+      {
+        "source": {
+          "content_kind": {
+            "kind": "Screen"
+          },
+          "layer_index": 0
+        },
+        "x_ratio": 0.033333333,
+        "y_ratio": 0.172222222,
+        "width_ratio": 0.933333333,
+        "height_ratio": 0.768518519,
+        "border_radius_ratio": 0.013541667,
+        "lock_aspect_ratio": false,
+        "overflow": false,
+        "corner_shape": {
+          "kind": "Regular"
+        },
+        "is_shadow_style_aware": true,
+        "shadow_style": {
+          "x_offset_ratio": 0,
+          "y_offset_ratio": 0.010416667,
+          "blur_ratio": 0.010416667,
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 100
+          }
+        },
+        "stroke_style": null,
+        "video_background_override": null,
+        "face_tracking_mode_override": null,
+        "hide_on_cursor_overlap": null
+      }
+    ]
   }
 ]

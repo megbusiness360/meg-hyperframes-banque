@@ -8,14 +8,14 @@ Source canonique : racine du dépôt `meg-hyperframes-banque` sur `main`. Le kit
 
 | Classe | Blocs | Traitement |
 |---|---:|---|
-| Layout natif convertible | 109 | Installés comme `83` géométries favorites uniques après déduplication. |
+| Layout natif convertible | 109 | Installés comme `83` géométries favorites uniques après déduplication ; le kit ajoute `3` layouts validés en situation réelle. |
 | Overlay natif reconstructible | 70 | À reconstruire nativement dans le projet au moment de l’usage ; Borumi n’a pas de bibliothèque globale de presets d’overlays custom via MCP. |
 | Média uniquement | 13 | Rendu local transparent ou B-roll remplaçable. |
 | Motion uniquement | 82 | HyperFrames, puis import du rendu local. |
 
-L’inventaire source exhaustif reste `registry/registry.json`. Le mapping des 83 géométries natives dédupliquées est versionné dans `borumi/layouts/manifest.json`.
+L’inventaire source exhaustif reste `registry/registry.json`. Le mapping des 83 géométries natives dédupliquées et des 3 layouts complémentaires validés est versionné dans `borumi/layouts/manifest.json`.
 
-Les `83` favoris générés couvrent `56` géométries Reel/Story et `27` géométries YouTube. Après la restauration du 24 août 2026, Borumi contient `84` favoris globaux : les `83` MEG et un favori utilisateur conservé. Ils apparaissent aussi dans `All`, qui est une vue agrégée.
+Le kit portable contient `86` favoris : `57` géométries Reel/Story et `29` géométries YouTube. Les trois ajouts couvrent la preuve Reel, les étapes YouTube avec caméra à droite et la preuve YouTube. La dernière installation locale antérieure en contient `84` (`83` MEG + un favori utilisateur) ; la prochaine installation, Borumi fermé, fusionnera les `86` sans supprimer ce favori. Ils apparaissent aussi dans `All`, qui est une vue agrégée.
 
 ## Familles Reel 9:16
 
@@ -51,6 +51,22 @@ La banque comporte aussi les équivalents Large 16:9 : solos, duos, trios, bande
 | `meg-lower-third-identity` | Deux gélules + logo/point : natif si éditabilité prioritaire, PNG transparent si fidélité prioritaire. |
 | `meg-masked-face-stage`, `meg-cutout-*` | Layout natif si seul le détourage caméra est requis ; HyperFrames si une occlusion ou une animation doit passer derrière/devant la silhouette. |
 | `anim-*`, `motion-*`, `transition-*` | HyperFrames, rendu local, import Borumi. |
+
+## Overlays Borumi versionnés
+
+Les habillages statiques récurrents peuvent être rendus localement avec
+`borumi/scripts/render-overlay.mjs` puis importés comme `media_overlay` :
+
+| Type | Contenu | Routage |
+|---|---|---|
+| `brand-chrome` | Cartouche haut-gauche + vrai logo MEG en pastille crème | PNG transparent importé plein cadre |
+| `steps` | Liste gauche de 5/6/7 items, numéros, actif optionnel | PNG transparent si la liste doit rester identique pendant le segment ; texte natif si éditabilité prioritaire |
+| `proof-chrome` | Chrome + fond violet MEG autour d’une fenêtre transparente de preuve/B-roll | PNG transparent au-dessus de la composition |
+
+Le renderer accepte `reel` (`1080×1920`) et `youtube` (`1920×1080`), sans
+réseau. Il valide les dimensions et l’alpha avec `sips`. Les formes fixes et
+les textes qui doivent être corrigés dans Borumi restent natifs ; toute
+animation, occlusion ou transition continue de passer par HyperFrames.
 
 ## Règle d’éditabilité
 
