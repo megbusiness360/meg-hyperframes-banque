@@ -1,0 +1,4015 @@
+{
+  "schemaVersion": 1,
+  "kit": "MEG Borumi favorite layout presets",
+  "presetCount": 83,
+  "source": {
+    "report": "import-hyperframes-layouts-to-borumi.report.json",
+    "payload": "favorite-layout-presets.json",
+    "metadataPolicy": "External names, families and formats stay in this manifest; the Borumi payload remains metadata-free."
+  },
+  "presets": [
+    {
+      "id": "meg-layout-000",
+      "presetIndex": 0,
+      "name": "meg-face-full",
+      "title": "Plein cadre",
+      "family": null,
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "maitre",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "visage"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-face-full",
+          "title": "Plein cadre",
+          "description": "Vidéo maître plein cadre.",
+          "family": null,
+          "familyTitle": null,
+          "variant": null,
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-face-full.html",
+          "staticFace": false,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-001",
+      "presetIndex": 1,
+      "name": "meg-face-proof-split-t04",
+      "title": "Preuve haut 40 · Visage bas 60",
+      "family": "split",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.372916667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "40-60",
+        "haut",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-preuves",
+        "preuve",
+        "separe"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-face-proof-split-t04",
+          "title": "Preuve haut 40 · Visage bas 60",
+          "description": "Preuve haute 40 %, visage bas 60 % ; transition, rayon et sous-titre synchronisés.",
+          "family": "split",
+          "familyTitle": "Preuve + visage",
+          "variant": "Preuve haut 40 · Visage bas 60",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-face-proof-split-t04.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-002",
+      "presetIndex": 2,
+      "name": "meg-face-proof-split-t17",
+      "title": "Visage haut 60 · Preuve bas 40",
+      "family": "split",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.372916667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.603125}]",
+      "tags": [
+        "60-40",
+        "bas",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-preuves",
+        "preuve",
+        "separe"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-face-proof-split-t17",
+          "title": "Visage haut 60 · Preuve bas 40",
+          "description": "Visage haut 60 %, preuve basse 40 % ; transition, rayon et sous-titre synchronisés.",
+          "family": "split",
+          "familyTitle": "Preuve + visage",
+          "variant": "Visage haut 60 · Preuve bas 40",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-face-proof-split-t17.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-003",
+      "presetIndex": 3,
+      "name": "meg-proof-split-50-bottom",
+      "title": "Visage haut 50 · Preuve bas 50",
+      "family": "split",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.4703125,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.505729167}]",
+      "tags": [
+        "50-50",
+        "bas",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-preuves",
+        "preuve",
+        "separe"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-proof-split-50-bottom",
+          "title": "Visage haut 50 · Preuve bas 50",
+          "description": "Partage à parts égales, preuve sous le visage.",
+          "family": "split",
+          "familyTitle": "Preuve + visage",
+          "variant": "Visage haut 50 · Preuve bas 50",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-proof-split-50-bottom.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-004",
+      "presetIndex": 4,
+      "name": "meg-proof-split-50-top",
+      "title": "Preuve haut 50 · Visage bas 50",
+      "family": "split",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.4703125,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "50-50",
+        "haut",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-preuves",
+        "preuve",
+        "separe"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-proof-split-50-top",
+          "title": "Preuve haut 50 · Visage bas 50",
+          "description": "Partage à parts égales, preuve au-dessus du visage.",
+          "family": "split",
+          "familyTitle": "Preuve + visage",
+          "variant": "Preuve haut 50 · Visage bas 50",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-proof-split-50-top.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-005",
+      "presetIndex": 5,
+      "name": "meg-reel-bande-bas-25",
+      "title": "Reel — écran dominant, bande visage bas 25 %",
+      "family": "reel-bande",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.25,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.75},{\"border_radius_ratio\":0,\"height_ratio\":0.746875,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bande",
+        "bas",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-bande-bas-25",
+          "title": "Reel — écran dominant, bande visage bas 25 %",
+          "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (25 %) en bas. Jamais de PIP coin.",
+          "family": "reel-bande",
+          "familyTitle": "Reels — écran dominant + bande visage",
+          "variant": "bas 25 %",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-bande-bas-25.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-006",
+      "presetIndex": 6,
+      "name": "meg-reel-bande-bas-33",
+      "title": "Reel — écran dominant, bande visage bas 33 %",
+      "family": "reel-bande",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.330208333,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.669791667},{\"border_radius_ratio\":0,\"height_ratio\":0.666666667,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bande",
+        "bas",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-bande-bas-33",
+          "title": "Reel — écran dominant, bande visage bas 33 %",
+          "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (33 %) en bas. Jamais de PIP coin.",
+          "family": "reel-bande",
+          "familyTitle": "Reels — écran dominant + bande visage",
+          "variant": "bas 33 %",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-bande-bas-33.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-007",
+      "presetIndex": 7,
+      "name": "meg-reel-bande-haut-25",
+      "title": "Reel — écran dominant, bande visage haut 25 %",
+      "family": "reel-bande",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.25,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0,\"height_ratio\":0.746875,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.253125}]",
+      "tags": [
+        "bande",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-bande-haut-25",
+          "title": "Reel — écran dominant, bande visage haut 25 %",
+          "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (25 %) en haut. Jamais de PIP coin.",
+          "family": "reel-bande",
+          "familyTitle": "Reels — écran dominant + bande visage",
+          "variant": "haut 25 %",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-bande-haut-25.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-008",
+      "presetIndex": 8,
+      "name": "meg-reel-bande-haut-33",
+      "title": "Reel — écran dominant, bande visage haut 33 %",
+      "family": "reel-bande",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.330208333,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0,\"height_ratio\":0.666666667,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.333333333}]",
+      "tags": [
+        "bande",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-bande-haut-33",
+          "title": "Reel — écran dominant, bande visage haut 33 %",
+          "description": "Layout 9:16 : écran bord à bord dominant, visage master en bande pleine largeur (33 %) en haut. Jamais de PIP coin.",
+          "family": "reel-bande",
+          "familyTitle": "Reels — écran dominant + bande visage",
+          "variant": "haut 33 %",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-bande-haut-33.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-009",
+      "presetIndex": 9,
+      "name": "meg-reel-detoure-centre-carte-grand",
+      "title": "Reel — détouré centre (écran carte, grand)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.520833333,\"kind\":\"Camera\",\"width_ratio\":0.666666667,\"x_ratio\":0.166666667,\"y_ratio\":0.479166667},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.46875,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "centre",
+        "detoure",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-centre-carte-grand",
+          "title": "Reel — détouré centre (écran carte, grand)",
+          "description": "Layout fond vert 9:16 : écran en carte + silhouette détourée centre en bas (grand). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "centre carte grand",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-centre-carte-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-010",
+      "presetIndex": 10,
+      "name": "meg-reel-detoure-centre-carte-serre",
+      "title": "Reel — détouré centre (écran carte, serre)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.416666667,\"kind\":\"Camera\",\"width_ratio\":0.518518519,\"x_ratio\":0.240740741,\"y_ratio\":0.583333333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.46875,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "centre",
+        "detoure",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-centre-carte-serre",
+          "title": "Reel — détouré centre (écran carte, serre)",
+          "description": "Layout fond vert 9:16 : écran en carte + silhouette détourée centre en bas (serre). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "centre carte serre",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-centre-carte-serre.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-011",
+      "presetIndex": 11,
+      "name": "meg-reel-detoure-centre-plein-grand",
+      "title": "Reel — détouré centre (écran plein, grand)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.520833333,\"kind\":\"Camera\",\"width_ratio\":0.666666667,\"x_ratio\":0.166666667,\"y_ratio\":0.479166667},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "centre",
+        "detoure",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-centre-plein-grand",
+          "title": "Reel — détouré centre (écran plein, grand)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée centre en bas (grand). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "centre plein grand",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-centre-plein-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-012",
+      "presetIndex": 12,
+      "name": "meg-reel-detoure-centre-plein-serre",
+      "title": "Reel — détouré centre (écran plein, serre)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.416666667,\"kind\":\"Camera\",\"width_ratio\":0.518518519,\"x_ratio\":0.240740741,\"y_ratio\":0.583333333},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "centre",
+        "detoure",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-centre-plein-serre",
+          "title": "Reel — détouré centre (écran plein, serre)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée centre en bas (serre). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "centre plein serre",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-centre-plein-serre.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-013",
+      "presetIndex": 13,
+      "name": "meg-reel-detoure-droite-plein-grand",
+      "title": "Reel — détouré droite (écran plein, grand)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.520833333,\"kind\":\"Camera\",\"width_ratio\":0.666666667,\"x_ratio\":0.361111111,\"y_ratio\":0.479166667},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "detoure",
+        "droite",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-droite-plein-grand",
+          "title": "Reel — détouré droite (écran plein, grand)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée droite en bas (grand). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "droite plein grand",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-droite-plein-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-014",
+      "presetIndex": 14,
+      "name": "meg-reel-detoure-droite-plein-serre",
+      "title": "Reel — détouré droite (écran plein, serre)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.416666667,\"kind\":\"Camera\",\"width_ratio\":0.518518519,\"x_ratio\":0.509259259,\"y_ratio\":0.583333333},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "detoure",
+        "droite",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-droite-plein-serre",
+          "title": "Reel — détouré droite (écran plein, serre)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée droite en bas (serre). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "droite plein serre",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-droite-plein-serre.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-015",
+      "presetIndex": 15,
+      "name": "meg-reel-detoure-gauche-plein-grand",
+      "title": "Reel — détouré gauche (écran plein, grand)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.520833333,\"kind\":\"Camera\",\"width_ratio\":0.666666667,\"x_ratio\":-0.027777778,\"y_ratio\":0.479166667},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-gauche-plein-grand",
+          "title": "Reel — détouré gauche (écran plein, grand)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée gauche en bas (grand). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "gauche plein grand",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-gauche-plein-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-016",
+      "presetIndex": 16,
+      "name": "meg-reel-detoure-gauche-plein-serre",
+      "title": "Reel — détouré gauche (écran plein, serre)",
+      "family": "reel-detoure",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.416666667,\"kind\":\"Camera\",\"width_ratio\":0.518518519,\"x_ratio\":-0.027777778,\"y_ratio\":0.583333333},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-detourage",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-detoure-gauche-plein-serre",
+          "title": "Reel — détouré gauche (écran plein, serre)",
+          "description": "Layout fond vert 9:16 : écran plein cadre + silhouette détourée gauche en bas (serre). Remplacer la silhouette par l'asset alpha.",
+          "family": "reel-detoure",
+          "familyTitle": "Reels — visage détouré (fond vert)",
+          "variant": "gauche plein serre",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-detoure-gauche-plein-serre.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-017",
+      "presetIndex": 17,
+      "name": "meg-reel-duo-cote-haut-carte-domine",
+      "title": "Reel — duo 2 écrans côte à côte en haut (carte, domine)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.340104167,\"kind\":\"Screen\",\"width_ratio\":0.355555556,\"x_ratio\":0.601851852,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.340104167,\"kind\":\"Screen\",\"width_ratio\":0.533333333,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.596354167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.3796875}]",
+      "tags": [
+        "carte",
+        "cote-haut",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-cote-haut-carte-domine",
+          "title": "Reel — duo 2 écrans côte à côte en haut (carte, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition dominante, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "cote-haut carte domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-cote-haut-carte-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-cote-haut-nav-domine",
+          "title": "Reel — duo 2 écrans côte à côte en haut (nav, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition dominante, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "cote-haut nav domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-cote-haut-nav-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-018",
+      "presetIndex": 18,
+      "name": "meg-reel-duo-cote-haut-carte-egal",
+      "title": "Reel — duo 2 écrans côte à côte en haut (carte, egal)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.340104167,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.340104167,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.512962963,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.596354167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.3796875}]",
+      "tags": [
+        "carte",
+        "cote-haut",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-cote-haut-carte-egal",
+          "title": "Reel — duo 2 écrans côte à côte en haut (carte, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition égale, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "cote-haut carte egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-cote-haut-carte-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-cote-haut-nav-egal",
+          "title": "Reel — duo 2 écrans côte à côte en haut (nav, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans côte à côte en haut, répartition égale, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "cote-haut nav egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-cote-haut-nav-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-019",
+      "presetIndex": 19,
+      "name": "meg-reel-duo-pile-bas-carte-domine",
+      "title": "Reel — duo 2 écrans empilés en bas (carte, domine)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.191145833,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.784895833},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3125,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.4578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "pile-bas",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-pile-bas-carte-domine",
+          "title": "Reel — duo 2 écrans empilés en bas (carte, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition dominante, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-bas carte domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-bas-carte-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-pile-bas-nav-domine",
+          "title": "Reel — duo 2 écrans empilés en bas (nav, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition dominante, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-bas nav domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-bas-nav-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-020",
+      "presetIndex": 20,
+      "name": "meg-reel-duo-pile-bas-carte-egal",
+      "title": "Reel — duo 2 écrans empilés en bas (carte, egal)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.2515625,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.724479167},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.252083333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.4578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "pile-bas",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-pile-bas-carte-egal",
+          "title": "Reel — duo 2 écrans empilés en bas (carte, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition égale, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-bas carte egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-bas-carte-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-pile-bas-nav-egal",
+          "title": "Reel — duo 2 écrans empilés en bas (nav, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en bas, répartition égale, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-bas nav egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-bas-nav-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-021",
+      "presetIndex": 21,
+      "name": "meg-reel-duo-pile-haut-carte-domine",
+      "title": "Reel — duo 2 écrans empilés en haut (carte, domine)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.191145833,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.351041667},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3125,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.5578125}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "pile-haut",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-pile-haut-carte-domine",
+          "title": "Reel — duo 2 écrans empilés en haut (carte, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition dominante, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-haut carte domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-haut-carte-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-pile-haut-nav-domine",
+          "title": "Reel — duo 2 écrans empilés en haut (nav, domine)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition dominante, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-haut nav domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-haut-nav-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-022",
+      "presetIndex": 22,
+      "name": "meg-reel-duo-pile-haut-carte-egal",
+      "title": "Reel — duo 2 écrans empilés en haut (carte, egal)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.2515625,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.290625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.252083333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.5578125}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "pile-haut",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-pile-haut-carte-egal",
+          "title": "Reel — duo 2 écrans empilés en haut (carte, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition égale, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-haut carte egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-haut-carte-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-pile-haut-nav-egal",
+          "title": "Reel — duo 2 écrans empilés en haut (nav, egal)",
+          "description": "Split 9:16 à deux écrans : 2 écrans empilés en haut, répartition égale, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "pile-haut nav egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-pile-haut-nav-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-023",
+      "presetIndex": 23,
+      "name": "meg-reel-duo-sandwich-carte-domine",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, domine)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.208333333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.767708333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.333333333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.379166667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.372916667}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "sandwich"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-sandwich-carte-domine",
+          "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, domine)",
+          "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition dominante, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "sandwich carte domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-sandwich-carte-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-sandwich-nav-domine",
+          "title": "Reel — duo écran haut + écran bas, visage au milieu (nav, domine)",
+          "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition dominante, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "sandwich nav domine",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-sandwich-nav-domine.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-024",
+      "presetIndex": 24,
+      "name": "meg-reel-duo-sandwich-carte-egal",
+      "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, egal)",
+      "family": "reel-split-duo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.270833333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.270833333,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.705208333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.379166667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.310416667}]",
+      "tags": [
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "sandwich"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-sandwich-carte-egal",
+          "title": "Reel — duo écran haut + écran bas, visage au milieu (carte, egal)",
+          "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition égale, visage master recadré. Style carte.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "sandwich carte egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-sandwich-carte-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-reel-duo-sandwich-nav-egal",
+          "title": "Reel — duo écran haut + écran bas, visage au milieu (nav, egal)",
+          "description": "Split 9:16 à deux écrans : écran haut + écran bas, visage au milieu, répartition égale, visage master recadré. Style nav.",
+          "family": "reel-split-duo",
+          "familyTitle": "Reels — splits visage + 2 écrans",
+          "variant": "sandwich nav egal",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-sandwich-nav-egal.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-025",
+      "presetIndex": 25,
+      "name": "meg-reel-duo-visages-cote-a-cote",
+      "title": "Reel — deux visages côte à côte 50/50",
+      "family": "reel-duo-visages",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.5625,\"kind\":\"Camera\",\"width_ratio\":0.5,\"x_ratio\":0,\"y_ratio\":0.21875}]",
+      "tags": [
+        "cote-a-cote",
+        "duo-visages",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reaction",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-visages-cote-a-cote",
+          "title": "Reel — deux visages côte à côte 50/50",
+          "description": "Layout réaction/entretien 9:16 : master côte à côte 50/50 + zone invité à remplacer par le rush du second intervenant.",
+          "family": "reel-duo-visages",
+          "familyTitle": "Reels — deux visages (réaction/entretien)",
+          "variant": "côte à côte 50/50",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-visages-cote-a-cote.html",
+          "staticFace": true,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-026",
+      "presetIndex": 26,
+      "name": "meg-reel-duo-visages-entretien-droite",
+      "title": "Reel — deux visages hôte dominant à droite",
+      "family": "reel-duo-visages",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.666666667,\"kind\":\"Camera\",\"width_ratio\":0.564814815,\"x_ratio\":0.392592593,\"y_ratio\":0.15625}]",
+      "tags": [
+        "duo-visages",
+        "entretien-droite",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reaction",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-visages-entretien-droite",
+          "title": "Reel — deux visages hôte dominant à droite",
+          "description": "Layout réaction/entretien 9:16 : master hôte dominant à droite + zone invité à remplacer par le rush du second intervenant.",
+          "family": "reel-duo-visages",
+          "familyTitle": "Reels — deux visages (réaction/entretien)",
+          "variant": "hôte dominant à droite",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-visages-entretien-droite.html",
+          "staticFace": true,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-027",
+      "presetIndex": 27,
+      "name": "meg-reel-duo-visages-entretien-gauche",
+      "title": "Reel — deux visages hôte dominant à gauche",
+      "family": "reel-duo-visages",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.666666667,\"kind\":\"Camera\",\"width_ratio\":0.564814815,\"x_ratio\":0.042592593,\"y_ratio\":0.15625}]",
+      "tags": [
+        "duo-visages",
+        "entretien-gauche",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reaction",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-visages-entretien-gauche",
+          "title": "Reel — deux visages hôte dominant à gauche",
+          "description": "Layout réaction/entretien 9:16 : master hôte dominant à gauche + zone invité à remplacer par le rush du second intervenant.",
+          "family": "reel-duo-visages",
+          "familyTitle": "Reels — deux visages (réaction/entretien)",
+          "variant": "hôte dominant à gauche",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-visages-entretien-gauche.html",
+          "staticFace": true,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-028",
+      "presetIndex": 28,
+      "name": "meg-reel-duo-visages-haut-bas",
+      "title": "Reel — deux visages empilé 50/50",
+      "family": "reel-duo-visages",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.463541667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "duo-visages",
+        "haut-bas",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reaction",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-duo-visages-haut-bas",
+          "title": "Reel — deux visages empilé 50/50",
+          "description": "Layout réaction/entretien 9:16 : master empilé 50/50 + zone invité à remplacer par le rush du second intervenant.",
+          "family": "reel-duo-visages",
+          "familyTitle": "Reels — deux visages (réaction/entretien)",
+          "variant": "empilé 50/50",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-duo-visages-haut-bas.html",
+          "staticFace": true,
+          "staticScreens": 0
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-029",
+      "presetIndex": 29,
+      "name": "meg-reel-ecran-bas-35-bord",
+      "title": "Reel — écran bas 35 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.6484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.6515625}]",
+      "tags": [
+        "bas",
+        "bord",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-35-bord",
+          "title": "Reel — écran bas 35 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 35 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-35-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-030",
+      "presetIndex": 30,
+      "name": "meg-reel-ecran-bas-35-carte",
+      "title": "Reel — écran bas 35 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.318229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.6578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.618229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "bas",
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-35-carte",
+          "title": "Reel — écran bas 35 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 35 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-35-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-bas-35-nav",
+          "title": "Reel — écran bas 35 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en bas (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 35 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-35-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-031",
+      "presetIndex": 31,
+      "name": "meg-reel-ecran-bas-45-bord",
+      "title": "Reel — écran bas 45 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.5484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.4484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.5515625}]",
+      "tags": [
+        "bas",
+        "bord",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-45-bord",
+          "title": "Reel — écran bas 45 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 45 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-45-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-032",
+      "presetIndex": 32,
+      "name": "meg-reel-ecran-bas-45-carte",
+      "title": "Reel — écran bas 45 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.5578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "bas",
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-45-carte",
+          "title": "Reel — écran bas 45 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 45 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-45-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-bas-45-nav",
+          "title": "Reel — écran bas 45 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en bas (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 45 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-45-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-033",
+      "presetIndex": 33,
+      "name": "meg-reel-ecran-bas-45-incline",
+      "title": "Reel — écran bas 45 % incliné",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Screen\",\"width_ratio\":0.881481481,\"x_ratio\":0.059259259,\"y_ratio\":0.5578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "bas",
+        "incline",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-45-incline",
+          "title": "Reel — écran bas 45 % incliné",
+          "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en bas, visage master sur le reste.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 45 % incliné",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-45-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-034",
+      "presetIndex": 34,
+      "name": "meg-reel-ecran-bas-55-bord",
+      "title": "Reel — écran bas 55 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.4484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.5484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.4515625}]",
+      "tags": [
+        "bas",
+        "bord",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-55-bord",
+          "title": "Reel — écran bas 55 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 55 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-55-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-035",
+      "presetIndex": 35,
+      "name": "meg-reel-ecran-bas-55-carte",
+      "title": "Reel — écran bas 55 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.4578125}]",
+      "tags": [
+        "bas",
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-55-carte",
+          "title": "Reel — écran bas 55 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 55 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-55-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-bas-55-nav",
+          "title": "Reel — écran bas 55 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en bas (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 55 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-55-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-036",
+      "presetIndex": 36,
+      "name": "meg-reel-ecran-bas-60-incline",
+      "title": "Reel — écran bas 60 % incliné",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.368229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.568229167,\"kind\":\"Screen\",\"width_ratio\":0.881481481,\"x_ratio\":0.059259259,\"y_ratio\":0.4078125}]",
+      "tags": [
+        "bas",
+        "incline",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-60-incline",
+          "title": "Reel — écran bas 60 % incliné",
+          "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en bas, visage master sur le reste.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 60 % incliné",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-60-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-037",
+      "presetIndex": 37,
+      "name": "meg-reel-ecran-bas-65-bord",
+      "title": "Reel — écran bas 65 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.3484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.6484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.3515625}]",
+      "tags": [
+        "bas",
+        "bord",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-65-bord",
+          "title": "Reel — écran bas 65 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 65 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-65-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-038",
+      "presetIndex": 38,
+      "name": "meg-reel-ecran-bas-65-carte",
+      "title": "Reel — écran bas 65 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.318229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.618229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.3578125}]",
+      "tags": [
+        "bas",
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-bas-65-carte",
+          "title": "Reel — écran bas 65 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 65 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-65-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-bas-65-nav",
+          "title": "Reel — écran bas 65 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en bas (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "bas 65 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-bas-65-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-039",
+      "presetIndex": 39,
+      "name": "meg-reel-ecran-haut-35-bord",
+      "title": "Reel — écran haut 35 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.6484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.3515625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bord",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-35-bord",
+          "title": "Reel — écran haut 35 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 35 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-35-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-040",
+      "presetIndex": 40,
+      "name": "meg-reel-ecran-haut-35-carte",
+      "title": "Reel — écran haut 35 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.318229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.618229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.3578125}]",
+      "tags": [
+        "carte",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-35-carte",
+          "title": "Reel — écran haut 35 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 35 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-35-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-haut-35-nav",
+          "title": "Reel — écran haut 35 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en haut (35 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 35 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-35-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-041",
+      "presetIndex": 41,
+      "name": "meg-reel-ecran-haut-45-bord",
+      "title": "Reel — écran haut 45 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.5484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.4515625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.4484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bord",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-45-bord",
+          "title": "Reel — écran haut 45 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 45 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-45-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-042",
+      "presetIndex": 42,
+      "name": "meg-reel-ecran-haut-45-carte",
+      "title": "Reel — écran haut 45 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.4578125}]",
+      "tags": [
+        "carte",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-45-carte",
+          "title": "Reel — écran haut 45 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 45 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-45-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-haut-45-nav",
+          "title": "Reel — écran haut 45 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en haut (45 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 45 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-45-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-043",
+      "presetIndex": 43,
+      "name": "meg-reel-ecran-haut-45-incline",
+      "title": "Reel — écran haut 45 % incliné",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Screen\",\"width_ratio\":0.881481481,\"x_ratio\":0.059259259,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.4578125}]",
+      "tags": [
+        "haut",
+        "incline",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-45-incline",
+          "title": "Reel — écran haut 45 % incliné",
+          "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en haut, visage master sur le reste.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 45 % incliné",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-45-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-044",
+      "presetIndex": 44,
+      "name": "meg-reel-ecran-haut-55-bord",
+      "title": "Reel — écran haut 55 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.4484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.5515625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.5484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bord",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-55-bord",
+          "title": "Reel — écran haut 55 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 55 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-55-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-045",
+      "presetIndex": 45,
+      "name": "meg-reel-ecran-haut-55-carte",
+      "title": "Reel — écran haut 55 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.418229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.5578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.518229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "carte",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-55-carte",
+          "title": "Reel — écran haut 55 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 55 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-55-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-haut-55-nav",
+          "title": "Reel — écran haut 55 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en haut (55 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 55 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-55-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-046",
+      "presetIndex": 46,
+      "name": "meg-reel-ecran-haut-60-incline",
+      "title": "Reel — écran haut 60 % incliné",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.368229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.6078125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.568229167,\"kind\":\"Screen\",\"width_ratio\":0.881481481,\"x_ratio\":0.059259259,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "haut",
+        "incline",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-60-incline",
+          "title": "Reel — écran haut 60 % incliné",
+          "description": "Split 9:16 dynamique : carte écran légèrement inclinée (-2,5°) en haut, visage master sur le reste.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 60 % incliné",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-60-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-047",
+      "presetIndex": 47,
+      "name": "meg-reel-ecran-haut-65-bord",
+      "title": "Reel — écran haut 65 % (bord à bord)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.3484375,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.6515625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.6484375,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "bord",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-65-bord",
+          "title": "Reel — écran haut 65 % (bord à bord)",
+          "description": "Split 9:16 : écran bord à bord en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 65 % bord à bord",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-65-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-048",
+      "presetIndex": 48,
+      "name": "meg-reel-ecran-haut-65-carte",
+      "title": "Reel — écran haut 65 % (carte crème)",
+      "family": "reel-split-solo",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.318229167,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.6578125},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.618229167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "carte",
+        "haut",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-haut-65-carte",
+          "title": "Reel — écran haut 65 % (carte crème)",
+          "description": "Split 9:16 : écran carte crème en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 65 % carte crème",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-65-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-haut-65-nav",
+          "title": "Reel — écran haut 65 % (fenêtre navigateur)",
+          "description": "Split 9:16 : écran fenêtre navigateur en haut (65 % de la hauteur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master tout seul.",
+          "family": "reel-split-solo",
+          "familyTitle": "Reels — splits visage + 1 écran",
+          "variant": "haut 65 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-haut-65-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-049",
+      "presetIndex": 49,
+      "name": "meg-reel-ecran-titre-45-carte",
+      "title": "Reel — écran 45 % + titre à la couture (carte)",
+      "family": "reel-ecran-titre",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.394791667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.466666667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.509375}]",
+      "tags": [
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split",
+        "titre"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-titre-45-carte",
+          "title": "Reel — écran 45 % + titre à la couture (carte)",
+          "description": "Split 9:16 : écran carte en haut (45 %), grande ligne de titre éditable à la couture, visage master en bas.",
+          "family": "reel-ecran-titre",
+          "familyTitle": "Reels — écran + titre à la couture",
+          "variant": "45 % carte",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-titre-45-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-titre-45-nav",
+          "title": "Reel — écran 45 % + titre à la couture (nav)",
+          "description": "Split 9:16 : écran nav en haut (45 %), grande ligne de titre éditable à la couture, visage master en bas.",
+          "family": "reel-ecran-titre",
+          "familyTitle": "Reels — écran + titre à la couture",
+          "variant": "45 % nav",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-titre-45-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-050",
+      "presetIndex": 50,
+      "name": "meg-reel-ecran-titre-55-carte",
+      "title": "Reel — écran 55 % + titre à la couture (carte)",
+      "family": "reel-ecran-titre",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.366666667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.609375},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.494791667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "carte",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "nav",
+        "reel",
+        "split",
+        "titre"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-ecran-titre-55-carte",
+          "title": "Reel — écran 55 % + titre à la couture (carte)",
+          "description": "Split 9:16 : écran carte en haut (55 %), grande ligne de titre éditable à la couture, visage master en bas.",
+          "family": "reel-ecran-titre",
+          "familyTitle": "Reels — écran + titre à la couture",
+          "variant": "55 % carte",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-titre-55-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-reel-ecran-titre-55-nav",
+          "title": "Reel — écran 55 % + titre à la couture (nav)",
+          "description": "Split 9:16 : écran nav en haut (55 %), grande ligne de titre éditable à la couture, visage master en bas.",
+          "family": "reel-ecran-titre",
+          "familyTitle": "Reels — écran + titre à la couture",
+          "variant": "55 % nav",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-ecran-titre-55-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-051",
+      "presetIndex": 51,
+      "name": "meg-reel-trio-colonne",
+      "title": "Reel — trio visage pleine hauteur + colonne de 3 écrans",
+      "family": "reel-split-trio",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3078125,\"kind\":\"Screen\",\"width_ratio\":0.37037037,\"x_ratio\":0.587037037,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3078125,\"kind\":\"Screen\",\"width_ratio\":0.37037037,\"x_ratio\":0.587037037,\"y_ratio\":0.346354167},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.3078125,\"kind\":\"Screen\",\"width_ratio\":0.37037037,\"x_ratio\":0.587037037,\"y_ratio\":0.66875},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.952083333,\"kind\":\"Camera\",\"width_ratio\":0.516666667,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333}]",
+      "tags": [
+        "colonne",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "trio"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-trio-colonne",
+          "title": "Reel — trio visage pleine hauteur + colonne de 3 écrans",
+          "description": "Split 9:16 à trois écrans : visage pleine hauteur + colonne de 3 écrans, visage master recadré. Trois zones à remplacer indépendamment.",
+          "family": "reel-split-trio",
+          "familyTitle": "Reels — splits visage + 3 écrans",
+          "variant": "visage pleine hauteur + colonne de 3 écrans",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-trio-colonne.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-052",
+      "presetIndex": 52,
+      "name": "meg-reel-trio-grille-1-2",
+      "title": "Reel — trio 1 écran large + 2 côte à côte dessous",
+      "family": "reel-split-trio",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.223958333,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.042592593,\"y_ratio\":0.330208333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.223958333,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.512962963,\"y_ratio\":0.330208333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.291666667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.410416667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.565625}]",
+      "tags": [
+        "grille-1-2",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "trio"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-trio-grille-1-2",
+          "title": "Reel — trio 1 écran large + 2 côte à côte dessous",
+          "description": "Split 9:16 à trois écrans : 1 écran large + 2 côte à côte dessous, visage master recadré. Trois zones à remplacer indépendamment.",
+          "family": "reel-split-trio",
+          "familyTitle": "Reels — splits visage + 3 écrans",
+          "variant": "1 écran large + 2 côte à côte dessous",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-trio-grille-1-2.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-053",
+      "presetIndex": 53,
+      "name": "meg-reel-trio-grille-2-1",
+      "title": "Reel — trio 2 écrans côte à côte + 1 large dessous",
+      "family": "reel-split-trio",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.223958333,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.223958333,\"kind\":\"Screen\",\"width_ratio\":0.444444444,\"x_ratio\":0.512962963,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.291666667,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.2625},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.410416667,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.565625}]",
+      "tags": [
+        "grille-2-1",
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "reel",
+        "trio"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-trio-grille-2-1",
+          "title": "Reel — trio 2 écrans côte à côte + 1 large dessous",
+          "description": "Split 9:16 à trois écrans : 2 écrans côte à côte + 1 large dessous, visage master recadré. Trois zones à remplacer indépendamment.",
+          "family": "reel-split-trio",
+          "familyTitle": "Reels — splits visage + 3 écrans",
+          "variant": "2 écrans côte à côte + 1 large dessous",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-trio-grille-2-1.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-054",
+      "presetIndex": 54,
+      "name": "meg-reel-trio-pile-haut",
+      "title": "Reel — trio 3 écrans empilés en haut",
+      "family": "reel-split-trio",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.183854167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.023958333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.183854167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.222395833},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.183854167,\"kind\":\"Screen\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.420833333},{\"border_radius_ratio\":0.031481481,\"height_ratio\":0.35625,\"kind\":\"Camera\",\"width_ratio\":0.914814815,\"x_ratio\":0.042592593,\"y_ratio\":0.619791667}]",
+      "tags": [
+        "layout",
+        "meg",
+        "meg-reel",
+        "meg-reel-folder-ecran-visage",
+        "pile-haut",
+        "reel",
+        "trio"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-reel-trio-pile-haut",
+          "title": "Reel — trio 3 écrans empilés en haut",
+          "description": "Split 9:16 à trois écrans : 3 écrans empilés en haut, visage master recadré. Trois zones à remplacer indépendamment.",
+          "family": "reel-split-trio",
+          "familyTitle": "Reels — splits visage + 3 écrans",
+          "variant": "3 écrans empilés en haut",
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "meg-reel-trio-pile-haut.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-055",
+      "presetIndex": 55,
+      "name": "meg-yt-bande-bas-25",
+      "title": "Large — écran dominant, bande visage bas 25 %",
+      "family": "yt-bande",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.25,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.75},{\"border_radius_ratio\":0,\"height_ratio\":0.744444444,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bande",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-bande-bas-25",
+          "title": "Large — écran dominant, bande visage bas 25 %",
+          "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (25 %) en bas.",
+          "family": "yt-bande",
+          "familyTitle": "Large — écran dominant + bande visage",
+          "variant": "bas 25 %",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-bande-bas-25.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-056",
+      "presetIndex": 56,
+      "name": "meg-yt-bande-bas-33",
+      "title": "Large — écran dominant, bande visage bas 33 %",
+      "family": "yt-bande",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.32962963,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.67037037},{\"border_radius_ratio\":0,\"height_ratio\":0.664814815,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bande",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-bande-bas-33",
+          "title": "Large — écran dominant, bande visage bas 33 %",
+          "description": "Layout 16:9 : écran bord à bord dominant + visage master en bande pleine largeur (33 %) en bas.",
+          "family": "yt-bande",
+          "familyTitle": "Large — écran dominant + bande visage",
+          "variant": "bas 33 %",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-bande-bas-33.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-057",
+      "presetIndex": 57,
+      "name": "meg-yt-detoure-droite-grand",
+      "title": "Large — détouré droite (grand)",
+      "family": "yt-detoure",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.611111111,\"kind\":\"Camera\",\"width_ratio\":0.333333333,\"x_ratio\":0.677083333,\"y_ratio\":0.388888889},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "detoure",
+        "droite",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-detourage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-detoure-droite-grand",
+          "title": "Large — détouré droite (grand)",
+          "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à droite (grand). Remplacer par l'asset alpha.",
+          "family": "yt-detoure",
+          "familyTitle": "Large — visage détouré (fond vert)",
+          "variant": "droite grand",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-detoure-droite-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-058",
+      "presetIndex": 58,
+      "name": "meg-yt-detoure-droite-moyen",
+      "title": "Large — détouré droite (moyen)",
+      "family": "yt-detoure",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.481481481,\"kind\":\"Camera\",\"width_ratio\":0.25,\"x_ratio\":0.760416667,\"y_ratio\":0.518518519},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "detoure",
+        "droite",
+        "fond-vert",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-detourage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-detoure-droite-moyen",
+          "title": "Large — détouré droite (moyen)",
+          "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à droite (moyen). Remplacer par l'asset alpha.",
+          "family": "yt-detoure",
+          "familyTitle": "Large — visage détouré (fond vert)",
+          "variant": "droite moyen",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-detoure-droite-moyen.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-059",
+      "presetIndex": 59,
+      "name": "meg-yt-detoure-gauche-grand",
+      "title": "Large — détouré gauche (grand)",
+      "family": "yt-detoure",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.611111111,\"kind\":\"Camera\",\"width_ratio\":0.333333333,\"x_ratio\":-0.010416667,\"y_ratio\":0.388888889},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-detourage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-detoure-gauche-grand",
+          "title": "Large — détouré gauche (grand)",
+          "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à gauche (grand). Remplacer par l'asset alpha.",
+          "family": "yt-detoure",
+          "familyTitle": "Large — visage détouré (fond vert)",
+          "variant": "gauche grand",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-detoure-gauche-grand.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-060",
+      "presetIndex": 60,
+      "name": "meg-yt-detoure-gauche-moyen",
+      "title": "Large — détouré gauche (moyen)",
+      "family": "yt-detoure",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.481481481,\"kind\":\"Camera\",\"width_ratio\":0.25,\"x_ratio\":-0.010416667,\"y_ratio\":0.518518519},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "detoure",
+        "fond-vert",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-detourage",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-detoure-gauche-moyen",
+          "title": "Large — détouré gauche (moyen)",
+          "description": "Layout fond vert 16:9 : écran plein cadre + silhouette détourée ancrée en bas à gauche (moyen). Remplacer par l'asset alpha.",
+          "family": "yt-detoure",
+          "familyTitle": "Large — visage détouré (fond vert)",
+          "variant": "gauche moyen",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-detoure-gauche-moyen.html",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-061",
+      "presetIndex": 61,
+      "name": "meg-yt-duo-jumeaux-bande-carte",
+      "title": "Large — duo 2 écrans jumeaux + bande visage (carte)",
+      "family": "yt-split-duo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.407407407,\"kind\":\"Camera\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0.592592593},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.518518519,\"kind\":\"Screen\",\"width_ratio\":0.471875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.518518519,\"kind\":\"Screen\",\"width_ratio\":0.471875,\"x_ratio\":0.507291667,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "duo",
+        "jumeaux-bande",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-duo-jumeaux-bande-carte",
+          "title": "Large — duo 2 écrans jumeaux + bande visage (carte)",
+          "description": "Split 16:9 à deux écrans : 2 écrans jumeaux + bande visage, visage master recadré. Style carte.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans jumeaux + bande visage carte",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-jumeaux-bande-carte.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-yt-duo-jumeaux-bande-nav",
+          "title": "Large — duo 2 écrans jumeaux + bande visage (nav)",
+          "description": "Split 16:9 à deux écrans : 2 écrans jumeaux + bande visage, visage master recadré. Style nav.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans jumeaux + bande visage nav",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-jumeaux-bande-nav.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-062",
+      "presetIndex": 62,
+      "name": "meg-yt-duo-pile-droite-carte",
+      "title": "Large — duo 2 écrans empilés à droite (carte)",
+      "family": "yt-split-duo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.520833333,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.45,\"kind\":\"Screen\",\"width_ratio\":0.422916667,\"x_ratio\":0.55625,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.45,\"kind\":\"Screen\",\"width_ratio\":0.422916667,\"x_ratio\":0.55625,\"y_ratio\":0.512962963}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "pile-droite",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-duo-pile-droite-carte",
+          "title": "Large — duo 2 écrans empilés à droite (carte)",
+          "description": "Split 16:9 à deux écrans : 2 écrans empilés à droite, visage master recadré. Style carte.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans empilés à droite carte",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-pile-droite-carte.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-yt-duo-pile-droite-nav",
+          "title": "Large — duo 2 écrans empilés à droite (nav)",
+          "description": "Split 16:9 à deux écrans : 2 écrans empilés à droite, visage master recadré. Style nav.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans empilés à droite nav",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-pile-droite-nav.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-063",
+      "presetIndex": 63,
+      "name": "meg-yt-duo-pile-gauche-carte",
+      "title": "Large — duo 2 écrans empilés à gauche (carte)",
+      "family": "yt-split-duo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.520833333,\"x_ratio\":0.461458333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.45,\"kind\":\"Screen\",\"width_ratio\":0.426041667,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.45,\"kind\":\"Screen\",\"width_ratio\":0.426041667,\"x_ratio\":0.020833333,\"y_ratio\":0.512962963}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "pile-gauche",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-duo-pile-gauche-carte",
+          "title": "Large — duo 2 écrans empilés à gauche (carte)",
+          "description": "Split 16:9 à deux écrans : 2 écrans empilés à gauche, visage master recadré. Style carte.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans empilés à gauche carte",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-pile-gauche-carte.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-yt-duo-pile-gauche-nav",
+          "title": "Large — duo 2 écrans empilés à gauche (nav)",
+          "description": "Split 16:9 à deux écrans : 2 écrans empilés à gauche, visage master recadré. Style nav.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "2 écrans empilés à gauche nav",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-pile-gauche-nav.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-064",
+      "presetIndex": 64,
+      "name": "meg-yt-duo-principal-second-carte",
+      "title": "Large — duo écran principal + vignette dessous (carte)",
+      "family": "yt-split-duo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.526041667,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.344444444,\"kind\":\"Screen\",\"width_ratio\":0.417708333,\"x_ratio\":0.561458333,\"y_ratio\":0.618518519},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.555555556,\"kind\":\"Screen\",\"width_ratio\":0.417708333,\"x_ratio\":0.561458333,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "duo",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "principal-second",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-duo-principal-second-carte",
+          "title": "Large — duo écran principal + vignette dessous (carte)",
+          "description": "Split 16:9 à deux écrans : écran principal + vignette dessous, visage master recadré. Style carte.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "écran principal + vignette dessous carte",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-principal-second-carte.html",
+          "staticFace": true,
+          "staticScreens": 2
+        },
+        {
+          "name": "meg-yt-duo-principal-second-nav",
+          "title": "Large — duo écran principal + vignette dessous (nav)",
+          "description": "Split 16:9 à deux écrans : écran principal + vignette dessous, visage master recadré. Style nav.",
+          "family": "yt-split-duo",
+          "familyTitle": "Large — splits visage + 2 écrans",
+          "variant": "écran principal + vignette dessous nav",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-duo-principal-second-nav.html",
+          "staticFace": true,
+          "staticScreens": 2
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-065",
+      "presetIndex": 65,
+      "name": "meg-yt-ecran-droite-55-bord",
+      "title": "Large — écran droite 55 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.4484375,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.5484375,\"x_ratio\":0.4515625,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-55-bord",
+          "title": "Large — écran droite 55 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 55 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-55-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-066",
+      "presetIndex": 66,
+      "name": "meg-yt-ecran-droite-55-carte",
+      "title": "Large — écran droite 55 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.421875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.521875,\"x_ratio\":0.457291667,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-55-carte",
+          "title": "Large — écran droite 55 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 55 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-55-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-droite-55-nav",
+          "title": "Large — écran droite 55 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à droite (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 55 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-55-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-067",
+      "presetIndex": 67,
+      "name": "meg-yt-ecran-droite-62-incline",
+      "title": "Large — écran droite 62 % incliné",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.352083333,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.9,\"kind\":\"Screen\",\"width_ratio\":0.591666667,\"x_ratio\":0.3875,\"y_ratio\":0.05}]",
+      "tags": [
+        "16-9",
+        "droite",
+        "incline",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-62-incline",
+          "title": "Large — écran droite 62 % incliné",
+          "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à droite, visage master sur le reste.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 62 % incliné",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-62-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-068",
+      "presetIndex": 68,
+      "name": "meg-yt-ecran-droite-65-bord",
+      "title": "Large — écran droite 65 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.3484375,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.6484375,\"x_ratio\":0.3515625,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-65-bord",
+          "title": "Large — écran droite 65 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 65 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-65-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-069",
+      "presetIndex": 69,
+      "name": "meg-yt-ecran-droite-65-carte",
+      "title": "Large — écran droite 65 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.321875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.621875,\"x_ratio\":0.357291667,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-65-carte",
+          "title": "Large — écran droite 65 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 65 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-65-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-droite-65-nav",
+          "title": "Large — écran droite 65 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à droite (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 65 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-65-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-070",
+      "presetIndex": 70,
+      "name": "meg-yt-ecran-droite-75-bord",
+      "title": "Large — écran droite 75 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.2484375,\"x_ratio\":0,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.7484375,\"x_ratio\":0.2515625,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-75-bord",
+          "title": "Large — écran droite 75 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 75 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-75-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-071",
+      "presetIndex": 71,
+      "name": "meg-yt-ecran-droite-75-carte",
+      "title": "Large — écran droite 75 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.221875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.721875,\"x_ratio\":0.257291667,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "droite",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-droite-75-carte",
+          "title": "Large — écran droite 75 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 75 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-75-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-droite-75-nav",
+          "title": "Large — écran droite 75 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à droite (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "droite 75 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-droite-75-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-072",
+      "presetIndex": 72,
+      "name": "meg-yt-ecran-gauche-55-bord",
+      "title": "Large — écran gauche 55 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.4484375,\"x_ratio\":0.5515625,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.5484375,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-55-bord",
+          "title": "Large — écran gauche 55 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 55 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-55-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-073",
+      "presetIndex": 73,
+      "name": "meg-yt-ecran-gauche-55-carte",
+      "title": "Large — écran gauche 55 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.421875,\"x_ratio\":0.557291667,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.521875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-55-carte",
+          "title": "Large — écran gauche 55 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 55 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-55-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-gauche-55-nav",
+          "title": "Large — écran gauche 55 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à gauche (55 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 55 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-55-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-074",
+      "presetIndex": 74,
+      "name": "meg-yt-ecran-gauche-62-incline",
+      "title": "Large — écran gauche 62 % incliné",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.352083333,\"x_ratio\":0.627083333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.9,\"kind\":\"Screen\",\"width_ratio\":0.591666667,\"x_ratio\":0.020833333,\"y_ratio\":0.05}]",
+      "tags": [
+        "16-9",
+        "gauche",
+        "incline",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-62-incline",
+          "title": "Large — écran gauche 62 % incliné",
+          "description": "Split 16:9 dynamique : carte écran inclinée (-2°) à gauche, visage master sur le reste.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 62 % incliné",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-62-incline.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-075",
+      "presetIndex": 75,
+      "name": "meg-yt-ecran-gauche-65-bord",
+      "title": "Large — écran gauche 65 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.3484375,\"x_ratio\":0.6515625,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.6484375,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-65-bord",
+          "title": "Large — écran gauche 65 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 65 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-65-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-076",
+      "presetIndex": 76,
+      "name": "meg-yt-ecran-gauche-65-carte",
+      "title": "Large — écran gauche 65 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.321875,\"x_ratio\":0.657291667,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.621875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-65-carte",
+          "title": "Large — écran gauche 65 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 65 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-65-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-gauche-65-nav",
+          "title": "Large — écran gauche 65 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à gauche (65 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 65 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-65-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-077",
+      "presetIndex": 77,
+      "name": "meg-yt-ecran-gauche-75-bord",
+      "title": "Large — écran gauche 75 % (bord à bord)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Camera\",\"width_ratio\":0.2484375,\"x_ratio\":0.7515625,\"y_ratio\":0},{\"border_radius_ratio\":0.017708333,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":0.7484375,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "16-9",
+        "bord",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-75-bord",
+          "title": "Large — écran gauche 75 % (bord à bord)",
+          "description": "Split 16:9 : écran bord à bord à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 75 % bord à bord",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-75-bord.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-078",
+      "presetIndex": 78,
+      "name": "meg-yt-ecran-gauche-75-carte",
+      "title": "Large — écran gauche 75 % (carte crème)",
+      "family": "yt-split-solo",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.221875,\"x_ratio\":0.757291667,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.925925926,\"kind\":\"Screen\",\"width_ratio\":0.721875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037}]",
+      "tags": [
+        "16-9",
+        "carte",
+        "gauche",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "nav",
+        "split",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-ecran-gauche-75-carte",
+          "title": "Large — écran gauche 75 % (carte crème)",
+          "description": "Split 16:9 : écran carte crème à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 75 % carte crème",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-75-carte.html",
+          "staticFace": true,
+          "staticScreens": 1
+        },
+        {
+          "name": "meg-yt-ecran-gauche-75-nav",
+          "title": "Large — écran gauche 75 % (fenêtre navigateur)",
+          "description": "Split 16:9 : écran fenêtre navigateur à gauche (75 % de la largeur), visage master recadré sur le reste. Drag & drop : le bloc pilote le master.",
+          "family": "yt-split-solo",
+          "familyTitle": "Large — splits visage + 1 écran",
+          "variant": "gauche 75 % fenêtre navigateur",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-ecran-gauche-75-nav.html",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-079",
+      "presetIndex": 79,
+      "name": "meg-yt-trio-colonne-droite",
+      "title": "Large — trio colonne droite",
+      "family": "yt-split-trio",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.925925926,\"kind\":\"Camera\",\"width_ratio\":0.5625,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.290740741,\"kind\":\"Screen\",\"width_ratio\":0.38125,\"x_ratio\":0.597916667,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.290740741,\"kind\":\"Screen\",\"width_ratio\":0.38125,\"x_ratio\":0.597916667,\"y_ratio\":0.35462963},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.290740741,\"kind\":\"Screen\",\"width_ratio\":0.38125,\"x_ratio\":0.597916667,\"y_ratio\":0.672222222}]",
+      "tags": [
+        "16-9",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "trio",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-trio-colonne-droite",
+          "title": "Large — trio colonne droite",
+          "description": "Split 16:9 à trois écrans empilés à droite, visage master pleine hauteur à gauche.",
+          "family": "yt-split-trio",
+          "familyTitle": "Large — splits visage + 3 écrans",
+          "variant": "colonne droite",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-trio-colonne-droite.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-080",
+      "presetIndex": 80,
+      "name": "meg-yt-trio-grille",
+      "title": "Large — trio en grille",
+      "family": "yt-split-trio",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0.015625,\"height_ratio\":0.455555556,\"kind\":\"Camera\",\"width_ratio\":0.471875,\"x_ratio\":0.507291667,\"y_ratio\":0.507407407},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.444444444,\"kind\":\"Screen\",\"width_ratio\":0.471875,\"x_ratio\":0.020833333,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.444444444,\"kind\":\"Screen\",\"width_ratio\":0.471875,\"x_ratio\":0.507291667,\"y_ratio\":0.037037037},{\"border_radius_ratio\":0.017708333,\"height_ratio\":0.455555556,\"kind\":\"Screen\",\"width_ratio\":0.471875,\"x_ratio\":0.020833333,\"y_ratio\":0.507407407}]",
+      "tags": [
+        "16-9",
+        "grille",
+        "layout",
+        "meg",
+        "meg-large",
+        "meg-youtube-folder-ecran-visage",
+        "trio",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "meg-yt-trio-grille",
+          "title": "Large — trio en grille",
+          "description": "Split 16:9 : 3 écrans en grille 2×2, visage master dans le quart bas-droit.",
+          "family": "yt-split-trio",
+          "familyTitle": "Large — splits visage + 3 écrans",
+          "variant": "grille 2×2",
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          },
+          "html": "meg-yt-trio-grille.html",
+          "staticFace": true,
+          "staticScreens": 3
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-081",
+      "presetIndex": 81,
+      "name": "borumi-meg-screen-full",
+      "title": "MEG · Écran plein cadre",
+      "family": "borumi-native",
+      "format": "youtube",
+      "formats": [
+        "youtube"
+      ],
+      "sourceKinds": [
+        "Screen"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "layout",
+        "meg",
+        "reel",
+        "youtube"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "borumi-meg-screen-full",
+          "title": "MEG · Écran plein cadre",
+          "description": "Preset natif Borumi validé par Mohamed.",
+          "family": "borumi-native",
+          "familyTitle": null,
+          "variant": null,
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "borumi-native",
+          "staticFace": false,
+          "staticScreens": 1
+        }
+      ]
+    },
+    {
+      "id": "meg-layout-082",
+      "presetIndex": 82,
+      "name": "borumi-meg-cutout-screen-full",
+      "title": "MEG Reel · Écran plein + visage détouré bas gauche",
+      "family": "borumi-native",
+      "format": "reel",
+      "formats": [
+        "reel"
+      ],
+      "sourceKinds": [
+        "Screen",
+        "Camera"
+      ],
+      "dedupeKey": "[{\"border_radius_ratio\":0,\"height_ratio\":0.5,\"kind\":\"Camera\",\"width_ratio\":0.442287112,\"x_ratio\":0,\"y_ratio\":0.5},{\"border_radius_ratio\":0,\"height_ratio\":1,\"kind\":\"Screen\",\"width_ratio\":1,\"x_ratio\":0,\"y_ratio\":0}]",
+      "tags": [
+        "detoure",
+        "layout",
+        "meg",
+        "reel"
+      ],
+      "sourceBlocks": [
+        {
+          "name": "borumi-meg-cutout-screen-full",
+          "title": "MEG Reel · Écran plein + visage détouré bas gauche",
+          "description": "Preset natif Borumi validé par Mohamed.",
+          "family": "borumi-native",
+          "familyTitle": null,
+          "variant": null,
+          "dimensions": {
+            "width": 1080,
+            "height": 1920
+          },
+          "html": "borumi-native",
+          "staticFace": true,
+          "staticScreens": 1
+        }
+      ]
+    }
+  ]
+}

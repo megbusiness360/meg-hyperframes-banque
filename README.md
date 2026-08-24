@@ -25,6 +25,7 @@ La synchronisation installe uniquement les blocs absents dans `compositions/`. E
 - `registry/` : layouts MEG adaptés et directement utilisables dans HyperFrames Studio.
 - `sources/` : cinq banques Remotion MIT téléchargées (`onda`, `remocn`, `rve-templates`, `captions-themes`, `scenes`). Elles servent de matière première et ne sont jamais chargées directement dans une timeline HyperFrames.
 - `scripts/sync-project.mjs` : synchronisation universelle des blocs manquants.
+- `borumi/` : kit portable Borumi MEG (83 favoris, manifeste externe, rendu de titres A/B/E et installateur macOS en lecture seule par défaut). Voir [`borumi/README.md`](borumi/README.md).
 
 Les licences et crédits propres à chaque banque source restent dans son dossier. Le code MEG de la registry demeure la propriété de MEG Business 360.
 
